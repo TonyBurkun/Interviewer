@@ -25,6 +25,9 @@ gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem "devise"
 
+#Integrating Backend and frontend
+gem "foreman"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
