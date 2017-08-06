@@ -16,6 +16,8 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+ENV['RAILS_ADMIN_THEME'] = 'rollincode'
+
 module Interviewer
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
