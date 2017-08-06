@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
 
-import Login from './Main';
+import Main from './Main';
 
 class App extends Component {
     render() {
-        return (
-            <Login/>
-
-
-        );
+        return <Main/>
     }
 }
 
