@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+    fetch (endpoint) {
+        return new Promise((resolve, reject) => {
+            window.fetch(endpoint)
+            .then(response => response.json())
+    .then(json => resolve(json))
+    .catch(error => reject(error))
+    })
+    }
   render() {
     return (
       <div className="App">
