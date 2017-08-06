@@ -18,4 +18,4 @@ TODO: Devise and auto should go after models creation
 
 TODO: Don`t forget GrafQL
 
-TODO: DOn`t forget 3 separate branches for dev QA prod
+TODO: DOn`t forget 3 separate branches for Dev QA prod
