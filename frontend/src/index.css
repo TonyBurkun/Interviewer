@@ -1,5 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import "theme-styles/app-blue.css";
+@import "theme-styles/app-custom.css";
+@import "theme-styles/app-green.css";
+@import "theme-styles/app-orange.css";
+@import "theme-styles/app-purple.css";
+@import "theme-styles/app-red.css";
+@import "theme-styles/app-seagreen.css";
+@import "theme-styles/vendor.css";
+@import "theme-styles/app.css";
+
