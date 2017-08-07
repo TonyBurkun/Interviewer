@@ -10,78 +10,79 @@ class Login extends Component {
 
         let currentForm = event.target;
 
-
-        var formValidation = {
-
-            getRequiredFields: function(currentForm){
-                let allRequiredField = currentForm.querySelectorAll('.required');
-                return allRequiredField;
-            },
-
-            getAllFields: function(currentForm){
-                let allFields = currentForm.querySelectorAll('.form-control');
-                return allFields;
-            },
-
-            checkFields: function (allRequiredField) {
-                let that = this;
-
-                allRequiredField = Array.prototype.slice.call(allRequiredField);
-
-                allRequiredField.every(function (item) {
-
-
-                    let oneFormGroup = item.parentNode;
-
-                    if (item.value === ''){
-                        that.addError(oneFormGroup);
-                        return false;
-                    } else {
-
-                        let fieldAttribute = item.getAttribute('type');
-                        console.log(fieldAttribute);
-
-                        if (fieldAttribute === 'email'){
-                            that.removeError(oneFormGroup);
-                            return true;
-                           // let emailFieldValue = item.value,
-                           //     regext = /.+@.+\..+/i;
-
-                        } else {
-                            that.removeError(oneFormGroup);
-                            return true;
-                        }
-
-
-
-                    }
-                });
-
-            },
-
-            addError: function (field) {
-                if (!field.classList.contains('has-error')) {
-                    let error = document.createElement('span');
-                    error.className = 'fa fa-times form-control-feedback';
-                    field.classList.add('has-error');
-                    field.appendChild(error);
-                }
-            },
-
-            removeError: function (field) {
-                if (field.classList.contains('has-error')) {
-                    let error = field.querySelector('.fa.fa-times.form-control-feedback');
-                    field.classList.remove('has-error');
-                    field.removeChild(error);
-                }
-            }
-
-
-        };
-
-        let requireFields = formValidation.getRequiredFields(currentForm);
-        formValidation.checkFields(requireFields);
-
+        //-----------------------------------------
+        // THIS CODE WAS USED FOR CUSTOM VALIDATION
+        //-----------------------------------------
+        // var formValidation = {
+        //
+        //     getRequiredFields: function(currentForm){
+        //         let allRequiredField = currentForm.querySelectorAll('.required');
+        //         return allRequiredField;
+        //     },
+        //
+        //     getAllFields: function(currentForm){
+        //         let allFields = currentForm.querySelectorAll('.form-control');
+        //         return allFields;
+        //     },
+        //
+        //     checkFields: function (allRequiredField) {
+        //         let that = this;
+        //
+        //         allRequiredField = Array.prototype.slice.call(allRequiredField);
+        //
+        //         allRequiredField.every(function (item) {
+        //
+        //
+        //             let oneFormGroup = item.parentNode;
+        //
+        //             if (item.value === ''){
+        //                 that.addError(oneFormGroup);
+        //                 return false;
+        //             } else {
+        //
+        //                 let fieldAttribute = item.getAttribute('type');
+        //                 console.log(fieldAttribute);
+        //
+        //                 if (fieldAttribute === 'email'){
+        //                     that.removeError(oneFormGroup);
+        //                     return true;
+        //                    // let emailFieldValue = item.value,
+        //                    //     regext = /.+@.+\..+/i;
+        //
+        //                 } else {
+        //                     that.removeError(oneFormGroup);
+        //                     return true;
+        //                 }
+        //             }
+        //         });
+        //
+        //     },
+        //
+        //     addError: function (field) {
+        //         if (!field.classList.contains('has-error')) {
+        //             let error = document.createElement('span');
+        //             error.className = 'fa fa-times form-control-feedback';
+        //             field.classList.add('has-error');
+        //             field.appendChild(error);
+        //         }
+        //     },
+        //
+        //     removeError: function (field) {
+        //         if (field.classList.contains('has-error')) {
+        //             let error = field.querySelector('.fa.fa-times.form-control-feedback');
+        //             field.classList.remove('has-error');
+        //             field.removeChild(error);
+        //         }
+        //     }
+        //
+        //
+        // };
+        //
+        // let requireFields = formValidation.getRequiredFields(currentForm);
+        // formValidation.checkFields(requireFields);
+        //---------------------
+        //END CUSTOM VALIDATION
+        //---------------------
     }
 
     render() {
@@ -101,12 +102,12 @@ class Login extends Component {
                                 <div className="form-group">
                                     <label htmlFor="username">Username</label>
                                     <input type="email" className="form-control underlined required" name="username"
-                                           id="username" placeholder="Your email address" maxLength='60'/>
+                                           id="username" placeholder="Your email address" maxLength='60' required/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="password">Password</label>
                                     <input type="password" className="form-control underlined required" name="password"
-                                           id="password" placeholder="Your password"/>
+                                           id="password" placeholder="Your password" required/>
                                 </div>
                                 <div className="form-group submit-btn">
                                     <button type="submit" className="btn btn-block btn-primary">Login</button>
