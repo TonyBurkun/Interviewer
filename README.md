@@ -7,8 +7,10 @@ Run rails s -p 3001
 setting up pg_user
 https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04
 
-TODO: integrate React app and rails
-TODO: Deploy on heroku
+Have integrate React app and rails
+issue was with fetch
+
+Deployed on heroku https://interviewer-prod.herokuapp.com/
 
 Integrating rails admin by this tutorial
 http://onebitcode.com/english-rails-admin/
