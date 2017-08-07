@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Login from './../Login';
-import Home from './../Home';
+import Login from './components/Login';
+import Home from './components/Home';
 
 class Main extends Component {
     render() {
