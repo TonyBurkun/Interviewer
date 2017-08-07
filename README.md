@@ -1,23 +1,25 @@
-https://medium.com/superhighfives/a-top-shelf-web-stack-rails-5-api-activeadmin-create-react-app-de5481b7ec0b
-Creating API only, backend with Postgree as db
-rails new . --api --database=postgresql
+##Deploy
 
-Run rails s -p 3001
+Login via heroku account set in ticket *IN-62*
 
-setting up pg_user
-https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04
+###servers
+https://prod-interviewer.herokuapp.com/
 
-Have integrate React app and rails
-issue was with fetch
+https://dev-interviewer.herokuapp.com/
 
-Deployed on heroku https://interviewer-prod.herokuapp.com/
+https://qa-interviewer.herokuapp.com/
 
-Integrating rails admin by this tutorial
-http://onebitcode.com/english-rails-admin/
-from here rails admin + theme are set up
+###Production
+```sh
+git push production master
+```
 
-TODO: Devise and auto should go after models creation
+###Development
+```sh
+git push develop Develop:master
+```
 
-TODO: Don`t forget GrafQL
-
-TODO: DOn`t forget 3 separate branches for Dev QA prod
+###QA
+```sh
+git push qa QA:master
+```
