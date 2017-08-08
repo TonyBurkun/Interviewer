@@ -1,4 +1,5 @@
 /.idea/
+/frontend/src/**/*.css
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -21,3 +22,4 @@ frontend/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
