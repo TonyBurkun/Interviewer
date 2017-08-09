@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import './CreateProject.css';
-import $ from 'jquery'
-
+import {Link} from 'react-router-dom'
 
 class CreateProject extends Component {
 
@@ -15,12 +13,12 @@ class CreateProject extends Component {
     }
 
     handleConfirmLeavePage(event) {
-        if (this.state.projectTitle || this.state.projectDescription) {
+        let notEmptyFields = this.state.projectTitle || this.state.projectDescription;
+        if (notEmptyFields && event.target.activeElement.id != "submitBtn") {
             let confirmationMessage = "confirm";
             event.returnValue = confirmationMessage;
             return confirmationMessage;
         }
-
     }
 
     componentDidMount() {
@@ -37,13 +35,14 @@ class CreateProject extends Component {
 
     validateFormFields(event) {
         event.preventDefault();
-        //let regex = new RegExp("\b\w{4}\b");
-        // if ( !regex.test(this.state.projectDescription) ) {
-        //  alert("Incorrect data");
-        // }
+        let regex = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let title = this.state.projectTitle;
+        let descr = this.state.projectDescription;
+        if ( !regex.test(descr) || !regex.test(title) ) {
+            alert("Incorrect data");
+        }
         event.target.submit();
     }
-
 
     isFieldsNotEmpty(event) {
         if (this.state.projectTitle || this.state.projectDescription) {
@@ -59,14 +58,13 @@ class CreateProject extends Component {
         this.setState({projectDescription: ""});
     }
 
-
     render() {
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <h3>Create a project</h3>
-                        <a>Back to list</a>
+                        <Link to="/" onClick = {() => this. isFieldsNotEmpty()} >Back to list</Link>
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <input
                                 id="project-tittle"
@@ -77,7 +75,6 @@ class CreateProject extends Component {
                                 maxLength="100"
                                 value={this.state.projectTitle}
                                 onChange={(event) => this.handleTitleChange(event)}
-                                //   pattern="/[\w\[\]`!@#$%\^&*()={}:;<>+'-]*/"
                             />
                             <TextareaAutosize
                                 id="project-descr"
@@ -88,20 +85,20 @@ class CreateProject extends Component {
                                 rows={10}
                                 value={this.state.projectDescription}
                                 onChange={(event) => this.handleDescrChange(event)}
-                                //  pattern="/[\w\[\]`!@#$%\^&*()={}:;<>+'-]*/"
+
                             />
                             <input
+                                id="submitBtn"
                                 type="submit"
                                 value="Create"
                                 className="btn btn-default"
                                 disabled={!this.state.projectTitle || !this.state.projectDescription }
-
                             />
                             <input
                                 type="reset"
                                 value="Cancel"
                                 className="btn btn-default"
-                                onClick={() => this.isFieldsNotEmpty()}
+                                onClick = {() => this. isFieldsNotEmpty()}
                             />
                         </form>
                     </div>
