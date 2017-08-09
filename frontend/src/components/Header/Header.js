@@ -14,6 +14,12 @@ class Header extends Component{
                 <div className="header-block header-block-nav">
                     <ul className="nav-profile">
                         <li>
+                            Username
+                        </li>
+                        <li>
+                            Dashboard
+                        </li>
+                        <li>
                             <Link to="#">My settings</Link>
                         </li>
                         <li>
