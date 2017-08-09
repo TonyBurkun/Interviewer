@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import './CreateProject.css';
 
 class CreateProject extends Component {
@@ -10,7 +10,7 @@ class CreateProject extends Component {
         this.state = {
             projectTitle: "",
             projectDescription: "",
-        }
+        };
     }
 
     handleConfirmLeavePage(event) {
