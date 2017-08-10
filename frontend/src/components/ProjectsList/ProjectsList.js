@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router-dom';
-//import "./ProjectsList.css";
+import "./ProjectsList.css";
+
 
 class ProjectsList extends Component {
 
@@ -12,10 +13,9 @@ class ProjectsList extends Component {
                     <div className="col-md-12">
                         <div className="title-block">
                             <h3 className="title">List of projects</h3>
-
                         </div>
                         <div className="card card-block sameheight-item">
-                            <Link to="/createproject">
+                            <Link to="/projects/createproject">
                                 <button className="btn btn-primary">Create a new project</button>
                             </Link>
                         </div>

@@ -1,16 +1,12 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink, activeClassName} from "react-router-dom";
 import "./SideMenu.css";
 
 
 class SideMenu extends Component {
 
-    // handleLinkClass() {
-    //     this.props.location.pathname === '/' ? 'active' : '';
-    // }
 
     render() {
-
         return(
                 <div className="sidebar">
                     <div className="sidebar-container">
@@ -22,29 +18,29 @@ class SideMenu extends Component {
                         <nav className="menu">
                             <ul className="nav metismenu" id="sidebar-menu">
                                 <li>
-                                    <Link to="#">
+                                    <NavLink to="#" activeClassName="activeLink">
                                         <i className="fa fa-home"></i> Interviews
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="#">
+                                    <NavLink to="#" activeClassName="activeLink">
                                         <i className="fa fa-home"></i> Interviewers
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="#">
+                                    <NavLink to="#" activeClassName="activeLink">
                                         <i className="fa fa-home"></i> Vacancies
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="#">
+                                    <NavLink to="#" activeClassName="activeLink">
                                         <i className="fa fa-home"></i> Seekers
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/projects">
+                                    <NavLink to="/projects" activeClassName="activeLink">
                                         <i className="fa fa-home"></i> Projects
-                                    </Link>
+                                    </NavLink>
                                 </li>
 
                             </ul>

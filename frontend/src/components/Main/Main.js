@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect } from 'react-router-dom';
 import Dashboard from './../Dashboard';
 import Header from './../Header';
 import SideMenu from './../SideMenu';
@@ -17,8 +17,8 @@ class Main extends Component {
                     <article className="content dashboard-page">
                         <Switch>
                             <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                            <Route path="/projects" name="Projects List" component={ProjectsList}/>
-                            <Route path="/createproject" name="Create project" component={CreateProject}/>
+                            <Route exact path="/projects" name="Projects List" component={ProjectsList}/>
+                            <Route exact path="/projects/createproject" name="Create project" component={CreateProject} route={this.props.route}/>
                             <Redirect form="/" to="/dashboard"/>
                         </Switch>
                     </article>

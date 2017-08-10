@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import TextareaAutosize from 'react-autosize-textarea';
-import {Link} from 'react-router-dom';
-import './CreateProject.css';
+import React, {Component, PropTypes} from "react";
+import TextareaAutosize from "react-autosize-textarea";
+import {Link} from "react-router-dom";
+import "./CreateProject.css";
+
 
 class CreateProject extends Component {
 
@@ -22,9 +23,9 @@ class CreateProject extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener("beforeunload", this.handleConfirmLeavePage.bind(this))
-    }
+    componentDidMount(props) {
+        window.addEventListener("beforeunload", this.handleConfirmLeavePage.bind(this));
+           }
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
@@ -41,8 +42,10 @@ class CreateProject extends Component {
         let descr = this.state.projectDescription;
         if ( !regex.test(descr) || !regex.test(title) ) {
             alert("Please use only latin letters, numbers and special symbols");
+        } else {
+            event.target.submit();
         }
-        event.target.submit();
+
     }
 
     isFieldsNotEmpty(event) {
@@ -61,7 +64,6 @@ class CreateProject extends Component {
 
     render() {
         return (
-            <div className="bcgr">
                 <div className="row sameheight-container">
                     <div className="col-md-12">
                         <div className="title-block">
@@ -117,7 +119,6 @@ class CreateProject extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }
