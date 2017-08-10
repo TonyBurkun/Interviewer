@@ -11,6 +11,16 @@
   justify-content: center;
 }
 
+.no-account {
+  cursor: pointer;
+  p {
+    color: #818a91;
+    &:hover {
+      color: #70b02b;
+    }
+  }
+}
+
 .copyright {
   padding: 0;
   margin: 30px 0 0 0;
@@ -36,6 +46,28 @@
     &:first-child {
       &:before {
         display: none;
+      }
+    }
+    @media (max-width: 389px) {
+
+      display: block;
+      margin-bottom: 5px;
+
+      &:before {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.modal {
+  &.in {
+    .modal-dialog {
+      transform: translate(0, 100%);
+
+      .modal-body {
+        text-align: center;
       }
     }
   }

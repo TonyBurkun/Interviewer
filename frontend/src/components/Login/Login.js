@@ -1,9 +1,38 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {Modal} from 'react-bootstrap';
 import './login.css';
 
 
 class Login extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showModal: false
+        };
+
+
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+
+    }
+
+    openModal(){
+        this.setState({
+            showModal: true
+        });
+    }
+
+    closeModal(){
+        this.setState({
+            showModal: false
+        });
+    }
+
+
+
 
     handleSubmit(event){
         event.preventDefault();
@@ -89,6 +118,13 @@ class Login extends Component {
 
         return (
             <div className="auth">
+                <Modal show={this.state.showModal} onHide={this.closeModal}>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>In order to get access to Interviewer app please contact your system administrator or HR department</p>
+                    </Modal.Body>
+                </Modal>
                 <div className="auth-container">
                     <div className="card">
                         <header className="auth-header">
@@ -115,8 +151,8 @@ class Login extends Component {
                                 <div className="form-group forgot-pass">
                                     <Link to="/forgotpassword" className="forgot-btn pull-right">Forgot password?</Link>
                                 </div>
-                                <div className="form-group">
-                                    <p className="text-muted text-xs-center">Do not have an account? Click here</p>
+                                <div className="form-group no-account">
+                                    <p className="text-xs-center" onClick={this.openModal}>Do not have an account? Click here</p>
                                 </div>
                             </form>
 
