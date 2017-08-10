@@ -1,12 +1,42 @@
-.form-group{
+.form-group {
   overflow: hidden;
 }
 
-.submit-btn{
+.submit-btn {
   margin-top: 3rem;
 }
 
-.forgot-pass{
+.forgot-pass {
   display: flex;
   justify-content: center;
+}
+
+.copyright {
+  padding: 0;
+  margin: 30px 0 0 0;
+  list-style: none;
+  font-size: 0.8rem;
+  text-align: center;
+
+  li {
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -7px;
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 14px;
+      background: black;
+    }
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
 }

@@ -116,11 +116,21 @@ class Login extends Component {
                                     <Link to="/forgotpassword" className="forgot-btn pull-right">Forgot password?</Link>
                                 </div>
                                 <div className="form-group">
-                                    <p className="text-muted text-xs-center">Do not have an account?&emsp;
-                                        <Link to="/signup">Sign Up!</Link>
-                                    </p>
+                                    <p className="text-muted text-xs-center">Do not have an account? Click here</p>
                                 </div>
                             </form>
+
+                            <ul className="copyright">
+                                <li>
+                                    (C) Interviewer, 2017
+                                </li>
+                                <li>
+                                    <Link to="#">Terms of service</Link>
+                                </li>
+                                <li>
+                                    <Link to="#">Help Center</Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ class Header extends Component{
                             <Link to="#">My settings</Link>
                         </li>
                         <li>
-                            <Link to="#">Logout</Link>
+                            <Link to="/login">Logout</Link>
                         </li>
                     </ul>
                 </div>
