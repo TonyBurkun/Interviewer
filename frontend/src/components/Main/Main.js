@@ -4,6 +4,7 @@ import Dashboard from './../Dashboard';
 import Header from './../Header';
 import SideMenu from './../SideMenu';
 import CreateProject from './../CreateProject';
+import ProjectsList from './../ProjectsList';
 
 class Main extends Component {
     render() {
@@ -16,14 +17,13 @@ class Main extends Component {
                     <article className="content dashboard-page">
                         <Switch>
                             <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                            <Route exact path='/createproject' name="Create project" component={CreateProject}/>
+                            <Route path="/projects" name="Projects List" component={ProjectsList}/>
+                            <Route path="/createproject" name="Create project" component={CreateProject}/>
                             <Redirect form="/" to="/dashboard"/>
                         </Switch>
                     </article>
                 </div>
-
             </div>
-
 
         );
     }

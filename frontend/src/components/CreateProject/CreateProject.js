@@ -66,7 +66,7 @@ class CreateProject extends Component {
                     <div className="col-md-12">
                         <div className="title-block">
                             <h3 className="title">Create a project</h3>
-                            <Link to="/" onClick = {() => this. isFieldsNotEmpty()} className="title-description">
+                            <Link to="/projects" onClick = {() => this. isFieldsNotEmpty()} className="title-description">
                                 Back to list
                             </Link>
                         </div>
