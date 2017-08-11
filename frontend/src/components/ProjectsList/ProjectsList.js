@@ -13,7 +13,7 @@ class ProjectsList extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12">
                         <div className="title-block">
-                            <h3 className="title">List of projects</h3>
+                            <h3 className="title">Projects</h3>
                         </div>
                         <div className="card card-block sameheight-item">
                             <Link to="/projects/create-project">

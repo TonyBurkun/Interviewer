@@ -102,7 +102,7 @@ class CreateProject extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12">
                         <div className="title-block">
-                            <h3 className="title">Create a project</h3>
+                            <h3 className="title">Create project</h3>
                             <Link to="/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
                                 Back to list
                             </Link>
