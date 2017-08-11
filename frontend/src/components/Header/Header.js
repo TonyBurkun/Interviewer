@@ -23,6 +23,9 @@ class Header extends Component{
                             <Link to="#">My settings</Link>
                         </li>
                         <li>
+                            <Link to="/login">Log in</Link>
+                        </li>
+                        <li>
                             <Link to="/login">Logout</Link>
                         </li>
                     </ul>
