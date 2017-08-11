@@ -15,7 +15,6 @@ class CreateProject extends Component {
             showModalAlert: false,
             showModalConfirm: false,
             showModaLCreateAlert: false,
-            smt: false
         };
     }
     //----------------------------------
@@ -99,82 +98,81 @@ class CreateProject extends Component {
 
     render() {
         return (
-                <div className="row sameheight-container">
-                    <div className="col-md-12">
-                        <div className="title-block">
-                            <h3 className="title">Create project</h3>
-                            <Link to="/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
-                                Back to list
-                            </Link>
-                        </div>
-                        <div className="card card-block sameheight-item">
-
-                            <form onSubmit={(event) => this.validateFormFields(event)}>
-                                <div className="form-gro1up">
-                                    <label className="control-label">Project Title</label>
-                                    <input
-                                        id="create-project-title"
-                                        type='text'
-                                        name="ProjectTitle"
-                                        placeholder='Input Title'
-                                        className="form-control boxed"
-                                        maxLength="100"
-                                        value={this.state.projectTitle}
-                                        onChange={(event) => this.handleTitleChange(event)}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label className="control-label">Project Description</label>
-                                    <TextareaAutosize
-                                        id="create-project-descr"
-                                        name="ProjectDescription"
-                                        placeholder="Input Description"
-                                        className="form-control boxed"
-                                        maxLength="3000"
-                                        rows={10}
-                                        value={this.state.projectDescription}
-                                        onChange={(event) => this.handleDescrChange(event)}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <button
-                                        id="create-project-submitBtn"
-                                        type="submit"
-                                        className="btn btn-primary"
-                                        disabled={!this.state.projectTitle || !this.state.projectDescription }
-                                    >Create</button>
-                                    <button
-                                        id="create-project-resetBtn"
-                                        type="reset"
-                                        className="btn btn-primary create-project-btn"
-                                        onClick = {() => this. isFieldsNotEmpty()}
-                                    >Cancel</button>
-                                </div>
-                            </form>
-                        </div>
+            <div className="row sameheight-container">
+                <div className="col-md-12">
+                    <div className="title-block">
+                        <h3 className="title">Create project</h3>
+                        <Link to="/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
+                            Back to list
+                        </Link>
                     </div>
-                    <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
-                        <Modal.Header closeButton>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <p>Please use only latin letters, numbers and special symbols</p>
-                        </Modal.Body>
-                    </Modal>
-                    <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
-                        <Modal.Header closeButton>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <p>Are you sure you want to cancel without saving changes?</p>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button onClick={() => this.leaveForm()}>Cancel</Button>
-                            <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Save changes</Button>
-                        </Modal.Footer>
-                    </Modal>
+                    <div className="card card-block sameheight-item">
+
+                        <form onSubmit={(event) => this.validateFormFields(event)}>
+                            <div className="form-gro1up">
+                                <label className="control-label">Project Title</label>
+                                <input
+                                    id="create-project-title"
+                                    type='text'
+                                    name="ProjectTitle"
+                                    placeholder='Input Title'
+                                    className="form-control boxed"
+                                    maxLength="100"
+                                    value={this.state.projectTitle}
+                                    onChange={(event) => this.handleTitleChange(event)}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label">Project Description</label>
+                                <TextareaAutosize
+                                    id="create-project-descr"
+                                    name="ProjectDescription"
+                                    placeholder="Input Description"
+                                    className="form-control boxed"
+                                    maxLength="3000"
+                                    rows={10}
+                                    value={this.state.projectDescription}
+                                    onChange={(event) => this.handleDescrChange(event)}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <button
+                                    id="create-project-submitBtn"
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    disabled={!this.state.projectTitle || !this.state.projectDescription }
+                                >Create</button>
+                                <button
+                                    id="create-project-resetBtn"
+                                    type="reset"
+                                    className="btn btn-primary create-project-btn"
+                                    onClick = {() => this. isFieldsNotEmpty()}
+                                >Cancel</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Please use only latin letters, numbers and special symbols</p>
+                    </Modal.Body>
+                </Modal>
+                <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Are you sure you want to cancel without saving changes?</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={() => this.leaveForm()}>Cancel</Button>
+                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Save changes</Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
         )
     }
 }
 
 export default CreateProject;
-

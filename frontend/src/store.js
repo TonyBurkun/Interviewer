@@ -1,14 +1,12 @@
-// import {createStore, combineReducers, applyMiddleware} from "redux";
-// import logger from "redux-logger";
-//
-// import math from "./reducers/mathReducer";
-// import user from "./reducers/userReducer";
-//
-// export default createStore(
-//    combineReducers({
-//        math,
-//        user
-//    }),
-//    {},
-//    applyMiddleware(logger())
-// );
+import {createStore, combineReducers, applyMiddleware} from "redux";
+import logger from "redux-logger";
+
+import createProject from "./reducers/createProjectReducer";
+
+export default createStore(
+   combineReducers({
+       createProject,
+   }),
+   {},
+  // applyMiddleware(logger())
+);
