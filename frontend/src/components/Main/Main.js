@@ -7,6 +7,7 @@ import CreateProject from './../CreateProject';
 import ProjectsList from './../ProjectsList';
 
 class Main extends Component {
+
     render() {
         return (
             <div className="main-wrapper">
@@ -18,7 +19,7 @@ class Main extends Component {
                         <Switch>
                             <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                             <Route exact path="/projects" name="Projects List" component={ProjectsList}/>
-                            <Route exact path="/projects/createproject" name="Create project" component={CreateProject} route={this.props.route}/>
+                            <Route exact path="/projects/create-project" name="Create project" component={CreateProject}/>
                             <Redirect form="/" to="/dashboard"/>
                         </Switch>
                     </article>

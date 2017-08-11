@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from "react";
 import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
+import {Modal, Button} from 'react-bootstrap';
 import "./CreateProject.css";
 
 
@@ -11,21 +12,30 @@ class CreateProject extends Component {
         this.state = {
             projectTitle: "",
             projectDescription: "",
+            showModalAlert: false,
+            showModalConfirm: false,
+            showModaLCreateAlert: false,
+            smt: false
         };
     }
-
-    handleConfirmLeavePage(event) {
-        let notEmptyFields = this.state.projectTitle || this.state.projectDescription;
-        if (notEmptyFields && event.target.activeElement.id != "submitBtn") {
-            let confirmationMessage = "confirm";
-            event.returnValue = confirmationMessage;
-            return confirmationMessage;
-        }
-    }
-
-    componentDidMount(props) {
-        window.addEventListener("beforeunload", this.handleConfirmLeavePage.bind(this));
-           }
+    //----------------------------------
+    //      Will be implemented further
+    //------------------------------------
+    // componentDidMount(props) {
+    //     window.addEventListener("beforeunload", this.handleConfirmLeavePage.bind(this));
+    // }
+    //
+    // handleConfirmLeavePage(event) {
+    //     let notEmptyFields = this.state.projectTitle || this.state.projectDescription;
+    //     if (notEmptyFields && event.target.activeElement.id != "create-project-resetBtn") {
+    //         let confirmationMessage = "confirm";
+    //         event.returnValue = confirmationMessage;
+    //         return confirmationMessage;
+    //     }
+    // }
+    //-------------------------------------
+    //      End of the code
+    //--------------------------------------
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
@@ -36,30 +46,55 @@ class CreateProject extends Component {
     }
 
     validateFormFields(event) {
-        event.preventDefault();
         let regex = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let descr = this.state.projectDescription;
         if ( !regex.test(descr) || !regex.test(title) ) {
-            alert("Please use only latin letters, numbers and special symbols");
+            event.preventDefault()
+            this.openModalAlert();
         } else {
-            event.target.submit();
+            this.props.history.push("/projects");
         }
-
     }
 
     isFieldsNotEmpty(event) {
         if (this.state.projectTitle || this.state.projectDescription) {
-            let confirm = window.confirm("Are you sure you want to leave the page without saving changes?");
-            if(confirm) {
-                this.resetFormFields(event)
-            }
+            let confirm = this.openModalConfirm();
         }
     }
 
-    resetFormFields(event) {
+    openModalAlert() {
+        this.setState({
+            showModalAlert: true
+        });
+    }
+
+    closeModalAlert() {
+        this.setState({
+            showModalAlert: false
+        });
+    }
+
+    openModalConfirm() {
+        this.setState({
+            showModalConfirm: true
+        });
+    }
+
+    closeModalConfirm() {
+        this.setState({
+            showModalConfirm: false
+        });
+    }
+
+    leaveForm() {
+        this.resetFormFields();
+        this.closeModalConfirm()
+    }
+
+    resetFormFields() {
         this.setState({projectTitle: ""});
-        this.setState({projectDescription: ""});
+        this.setState({projectDescription: ""})
     }
 
     render() {
@@ -68,17 +103,17 @@ class CreateProject extends Component {
                     <div className="col-md-12">
                         <div className="title-block">
                             <h3 className="title">Create a project</h3>
-                            <Link to="/projects" onClick = {() => this. isFieldsNotEmpty()} className="title-description">
+                            <Link to="/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-block sameheight-item">
 
                             <form onSubmit={(event) => this.validateFormFields(event)}>
-                                <div className="form-group">
+                                <div className="form-gro1up">
                                     <label className="control-label">Project Title</label>
                                     <input
-                                        id="project-title"
+                                        id="create-project-title"
                                         type='text'
                                         name="ProjectTitle"
                                         placeholder='Input Title'
@@ -91,10 +126,10 @@ class CreateProject extends Component {
                                 <div className="form-group">
                                     <label className="control-label">Project Description</label>
                                     <TextareaAutosize
-                                        id="project-descr"
+                                        id="create-project-descr"
                                         name="ProjectDescription"
                                         placeholder="Input Description"
-                                        className="form-control"
+                                        className="form-control boxed"
                                         maxLength="3000"
                                         rows={10}
                                         value={this.state.projectDescription}
@@ -103,13 +138,13 @@ class CreateProject extends Component {
                                 </div>
                                 <div className="form-group">
                                     <button
-                                        id="submitBtn"
+                                        id="create-project-submitBtn"
                                         type="submit"
                                         className="btn btn-primary"
                                         disabled={!this.state.projectTitle || !this.state.projectDescription }
                                     >Create</button>
                                     <button
-                                        id="resetBtn"
+                                        id="create-project-resetBtn"
                                         type="reset"
                                         className="btn btn-primary create-project-btn"
                                         onClick = {() => this. isFieldsNotEmpty()}
@@ -118,6 +153,24 @@ class CreateProject extends Component {
                             </form>
                         </div>
                     </div>
+                    <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
+                        <Modal.Header closeButton>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p>Please use only latin letters, numbers and special symbols</p>
+                        </Modal.Body>
+                    </Modal>
+                    <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                        <Modal.Header closeButton>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p>Are you sure you want to cancel without saving changes?</p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button onClick={() => this.leaveForm()}>Cancel</Button>
+                            <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Save changes</Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
         )
     }
