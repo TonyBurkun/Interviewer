@@ -4,8 +4,8 @@ const createProjectReducer = (state = {
 }, action) => {
     switch (action.type) {
         case "FILL":
-            state = { //state here is a new js object
-                ...state, // takes all the properties from the state object from 1st line
+            state = { //"state" here is a new js object
+                ...state, // "..." takes all the properties from the "state" object from 1st line
                 projectTitle: action.payload,
                 projectDescription: action.payload
             };
