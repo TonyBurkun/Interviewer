@@ -16,7 +16,7 @@ class ProjectsList extends Component {
                             <h3 className="title">Projects</h3>
                         </div>
                         <div className="card card-block sameheight-item">
-                            <Link to="/projects/create-project">
+                            <Link to="/dashboard/projects/create-project">
                                 <button className="btn btn-primary">Create a new project</button>
                             </Link>
                         </div>

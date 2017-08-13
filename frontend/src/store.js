@@ -1,12 +1,12 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import logger from "redux-logger";
 
-import createProject from "./reducers/createProjectReducer";
+import createProjectFields from "./reducers/createProjectFieldsReducer";
 
 export default createStore(
    combineReducers({
-       createProject,
+       createProjectFields,
    }),
    {},
-  // applyMiddleware(logger())
+ // applyMiddleware(logger())
 );

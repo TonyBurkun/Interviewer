@@ -11,6 +11,10 @@ import ProjectsList from './../ProjectsList';
 import Username from './../Username';
 import Password from './../Password';
 import {connect} from "react-redux";
+import {fillProjectTitleFields} from "../../actions/createProjectFieldsActions";
+import {fillProjectDescriptionFields} from "../../actions/createProjectFieldsActions";
+import {clearProjectTitleFields} from "../../actions/createProjectFieldsActions";
+import {clearProjectDescriptionFields} from "../../actions/createProjectFieldsActions";
 
 
 class Main extends Component {
@@ -69,14 +73,13 @@ class Main extends Component {
                     </article>
                 </div>
             </div>
-
         );
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        createProject: state.createProjectReduser
+        createProjectFields: state.state,
         // we can map properties of the global store to local properties .
         // example passing to child: someprops = this.props.createProject.projectTitle
     };
@@ -84,9 +87,18 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // setName: (name) => {
-        //     dispatch(setName(name));
-        // }
+        fillProjectTitleFields: (title) => {
+            dispatch(fillProjectTitleFields(title));
+        },
+        fillProjectDescriptionFields: (description) => {
+            dispatch(fillProjectDescriptionFields(description));
+        },
+        clearProjectTitleFields: (title) => {
+            dispatch(clearProjectTitleFields(title));
+        },
+        clearProjectDescriptionFields: (description) => {
+            dispatch(clearProjectDescriptionFields(description));
+        },
     };
 };
 

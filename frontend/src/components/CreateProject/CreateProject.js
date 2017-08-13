@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from "react";
 import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
-import {Modal, Button} from 'react-bootstrap';
+import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 
 
@@ -45,20 +45,23 @@ class CreateProject extends Component {
     }
 
     validateFormFields(event) {
-        let regex = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let descr = this.state.projectDescription;
         if ( !regex.test(descr) || !regex.test(title) ) {
             event.preventDefault()
             this.openModalAlert();
         } else {
-            this.props.history.push("/projects");
+            this.props.history.push("/dashboard/projects");
         }
     }
 
     isFieldsNotEmpty(event) {
         if (this.state.projectTitle || this.state.projectDescription) {
             let confirm = this.openModalConfirm();
+
+        } else {
+            this.props.history.push("/dashboard/projects");
         }
     }
 
@@ -88,7 +91,8 @@ class CreateProject extends Component {
 
     leaveForm() {
         this.resetFormFields();
-        this.closeModalConfirm()
+        this.closeModalConfirm();
+        this.props.history.push("/dashboard/projects");
     }
 
     resetFormFields() {
@@ -102,7 +106,7 @@ class CreateProject extends Component {
                 <div className="col-md-12">
                     <div className="title-block">
                         <h3 className="title">Create project</h3>
-                        <Link to="/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
+                        <Link to="/dashboard/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
                             Back to list
                         </Link>
                     </div>
@@ -113,7 +117,7 @@ class CreateProject extends Component {
                                 <label className="control-label">Project Title</label>
                                 <input
                                     id="create-project-title"
-                                    type='text'
+                                    type="text"
                                     name="ProjectTitle"
                                     placeholder='Input Title'
                                     className="form-control boxed"
@@ -146,7 +150,7 @@ class CreateProject extends Component {
                                     id="create-project-resetBtn"
                                     type="reset"
                                     className="btn btn-primary create-project-btn"
-                                    onClick = {() => this. isFieldsNotEmpty()}
+                                    onClick = {() => this.isFieldsNotEmpty()}
                                 >Cancel</button>
                             </div>
                         </form>

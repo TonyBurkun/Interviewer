@@ -1,24 +1,22 @@
-const createProjectReducer = (state = {
+const createProjectFieldsReducer = (state = {
     projectTitle: "",
     projectDescription: ""
 }, action) => {
     switch (action.type) {
-        case "FILL":
+        case "TITTLE":
             state = { //"state" here is a new js object
                 ...state, // "..." takes all the properties from the "state" object from 1st line
                 projectTitle: action.payload,
-                projectDescription: action.payload
             };
             break;
-        case "CLEAR":
+        case "DESCRIPTION":
             state = {
                 ...state,
-                projectTitle: action.payload,
-                projectDescription: action.payload
+                projectDescription: action.payload,
             };
             break;
     }
     return state;
 };
 
-export default createProjectReducer;
+export default createProjectFieldsReducer;
