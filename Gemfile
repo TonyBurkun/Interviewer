@@ -19,6 +19,9 @@ gem 'puma', '~> 3.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#Block for api
+gem 'active_model_serializers'
+
 #Block for Rails_admin integration for the tutorial
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
