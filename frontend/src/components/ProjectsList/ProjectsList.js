@@ -17,7 +17,7 @@ class ProjectsList extends Component {
                         </div>
                         <div className="card card-block sameheight-item">
                             <Link to="/dashboard/projects/create-project">
-                                <button className="btn btn-primary">Create a new project</button>
+                                <button className="btn btn-primary">Create project</button>
                             </Link>
                         </div>
                     </div>
