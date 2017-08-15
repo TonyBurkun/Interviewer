@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do
+  Project.create({
+      title: Faker::App.name,
+      description: Faker::Lorem.paragraphs
+                 })
+end
+
+Admin.new({:email => "admin@admin.com", :password => "12345678", :password_confirmation => "12345678" }).save(:validate => false)
