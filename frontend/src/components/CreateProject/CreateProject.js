@@ -3,7 +3,8 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
-
+import { connect } from 'react-redux'
+import { createProject } from '../../redux/actions/projectActions';
 
 class CreateProject extends Component {
 
@@ -52,6 +53,8 @@ class CreateProject extends Component {
             event.preventDefault()
             this.openModalAlert();
         } else {
+            const { dispatch } = this.props;
+            dispatch(createProject({title: title, descr: descr}));
             this.props.history.push("/dashboard/projects");
         }
     }
@@ -179,4 +182,10 @@ class CreateProject extends Component {
     }
 }
 
-export default CreateProject;
+function mapStateToProps (state) {
+  return {
+    newProject: state.project
+  }
+}
+
+export default connect(mapStateToProps)(CreateProject);

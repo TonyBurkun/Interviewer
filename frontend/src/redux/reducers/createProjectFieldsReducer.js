@@ -1,6 +1,6 @@
 const createProjectFieldsReducer = (state = {
-    projectTitle: "",
-    projectDescription: "",
+    projectTitle: "asd",
+    projectDescription: "dsad",
     isNoteVisible: false
 }, action) => {
     switch (action.type) {

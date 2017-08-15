@@ -6,6 +6,7 @@ export function setProjectTitleFields(title) {
 }
 
 export function setProjectDescriptionFields(description) {
+    debugger
     return {
         type: "SET_DESCRIPTION",
         payload: description
@@ -13,6 +14,14 @@ export function setProjectDescriptionFields(description) {
 }
 
 export function showNote(){
+    debugger
+    return {
+        type: "SHOW_NOTE",
+        payload: true
+    };
+}
+
+export function createNewProject() {
     return {
         type: "SHOW_NOTE",
         payload: true
