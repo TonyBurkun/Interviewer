@@ -11,10 +11,9 @@ import ProjectsList from './../ProjectsList';
 import Username from './../Username';
 import Password from './../Password';
 import {connect} from "react-redux";
-import {fillProjectTitleFields} from "../../actions/createProjectFieldsActions";
-import {fillProjectDescriptionFields} from "../../actions/createProjectFieldsActions";
-import {clearProjectTitleFields} from "../../actions/createProjectFieldsActions";
-import {clearProjectDescriptionFields} from "../../actions/createProjectFieldsActions";
+import {setProjectTitleFields} from "../../redux/actions/createProjectFieldsActions";
+import {setProjectDescriptionFields} from "../../redux/actions/createProjectFieldsActions";
+import {showNote} from "../../redux/actions/createProjectFieldsActions";
 
 
 class Main extends Component {
@@ -28,6 +27,7 @@ class Main extends Component {
                     <Header/>
                     <SideMenu/>
                     <article className="content dashboard-page">
+
                         <Switch>
                             <Route
                                 exact path="/dashboard/projects"
@@ -87,17 +87,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fillProjectTitleFields: (title) => {
-            dispatch(fillProjectTitleFields(title));
+        setProjectTitleFields: (title) => {
+            dispatch(setProjectTitleFields(title));
         },
-        fillProjectDescriptionFields: (description) => {
-            dispatch(fillProjectDescriptionFields(description));
+        setProjectDescriptionFields: (description) => {
+            dispatch(setProjectDescriptionFields(description));
         },
-        clearProjectTitleFields: (title) => {
-            dispatch(clearProjectTitleFields(title));
-        },
-        clearProjectDescriptionFields: (description) => {
-            dispatch(clearProjectDescriptionFields(description));
+        showNote: () => {
+            dispatch(showNote());
         },
     };
 };
