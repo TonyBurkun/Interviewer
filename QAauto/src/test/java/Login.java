@@ -8,35 +8,39 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
-
+import ui.*;
 
 import java.util.concurrent.TimeUnit;
 
 
 public class Login {
+    LoginPage loginPage;
     WebDriver driver;
     final static Logger logger = Logger.getLogger(Login.class);
+
+
     @BeforeTest
     public void before() {
-        System.setProperty("webdriver.gecko.driver",
-                "C:\\selenium\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\selenium\\geckodriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
 
         driver = new FirefoxDriver(capabilities);
-       // loginPage = new FormsOnMainPage(driver);
+        loginPage = new LoginPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @Test(groups = {"functest", "questionToAdmin"})
-    public void questionToAdmin() throws InterruptedException {
 
 
     }
+
+
+    @Test(groups = {"functest", "login"})
+    public void login() throws InterruptedException {
+        loginPage.open();
+    }
+
 
     @AfterTest
-    public void after() {
-
+    public void after() { driver.quit();
 
     }
 }
