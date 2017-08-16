@@ -5,6 +5,7 @@ import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 import { connect } from 'react-redux'
 import { createProject } from '../../redux/actions/projectActions';
+import { showNote } from '../../redux/actions/notificationActions';
 
 class CreateProject extends Component {
 
@@ -53,16 +54,24 @@ class CreateProject extends Component {
             event.preventDefault()
             this.openModalAlert();
         } else {
+            this.props.history.push("/dashboard/projects");
             const { dispatch } = this.props;
             dispatch(createProject({title: title, descr: descr}));
-            this.props.history.push("/dashboard/projects");
+            this.showNote();
         }
+    }
+
+    showNote() {
+        const { dispatch } = this.props;
+        dispatch(showNote({show: true }))
+        setInterval(() => {
+            dispatch(showNote({show: false }))
+        }, 4000)
     }
 
     isFieldsNotEmpty(event) {
         if (this.state.projectTitle || this.state.projectDescription) {
             let confirm = this.openModalConfirm();
-
         } else {
             this.props.history.push("/dashboard/projects");
         }
@@ -124,7 +133,7 @@ class CreateProject extends Component {
                                     name="ProjectTitle"
                                     placeholder='Input Title'
                                     className="form-control boxed"
-                                    maxLength="100"
+                                    maxLength="60"
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
                                 />

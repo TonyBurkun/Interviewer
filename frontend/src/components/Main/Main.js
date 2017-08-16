@@ -10,10 +10,6 @@ import CreateProject from './../CreateProject';
 import ProjectsList from './../ProjectsList';
 import Username from './../Username';
 import Password from './../Password';
-import {connect} from "react-redux";
-import {setProjectTitleFields} from "../../redux/actions/createProjectFieldsActions";
-import {setProjectDescriptionFields} from "../../redux/actions/createProjectFieldsActions";
-import {showNote} from "../../redux/actions/createProjectFieldsActions";
 
 
 class Main extends Component {
@@ -77,28 +73,6 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        createProjectFields: state.state,
-        // we can map properties of the global store to local properties .
-        // example passing to child: someprops = this.props.createProject.projectTitle
-    };
-};
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setProjectTitleFields: (title) => {
-            dispatch(setProjectTitleFields(title));
-        },
-        setProjectDescriptionFields: (description) => {
-            dispatch(setProjectDescriptionFields(description));
-        },
-        showNote: () => {
-            dispatch(showNote());
-        },
-    };
-};
+export default Main
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
-//connect() use to tell react-redux which properties and actions
-// from global store we need in this component

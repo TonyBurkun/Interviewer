@@ -3,18 +3,18 @@ import { CREATE_PROJECT, SHOW_PROJECTS, REMOVE_PROJECT, UPDATE_PROJECT } from '.
 const initialState = {
 	projects: [],
 	newProject: {
-		projectTitle: "asd",
-	    projectDescription: "dsad",
-	    isNoteVisible: false
+		projectTitle: "initTitle",
+	    projectDescription: "initDiscr",
 	}
 }
 
 
 export default function project(state = initialState, action) {
   switch (action.type) {
-    case CREATE_PROJECT:
+      case CREATE_PROJECT:
       debugger
-      return Object.assign({}, state);
+      return  {...state,
+          newProject: {...state, projectTitle: action.payload.title, projectDescription: action.payload.descr}};
     case SHOW_PROJECTS:
       return { ...state, email: action.user_info.email,  auth: true};
     case REMOVE_PROJECT:

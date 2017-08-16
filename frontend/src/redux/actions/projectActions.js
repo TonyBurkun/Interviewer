@@ -7,6 +7,7 @@ export const UPDATE_PROJECT = 'UPDATE_PROJECT';
 
 
 export function createProject(date) {
+  debugger
   return {
     type: 'CREATE_PROJECT',
     payload: date

@@ -3,35 +3,23 @@ import {Link, IndexLink} from 'react-router-dom';
 import "./ProjectsList.css";
 import {Modal, Button} from 'react-bootstrap';
 import { Alert } from 'reactstrap';
+import { connect } from 'react-redux'
+import { createProject } from '../../redux/actions/projectActions';
+import { showNote } from '../../redux/actions/notificationActions';
 
 
 class ProjectsList extends Component {
 
-    constructor(props) {
-
-        super(props);
-
-        this.state = {
-            isNoteVisible: false
-        }
-    }
-
-    onDismiss() {
-        this.setState({ isNoteVisible: false });
-    }
-    //----------Will be used later------
-    // showNote() {
-    //     this.setState({ isNoteVisible: true });
-    //     setInterval(() => {
-    //         this.onDismiss()
-    //     }, 4000)
-    // }
-    //-----------End---------------------
-
-
-
+     onDismiss() {
+            const { dispatch } = this.props;
+            dispatch(showNote({show: false}))
+     }
 
     render() {
+
+        const { projectTitle, projectDescription } = this.props.newProject.newProject;
+        const { isNoteVisible } = this.props.newNote.newNote;
+        let projectToDisplay = "'" + projectTitle.slice(0,20) + "..." + "'"
 
         return (
             <div>
@@ -43,9 +31,9 @@ class ProjectsList extends Component {
                         </div>
                         <div className="card card-block sameheight-item">
                             <Alert className="col-md-7 alert-custom"
-                                   isOpen={this.state.isNoteVisible}
+                                   isOpen={isNoteVisible}
                                    toggle={() => this.onDismiss()}>
-                                Project "My very First Project..." was created!
+                                   Project {projectToDisplay} was created!
                             </Alert>
                             <Link to="/dashboard/projects/create-project">
                                 <button className="btn btn-primary">Create project</button>
@@ -66,4 +54,11 @@ class ProjectsList extends Component {
     }
 }
 
-export default ProjectsList;
+function mapStateToProps (state) {
+    return {
+        newProject: state.project,
+        newNote: state.notifications
+    }
+}
+
+export default connect(mapStateToProps)(ProjectsList);
