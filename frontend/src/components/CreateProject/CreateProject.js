@@ -3,7 +3,7 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { createProject } from '../../redux/actions/projectActions';
 import { showNote } from '../../redux/actions/notificationActions';
 

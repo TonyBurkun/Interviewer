@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch, Route, Redirect } from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import Header from './../Header';
 import SideMenu from './../SideMenu';
 import Interviews from './../Interviews';
@@ -11,15 +11,31 @@ import ProjectsList from './../ProjectsList';
 import Username from './../Username';
 import Password from './../Password';
 
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as pageActions from '../../redux/actions/sideBarActions';
+
 
 class Main extends Component {
+
+    componentDidUpdate() {
+
+        let {status} = this.props.sideBar,
+            app = document.getElementById('app');
+
+        if (status) {
+            app.classList.add('sidebar-open');
+        } else {
+            app.classList.remove('sidebar-open');
+        }
+    }
 
 
     render() {
 
         return (
             <div className="main-wrapper">
-                <div className="app">
+                <div className="app" id="app">
                     <Header/>
                     <SideMenu/>
                     <article className="content dashboard-page">
@@ -73,6 +89,16 @@ class Main extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        sideBar: state.sideBar
+    }
+}
 
-export default Main
+function mapDispatchToProps(dispatch) {
+    return {
+        pageActions: bindActionCreators(pageActions, dispatch)
+    }
+}
 
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
