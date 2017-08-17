@@ -56,8 +56,8 @@
  * @apiGroup Projects 
  * @apiParam {Number} id Projects unique ID.
  *
- * @apiParam {String} title         Optional title of the Projects.
- * @apiParam {String} description   Optional description of the Projects.
+ * @apiParam {String} title          Optional title of the Projects.
+ * @apiParam {String} description    Optional description of the Projects.
  * @apiParam {String} created_at      Mandatory with default value.
  * @apiParam {String} updated_at      Mandatory uwith default value.
  *
