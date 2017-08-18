@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Link, NavLink} from 'react-router-dom';
 import './header.css';
 
@@ -17,6 +18,10 @@ class Header extends Component {
 
     handleMenuBthClick() {
         this.props.pageActions.showSideBar(true);
+    }
+
+    componentDidUpdate(){
+
     }
 
     render() {
@@ -78,9 +83,10 @@ class Header extends Component {
     }
 }
 
+
 function mapStateToProps(state) {
     return {
-        sideBar: state.sideBar
+        sideBar: state.sideBar.status
     }
 }
 
@@ -90,4 +96,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Header)

@@ -94,9 +94,10 @@ class SideMenu extends Component {
    }
 }
 
+
 function mapStateToProps (state) {
     return {
-        sideBar: state.sideBar
+        sideBar: state.sideBar.status
     }
 }
 
@@ -106,4 +107,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideMenu)
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(SideMenu)

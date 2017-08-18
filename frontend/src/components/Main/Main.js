@@ -20,7 +20,7 @@ class Main extends Component {
 
     componentDidUpdate() {
 
-        let {status} = this.props.sideBar,
+        let status = this.props.sideBar,
             app = document.getElementById('app');
 
         if (status) {
@@ -89,9 +89,10 @@ class Main extends Component {
     }
 }
 
+
 function mapStateToProps(state) {
     return {
-        sideBar: state.sideBar
+        sideBar: state.sideBar.status
     }
 }
 
