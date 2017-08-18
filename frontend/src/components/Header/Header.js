@@ -2,22 +2,7 @@ import React, {Component} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import './header.css';
 
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as pageActions from '../../redux/actions/sideBarActions';
-
-
 class Header extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.handleMenuBthClick = this.handleMenuBthClick.bind(this);
-    }
-
-    handleMenuBthClick() {
-        this.props.pageActions.showSideBar(true);
-    }
 
     render() {
 
@@ -50,7 +35,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <div className="header-block header-block-collapse hidden-lg-up">
-                    <button className="collapse-btn" id="sidebar-collapse-btn" onClick={this.handleMenuBthClick}>
+                    <button className="collapse-btn" id="sidebar-collapse-btn">
                         <i className="fa fa-bars"></i>
                     </button>
                 </div>
@@ -78,16 +63,4 @@ class Header extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        sideBar: state.sideBar
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        pageActions: bindActionCreators(pageActions, dispatch)
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header;
