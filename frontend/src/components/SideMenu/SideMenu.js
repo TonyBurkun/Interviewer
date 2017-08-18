@@ -1,8 +1,21 @@
 import React, {Component} from "react";
 import {Link, NavLink, activeClassName} from "react-router-dom";
 import "./SideMenu.css";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as pageActions from '../../redux/actions/sideBarActions';
 
 class SideMenu extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.handleCloseSideBarClick = this.handleCloseSideBarClick.bind(this);
+    }
+
+    handleCloseSideBarClick() {
+        this.props.pageActions.hideSideBar(false);
+    }
 
     render() {
 
@@ -75,10 +88,23 @@ class SideMenu extends Component {
                             {changeMenuItems()}
                         </div>
                     </div>
-                    <div className="sidebar-overlay" id="sidebar-overlay"/>
+                    <div className="sidebar-overlay" id="sidebar-overlay" onClick={this.handleCloseSideBarClick}/>
                 </div>
         )
    }
 }
 
-export default SideMenu;
+
+function mapStateToProps (state) {
+    return {
+        sideBar: state.sideBar.status
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        pageActions: bindActionCreators(pageActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(SideMenu)

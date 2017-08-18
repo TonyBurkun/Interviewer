@@ -11,9 +11,25 @@ import ProjectsList from './../ProjectsList';
 import Username from './../Username';
 import Password from './../Password';
 
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as pageActions from '../../redux/actions/sideBarActions';
 
 
 class Main extends Component {
+
+    componentDidUpdate() {
+
+        let status = this.props.sideBar,
+            app = document.getElementById('app');
+
+        if (status) {
+            app.classList.add('sidebar-open');
+        } else {
+            app.classList.remove('sidebar-open');
+        }
+    }
+
 
     render() {
 
@@ -73,5 +89,17 @@ class Main extends Component {
     }
 }
 
-export default Main;
 
+function mapStateToProps(state) {
+    return {
+        sideBar: state.sideBar.status
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        pageActions: bindActionCreators(pageActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
