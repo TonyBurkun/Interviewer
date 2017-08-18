@@ -1,5 +1,5 @@
  /**
- * @api {get} api/v1/projects Request Projects information
+ * @api {get} api/v1/projects/:id Read data of a projects
  * @apiName GetProjects
  * @apiGroup Projects
  *
@@ -15,7 +15,7 @@
  
  
 /**
- * @api {post} api/v1/projects/ Post Project
+ * @api {post} api/v1/projects/ Create a new Project
  * @apiName PostProjects
  * @apiGroup Projects 
  * @apiParam {Number} id Projects unique ID.
@@ -33,7 +33,7 @@
  */
  
  /**
- * @api {put} api/v1/projects/ Put Project
+ * @api {put} api/v1/projects/:id Change a new Project
  * @apiName PutProjects
  * @apiGroup Projects 
  * @apiParam {Number} id Projects unique ID.
@@ -51,7 +51,7 @@
  */
  
  /**
- * @api {patch} api/v1/projects/ Patch Project
+ * @api {patch} api/v1/projects/:id Edit of a Project
  * @apiName PatchProjects
  * @apiGroup Projects 
  * @apiParam {Number} id Projects unique ID.
@@ -71,13 +71,13 @@
  
   
 /**
- * @api {delete} api/v1/projects/ Delete Project
+ * @api {delete} api/v1/projects/:id Delete a Project
  * @apiName DeleteProjects
  * @apiGroup Projects 
  * @apiParam {Number} id Projects unique ID.
  *
  *
- * @apiSuccess {String} id The new Projects-ID.
+ * @apiSuccess {String} id              The Projects-ID.
  * @apiSuccess {String} title		    Title of the Projects.
  * @apiSuccess {String} description     Description of the Projects.
  * @apiSuccess {String} created_at      Mandatory with default value.

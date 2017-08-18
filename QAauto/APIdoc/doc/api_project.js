@@ -1,4 +1,4 @@
-{
+define({
   "name": "interviewer",
   "version": "0.1.0",
   "description": "apiDoc basic for interviewer",
@@ -9,8 +9,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-08-16T20:03:17.379Z",
+    "time": "2017-08-18T16:48:06.451Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
-}
+});

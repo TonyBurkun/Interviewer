@@ -23,14 +23,14 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/main.js",
-    "group": "D__interviewer_Interviewer_QAauto_doc_main_js",
-    "groupTitle": "D__interviewer_Interviewer_QAauto_doc_main_js",
+    "group": "D__interviewer_Interviewer_QAauto_APIdoc_doc_main_js",
+    "groupTitle": "D__interviewer_Interviewer_QAauto_APIdoc_doc_main_js",
     "name": ""
   },
   {
     "type": "delete",
-    "url": "api/v1/projects/",
-    "title": "Delete Project",
+    "url": "api/v1/projects/:id",
+    "title": "Delete a Project",
     "name": "DeleteProjects",
     "group": "Projects",
     "parameter": {
@@ -54,7 +54,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "id",
-            "description": "<p>The new Projects-ID.</p>"
+            "description": "<p>The Projects-ID.</p>"
           },
           {
             "group": "Success 200",
@@ -93,8 +93,8 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v1/projects",
-    "title": "Request Projects information",
+    "url": "api/v1/projects/:id",
+    "title": "Read data of a projects",
     "name": "GetProjects",
     "group": "Projects",
     "parameter": {
@@ -162,8 +162,8 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "api/v1/projects/",
-    "title": "Patch Project",
+    "url": "api/v1/projects/:id",
+    "title": "Edit of a Project",
     "name": "PatchProjects",
     "group": "Projects",
     "parameter": {
@@ -248,7 +248,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "api/v1/projects/",
-    "title": "Post Project",
+    "title": "Create a new Project",
     "name": "PostProjects",
     "group": "Projects",
     "parameter": {
@@ -337,8 +337,8 @@ define({ "api": [
   },
   {
     "type": "put",
-    "url": "api/v1/projects/",
-    "title": "Put Project",
+    "url": "api/v1/projects/:id",
+    "title": "Change a new Project",
     "name": "PutProjects",
     "group": "Projects",
     "parameter": {

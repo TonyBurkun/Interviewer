@@ -121,8 +121,52 @@ public class Login {
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
     }
+    @Test(groups = {"functest", "10"})
+    public void enterMinThenMinPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.typeEmailAdress("intsa@test.com");
+        loginPage.typePassword("12345");
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+    }
+    @Test(groups = {"functest", "10.1"})
+    public void enterMinPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.typeEmailAdress("intsa@test.com");
+        loginPage.typePassword("123456");
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+    }
+    @Test(groups = {"functest", "10.2"})
+    public void enterMaxPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.typeEmailAdress("intsa@test.com");
+        loginPage.typePassword("123456789123456789123456789123");
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+    }
+    @Test(groups = {"functest", "10.3"})
+    public void enterMaxThenMaxPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.typeEmailAdress("intsa@test.com");
+        loginPage.typePassword("1234567891234567891234567891234");
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+    }
 
+    @Test(groups = {"functest", "11"})
+    public void forgotYourPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.clickforgotPasswordButton();
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+    }
 
+    @Test(groups = {"functest", "12"})
+    public void dontHaveAccount() throws InterruptedException {
+        loginPage.open();
+        loginPage.clickdontHaveAccountButton();
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
+        loginPage.clickCloseButtonForDontHaveAccount();
+        Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
+    }
+
+    
     @AfterTest
     public void after() { driver.quit();
 
