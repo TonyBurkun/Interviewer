@@ -30,7 +30,7 @@ define({ "api": [
   {
     "type": "delete",
     "url": "api/v1/projects/:id",
-    "title": "Delete a Project",
+    "title": "Delete project",
     "name": "DeleteProjects",
     "group": "Projects",
     "parameter": {
@@ -42,6 +42,33 @@ define({ "api": [
             "optional": false,
             "field": "id",
             "description": "<p>Projects unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "access-key",
+            "description": "<p>Users unique access-key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "accept",
+            "description": "<p>application/json</p>"
           }
         ]
       }
@@ -87,6 +114,24 @@ define({ "api": [
         ]
       }
     },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>Returned if the user is not logged in.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ProjectNotFound",
+            "description": "<p>Returned if the project does not exist.</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "./j.java",
     "groupTitle": "Projects"
@@ -94,9 +139,10 @@ define({ "api": [
   {
     "type": "get",
     "url": "api/v1/projects/:id",
-    "title": "Read data of a projects",
+    "title": "Get all projects",
     "name": "GetProjects",
     "group": "Projects",
+    "description": "<p>Returns all projects which are visible for the currently logged in user.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -110,7 +156,41 @@ define({ "api": [
         ]
       }
     },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "access-key",
+            "description": "<p>Users unique access-key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "accept",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      }
+    },
     "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n        \"id\": 1,\n        \"title\": \"Opela\",\n        \"description\": \"Deserunt officia et et et quia non.\",\n        \"created_at\": \"2017-08-15T00:59:51.835Z\",\n        \"updated_at\": \"2017-08-15T00:59:51.835Z\"\n    }",
+          "type": "json"
+        }
+      ],
       "fields": {
         "Success 200": [
           {
@@ -152,6 +232,12 @@ define({ "api": [
             "optional": false,
             "field": "ProjectNotFound",
             "description": "<p>The <code>id</code> of the Project was not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>Returned if the user is not logged in.</p>"
           }
         ]
       }
@@ -163,7 +249,7 @@ define({ "api": [
   {
     "type": "patch",
     "url": "api/v1/projects/:id",
-    "title": "Edit of a Project",
+    "title": "Edit project",
     "name": "PatchProjects",
     "group": "Projects",
     "parameter": {
@@ -207,6 +293,34 @@ define({ "api": [
         ]
       }
     },
+    "description": "<p>Replace parts of existing project.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "access-key",
+            "description": "<p>Users unique access-key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "accept",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -239,6 +353,31 @@ define({ "api": [
             "description": "<p>Mandatory uwith default value.</p>"
           }
         ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n    \"id\": 21,\n    \"title\": test11,\n    \"description\": test,\n    \"created_at\": \"2017-08-19T20:58:14.648Z\",\n    \"updated_at\": \"2017-08-19T20:58:14.648Z\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>Returned if the user is not logged in.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ProjectNotFound",
+            "description": "<p>Returned if the project does not exist.</p>"
+          }
+        ]
       }
     },
     "version": "0.0.0",
@@ -248,7 +387,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "api/v1/projects/",
-    "title": "Create a new Project",
+    "title": "Create project",
     "name": "PostProjects",
     "group": "Projects",
     "parameter": {
@@ -278,6 +417,33 @@ define({ "api": [
         ]
       }
     },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "access-key",
+            "description": "<p>Users unique access-key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "accept",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -317,7 +483,14 @@ define({ "api": [
             "description": "<p>Mandatory uwith default value.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n    \"id\": 21,\n    \"title\": null,\n    \"description\": null,\n    \"created_at\": \"2017-08-19T20:58:14.648Z\",\n    \"updated_at\": \"2017-08-19T20:58:14.648Z\"\n    }",
+          "type": "json"
+        }
+      ]
     },
     "error": {
       "fields": {
@@ -327,6 +500,12 @@ define({ "api": [
             "optional": false,
             "field": "ProjectNotFound",
             "description": "<p>The <code>id</code> of the Project was not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>Returned if the user is not logged in.</p>"
           }
         ]
       }
@@ -338,7 +517,7 @@ define({ "api": [
   {
     "type": "put",
     "url": "api/v1/projects/:id",
-    "title": "Change a new Project",
+    "title": "Update project",
     "name": "PutProjects",
     "group": "Projects",
     "parameter": {
@@ -368,6 +547,34 @@ define({ "api": [
         ]
       }
     },
+    "description": "<p>Replace the entire project with the new representation provided.</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "access-key",
+            "description": "<p>Users unique access-key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json; charset=utf-8</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "accept",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -407,7 +614,14 @@ define({ "api": [
             "description": "<p>Mandatory uwith default value.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"id\": 21,\n    \"title\": test,\n    \"description\": test,\n    \"created_at\": \"2017-08-19T20:58:14.648Z\",\n    \"updated_at\": \"2017-08-19T20:58:14.648Z\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "error": {
       "fields": {
@@ -416,7 +630,13 @@ define({ "api": [
             "group": "Error 4xx",
             "optional": false,
             "field": "ProjectNotFound",
-            "description": "<p>The <code>id</code> of the Project was not found.</p>"
+            "description": "<p>Returned if the project does not exist.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>Returned if the user is not logged in.</p>"
           }
         ]
       }
