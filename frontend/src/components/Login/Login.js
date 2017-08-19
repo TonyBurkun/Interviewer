@@ -149,7 +149,7 @@ class Login extends Component {
                                     <button type="submit" className="btn btn-block btn-primary">Login</button>
                                 </div>
                                 <div className="form-group forgot-pass">
-                                    <Link to="/forgotpassword" className="forgot-btn pull-right">Forgot password?</Link>
+                                    <Link to="/forgotpassword" className="forgot-btn">Forgot password?</Link>
                                 </div>
                                 <div className="form-group no-account">
                                     <p className="text-xs-center" onClick={this.openModal}>Do not have an account? Click here</p>
