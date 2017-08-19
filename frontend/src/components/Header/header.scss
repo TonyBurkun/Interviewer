@@ -4,6 +4,20 @@
   .collapse-btn{
     cursor: pointer;
   }
+
+
+  .header-block-nav{
+    height: 100%;
+    ul{
+      height: 100%;
+      float: right;
+      li{
+        vertical-align: middle;
+      }
+    }
+  }
+
+
   .header-block-nav > ul > li > a {
     padding: 0;
   }
