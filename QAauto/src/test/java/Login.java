@@ -9,7 +9,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 import ui.*;
-import utils.ListenerTest;
+import utils.*;
+import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+import org.json.simple.JSONObject;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,11 +22,32 @@ public class Login {
     LoginPage loginPage;
     WebDriver driver;
     ListenerTest listenerTest;
+    APIClient client = new APIClient("https://interviewer.testrail.net/index.php?/runs/view/3&group_by=cases:section_id&group_order=asc");
 //    final static Logger logger = Logger.getLogger(Login.class);
 
 
     @BeforeTest(groups = {"functest", "login"})
     public void before() {
+//        APIClient client = new APIClient("https://interviewer.testrail.net/");
+//        client.setUser("Oksana Gorbachenko");
+//        client.setPassword("123456QWERTY");
+
+
+//        JSONObject response = null;
+//        JSONObject body = new JSONObject();
+//        body.put("status_id", "1");
+//
+//
+//        try {
+//            response = (JSONObject) client.sendGet("get_case/1");
+//           // response = (JSONObject) client.sendPost("add_result_for_case/3/2", body);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (APIException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(response.get("title"));
+
         System.setProperty("webdriver.gecko.driver", "C:\\selenium\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
@@ -34,7 +59,26 @@ public class Login {
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }
-
+    @Test(groups = {"functest", "0"})
+    public void OpenPage() throws IOException {
+        loginPage.open();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        APIClient client = new APIClient("https://interviewer.testrail.net/");
+        client.setUser("Oksana Gorbachenko");
+        client.setPassword("123456QWERTY");
+        JSONObject response = null;
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            response = (JSONObject) client.sendGet("get_case/1");
+            response = (JSONObject) client.sendPost("add_result_for_case/3/2", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+        System.out.println(response.get("title"));
+    }
 
     @Test(groups = {"functest", "2"})
     public void assertElementsOnPage() throws InterruptedException {
@@ -166,7 +210,7 @@ public class Login {
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
     }
 
-    
+
     @AfterTest
     public void after() { driver.quit();
 
