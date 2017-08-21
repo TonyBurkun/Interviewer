@@ -4,11 +4,16 @@ import "./ProjectsList.css";
 import {Modal, Button} from 'react-bootstrap';
 import { Alert } from 'reactstrap';
 import { connect } from 'react-redux'
-import { createProject } from '../../redux/actions/projectActions';
 import { showNote } from '../../redux/actions/notificationActions';
+import { showProjects } from '../../redux/actions/projectActions';
 
 
 class ProjectsList extends Component {
+
+    componentDidMount() {
+        const {dispatch} = this.props;
+        dispatch(showProjects())
+    }
 
      onDismiss() {
             const { dispatch } = this.props;
