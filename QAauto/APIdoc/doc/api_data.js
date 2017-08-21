@@ -23,8 +23,8 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/main.js",
-    "group": "D__interviewer_Interviewer_QAauto_APIdoc_doc_main_js",
-    "groupTitle": "D__interviewer_Interviewer_QAauto_APIdoc_doc_main_js",
+    "group": "E__interviwer_Interviewer_QAauto_APIdoc_doc_main_js",
+    "groupTitle": "E__interviwer_Interviewer_QAauto_APIdoc_doc_main_js",
     "name": ""
   },
   {
@@ -33,19 +33,6 @@ define({ "api": [
     "title": "Delete project",
     "name": "DeleteProjects",
     "group": "Projects",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Projects unique ID.</p>"
-          }
-        ]
-      }
-    },
     "header": {
       "fields": {
         "Header": [
@@ -102,14 +89,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
+            "description": "<p>Mandatory with data of creating(By default).</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
+            "description": "<p>Mandatory with data of update(By default).</p>"
           }
         ]
       }
@@ -143,19 +130,6 @@ define({ "api": [
     "name": "GetProjects",
     "group": "Projects",
     "description": "<p>Returns all projects which are visible for the currently logged in user.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Projects unique ID.</p>"
-          }
-        ]
-      }
-    },
     "header": {
       "fields": {
         "Header": [
@@ -212,14 +186,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
+            "description": "<p>Mandatory with data of creating(By default).</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
+            "description": "<p>Mandatory with data of update(By default).</p>"
           }
         ]
       }
@@ -252,47 +226,6 @@ define({ "api": [
     "title": "Edit project",
     "name": "PatchProjects",
     "group": "Projects",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Projects unique ID.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "title",
-            "description": "<p>Optional title of the Projects.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "description",
-            "description": "<p>Optional description of the Projects.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
-          }
-        ]
-      }
-    },
     "description": "<p>Replace parts of existing project.</p>",
     "header": {
       "fields": {
@@ -321,6 +254,26 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>Optional title of the Projects.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>Optional description of the Projects.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -343,14 +296,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
+            "description": "<p>Mandatory with data of creating(By default).</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
+            "description": "<p>Mandatory with data of update(By default).</p>"
           }
         ]
       },
@@ -390,33 +343,6 @@ define({ "api": [
     "title": "Create project",
     "name": "PostProjects",
     "group": "Projects",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Projects unique ID.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "title",
-            "description": "<p>Optional title of the Projects.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "description",
-            "description": "<p>Optional description of the Projects.</p>"
-          }
-        ]
-      }
-    },
     "header": {
       "fields": {
         "Header": [
@@ -440,6 +366,26 @@ define({ "api": [
             "optional": false,
             "field": "accept",
             "description": "<p>application/json</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>Optional title of the Projects.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>Optional description of the Projects.</p>"
           }
         ]
       }
@@ -473,14 +419,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
+            "description": "<p>Mandatory with data of creating(By default).</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
+            "description": "<p>Mandatory with data of update(By default).</p>"
           }
         ]
       },
@@ -520,33 +466,6 @@ define({ "api": [
     "title": "Update project",
     "name": "PutProjects",
     "group": "Projects",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Projects unique ID.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "title",
-            "description": "<p>Optional title of the Projects.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "description",
-            "description": "<p>Optional description of the Projects.</p>"
-          }
-        ]
-      }
-    },
     "description": "<p>Replace the entire project with the new representation provided.</p>",
     "header": {
       "fields": {
@@ -575,16 +494,29 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>Optional title of the Projects.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>Optional description of the Projects.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": "<p>The new Projects-ID.</p>"
-          },
           {
             "group": "Success 200",
             "type": "String",
@@ -604,14 +536,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "created_at",
-            "description": "<p>Mandatory with default value.</p>"
+            "description": "<p>Mandatory with data of creating(By default).</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "updated_at",
-            "description": "<p>Mandatory uwith default value.</p>"
+            "description": "<p>Mandatory with data of update(By default).</p>"
           }
         ]
       },

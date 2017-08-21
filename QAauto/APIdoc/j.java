@@ -4,7 +4,6 @@
  * @apiGroup Projects
  *
  * @apiDescription Returns all projects which are visible for the currently logged in user.
- * @apiParam {Number} id Projects unique ID.
  *
  * @apiHeader {String} access-key Users unique access-key.
  * @apiHeader {String} content-type application/json; charset=utf-8
@@ -21,8 +20,8 @@
         }
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
- * @apiSuccess {String} created_at      Mandatory with default value.
- * @apiSuccess {String} updated_at      Mandatory uwith default value.
+ * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
+ * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
  * @apiError ProjectNotFound The <code>id</code> of the Project was not found.
  * @apiError Unauthorized Returned if the user is not logged in.
@@ -34,8 +33,7 @@
 /**
  * @api {post} api/v1/projects/ Create project
  * @apiName PostProjects
- * @apiGroup Projects 
- * @apiParam {Number} id Projects unique ID.
+ * @apiGroup Projects
  *
  *
  * @apiHeader {String} access-key Users unique access-key.
@@ -49,9 +47,8 @@
  * @apiSuccess {String} id The new Projects-ID.
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
- * @apiSuccess {String} created_at      Mandatory with default value.
- * @apiSuccess {String} updated_at      Mandatory uwith default value.
- *
+ * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
+ * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -73,7 +70,6 @@
  * @api {put} api/v1/projects/:id Update project
  * @apiName PutProjects
  * @apiGroup Projects 
- * @apiParam {Number} id Projects unique ID.
  * @apiDescription Replace the entire project with the new representation provided.
  *
  *
@@ -85,11 +81,10 @@
  * @apiParam {String} [title]         Optional title of the Projects.
  * @apiParam {String} [description]     Optional description of the Projects.
  *
- * @apiSuccess {String} id The new Projects-ID.
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
- * @apiSuccess {String} created_at      Mandatory with default value.
- * @apiSuccess {String} updated_at      Mandatory uwith default value.
+ * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
+ * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
  *
  * @apiSuccessExample {json} Success-Response:
@@ -111,7 +106,6 @@
  * @api {patch} api/v1/projects/:id Edit project
  * @apiName PatchProjects
  * @apiGroup Projects 
- * @apiParam {Number} id Projects unique ID.
  * @apiDescription Replace parts of existing project.
  *
  *
@@ -119,16 +113,14 @@
  * @apiHeader {String} content-type application/json; charset=utf-8
  * @apiHeader {String} accept application/json
  *
- * @apiParam {String} title          Optional title of the Projects.
- * @apiParam {String} description    Optional description of the Projects.
- * @apiParam {String} created_at      Mandatory with default value.
- * @apiParam {String} updated_at      Mandatory uwith default value.
+ * @apiParam {String} [title]          Optional title of the Projects.
+ * @apiParam {String} [description]    Optional description of the Projects.
  *
  *
- * @apiSuccess {String} title		    Title of the Projects.
- * @apiSuccess {String} description     Description of the Projects.
- * @apiSuccess {String} created_at      Mandatory with default value.
- * @apiSuccess {String} updated_at      Mandatory uwith default value.
+ * @apiSuccess {String} title 	      Title of the Projects.
+ * @apiSuccess {String} description   Description of the Projects.
+ * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
+ * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
  *
  * @apiSuccessExample {json} Success-Response:
@@ -150,7 +142,6 @@
  * @api {delete} api/v1/projects/:id Delete project
  * @apiName DeleteProjects
  * @apiGroup Projects 
- * @apiParam {Number} id Projects unique ID.
  *
  *
  *
@@ -162,8 +153,8 @@
  * @apiSuccess {String} id              The Projects-ID.
  * @apiSuccess {String} title		    Title of the Projects.
  * @apiSuccess {String} description     Description of the Projects.
- * @apiSuccess {String} created_at      Mandatory with default value.
- * @apiSuccess {String} updated_at      Mandatory uwith default value.
+ * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
+ * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
  * @apiError Unauthorized Returned if the user is not logged in.
  * @apiError ProjectNotFound Returned if the project does not exist.
