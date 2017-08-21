@@ -14,8 +14,9 @@ export default function project(state = initialState, action) {
       case CREATE_PROJECT:
       return  {...state,
           newProject: {...state, projectTitle: action.payload.title, projectDescription: action.payload.descr}};
-    case SHOW_PROJECTS:
-      return { ...state, email: action.user_info.email,  auth: true};
+      case SHOW_PROJECTS:
+      return { ...state,
+          projects: [...state.projects, action.payload]}
     case REMOVE_PROJECT:
       return { ...state, email: '', auth: false };
     case UPDATE_PROJECT:

@@ -13,10 +13,11 @@ class CreateProject extends Component {
         super(props);
         this.state = {
             projectTitle: "",
-            projectDescription: "",
+            projectDescription:"",
             showModalAlert: false,
             showModalConfirm: false,
             showModaLCreateAlert: false,
+            alertText: ""
         };
     }
     //----------------------------------
@@ -50,15 +51,48 @@ class CreateProject extends Component {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let descr = this.state.projectDescription;
-        if ( !regex.test(descr) || !regex.test(title) ) {
-            event.preventDefault()
+        if (!regex.test(descr) || !regex.test(title)) {
+            event.preventDefault();
+            this.setState({
+                alertText: "Please use only latin letters, numbers and special symbols"
+            });
             this.openModalAlert();
-        } else {
+        } else if(!this.isTitleUnique()) {
+            event.preventDefault();
+            this.setState({
+                alertText: "This title already exists. Please, use only unique titles."
+            });
+            this.openModalAlert();
+        }else {
             this.props.history.push("/dashboard/projects");
             const { dispatch } = this.props;
             dispatch(createProject({title: title, descr: descr}));
             this.showNote();
         }
+    }
+
+
+    isTitleUnique() {
+        let projects = [
+            {title: "Title1", description: "something1"},
+            {title: "Title2", description: "something2"},
+            {title: "Title3", description: "something3"},
+            {title: "Title4", description: "something4"},
+            {title: "Title5", description: "something5"},
+            {title: "Title6", description: "something6"},
+            {title: "Title7", description: "something7"},
+            {title: "Title8", description: "something8"},
+            {title: "Title9", description: "something9"},
+            {title: "Title10", description: "something10"},
+        ];
+        let isUnique = true;
+        let title = this.state.projectTitle;
+        projects.forEach(function(item) {
+            if (item.title === title) {
+                isUnique = false;
+            }
+        });
+        return (isUnique) ? true: false;
     }
 
     showNote() {
@@ -69,7 +103,7 @@ class CreateProject extends Component {
         }, 4000)
     }
 
-    isFieldsNotEmpty(event) {
+    isFieldsNotEmpty() {
         if (this.state.projectTitle || this.state.projectDescription) {
             let confirm = this.openModalConfirm();
         } else {
@@ -172,7 +206,7 @@ class CreateProject extends Component {
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Please use only latin letters, numbers and special symbols</p>
+                        <p>{this.state.alertText}</p>
                     </Modal.Body>
                 </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
