@@ -22,31 +22,14 @@ public class Login {
     LoginPage loginPage;
     WebDriver driver;
     ListenerTest listenerTest;
-    APIClient client = new APIClient("https://interviewer.testrail.net/index.php?/runs/view/3&group_by=cases:section_id&group_order=asc");
-//    final static Logger logger = Logger.getLogger(Login.class);
+    APIClient client = new APIClient("https://interviewer.testrail.net/");
 
 
     @BeforeTest(groups = {"functest", "login"})
     public void before() {
-//        APIClient client = new APIClient("https://interviewer.testrail.net/");
-//        client.setUser("Oksana Gorbachenko");
-//        client.setPassword("123456QWERTY");
+        client.setUser("oksana.gorbachenko.2009@gmail.com");
+        client.setPassword("123456QWERTY");
 
-
-//        JSONObject response = null;
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//
-//
-//        try {
-//            response = (JSONObject) client.sendGet("get_case/1");
-//           // response = (JSONObject) client.sendPost("add_result_for_case/3/2", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(response.get("title"));
 
         System.setProperty("webdriver.gecko.driver", "C:\\selenium\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
@@ -63,21 +46,17 @@ public class Login {
     public void OpenPage() throws IOException {
         loginPage.open();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        APIClient client = new APIClient("https://interviewer.testrail.net/");
-        client.setUser("Oksana Gorbachenko");
-        client.setPassword("123456QWERTY");
-        JSONObject response = null;
+
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
-            response = (JSONObject) client.sendGet("get_case/1");
-            response = (JSONObject) client.sendPost("add_result_for_case/3/2", body);
+            client.sendPost("add_result_for_case/3/2", body);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (APIException e) {
             e.printStackTrace();
         }
-        System.out.println(response.get("title"));
+
     }
 
     @Test(groups = {"functest", "2"})
@@ -91,20 +70,51 @@ public class Login {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[5]/p")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[2]/a")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[3]/a")).isDisplayed());
-    }
 
-    @Test(groups = {"functest", "3"})
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/2", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+    }
+    @Test(groups = {"functest", "4"})
     public void passwordWithAsterisk() throws InterruptedException {
         loginPage.open();
         loginPage.typePassword("qwerty");
-        Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
-        //TODO password should be with asterisk
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[type='password']")).isDisplayed());
+
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/4", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
     }
-
-
     @Test(groups = {"functest", "5"})
     public void passwordHolder() throws InterruptedException {
         loginPage.open();
+        Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your password']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your email address']")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/5", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
 
     }
     @Test(groups = {"functest", "6"})
@@ -113,6 +123,18 @@ public class Login {
         loginPage.typeEmailAdress("HR@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/6", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+
     }
     @Test(groups = {"functest", "7"})
     public void enterAsInterviewer() throws InterruptedException {
@@ -120,13 +142,34 @@ public class Login {
         loginPage.typeEmailAdress("interviewer@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/7", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
     }
     @Test(groups = {"functest", "8"})
     public void enterWithWrongEmail() throws InterruptedException {
         loginPage.open();
-        loginPage.typeEmailAdress("tes!@#@test.com");
+        loginPage.typeEmailAdress("teskkkkk@test.com");
         loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[type='email']")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/8", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test(groups = {"functest", "8.1"})
@@ -135,6 +178,15 @@ public class Login {
         loginPage.typeEmailAdress("interviewer@test.com");
         loginPage.typePassword("123456@#$%");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/8", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
     @Test(groups = {"functest", "9"})
     public void enterMinThenMinEmail() throws InterruptedException {
@@ -164,6 +216,16 @@ public class Login {
         loginPage.typeEmailAdress("intervieweintervieweintervieweintervieweintervieweinterviewel@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/9", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
     @Test(groups = {"functest", "10"})
     public void enterMinThenMinPassword() throws InterruptedException {
@@ -192,6 +254,16 @@ public class Login {
         loginPage.typeEmailAdress("intsa@test.com");
         loginPage.typePassword("1234567891234567891234567891234");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/10", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test(groups = {"functest", "11"})
@@ -199,6 +271,16 @@ public class Login {
         loginPage.open();
         loginPage.clickforgotPasswordButton();
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/11", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test(groups = {"functest", "12"})
@@ -208,6 +290,16 @@ public class Login {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
         loginPage.clickCloseButtonForDontHaveAccount();
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/3/12", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
 
 
