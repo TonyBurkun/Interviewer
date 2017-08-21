@@ -15,23 +15,23 @@ export function createProject(date) {
 }
 
 export function showProjects() {
-    window.fetch('/api/v1/projects')
-        .then(
-            function(response) {
-                if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' +
-                        response.status);
-                }
-                response.json().then(function(projects) {
-                    console.log(projects.data)
-                    return { type: SHOW_PROJECTS, payload: projects};
-                });
-            }
-        )
-        .catch(function(err) {
-            console.log('Fetch Error:' , err);
-        })
-}
+//     window.fetch('/api/v1/projects')
+//         .then(
+//             function(response) {
+//                 if (response.status !== 200) {
+//                     console.log('Looks like there was a problem. Status Code: ' +
+//                         response.status);
+//                 }
+//                 response.json().then(function(projects) {
+//                     console.log(projects.data)
+//                     return { type: 'SHOW_PROJECTS', payload: projects};
+//                 });
+//             }
+//         )
+//         .catch(function(err) {
+//             console.log('Fetch Error:' , err);
+//         })
+ }
 
 export function removeProject() {
   return (dispatch) => {
