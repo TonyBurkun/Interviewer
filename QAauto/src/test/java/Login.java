@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -31,13 +32,15 @@ public class Login {
         client.setPassword("123456QWERTY");
 
 
-        System.setProperty("webdriver.gecko.driver", "C:\\selenium\\chromedriver.exe");
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        //System.setProperty("webdriver.gecko.driver", "C:\\selenium\\chromedriver.exe");
+       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         // capabilities.setCapability("marionette", true);
-
-        listenerTest = new ListenerTest();
-        driver = new FirefoxDriver(capabilities);
+        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+        driver = new ChromeDriver(capabilities);
+       // listenerTest = new ListenerTest();
+       // driver = new FirefoxDriver(capabilities);
+       // driver = new ChromeDriver(capabilities);
         loginPage = new LoginPage(driver);
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
@@ -47,22 +50,14 @@ public class Login {
         loginPage.open();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/3/2", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
 
     }
 
     @Test(groups = {"functest", "2"})
     public void assertElementsOnPage() throws InterruptedException {
         loginPage.open();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        loginPage.clickLoginLink();
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[3]/button")).isDisplayed());

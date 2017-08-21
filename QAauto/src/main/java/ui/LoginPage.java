@@ -18,8 +18,13 @@ public class LoginPage {
     By termsLink = By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[2]/a");
     By helpCenterLink = By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[3]/a");
     By closeButtonForDontHaveAccount = By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/button/span[1]");
+    By loginLink = By.linkText("Log in");
 
 
+    public LoginPage clickLoginLink() {
+        driver.findElement(loginButton).click();
+        return this;
+    }
     public LoginPage clickCloseButtonForDontHaveAccount() {
         driver.findElement(closeButtonForDontHaveAccount).click();
         return this;
@@ -55,7 +60,7 @@ public class LoginPage {
         return this;
     }
     public LoginPage open() {
-        driver.get("https://dev-interviewer.herokuapp.com/login");
+        driver.get("https://dev-interviewer.herokuapp.com");
         return this;
     }
 
