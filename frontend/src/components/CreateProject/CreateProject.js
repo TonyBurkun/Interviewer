@@ -156,7 +156,7 @@ class CreateProject extends Component {
                             Back to list
                         </Link>
                     </div>
-                    <div className="card card-block sameheight-item">
+                    {/*<div className="card card-block sameheight-item">*/}
 
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="form-gro1up">
@@ -170,9 +170,10 @@ class CreateProject extends Component {
                                     maxLength="60"
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
+                                    autofocus
                                 />
                             </div>
-                            <div className="form-group">
+                            <div className="form-group form-field-margin">
                                 <label className="control-label">Project Description</label>
                                 <TextareaAutosize
                                     id="create-project-descr"
@@ -200,7 +201,7 @@ class CreateProject extends Component {
                                 >Cancel</button>
                             </div>
                         </form>
-                    </div>
+                    {/*</div>*/}
                 </div>
                 <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
                     <Modal.Header closeButton>

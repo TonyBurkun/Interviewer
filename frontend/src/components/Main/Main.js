@@ -8,6 +8,8 @@ import Seekers from './../Seekers';
 import Vacancies from './../Vacancies';
 import CreateProject from './../CreateProject';
 import ProjectsList from './../ProjectsList';
+import ProjectDetails from './../ProjectDetails';
+import ProjectEdit from './../ProjectEdit';
 import Username from './../Username';
 import Password from './../Password';
 
@@ -50,6 +52,18 @@ class Main extends Component {
                                 name="Create project"
                                 component={CreateProject}
                             />
+                            <Route
+                                exact path="/dashboard/projects/project"
+                                name="Project Details"
+                                component={ProjectDetails}
+                            />
+
+                            <Route
+                                exact path="/dashboard/projects/project/edit"
+                                name="Project Edit"
+                                component={ProjectEdit}
+                            />
+
                             <Route
                                 exact path="/dashboard/interviews"
                                 name="Interviews"

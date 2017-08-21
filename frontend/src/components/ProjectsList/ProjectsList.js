@@ -65,16 +65,14 @@ class ProjectsList extends Component {
                         <div className="title-block">
                             <h3 className="title">Projects</h3>
                         </div>
-                        <div className="card card-block sameheight-item">
                             <Alert className="col-md-7 alert-custom"
                                    isOpen={isNoteVisible}
                                    toggle={() => this.onDismiss()}>
                                    Project {projectToNote} was created!
                             </Alert>
                             <Link to="/dashboard/projects/create-project">
-                                <button className="btn btn-primary">Create project</button>
+                                <button className="btn btn-primary create-button">Create project</button>
                             </Link>
-                        </div>
                     </div>
                 </div>
                 {projectsToDisplay}
