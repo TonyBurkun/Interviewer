@@ -17,7 +17,8 @@ class ProjectEdit extends Component {
             projectDescription: "Lorem ipsum dolor sit amet, nulla quam sapien praesent purus commodo nascetur",
             showModalConfirm: false,
             showModaLCreateAlert: false,
-            alertText: ""
+            alertText: "",
+            confirmText: ""
         }
     }
 
@@ -39,6 +40,13 @@ class ProjectEdit extends Component {
         this.setState({
             showModalAlert: false
         });
+    }
+
+    showMConfirmMessage() {
+        this.setState({
+            confirmText: "Are you sure you want to cancel without saving changes?"
+        });
+        this.openModalConfirm();
     }
 
     openModalConfirm() {
@@ -76,8 +84,6 @@ class ProjectEdit extends Component {
             this.openModalAlert();
         }else {
             this.props.history.push("/dashboard/projects/project");
-            // const { dispatch } = this.props;
-            // dispatch(createProject({title: title, descr: descr}));
         }
     }
 
@@ -141,7 +147,7 @@ class ProjectEdit extends Component {
                                 <button
                                     type="reset"
                                     className="btn btn-primary right-project-btn"
-                                    onClick={() => this.openModalConfirm()}
+                                    onClick={() => this.showMConfirmMessage()}
                                 >Cancel
                                 </button>
                             </div>
@@ -159,7 +165,7 @@ class ProjectEdit extends Component {
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Are you sure you want to cancel without saving changes?</p>
+                        <p>{this.state.confirmText}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => this.leaveEdit()}>Cancel</Button>

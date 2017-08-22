@@ -17,7 +17,8 @@ class CreateProject extends Component {
             showModalAlert: false,
             showModalConfirm: false,
             showModaLCreateAlert: false,
-            alertText: ""
+            alertText: "",
+            confirmText: ""
         };
     }
     //----------------------------------
@@ -74,16 +75,16 @@ class CreateProject extends Component {
 
     isTitleUnique() {
         let projects = [
-            {title: "Title1", description: "something1"},
-            {title: "Title2", description: "something2"},
-            {title: "Title3", description: "something3"},
-            {title: "Title4", description: "something4"},
-            {title: "Title5", description: "something5"},
-            {title: "Title6", description: "something6"},
-            {title: "Title7", description: "something7"},
-            {title: "Title8", description: "something8"},
-            {title: "Title9", description: "something9"},
-            {title: "Title10", description: "something10"},
+            {title: "Greenlam", description: "something1"},
+            {title: "Gembucket", description: "something2"},
+            {title: "Asoka", description: "something3"},
+            {title: "Biodex", description: "something4"},
+            {title: "It", description: "something5"},
+            {title: "Vagram", description: "something6"},
+            {title: "Quo Lux", description: "something7"},
+            {title: "Sub-Ex", description: "something8"},
+            {title: "Pannier", description: "something9"},
+            {title: "Span", description: "something10"},
         ];
         let isUnique = true;
         let title = this.state.projectTitle;
@@ -105,6 +106,9 @@ class CreateProject extends Component {
 
     isFieldsNotEmpty() {
         if (this.state.projectTitle || this.state.projectDescription) {
+            this.setState({
+                confirmText: "Are you sure you want to cancel without saving changes?"
+            });
             let confirm = this.openModalConfirm();
         } else {
             this.props.history.push("/dashboard/projects");
@@ -156,8 +160,6 @@ class CreateProject extends Component {
                             Back to list
                         </Link>
                     </div>
-                    {/*<div className="card card-block sameheight-item">*/}
-
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="form-gro1up">
                                 <label className="control-label">Project Title</label>
@@ -201,7 +203,6 @@ class CreateProject extends Component {
                                 >Cancel</button>
                             </div>
                         </form>
-                    {/*</div>*/}
                 </div>
                 <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
                     <Modal.Header closeButton>
