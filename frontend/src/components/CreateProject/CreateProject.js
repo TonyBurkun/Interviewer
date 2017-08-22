@@ -170,7 +170,7 @@ class CreateProject extends Component {
                                     maxLength="60"
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
-                                    autofocus
+                                    autoFocus
                                 />
                             </div>
                             <div className="form-group form-field-margin">
@@ -196,7 +196,7 @@ class CreateProject extends Component {
                                 <button
                                     id="create-project-resetBtn"
                                     type="reset"
-                                    className="btn btn-primary create-project-btn"
+                                    className="btn btn-primary right-project-btn"
                                     onClick = {() => this.isFieldsNotEmpty()}
                                 >Cancel</button>
                             </div>
@@ -211,16 +211,16 @@ class CreateProject extends Component {
                     </Modal.Body>
                 </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>Are you sure you want to cancel without saving changes?</p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={() => this.leaveForm()}>Cancel</Button>
-                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Save changes</Button>
-                    </Modal.Footer>
-                </Modal>
+                <Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Are you sure you want to cancel without saving changes?</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={() => this.leaveForm()}>Cancel</Button>
+                    <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                </Modal.Footer>
+            </Modal>
             </div>
         )
     }

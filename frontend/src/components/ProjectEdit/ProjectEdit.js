@@ -1,8 +1,11 @@
 import React, {Component} from "react";
 import {IndexLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import TextareaAutosize from "react-autosize-textarea";
+import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
+import { showNote } from '../../redux/actions/notificationActions';
 
 
 class ProjectEdit extends Component {
@@ -11,7 +14,10 @@ class ProjectEdit extends Component {
         super(props);
         this.state = {
             projectTitle: "Project Title",
-            projectDescription: "Lorem ipsum dolor sit amet, nulla quam sapien praesent purus commodo nascetur"
+            projectDescription: "Lorem ipsum dolor sit amet, nulla quam sapien praesent purus commodo nascetur",
+            showModalConfirm: false,
+            showModaLCreateAlert: false,
+            alertText: ""
         }
     }
 
@@ -23,7 +29,80 @@ class ProjectEdit extends Component {
         this.setState({projectDescription: event.target.value});
     }
 
+    openModalAlert() {
+        this.setState({
+            showModalAlert: true
+        });
+    }
 
+    closeModalAlert() {
+        this.setState({
+            showModalAlert: false
+        });
+    }
+
+    openModalConfirm() {
+        this.setState({
+            showModalConfirm: true
+        });
+    }
+
+    closeModalConfirm() {
+        this.setState({
+            showModalConfirm: false
+        });
+    }
+
+    leaveEdit() {
+        this.closeModalConfirm();
+        this.props.history.push("/dashboard/projects/project");
+    }
+
+    validateFormFields(event) {
+        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let title = this.state.projectTitle;
+        let descr = this.state.projectDescription;
+        if (!regex.test(descr) || !regex.test(title)) {
+            event.preventDefault();
+            this.setState({
+                alertText: "Please use only latin letters, numbers and special symbols"
+            });
+            this.openModalAlert();
+        } else if(!this.isTitleUnique()) {
+            event.preventDefault();
+            this.setState({
+                alertText: "This title already exists. Please, use only unique titles."
+            });
+            this.openModalAlert();
+        }else {
+            this.props.history.push("/dashboard/projects/project");
+            // const { dispatch } = this.props;
+            // dispatch(createProject({title: title, descr: descr}));
+        }
+    }
+
+    isTitleUnique() {
+        let projects = [
+            {title: "Title1", description: "something1"},
+            {title: "Title2", description: "something2"},
+            {title: "Title3", description: "something3"},
+            {title: "Title4", description: "something4"},
+            {title: "Title5", description: "something5"},
+            {title: "Title6", description: "something6"},
+            {title: "Title7", description: "something7"},
+            {title: "Title8", description: "something8"},
+            {title: "Title9", description: "something9"},
+            {title: "Title10", description: "something10"},
+        ];
+        let isUnique = true;
+        let title = this.state.projectTitle;
+        projects.forEach(function(item) {
+            if (item.title === title) {
+                isUnique = false;
+            }
+        });
+        return (isUnique) ? true: false;
+    }
 
     render() {
 
@@ -32,14 +111,17 @@ class ProjectEdit extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
 
-                        <form>
+                        <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="title-block">
                                 <input // will transform to h3 with className="tittle"
                                     className="title form-control boxed"
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
-                                    autofocus
+                                    autoFocus
                                 />
+                                <Link to="/dashboard/projects" className="title-description">
+                                    Back to list
+                                </Link>
                             </div>
                             <div className="card card-default">
                                 <TextareaAutosize // will transform to div with className="card-block"
@@ -59,13 +141,31 @@ class ProjectEdit extends Component {
                                 <button
                                     type="reset"
                                     className="btn btn-primary right-project-btn"
+                                    onClick={() => this.openModalConfirm()}
                                 >Cancel
                                 </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
+                <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>{this.state.alertText}</p>
+                    </Modal.Body>
+                </Modal>
+                <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Are you sure you want to cancel without saving changes?</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={() => this.leaveEdit()}>Cancel</Button>
+                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         )
     }

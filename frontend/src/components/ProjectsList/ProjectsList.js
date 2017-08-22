@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import {Link, IndexLink} from "react-router-dom";
 import "./ProjectsList.css";
-import { connect } from 'react-redux'
+import {connect} from "react-redux";
 import {Modal} from "react-bootstrap";
 import {Alert} from "reactstrap";
 import {showNote} from "../../redux/actions/notificationActions";
-import {showProjects} from "../../redux/actions/projectActions";
 
 
 class ProjectsList extends Component {
@@ -55,24 +54,24 @@ class ProjectsList extends Component {
 
         const { projectTitle, projectDescription } = this.props.newProject.newProject;
         const { isNoteVisible } = this.props.newNote.newNote;
+        console.log(this.props.newNote.newNote)
         let projectToNote = "'" + projectTitle.slice(0,20) + "..." + "'"
 
         return (
             <div>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
-
                         <div className="title-block">
                             <h3 className="title">Projects</h3>
                         </div>
-                            <Alert className="col-md-7 alert-custom"
-                                   isOpen={isNoteVisible}
-                                   toggle={() => this.onDismiss()}>
-                                   Project {projectToNote} was created!
-                            </Alert>
-                            <Link to="/dashboard/projects/create-project">
-                                <button className="btn btn-primary create-button">Create project</button>
-                            </Link>
+                        <Alert className="col-md-7 alert-custom"
+                               isOpen={isNoteVisible}
+                               toggle={() => this.onDismiss()}>
+                            Project {projectToNote} was created!
+                        </Alert>
+                        <Link to="/dashboard/projects/create-project">
+                            <button className="btn btn-primary create-button">Create project</button>
+                        </Link>
                     </div>
                 </div>
                 {projectsToDisplay}
