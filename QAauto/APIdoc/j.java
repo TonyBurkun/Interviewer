@@ -1,7 +1,8 @@
  /**
- * @api {get} api/v1/projects/:id Get all projects
  * @apiName GetProjects
  * @apiGroup Projects
+ *
+ * @api {get} api/v1/projects/:id Get all projects
  *
  * @apiDescription Returns all projects which are visible for the currently logged in user.
  *
@@ -11,13 +12,17 @@
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *      {
-            "id": 1,
-            "title": "Opela",
-            "description": "Deserunt officia et et et quia non.",
-            "created_at": "2017-08-15T00:59:51.835Z",
-            "updated_at": "2017-08-15T00:59:51.835Z"
+ *   {
+ *  	"status": "SUCCESS",
+ *  	"message": "Project id=30 loaded",
+ *  	"data":  {
+         	 "id": 30,
+           	 "title": "Test",
+            	 "description": "test",
+            	 "created_at": "2017-08-22T11:32:34.824Z",
+            	 "updated_at": "2017-08-22T11:32:34.824Z"
         }
+*}
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
  * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
@@ -44,6 +49,14 @@
  * @apiParam {String} [title]         Optional title of the Projects.
  * @apiParam {String} [description]     Optional description of the Projects.
  *
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *     	"title": "Test",
+ 
+        "description": "test"
+
+ *     }
+ *
  * @apiSuccess {String} id The new Projects-ID.
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
@@ -52,13 +65,17 @@
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *      {
-        "id": 21,
-        "title": null,
-        "description": null,
-        "created_at": "2017-08-19T20:58:14.648Z",
-        "updated_at": "2017-08-19T20:58:14.648Z"
-        }
+ *{
+  	"status": "SUCCESS",
+  	"message": "Saved project",
+  	"data": {
+        	"id": 30,
+       		"title": "Test",
+       		"description": "test",
+       		"created_at": "2017-08-22T11:32:34.824Z",
+       		"updated_at": "2017-08-22T11:32:34.824Z"
+       }
+ *}
  *
  * @apiError ProjectNotFound The <code>id</code> of the Project was not found.
  * @apiError Unauthorized Returned if the user is not logged in.
@@ -81,6 +98,13 @@
  * @apiParam {String} [title]         Optional title of the Projects.
  * @apiParam {String} [description]     Optional description of the Projects.
  *
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *     	"title": "TestUpdate",
+ 
+        "description": "testUpdate"
+ *     }
+ *
  * @apiSuccess {String} title Title of the Projects.
  * @apiSuccess {String} description  Description of the Projects.
  * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
@@ -89,13 +113,17 @@
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *     {
-        "id": 21,
-        "title": test,
-        "description": test,
-        "created_at": "2017-08-19T20:58:14.648Z",
-        "updated_at": "2017-08-19T20:58:14.648Z"
+ * {
+ * 	"status": "SUCCESS",
+ * 	"message": "Update project",
+ *  	"data": {
+   		"id": 30,
+       	 	"title": "TestUpdate",
+        	"description": "testUpdate",
+        	"created_at": "2017-08-22T11:32:34.824Z",
+        	"updated_at": "2017-08-22T11:44:33.906Z"
     }
+*}
  * @apiError ProjectNotFound Returned if the project does not exist.
  * @apiError Unauthorized Returned if the user is not logged in.
  */
@@ -116,6 +144,12 @@
  * @apiParam {String} [title]          Optional title of the Projects.
  * @apiParam {String} [description]    Optional description of the Projects.
  *
+ * @apiParamExample {json} Request-Example:
+ *     {
+ *     	"title": "TestEdit", 
+        "description": "testUpdate"
+ *     }
+ *
  *
  * @apiSuccess {String} title 	      Title of the Projects.
  * @apiSuccess {String} description   Description of the Projects.
@@ -125,13 +159,17 @@
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
-     {
-        "id": 21,
-        "title": test11,
-        "description": test,
-        "created_at": "2017-08-19T20:58:14.648Z",
-        "updated_at": "2017-08-19T20:58:14.648Z"
+ * {
+ * 	"status": "SUCCESS",
+ * 	"message": "Update project",
+    	"data": {
+         	"id": 30,
+         	"title": "TestEdit",
+         	"description": "testUpdate",
+         	"created_at": "2017-08-22T11:32:34.824Z",
+         	"updated_at": "2017-08-22T11:52:25.651Z"
     }
+*}
  * @apiError Unauthorized Returned if the user is not logged in.
  * @apiError ProjectNotFound Returned if the project does not exist.
  */
@@ -156,6 +194,20 @@
  * @apiSuccess {String} created_at    Mandatory with data of creating(By default).
  * @apiSuccess {String} updated_at    Mandatory with data of update(By default).
  *
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ * 	"status": "SUCCESS",
+ *  	"message": "Project deleted",
+    	"data": {
+         	"id": 30,
+         	"title": "TestEdit",
+         	"description": "testUpdate",
+         	"created_at": "2017-08-22T11:32:34.824Z",
+         	"updated_at": "2017-08-22T11:52:25.651Z"
+    }
+*}
  * @apiError Unauthorized Returned if the user is not logged in.
  * @apiError ProjectNotFound Returned if the project does not exist.
  */
