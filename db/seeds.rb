@@ -13,4 +13,4 @@
                  })
 end
 
-Admin.new({:email => "admin@admin.com", :password => "12345678", :password_confirmation => "12345678" }).save(:validate => false)
+Admin.new({:email => "admin2@admin.com", :password => "123456", :password_confirmation => "123456" }).save(:validate => false)

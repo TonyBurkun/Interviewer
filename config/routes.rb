@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_scope :admin do
+    get '/admin/sign_out' => 'devise/sessions#destroy'
+  end
 
-  devise_for :admin, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+# root 'rails_admin/main#dashboard'
+
+  devise_for :admin
+ # devise_for :admin, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace 'api' do

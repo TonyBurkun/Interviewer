@@ -26,8 +26,8 @@ git push qa QA:master
 
 ### Running local
 If you don`t have environment, install it
+install ruby
 ```sh
-gem install ruby
 gem install bundler
 bundle install
 ```
