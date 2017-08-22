@@ -53,7 +53,7 @@ class Main extends Component {
                                 component={CreateProject}
                             />
                             <Route
-                                exact path="/dashboard/projects/project"
+                                exact path="/dashboard/projects/project/:id"
                                 name="Project Details"
                                 component={ProjectDetails}
                             />

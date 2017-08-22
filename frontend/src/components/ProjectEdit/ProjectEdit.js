@@ -89,16 +89,16 @@ class ProjectEdit extends Component {
 
     isTitleUnique() {
         let projects = [
-            {title: "Title1", description: "something1"},
-            {title: "Title2", description: "something2"},
-            {title: "Title3", description: "something3"},
-            {title: "Title4", description: "something4"},
-            {title: "Title5", description: "something5"},
-            {title: "Title6", description: "something6"},
-            {title: "Title7", description: "something7"},
-            {title: "Title8", description: "something8"},
-            {title: "Title9", description: "something9"},
-            {title: "Title10", description: "something10"},
+            {id:1, title: "Greenlam", description: "something1"},
+            {id:2, title: "Gembucket", description: "something2"},
+            {id:3, title: "Asoka", description: "something3"},
+            {id:4, title: "Biodex", description: "something4"},
+            {id:5, title: "It", description: "something5"},
+            {id:6, title: "Vagram", description: "something6"},
+            {id:7, title: "Quo Lux", description: "something7"},
+            {id:8, title: "Sub-Ex", description: "something8"},
+            {id:9, title: "Pannier", description: "something9"},
+            {id:10, title: "Span", description: "something10"},
         ];
         let isUnique = true;
         let title = this.state.projectTitle;
