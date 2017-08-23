@@ -25,23 +25,14 @@ class ProjectsList extends Component {
 
     render() {
 
-        const { allProjects } = this.props.newProject.projects;
+        const { allProjects } = this.props.projects;
         console.log(this.props)
+        debugger
+        console.log(allProjects)
 
 
 
-        let projects = [
-            {title: "Title1", description: "something1"},
-            {title: "Title2", description: "something2"},
-            {title: "Title3", description: "something3"},
-            {title: "Title4", description: "something4"},
-            {title: "Title5", description: "something5"},
-            {title: "Title6", description: "something6"},
-            {title: "Title7", description: "something7"},
-            {title: "Title8", description: "something8"},
-            {title: "Title9", description: "something9"},
-            {title: "Title10", description: "something10"},
-        ];
+        let projects = this.props.projects;
 
             // I need to create "projectsSorted" from "projects" first. Then use it in map()\
         const projectsToDisplay = projects.map((value, index) =>
@@ -103,6 +94,7 @@ class ProjectsList extends Component {
 
 function mapStateToProps (state) {
     return {
+        projects: state.project.projects,
         newProject: state.project,
         newNote: state.notifications
     }

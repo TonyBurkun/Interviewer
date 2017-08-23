@@ -4,19 +4,18 @@ const initialState = {
 	projects: [],
 	newProject: {
 		projectTitle: "initTitle",
-	    projectDescription: "initDiscr",
+    projectDescription: "initDiscr"
 	}
 }
 
 
-export default function project(state = initialState, action) {
+export default function page(state = initialState, action) {
   switch (action.type) {
-      case CREATE_PROJECT:
+    case CREATE_PROJECT:
       return  {...state,
           newProject: {...state, projectTitle: action.payload.title, projectDescription: action.payload.descr}};
-      case SHOW_PROJECTS:
-      return { ...state,
-          projects: [...state.projects, action.payload]}
+    case SHOW_PROJECTS:
+      return { ...state, projects: action.payload}
     case REMOVE_PROJECT:
       return { ...state, email: '', auth: false };
     case UPDATE_PROJECT:
