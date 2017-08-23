@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -23,6 +24,7 @@ public class SideMenu {
     SideMenuPage sideMenuPage;
     WebDriver driver;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
+    String BaseURL = "https://dev-interviewer.herokuapp.com/dashboard/";
 
 
     @BeforeTest(groups = {"functest", "login"})
@@ -86,16 +88,73 @@ public class SideMenu {
     @Test(groups = {"functest", "20"})
     public void assertActiveItem() throws InterruptedException {
         driver.manage().window().maximize();
-        //TODO Check, if the menu item is active and the user navigates to different pages within this menu item: the menu item remains active.
+
+        sideMenuPage.clickInterviewsItem();
+        String href_interviews = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        Assert.assertEquals(href_interviews, BaseURL+"interviews");
+
+        sideMenuPage.clickInterviewersItem();
+        String href_interviewers = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        Assert.assertEquals(href_interviewers, BaseURL+"interviewers");
+
+        sideMenuPage.clickVacanciesItem();
+        String href_vacancies = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        Assert.assertEquals(href_vacancies, BaseURL+"vacancies");
+
+        sideMenuPage.clickSeekersItem();
+        String href_seekers = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        Assert.assertEquals(href_seekers, BaseURL+"seekers");
+
+        sideMenuPage.clickProjectsItem();
+        String href_projects = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        Assert.assertEquals(href_projects, BaseURL+"projects");
 
 
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/5/20", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test(groups = {"functest", "21"})
     public void asserItemLinks() throws InterruptedException {
         driver.manage().window().maximize();
-        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
-        //TODO Clicking on the menu items: go to the relevant pages.
+
+        sideMenuPage.clickInterviewsItem();
+        String interviews_utl = driver.getCurrentUrl();
+        Assert.assertEquals(interviews_utl, BaseURL+"interviews");
+
+        sideMenuPage.clickInterviewersItem();
+        String interviewers_url = driver.getCurrentUrl();
+        Assert.assertEquals(interviewers_url, BaseURL+"interviewers");
+
+        sideMenuPage.clickVacanciesItem();
+        String vacancies_url = driver.getCurrentUrl();
+        Assert.assertEquals(vacancies_url, BaseURL+"vacancies");
+
+        sideMenuPage.clickSeekersItem();
+        String seekers_url = driver.getCurrentUrl();
+        Assert.assertEquals(seekers_url, BaseURL+"seekers");
+
+        sideMenuPage.clickProjectsItem();
+        String projects_url = driver.getCurrentUrl();
+        Assert.assertEquals(projects_url, BaseURL+"projects");
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/5/21", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Test(groups = {"functest", "22"})
