@@ -20,6 +20,8 @@ class ProjectsList extends Component {
     }
 
     render() {
+        const { proj } = this.props.newProject.projects;
+
         let projects = [
             {id:1, title: "Greenlam", description: "something1"},
             {id:2, title: "Gembucket", description: "something2"},
@@ -32,6 +34,7 @@ class ProjectsList extends Component {
             {id:9, title: "Pannier", description: "something9"},
             {id:10, title: "Span", description: "something10"},
         ];
+
         let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
@@ -62,6 +65,9 @@ class ProjectsList extends Component {
         const { projectTitle, projectDescription } = this.props.newProject.newProject;
         const { isNoteVisible } = this.props.newNote.newNote;
         let projectToNote = "'" + projectTitle.slice(0,20) + "..." + "'"
+
+
+
 
         return (
             <div>

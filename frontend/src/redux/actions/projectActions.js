@@ -9,7 +9,6 @@ export const UPDATE_PROJECT = 'UPDATE_PROJECT';
 
 
 export function createProject(date) {
-    debugger
     return {
         type: 'CREATE_PROJECT',
         payload: date
@@ -17,14 +16,20 @@ export function createProject(date) {
 }
 
 export function showProjects() {
+
     return (dispatch) => {
         fetch('/api/v1/projects')
             .then(res =>
                 res.json()
             )
-            .then(projects =>
+            .then(projects => {
                 console.log(projects)
-            );
+                debugger
+                return {
+                    type: 'SHOW_PROJECTS',
+                    payload: projects.data
+                };
+            });
     };
     // window.fetch('/api/v1/projects')
     //     .then(

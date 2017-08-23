@@ -73,7 +73,7 @@ class ProjectDetails extends Component {
                         <div className="form-group">
                             <button
                                 className="btn btn-primary"
-                                onClick={() => this.switchToEditMode()}
+                                //onClick={() => this.switchToEditMode()}
                             >Edit</button>
                             <button
                                 type="reset"

@@ -18,7 +18,9 @@ class CreateProject extends Component {
             showModalConfirm: false,
             showModaLCreateAlert: false,
             alertText: "",
-            confirmText: ""
+            confirmText: "",
+            titleError:"",
+            descriptionError: ""
         };
     }
     //----------------------------------
@@ -42,11 +44,16 @@ class CreateProject extends Component {
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
+        this.setState({titleError: ""});
     }
 
     handleDescrChange(event) {
         this.setState({projectDescription: event.target.value});
+        this.setState({descriptionError:""});
     }
+
+
+
 
     validateFormFields(event) {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
@@ -71,6 +78,46 @@ class CreateProject extends Component {
             this.showNote();
         }
     }
+
+
+    // validateFormFields(event) {
+    //         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+    //         let title = this.state.projectTitle;
+    //         let descr = this.state.projectDescription;
+    //         if (!regex.test(title)) {
+    //             event.preventDefault();
+    //             this.setState({
+    //                 titleError: "Please use only latin letters, numbers and special symbols"
+    //             });
+    //         } else {
+    //             this.props.history.push("/dashboard/projects");
+    //             const { dispatch } = this.props;
+    //             dispatch(createProject({title: title, descr: descr}));
+    //             this.showNote();
+    //         }
+    //
+
+        //     else if(!regex.test(descr)) {
+        //         event.preventDefault();
+        //         this.setState({
+        //             descriptionError: "This title already exists. Please, use only unique titles."
+        //         });
+        //         this.openModalAlert();
+        //
+        //
+        //     } else if(!this.isTitleUnique()) {
+        //         event.preventDefault();
+        //         this.setState({
+        //             titleError : "This title already exists. Please, use only unique titles."
+        //         });
+        //
+        //     } else {
+        //         this.props.history.push("/dashboard/projects");
+        //         const { dispatch } = this.props;
+        //         dispatch(createProject({title: title, descr: descr}));
+        //         this.showNote();
+        //     }
+        // }
 
 
     isTitleUnique() {
@@ -150,6 +197,8 @@ class CreateProject extends Component {
         this.setState({projectDescription: ""})
     }
 
+
+
     render() {
         return (
             <div className="row sameheight-container">
@@ -174,6 +223,7 @@ class CreateProject extends Component {
                                 onChange={(event) => this.handleTitleChange(event)}
                                 autoFocus
                             />
+                            <span className="has-error error-message">{this.state.titleError}</span>
                         </div>
                         <div className="form-group form-field-margin">
                             <label className="control-label">Project Description</label>
@@ -187,6 +237,7 @@ class CreateProject extends Component {
                                 value={this.state.projectDescription}
                                 onChange={(event) => this.handleDescrChange(event)}
                             />
+                            <span className="has-error error-message">{this.state.descriptionError}</span>
                         </div>
                         <div className="form-group">
                             <button
