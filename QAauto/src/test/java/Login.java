@@ -60,11 +60,11 @@ public class Login {
         loginPage.clickLoginLink();
         Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[3]/button")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/ad")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[5]/p")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[2]/a")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[3]/a")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("loginSubmit")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("forgotPassBtn")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("noAccount")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("termsService")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("helpCenter")).isDisplayed());
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -189,6 +189,7 @@ public class Login {
         loginPage.typeEmailAdress("inte@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
     }
     @Test(groups = {"functest", "9.1"})
     public void enterMinEmail() throws InterruptedException {
@@ -196,12 +197,14 @@ public class Login {
         loginPage.typeEmailAdress("interv@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
     }
     @Test(groups = {"functest", "9.2"})
     public void enterMaxEmail() throws InterruptedException {
         loginPage.open();
         loginPage.typeEmailAdress("intervieweintervieweintervieweintervieweintervieweinterviewe@test.com");
         loginPage.typePassword("123456");
+        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
     }
 
@@ -211,6 +214,7 @@ public class Login {
         loginPage.typeEmailAdress("intervieweintervieweintervieweintervieweintervieweinterviewel@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -265,7 +269,7 @@ public class Login {
     public void forgotYourPassword() throws InterruptedException {
         loginPage.open();
         loginPage.clickforgotPasswordButton();
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("")).isDisplayed());
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -281,10 +285,12 @@ public class Login {
     @Test(groups = {"functest", "12"})
     public void dontHaveAccount() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.clickdontHaveAccountButton();
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
         loginPage.clickCloseButtonForDontHaveAccount();
-        Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]/p")).isDisplayed());
+     //   Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]")).isEnabled());
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");

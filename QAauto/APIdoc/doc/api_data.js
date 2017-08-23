@@ -131,11 +131,11 @@ define({ "api": [
     "groupTitle": "Projects"
   },
   {
+    "name": "GetProjects",
+    "group": "Projects",
     "type": "get",
     "url": "api/v1/projects/:id",
     "title": "Get all projects",
-    "name": "GetProjects",
-    "group": "Projects",
     "description": "<p>Returns all projects which are visible for the currently logged in user.</p>",
     "header": {
       "fields": {

@@ -4,11 +4,13 @@
  *
  * @api {get} api/v1/projects/:id Get all projects
  *
+ *
  * @apiDescription Returns all projects which are visible for the currently logged in user.
  *
  * @apiHeader {String} access-key Users unique access-key.
  * @apiHeader {String} content-type application/json; charset=utf-8
  * @apiHeader {String} accept application/json
+ *
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -30,8 +32,8 @@
  *
  * @apiError ProjectNotFound The <code>id</code> of the Project was not found.
  * @apiError Unauthorized Returned if the user is not logged in.
+ *
  */
- 
  
  
  
@@ -39,7 +41,6 @@
  * @api {post} api/v1/projects/ Create project
  * @apiName PostProjects
  * @apiGroup Projects
- *
  *
  * @apiHeader {String} access-key Users unique access-key.
  * @apiHeader {String} content-type application/json; charset=utf-8

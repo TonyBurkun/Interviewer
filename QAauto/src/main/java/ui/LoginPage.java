@@ -12,17 +12,17 @@ public class LoginPage {
 
     By emailAdressField = By.id("username");
     By passwordField = By.id("password");
-    By loginButton = By.xpath("//*[@id=\"login-form\"]/div[3]/button");
-    By forgotPasswordButton = By.xpath("//*[@id=\"login-form\"]/div[4]/a");
-    By dontHaveAccountButton = By.xpath("//*[@id=\"login-form\"]/div[5]/p");
-    By termsLink = By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[2]/a");
-    By helpCenterLink = By.xpath("//*[@id=\"root\"]/div/div/div/div/ul/li[3]/a");
+    By loginButton = By.id("loginSubmit");
+    By forgotPasswordButton = By.id("forgotPassBtn");
+    By dontHaveAccountButton = By.id("noAccount");
+    By termsLink = By.id("termsService");
+    By helpCenterLink = By.id("helpCenter");
     By closeButtonForDontHaveAccount = By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/button/span[1]");
     By loginLink = By.linkText("Log in");
 
 
     public LoginPage clickLoginLink() {
-        driver.findElement(loginButton).click();
+        driver.findElement(loginLink).click();
         return this;
     }
     public LoginPage clickCloseButtonForDontHaveAccount() {
