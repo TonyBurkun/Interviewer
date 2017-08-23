@@ -22,9 +22,12 @@ export function showProjects() {
             .then(res =>
                 res.json()
             )
-            .then(projects =>
-                console.log(projects)
-            );
+            .then(projects => {
+                return {
+                    type: 'SHOW_PROJECTS',
+                    payload: projects
+                };
+            });
     };
     // window.fetch('/api/v1/projects')
     //     .then(

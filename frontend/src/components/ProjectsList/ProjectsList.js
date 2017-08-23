@@ -10,10 +10,12 @@ import {showProjects} from "../../redux/actions/projectActions";
 
 class ProjectsList extends Component {
 
-    // componentDidMount() {
-    //     const {dispatch} = this.props;
-    //     dispatch(showProjects())
-    // }
+    componentDidMount() {
+        const {dispatch} = this.props;
+        dispatch(showProjects())
+    }
+
+
 
      onDismiss() {
             const { dispatch } = this.props;
@@ -22,6 +24,12 @@ class ProjectsList extends Component {
 
 
     render() {
+
+        const { allProjects } = this.props.newProject.projects;
+        console.log(this.props)
+
+
+
         let projects = [
             {title: "Title1", description: "something1"},
             {title: "Title2", description: "something2"},
@@ -51,6 +59,8 @@ class ProjectsList extends Component {
                 </div>
             </div>
         );
+
+
 
 
         const { projectTitle, projectDescription } = this.props.newProject.newProject;
