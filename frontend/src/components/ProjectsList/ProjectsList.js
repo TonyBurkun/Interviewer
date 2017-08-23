@@ -2,22 +2,22 @@ import React, {Component} from "react";
 import {Link, IndexLink} from "react-router-dom";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
-import {Modal} from "react-bootstrap";
 import {Alert} from "reactstrap";
 import {showNote} from "../../redux/actions/notificationActions";
+import {showProjects} from "../../redux/actions/projectActions";
 
 
 class ProjectsList extends Component {
 
-    // componentDidMount() {
-    //     const {dispatch} = this.props;
-    //     dispatch(showProjects())
-    // }
+    componentDidMount() {
+        const {dispatch} = this.props;
+        dispatch(showProjects())
+    }
 
-     onDismiss() {
-            const { dispatch } = this.props;
-            dispatch(showNote({show: false}))
-     }
+    onDismiss() {
+        const {dispatch} = this.props;
+        dispatch(showNote({show: false}))
+    }
 
     render() {
         let projects = [

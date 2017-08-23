@@ -5,7 +5,10 @@ import Routers from './routes';
 import registerServiceWorker from './registerServiceWorker';
 
 import {Provider} from "react-redux";
-import store from "./redux/store";
+import configureStore from './redux/store/configureStore';
+
+
+const store = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>
@@ -13,4 +16,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-registerServiceWorker();
+//registerServiceWorker();

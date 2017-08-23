@@ -75,16 +75,16 @@ class CreateProject extends Component {
 
     isTitleUnique() {
         let projects = [
-            {title: "Greenlam", description: "something1"},
-            {title: "Gembucket", description: "something2"},
-            {title: "Asoka", description: "something3"},
-            {title: "Biodex", description: "something4"},
-            {title: "It", description: "something5"},
-            {title: "Vagram", description: "something6"},
-            {title: "Quo Lux", description: "something7"},
-            {title: "Sub-Ex", description: "something8"},
-            {title: "Pannier", description: "something9"},
-            {title: "Span", description: "something10"},
+            {id:1, title: "Greenlam", description: "something1"},
+            {id:2, title: "Gembucket", description: "something2"},
+            {id:3, title: "Asoka", description: "something3"},
+            {id:4, title: "Biodex", description: "something4"},
+            {id:5, title: "It", description: "something5"},
+            {id:6, title: "Vagram", description: "something6"},
+            {id:7, title: "Quo Lux", description: "something7"},
+            {id:8, title: "Sub-Ex", description: "something8"},
+            {id:9, title: "Pannier", description: "something9"},
+            {id:10, title: "Span", description: "something10"},
         ];
         let isUnique = true;
         let title = this.state.projectTitle;
@@ -160,49 +160,49 @@ class CreateProject extends Component {
                             Back to list
                         </Link>
                     </div>
-                        <form onSubmit={(event) => this.validateFormFields(event)}>
-                            <div className="form-gro1up">
-                                <label className="control-label">Project Title</label>
-                                <input
-                                    id="create-project-title"
-                                    type="text"
-                                    name="ProjectTitle"
-                                    placeholder='Input Title'
-                                    className="form-control boxed"
-                                    maxLength="60"
-                                    value={this.state.projectTitle}
-                                    onChange={(event) => this.handleTitleChange(event)}
-                                    autoFocus
-                                />
-                            </div>
-                            <div className="form-group form-field-margin">
-                                <label className="control-label">Project Description</label>
-                                <TextareaAutosize
-                                    id="create-project-descr"
-                                    name="ProjectDescription"
-                                    placeholder="Input Description"
-                                    className="form-control boxed"
-                                    maxLength="3000"
-                                    rows={10}
-                                    value={this.state.projectDescription}
-                                    onChange={(event) => this.handleDescrChange(event)}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    id="create-project-submitBtn"
-                                    type="submit"
-                                    className="btn btn-primary"
-                                    disabled={!this.state.projectTitle || !this.state.projectDescription }
-                                >Create</button>
-                                <button
-                                    id="create-project-resetBtn"
-                                    type="reset"
-                                    className="btn btn-primary right-project-btn"
-                                    onClick = {() => this.isFieldsNotEmpty()}
-                                >Cancel</button>
-                            </div>
-                        </form>
+                    <form onSubmit={(event) => this.validateFormFields(event)}>
+                        <div className="form-gro1up">
+                            <label className="control-label">Project Title</label>
+                            <input
+                                id="create-project-title"
+                                type="text"
+                                name="ProjectTitle"
+                                placeholder='Input Title'
+                                className="form-control boxed"
+                                maxLength="60"
+                                value={this.state.projectTitle}
+                                onChange={(event) => this.handleTitleChange(event)}
+                                autoFocus
+                            />
+                        </div>
+                        <div className="form-group form-field-margin">
+                            <label className="control-label">Project Description</label>
+                            <TextareaAutosize
+                                id="create-project-descr"
+                                name="ProjectDescription"
+                                placeholder="Input Description"
+                                className="form-control boxed"
+                                maxLength="3000"
+                                rows={10}
+                                value={this.state.projectDescription}
+                                onChange={(event) => this.handleDescrChange(event)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <button
+                                id="create-project-submitBtn"
+                                type="submit"
+                                className="btn btn-primary"
+                                disabled={!this.state.projectTitle || !this.state.projectDescription }
+                            >Create</button>
+                            <button
+                                id="create-project-resetBtn"
+                                type="reset"
+                                className="btn btn-primary right-project-btn"
+                                onClick = {() => this.isFieldsNotEmpty()}
+                            >Cancel</button>
+                        </div>
+                    </form>
                 </div>
                 <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
                     <Modal.Header closeButton>
@@ -212,25 +212,25 @@ class CreateProject extends Component {
                     </Modal.Body>
                 </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
-                <Modal.Header closeButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Are you sure you want to cancel without saving changes?</p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={() => this.leaveForm()}>Cancel</Button>
-                    <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
-                </Modal.Footer>
-            </Modal>
+                    <Modal.Header closeButton>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Are you sure you want to cancel without saving changes?</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={() => this.leaveForm()}>Cancel</Button>
+                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         )
     }
 }
 
 function mapStateToProps (state) {
-  return {
-    newProject: state.project
-  }
+    return {
+        newProject: state.project
+    }
 }
 
 export default connect(mapStateToProps)(CreateProject);
