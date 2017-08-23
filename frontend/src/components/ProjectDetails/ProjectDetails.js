@@ -12,8 +12,6 @@ class ProjectDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // projectTitle: "Project Title",
-            // projectDescription: "Lorem ipsum dolor sit amet, nulla quam sapien praesent purus commodo nascetur",
             showModalConfirm: false
         }
     }
@@ -39,19 +37,8 @@ class ProjectDetails extends Component {
 
 
     render() {
+        let projects = this.props.newProject.projects;
 
-        let projects = [
-            {id:1, title: "Greenlam", description: "something1"},
-            {id:2, title: "Gembucket", description: "something2"},
-            {id:3, title: "Asoka", description: "something3"},
-            {id:4, title: "Biodex", description: "something4"},
-            {id:5, title: "It", description: "something5"},
-            {id:6, title: "Vagram", description: "something6"},
-            {id:7, title: "Quo Lux", description: "something7"},
-            {id:8, title: "Sub-Ex", description: "something8"},
-            {id:9, title: "Pannier", description: "something9"},
-            {id:10, title: "Span", description: "something10"},
-        ];
         let projectId = this.props.match.params.id;
         let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
 
@@ -60,7 +47,7 @@ class ProjectDetails extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            <h3 className="title ">{currentProject.title}</h3>
+                            <h3 className="title">{currentProject.title}</h3>
                             <Link to="/dashboard/projects" className="title-description">
                                 Back to list
                             </Link>

@@ -3,9 +3,9 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
-import { connect } from 'react-redux';
-import { createProject } from '../../redux/actions/projectActions';
-import { showNote } from '../../redux/actions/notificationActions';
+import {connect} from "react-redux";
+import {createProject} from "../../redux/actions/projectActions";
+import {showNote} from "../../redux/actions/notificationActions";
 
 class CreateProject extends Component {
 
@@ -52,87 +52,43 @@ class CreateProject extends Component {
         this.setState({descriptionError:""});
     }
 
-
-
-
     validateFormFields(event) {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let descr = this.state.projectDescription;
-        if (!regex.test(descr) || !regex.test(title)) {
+        let wrongCharMessage = "Please use only latin letters, numbers and special symbols"
+        if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
-                alertText: "Please use only latin letters, numbers and special symbols"
+                titleError: wrongCharMessage
             });
-            this.openModalAlert();
-        } else if(!this.isTitleUnique()) {
+        }
+        if (!regex.test(descr)) {
             event.preventDefault();
             this.setState({
-                alertText: "This title already exists. Please, use only unique titles."
+                descriptionError: wrongCharMessage
             });
-            this.openModalAlert();
-        }else {
+        }
+        if (!this.isTitleUnique()) {
+            event.preventDefault();
+            this.setState({
+                titleError: "This title already exists. Please, use only unique titles"
+            });
+
+        } if (regex.test(title) && regex.test(descr) && this.isTitleUnique()) {
             this.props.history.push("/dashboard/projects");
-            const { dispatch } = this.props;
+            const {dispatch} = this.props;
             dispatch(createProject({title: title, descr: descr}));
             this.showNote();
         }
     }
 
 
-    // validateFormFields(event) {
-    //         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
-    //         let title = this.state.projectTitle;
-    //         let descr = this.state.projectDescription;
-    //         if (!regex.test(title)) {
-    //             event.preventDefault();
-    //             this.setState({
-    //                 titleError: "Please use only latin letters, numbers and special symbols"
-    //             });
-    //         } else {
-    //             this.props.history.push("/dashboard/projects");
-    //             const { dispatch } = this.props;
-    //             dispatch(createProject({title: title, descr: descr}));
-    //             this.showNote();
-    //         }
-    //
-
-        //     else if(!regex.test(descr)) {
-        //         event.preventDefault();
-        //         this.setState({
-        //             descriptionError: "This title already exists. Please, use only unique titles."
-        //         });
-        //         this.openModalAlert();
-        //
-        //
-        //     } else if(!this.isTitleUnique()) {
-        //         event.preventDefault();
-        //         this.setState({
-        //             titleError : "This title already exists. Please, use only unique titles."
-        //         });
-        //
-        //     } else {
-        //         this.props.history.push("/dashboard/projects");
-        //         const { dispatch } = this.props;
-        //         dispatch(createProject({title: title, descr: descr}));
-        //         this.showNote();
-        //     }
-        // }
-
-
     isTitleUnique() {
-        let projects = [
-            {id:1, title: "Greenlam", description: "something1"},
-            {id:2, title: "Gembucket", description: "something2"},
-            {id:3, title: "Asoka", description: "something3"},
-            {id:4, title: "Biodex", description: "something4"},
-            {id:5, title: "It", description: "something5"},
-            {id:6, title: "Vagram", description: "something6"},
-            {id:7, title: "Quo Lux", description: "something7"},
-            {id:8, title: "Sub-Ex", description: "something8"},
-            {id:9, title: "Pannier", description: "something9"},
-            {id:10, title: "Span", description: "something10"},
-        ];
+        const { allProjects } = this.props.newProject.projects;
+
+        let projects = this.props.newProject.projects;
+
         let isUnique = true;
         let title = this.state.projectTitle;
         projects.forEach(function(item) {
@@ -162,19 +118,7 @@ class CreateProject extends Component {
         }
     }
 
-    openModalAlert() {
-        this.setState({
-            showModalAlert: true
-        });
-    }
-
-    closeModalAlert() {
-        this.setState({
-            showModalAlert: false
-        });
-    }
-
-    openModalConfirm() {
+     openModalConfirm() {
         this.setState({
             showModalConfirm: true
         });
@@ -197,8 +141,6 @@ class CreateProject extends Component {
         this.setState({projectDescription: ""})
     }
 
-
-
     render() {
         return (
             <div className="row sameheight-container">
@@ -210,7 +152,7 @@ class CreateProject extends Component {
                         </Link>
                     </div>
                     <form onSubmit={(event) => this.validateFormFields(event)}>
-                        <div className="form-gro1up">
+                        <div className="form-group has-error">
                             <label className="control-label">Project Title</label>
                             <input
                                 id="create-project-title"
@@ -255,13 +197,6 @@ class CreateProject extends Component {
                         </div>
                     </form>
                 </div>
-                <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>{this.state.alertText}</p>
-                    </Modal.Body>
-                </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
                     <Modal.Header closeButton>
                     </Modal.Header>

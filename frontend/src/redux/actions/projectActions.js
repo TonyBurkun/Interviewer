@@ -6,8 +6,6 @@ export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const UPDATE_PROJECT = 'UPDATE_PROJECT';
 
 
-
-
 export function createProject(date) {
     return {
         type: 'CREATE_PROJECT',
@@ -15,38 +13,20 @@ export function createProject(date) {
     }
 }
 
-export function showProjects() {
+function addProjects(projects) {
+    return { type: SHOW_PROJECTS, payload: projects};
+}
 
+export function showProjects() {
     return (dispatch) => {
         fetch('/api/v1/projects')
             .then(res =>
                 res.json()
             )
             .then(projects => {
-                console.log(projects)
-                debugger
-                return {
-                    type: 'SHOW_PROJECTS',
-                    payload: projects.data
-                };
+                dispatch(addProjects(projects.data));
             });
     };
-    // window.fetch('/api/v1/projects')
-    //     .then(
-    //         function(response) {
-    //             if (response.status !== 200) {
-    //                 console.log('Looks like there was a problem. Status Code: ' +
-    //                     response.status);
-    //             }
-    //             response.json().then(function(projects) {
-    //                 console.log(projects.data)
-    //                 return { type: SHOW_PROJECTS, payload: projects};
-    //             });
-    //         }
-    //     )
-    //     .catch(function(err) {
-    //         console.log('Fetch Error:' , err);
-    //     })
 }
 
 export function removeProject() {

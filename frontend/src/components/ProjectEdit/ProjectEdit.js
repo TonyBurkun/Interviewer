@@ -88,18 +88,8 @@ class ProjectEdit extends Component {
     }
 
     isTitleUnique() {
-        let projects = [
-            {id:1, title: "Greenlam", description: "something1"},
-            {id:2, title: "Gembucket", description: "something2"},
-            {id:3, title: "Asoka", description: "something3"},
-            {id:4, title: "Biodex", description: "something4"},
-            {id:5, title: "It", description: "something5"},
-            {id:6, title: "Vagram", description: "something6"},
-            {id:7, title: "Quo Lux", description: "something7"},
-            {id:8, title: "Sub-Ex", description: "something8"},
-            {id:9, title: "Pannier", description: "something9"},
-            {id:10, title: "Span", description: "something10"},
-        ];
+        let projects = this.props.newProject.projects;
+
         let isUnique = true;
         let title = this.state.projectTitle;
         projects.forEach(function(item) {
@@ -111,6 +101,11 @@ class ProjectEdit extends Component {
     }
 
     render() {
+        let projects = this.props.newProject.projects;
+        console.log(projects)
+
+        let projectId = this.props.match.params.id;
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
 
         return (
             <div>
@@ -121,7 +116,7 @@ class ProjectEdit extends Component {
                             <div className="title-block">
                                 <input // will transform to h3 with className="tittle"
                                     className="title form-control boxed"
-                                    value={this.state.projectTitle}
+                                    value={currentProject.title}
                                     onChange={(event) => this.handleTitleChange(event)}
                                     autoFocus
                                 />
@@ -134,7 +129,7 @@ class ProjectEdit extends Component {
                                     className="form-control boxed card-block"
                                     maxLength="3000"
                                     rows={10}
-                                    value={this.state.projectDescription}
+                                    value={currentProject.description}
                                     onChange={(event) => this.handleDescrChange(event)}
                                 />
                             </div>

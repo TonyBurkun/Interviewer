@@ -20,22 +20,11 @@ class ProjectsList extends Component {
     }
 
     render() {
-        const { proj } = this.props.newProject.projects;
+       // const { allProjects } = this.props.newProject.projects;
 
-        let projects = [
-            {id:1, title: "Greenlam", description: "something1"},
-            {id:2, title: "Gembucket", description: "something2"},
-            {id:3, title: "Asoka", description: "something3"},
-            {id:4, title: "Biodex", description: "something4"},
-            {id:5, title: "It", description: "something5"},
-            {id:6, title: "Vagram", description: "something6"},
-            {id:7, title: "Quo Lux", description: "something7"},
-            {id:8, title: "Sub-Ex", description: "something8"},
-            {id:9, title: "Pannier", description: "something9"},
-            {id:10, title: "Span", description: "something10"},
-        ];
+        let projects = this.props.newProject.projects;
 
-        let compareTitle = (a, b) => {
+            let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
         };
