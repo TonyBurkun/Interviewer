@@ -6,6 +6,7 @@ import {Modal, Button} from "react-bootstrap";
 import "./ProjectDetails.css";
 import {connect} from "react-redux";
 import {removeProject} from "../../redux/actions/projectActions";
+import {showProjects} from "../../redux/actions/projectActions";
 
 
 class ProjectDetails extends Component {
@@ -17,6 +18,11 @@ class ProjectDetails extends Component {
             projectTitle: "",
             projectDescription: ""
         }
+    }
+
+    componentWillMount() {
+        const {dispatch} = this.props;
+        dispatch(showProjects())
     }
 
     switchToEditMode() {
@@ -37,19 +43,20 @@ class ProjectDetails extends Component {
 
     deleteProject(){
         let title = this.state.projectTitle;
-        let descr = this.state.projectDescription;
+        let description = this.state.projectDescription;
         const {dispatch} = this.props;
-        dispatch(removeProject({title: title, descr: descr}))
+        dispatch(removeProject({title: title, description: description}))
     }
 
 
     render() {
-        // let projects = this.props.newProject.projects;
-        // console.log(this.props)
-        //
-        // let projectId = this.props.match.params.id;
-        // let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
-        //
+        let projects  = this.props.newProject.projects;
+
+
+        let projectId = this.props.match.params.id;
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        //console.log(currentProject)
+
         // this.setState({projectTitle: currentProject.title});
         // this.setState({projectDescription: currentProject.description});
 
@@ -58,14 +65,14 @@ class ProjectDetails extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            {/*<h3 className="title">{currentProject.title}</h3>*/}
+                            <h3 className="title">{currentProject.title}</h3>
                             <Link to="/dashboard/projects" className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block">
-                                    {/*{currentProject.description}*/}
+                                    {currentProject.description}
                                 </div>
                         </div>
                         <div className="form-group">
@@ -100,6 +107,7 @@ class ProjectDetails extends Component {
     }
 }
 
+
 function mapStateToProps (state) {
     return {
         newProject: state.project,
@@ -108,3 +116,4 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(ProjectDetails);
+

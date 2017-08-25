@@ -137,7 +137,10 @@ class CreateProject extends Component {
                 <div className="col-md-12">
                     <div className="title-block">
                         <h3 className="title">Create project</h3>
-                        <Link to="/dashboard/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
+                        <Link id="link-to-list"
+                              to="/dashboard/projects"
+                              onClick = {() => this.isFieldsNotEmpty()}
+                              className="title-description">
                             Back to list
                         </Link>
                     </div>
@@ -147,7 +150,7 @@ class CreateProject extends Component {
                             <input
                                 id="create-project-title"
                                 type="text"
-                                name="ProjectTitle"
+                                name="title"
                                 placeholder='Input Title'
                                 className="form-control boxed"
                                 maxLength="60"
@@ -161,7 +164,7 @@ class CreateProject extends Component {
                             <label className="control-label">Project Description</label>
                             <TextareaAutosize
                                 id="create-project-descr"
-                                name="ProjectDescription"
+                                name="description"
                                 placeholder="Input Description"
                                 className="form-control boxed"
                                 maxLength="3000"
@@ -194,8 +197,12 @@ class CreateProject extends Component {
                         <p>Are you sure you want to cancel without saving changes?</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => this.leaveForm()}>Cancel</Button>
-                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                        <Button
+                            id="modal-confirm-cancel"
+                            onClick={() => this.leaveForm()}>Cancel</Button>
+                        <Button
+                            id="modal-confirm-back"
+                            onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

@@ -4,6 +4,11 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "devDependencies": {
+      "expect": "^1.20.2",
+      "redux-devtools": "^3.4.0",
+      "redux-thunk": "^2.2.0"
+    },
     "history": "^4.6.3",
     "jquery": "^3.2.1",
     "node-sass-chokidar": "0.0.3",
@@ -24,11 +29,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3"
   },
-  "devDependencies": {
-    "expect": "^1.20.2",
-    "redux-devtools": "^3.4.0",
-    "redux-thunk": "^2.2.0"
-  },
+
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",

@@ -38,14 +38,15 @@ class ProjectsList extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card card-default">
-                            <Link to={"/dashboard/projects/project/" + value.id}
+                            {/*<Link to={"/dashboard/projects/project/" + value.id}*/}
+                            <a href="#"
                                   className="card-header project-title"
                                   id={value.id}
                             >
                                 <div className="header-block">
                                     <p className="title">{value.title}</p>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
