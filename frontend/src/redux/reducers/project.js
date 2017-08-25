@@ -15,7 +15,10 @@ export default function project(state = initialState, action) {
         case CREATE_PROJECT:
             return {
                 ...state,
-                newProject: {...state, projectTitle: action.payload.title, projectDescription: action.payload.descr}
+                newProject: {...state,
+                    projectTitle: action.payload.title,
+                    projectDescription: action.payload.description
+                }
             };
         case SHOW_PROJECTS:
             return { ...state, projects: action.payload}

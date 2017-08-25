@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link, NavLink, activeClassName} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import "./SideMenu.css";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';

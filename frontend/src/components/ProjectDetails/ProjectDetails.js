@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectDetails.css";
 import {connect} from "react-redux";
+import {removeProject} from "../../redux/actions/projectActions";
 
 
 class ProjectDetails extends Component {
@@ -12,7 +13,9 @@ class ProjectDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModalConfirm: false
+            showModalConfirm: false,
+            projectTitle: "",
+            projectDescription: ""
         }
     }
 
@@ -32,29 +35,37 @@ class ProjectDetails extends Component {
         });
     }
 
-    deleteProject(){}
-
+    deleteProject(){
+        let title = this.state.projectTitle;
+        let descr = this.state.projectDescription;
+        const {dispatch} = this.props;
+        dispatch(removeProject({title: title, descr: descr}))
+    }
 
 
     render() {
-        let projects = this.props.newProject.projects;
-
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        // let projects = this.props.newProject.projects;
+        // console.log(this.props)
+        //
+        // let projectId = this.props.match.params.id;
+        // let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        //
+        // this.setState({projectTitle: currentProject.title});
+        // this.setState({projectDescription: currentProject.description});
 
         return (
             <div>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            <h3 className="title">{currentProject.title}</h3>
+                            {/*<h3 className="title">{currentProject.title}</h3>*/}
                             <Link to="/dashboard/projects" className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block">
-                                    {currentProject.description}
+                                    {/*{currentProject.description}*/}
                                 </div>
                         </div>
                         <div className="form-group">

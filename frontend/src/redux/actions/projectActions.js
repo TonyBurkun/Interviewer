@@ -1,16 +1,42 @@
-import fetch from 'isomorphic-fetch';
+import fetch from "isomorphic-fetch";
+import {showNote} from "../../redux/actions/notificationActions";
 
-export const CREATE_PROJECT = 'CREATE_PROJECT';
-export const SHOW_PROJECTS = 'SHOW_PROJECTS';
-export const REMOVE_PROJECT = 'REMOVE_PROJECT';
-export const UPDATE_PROJECT = 'UPDATE_PROJECT';
+export const CREATE_PROJECT = "CREATE_PROJECT";
+export const SHOW_PROJECTS = "SHOW_PROJECTS";
+export const REMOVE_PROJECT = "REMOVE_PROJECT";
+export const UPDATE_PROJECT = "UPDATE_PROJECT";
 
+
+function addNewProject(date) {
+    return { type: CREATE_PROJECT, payload: date.data};
+}
 
 export function createProject(date) {
-    return {
-        type: 'CREATE_PROJECT',
-        payload: date
-    }
+
+    return (dispatch) => {
+        fetch("/api/v1/projects",
+            {
+                method: 'post',
+                body: JSON.stringify(date),
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+            .then(res =>
+                res.json()
+            )
+            .then(date => {
+                dispatch(addNewProject(date));
+                dispatch(showProjects());
+                dispatch(showNote({show: true }))
+                setInterval(() => {
+                    dispatch(showNote({show: false }))
+                }, 4000)
+            })
+            .catch(function(err) {
+                alert('Error:'+ err);
+            })
+    };
 }
 
 function addProjects(projects) {
@@ -19,23 +45,43 @@ function addProjects(projects) {
 
 export function showProjects() {
     return (dispatch) => {
-        fetch('/api/v1/projects')
+        fetch("/api/v1/projects")
             .then(res =>
                 res.json()
             )
             .then(projects => {
                 dispatch(addProjects(projects.data));
+            })
+            .catch(function(err) {
+                alert('Error:'+ err);
+            })
+    };
+}
+
+
+function deleteProjects(date) {
+    return { type: SHOW_PROJECTS, payload: date};
+}
+
+export function removeProject(date) {
+    return (dispatch) => {
+        fetch('/api/v1/projects',
+            {
+                method: 'post',
+                body: JSON.stringify(date),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res =>
+                res.json()
+            )
+            .then(date => {
+                dispatch(deleteProjects(date));
             });
     };
 }
 
-export function removeProject() {
-    return (dispatch) => {
-        dispatch({
-            type: REMOVE_PROJECT
-        })
-    }
-}
 
 export function updateProject() {
     return (dispatch) => {

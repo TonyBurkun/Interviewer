@@ -24,12 +24,13 @@ class ProjectsList extends Component {
 
         let projects = this.props.newProject.projects;
 
+
             let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
         };
 
-        let sortedProjects = projects.sort(compareTitle);
+       let sortedProjects = projects.sort(compareTitle);
 
         const projectsToDisplay = sortedProjects.map((value, index) =>
 

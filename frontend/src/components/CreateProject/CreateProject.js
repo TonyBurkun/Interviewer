@@ -5,7 +5,6 @@ import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 import {connect} from "react-redux";
 import {createProject} from "../../redux/actions/projectActions";
-import {showNote} from "../../redux/actions/notificationActions";
 
 class CreateProject extends Component {
 
@@ -55,7 +54,7 @@ class CreateProject extends Component {
     validateFormFields(event) {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
-        let descr = this.state.projectDescription;
+        let description = this.state.projectDescription;
         let wrongCharMessage = "Please use only latin letters, numbers and special symbols"
         if (!regex.test(title)) {
             event.preventDefault();
@@ -63,7 +62,7 @@ class CreateProject extends Component {
                 titleError: wrongCharMessage
             });
         }
-        if (!regex.test(descr)) {
+        if (!regex.test(description)) {
             event.preventDefault();
             this.setState({
                 descriptionError: wrongCharMessage
@@ -75,17 +74,16 @@ class CreateProject extends Component {
                 titleError: "This title already exists. Please, use only unique titles"
             });
 
-        } if (regex.test(title) && regex.test(descr) && this.isTitleUnique()) {
+        } if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
             this.props.history.push("/dashboard/projects");
             const {dispatch} = this.props;
-            dispatch(createProject({title: title, descr: descr}));
-            this.showNote();
+            dispatch(createProject({title: title, description: description}));
         }
     }
 
 
     isTitleUnique() {
-        const { allProjects } = this.props.newProject.projects;
+        //const { allProjects } = this.props.newProject.projects;
 
         let projects = this.props.newProject.projects;
 
@@ -97,14 +95,6 @@ class CreateProject extends Component {
             }
         });
         return (isUnique) ? true: false;
-    }
-
-    showNote() {
-        const { dispatch } = this.props;
-        dispatch(showNote({show: true }))
-        setInterval(() => {
-            dispatch(showNote({show: false }))
-        }, 4000)
     }
 
     isFieldsNotEmpty() {
