@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {Link, NavLink} from 'react-router-dom';
 import './header.css';
 
@@ -30,11 +29,11 @@ class Header extends Component {
             let path = window.location.pathname;
             if (path.indexOf('/dashboard') === 0) {
                 return (
-                    <Link to="/dashboard/interviews" className="active">Dashboard</Link>
+                    <Link to="/dashboard/interviews_upcoming" className="active">Dashboard</Link>
                 );
             } else {
                 return (
-                    <Link to="/dashboard/interviews">Dashboard</Link>
+                    <Link to="/dashboard/interviews_upcoming">Dashboard</Link>
                 );
             }
         };

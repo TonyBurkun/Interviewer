@@ -68,6 +68,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
     builder (3.2.3)
     byebug (9.0.6)
@@ -91,6 +92,7 @@ GEM
     execjs (2.7.0)
     faker (1.8.4)
       i18n (~> 0.5)
+    ffi (1.9.18)
     ffi (1.9.18-x86-mingw32)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -133,11 +135,14 @@ GEM
     minitest (5.10.3)
     nested_form (0.3.2)
     nio4r (2.1.0)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     pg (0.21.0-x86-mingw32)
-    puma (3.9.1)
+    puma (3.10.0)
     rack (2.0.3)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -209,6 +214,7 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -226,4 +232,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.14.6
+   1.15.4

@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import './interviews.css';
+import './interviewsCompleted.css';
 
-class Interviews extends Component{
+
+class InterviewsCompleted extends Component{
+    constructor(props) {
+        super(props);
+    }
+
     render(){
         return (
             <div className="bcgr">
                 <div className="row sameheight-container">
                     <div className="col-md-12">
                         <div className="title-block">
-                            <h3 className="title">Interviews</h3>
+                            <h3 className="title">Completed interviews</h3>
                         </div>
                     </div>
                 </div>
@@ -18,4 +22,6 @@ class Interviews extends Component{
     }
 }
 
-export default Interviews;
+
+export default InterviewsCompleted;
+

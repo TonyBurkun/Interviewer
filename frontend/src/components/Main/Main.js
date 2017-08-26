@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Header from './../Header';
 import SideMenu from './../SideMenu';
-import Interviews from './../Interviews';
 import Interviewers from './../Interviewers';
+import InterviewsUpcoming from '../InterviewsUpcoming';
+import InterviewsCompleted from '../InterviewsCompleted';
 import Seekers from './../Seekers';
-import Vacancies from './../Vacancies';
+import VacanciesOpen from './../VacanciesOpen';
+import VacanciesClosed from './../VacanciesClosed';
 import CreateProject from './../CreateProject';
 import ProjectsList from './../ProjectsList';
 import ProjectDetails from './../ProjectDetails';
@@ -63,11 +65,15 @@ class Main extends Component {
                                 name="Project Edit"
                                 component={ProjectEdit}
                             />
-
                             <Route
-                                exact path="/dashboard/interviews"
-                                name="Interviews"
-                                component={Interviews}
+                                exact path="/dashboard/interviews_upcoming"
+                                name="InterviewsUpcoming"
+                                component={InterviewsUpcoming}
+                            />
+                            <Route
+                                exact path="/dashboard/interviews_completed"
+                                name="InterviewsCompleted"
+                                component={InterviewsCompleted}
                             />
                             <Route
                                 exact path="/dashboard/interviewers"
@@ -80,9 +86,14 @@ class Main extends Component {
                                 component={Seekers}
                             />
                             <Route
-                                exact path="/dashboard/vacancies"
-                                name="Vacancies"
-                                component={Vacancies}
+                                exact path="/dashboard/vacancies_open"
+                                name="VacanciesOpen"
+                                component={VacanciesOpen}
+                            />
+                            <Route
+                                exact path="/dashboard/vacancies_closed"
+                                name="VacanciesClosed"
+                                component={VacanciesClosed}
                             />
                             <Route
                                 exact path="/settings/username"
@@ -94,7 +105,7 @@ class Main extends Component {
                                 name="Settings"
                                 component={Password}
                             />
-                            <Redirect form="/" to="/dashboard/interviews"/>
+                            <Redirect form="/" to="/dashboard/interviews_upcoming"/>
                         </Switch>
                     </article>
                 </div>

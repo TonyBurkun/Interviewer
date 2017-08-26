@@ -118,7 +118,7 @@ class Login extends Component {
 
         return (
             <div className="auth">
-                <Modal show={this.state.showModal} onHide={this.closeModal}>
+                <Modal show={this.state.showModal} onHide={this.closeModal} id="noAccountModal">
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
