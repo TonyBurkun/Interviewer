@@ -3,16 +3,20 @@
   border: 1px solid rgba(133,206,54,0) !important;
   border-radius: 0px !important;
   position: absolute;
-  top:-100%;
+  top:-10%;
   left: 22%;
   margin: 0 !important;
   max-width: 100% !important;
 }
 
-component-container {
+.component-container {
   position: relative;
 }
 
 .project-title {
   text-decoration: none !important;
+}
+
+.create-button {
+  margin-bottom: 20px;
 }

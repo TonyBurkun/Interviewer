@@ -1869,7 +1869,7 @@ span a {
       padding: 0;
       height: 0px;
       overflow: hidden; }
-      .loaded .sidebar .nav ul {
+      .sidebar .nav ul {
         height: auto; }
     .sidebar .nav li.active ul {
       height: auto; }

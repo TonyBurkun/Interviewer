@@ -3,9 +3,8 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
-import { connect } from 'react-redux'
-import { createProject } from '../../redux/actions/projectActions';
-import { showNote } from '../../redux/actions/notificationActions';
+import {connect} from "react-redux";
+import {createProject} from "../../redux/actions/projectActions";
 
 class CreateProject extends Component {
 
@@ -17,7 +16,10 @@ class CreateProject extends Component {
             showModalAlert: false,
             showModalConfirm: false,
             showModaLCreateAlert: false,
-            alertText: ""
+            alertText: "",
+            confirmText: "",
+            titleError:"",
+            descriptionError: ""
         };
     }
     //----------------------------------
@@ -41,50 +43,50 @@ class CreateProject extends Component {
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
+        this.setState({titleError: ""});
     }
 
     handleDescrChange(event) {
         this.setState({projectDescription: event.target.value});
+        this.setState({descriptionError:""});
     }
 
     validateFormFields(event) {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
-        let descr = this.state.projectDescription;
-        if (!regex.test(descr) || !regex.test(title)) {
+        let description = this.state.projectDescription;
+        let wrongCharMessage = "Please use only latin letters, numbers and special symbols"
+        if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
-                alertText: "Please use only latin letters, numbers and special symbols"
+                titleError: wrongCharMessage
             });
-            this.openModalAlert();
-        } else if(!this.isTitleUnique()) {
+        }
+        if (!regex.test(description)) {
             event.preventDefault();
             this.setState({
-                alertText: "This title already exists. Please, use only unique titles."
+                descriptionError: wrongCharMessage
             });
-            this.openModalAlert();
-        }else {
+        }
+        if (!this.isTitleUnique()) {
+            event.preventDefault();
+            this.setState({
+                titleError: "This title already exists. Please, use only unique titles"
+            });
+
+        } if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
             this.props.history.push("/dashboard/projects");
-            const { dispatch } = this.props;
-            dispatch(createProject({title: title, descr: descr}));
-            this.showNote();
+            const {dispatch} = this.props;
+            dispatch(createProject({title: title, description: description}));
         }
     }
 
 
     isTitleUnique() {
-        let projects = [
-            {title: "Title1", description: "something1"},
-            {title: "Title2", description: "something2"},
-            {title: "Title3", description: "something3"},
-            {title: "Title4", description: "something4"},
-            {title: "Title5", description: "something5"},
-            {title: "Title6", description: "something6"},
-            {title: "Title7", description: "something7"},
-            {title: "Title8", description: "something8"},
-            {title: "Title9", description: "something9"},
-            {title: "Title10", description: "something10"},
-        ];
+        //const { allProjects } = this.props.newProject.projects;
+
+        let projects = this.props.newProject.projects;
+
         let isUnique = true;
         let title = this.state.projectTitle;
         projects.forEach(function(item) {
@@ -95,35 +97,18 @@ class CreateProject extends Component {
         return (isUnique) ? true: false;
     }
 
-    showNote() {
-        const { dispatch } = this.props;
-        dispatch(showNote({show: true }))
-        setInterval(() => {
-            dispatch(showNote({show: false }))
-        }, 4000)
-    }
-
     isFieldsNotEmpty() {
         if (this.state.projectTitle || this.state.projectDescription) {
+            this.setState({
+                confirmText: "Are you sure you want to cancel without saving changes?"
+            });
             let confirm = this.openModalConfirm();
         } else {
             this.props.history.push("/dashboard/projects");
         }
     }
 
-    openModalAlert() {
-        this.setState({
-            showModalAlert: true
-        });
-    }
-
-    closeModalAlert() {
-        this.setState({
-            showModalAlert: false
-        });
-    }
-
-    openModalConfirm() {
+     openModalConfirm() {
         this.setState({
             showModalConfirm: true
         });
@@ -152,63 +137,59 @@ class CreateProject extends Component {
                 <div className="col-md-12">
                     <div className="title-block">
                         <h3 className="title">Create project</h3>
-                        <Link to="/dashboard/projects" onClick = {() => this.isFieldsNotEmpty()} className="title-description">
+                        <Link id="link-to-list"
+                              to="/dashboard/projects"
+                              onClick = {() => this.isFieldsNotEmpty()}
+                              className="title-description">
                             Back to list
                         </Link>
                     </div>
-                    <div className="card card-block sameheight-item">
-
-                        <form onSubmit={(event) => this.validateFormFields(event)}>
-                            <div className="form-gro1up">
-                                <label className="control-label">Project Title</label>
-                                <input
-                                    id="create-project-title"
-                                    type="text"
-                                    name="ProjectTitle"
-                                    placeholder='Input Title'
-                                    className="form-control boxed"
-                                    maxLength="60"
-                                    value={this.state.projectTitle}
-                                    onChange={(event) => this.handleTitleChange(event)}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="control-label">Project Description</label>
-                                <TextareaAutosize
-                                    id="create-project-descr"
-                                    name="ProjectDescription"
-                                    placeholder="Input Description"
-                                    className="form-control boxed"
-                                    maxLength="3000"
-                                    rows={10}
-                                    value={this.state.projectDescription}
-                                    onChange={(event) => this.handleDescrChange(event)}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <button
-                                    id="create-project-submitBtn"
-                                    type="submit"
-                                    className="btn btn-primary"
-                                    disabled={!this.state.projectTitle || !this.state.projectDescription }
-                                >Create</button>
-                                <button
-                                    id="create-project-resetBtn"
-                                    type="reset"
-                                    className="btn btn-primary create-project-btn"
-                                    onClick = {() => this.isFieldsNotEmpty()}
-                                >Cancel</button>
-                            </div>
-                        </form>
-                    </div>
+                    <form onSubmit={(event) => this.validateFormFields(event)}>
+                        <div className="form-group has-error">
+                            <label className="control-label">Project Title</label>
+                            <input
+                                id="create-project-title"
+                                type="text"
+                                name="title"
+                                placeholder='Input Title'
+                                className="form-control boxed"
+                                maxLength="60"
+                                value={this.state.projectTitle}
+                                onChange={(event) => this.handleTitleChange(event)}
+                                autoFocus
+                            />
+                            <span className="has-error error-message">{this.state.titleError}</span>
+                        </div>
+                        <div className="form-group form-field-margin">
+                            <label className="control-label">Project Description</label>
+                            <TextareaAutosize
+                                id="create-project-descr"
+                                name="description"
+                                placeholder="Input Description"
+                                className="form-control boxed"
+                                maxLength="3000"
+                                rows={10}
+                                value={this.state.projectDescription}
+                                onChange={(event) => this.handleDescrChange(event)}
+                            />
+                            <span className="has-error error-message">{this.state.descriptionError}</span>
+                        </div>
+                        <div className="form-group">
+                            <button
+                                id="create-project-submitBtn"
+                                type="submit"
+                                className="btn btn-primary"
+                                disabled={!this.state.projectTitle || !this.state.projectDescription }
+                            >Create</button>
+                            <button
+                                id="create-project-resetBtn"
+                                type="reset"
+                                className="btn btn-primary right-project-btn"
+                                onClick = {() => this.isFieldsNotEmpty()}
+                            >Cancel</button>
+                        </div>
+                    </form>
                 </div>
-                <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>{this.state.alertText}</p>
-                    </Modal.Body>
-                </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
                     <Modal.Header closeButton>
                     </Modal.Header>
@@ -216,8 +197,12 @@ class CreateProject extends Component {
                         <p>Are you sure you want to cancel without saving changes?</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => this.leaveForm()}>Cancel</Button>
-                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Save changes</Button>
+                        <Button
+                            id="modal-confirm-cancel"
+                            onClick={() => this.leaveForm()}>Cancel</Button>
+                        <Button
+                            id="modal-confirm-back"
+                            onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
@@ -226,9 +211,9 @@ class CreateProject extends Component {
 }
 
 function mapStateToProps (state) {
-  return {
-    newProject: state.project
-  }
+    return {
+        newProject: state.project
+    }
 }
 
 export default connect(mapStateToProps)(CreateProject);

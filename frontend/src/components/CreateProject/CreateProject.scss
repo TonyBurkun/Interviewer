@@ -2,10 +2,21 @@
   background-color: #f0f3f6;
 }
 
-.create-project-btn {
+.right-project-btn {
   margin-left:10px;
 }
+
 textarea {
   width: 200px;
   overflow-x:auto !important;
+}
+
+.form-field-margin {
+  margin-top: .5rem;
+}
+
+.error-message {
+  color: #FF4444;
+  font-size: 13px;
+  display: block !important;
 }

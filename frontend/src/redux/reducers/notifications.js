@@ -11,7 +11,6 @@ const initialState = {
 export default function project(state = initialState, action) {
     switch (action.type) {
         case SHOW_NOTE:
-            debugger
             return {...state,
                 newNote: {...state, isNoteVisible: action.payload.show}};
         default:

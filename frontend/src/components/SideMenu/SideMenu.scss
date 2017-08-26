@@ -1,4 +1,28 @@
-.activeLink {
+.activeLink, .parentActiveLink {
   background-color: #85CE36 !important;
   color: white !important;
+}
+
+
+#sidebar-menu {
+  li {
+    .collapse {
+      &.in{}
+      a.activeLink {
+        background: #333e48 !important;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.sidebar{
+  .nav{
+    li{
+      a:focus{
+        background-color: #333e48;
+      }
+    }
+  }
 }

@@ -118,7 +118,7 @@ class Login extends Component {
 
         return (
             <div className="auth">
-                <Modal show={this.state.showModal} onHide={this.closeModal}>
+                <Modal show={this.state.showModal} onHide={this.closeModal} id="noAccountModal">
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
@@ -146,13 +146,13 @@ class Login extends Component {
                                            id="password" placeholder="Your password" required/>
                                 </div>
                                 <div className="form-group submit-btn">
-                                    <button type="submit" className="btn btn-block btn-primary">Login</button>
+                                    <button type="submit" id="loginSubmit"  className="btn btn-block btn-primary">Login</button>
                                 </div>
                                 <div className="form-group forgot-pass">
-                                    <Link to="/forgotpassword" className="forgot-btn pull-right">Forgot password?</Link>
+                                    <Link to="/forgotpassword" className="forgot-btn" id="forgotPassBtn">Forgot password?</Link>
                                 </div>
                                 <div className="form-group no-account">
-                                    <p className="text-xs-center" onClick={this.openModal}>Do not have an account? Click here</p>
+                                    <p className="text-xs-center" id="noAccount" onClick={this.openModal}>Do not have an account? Click here</p>
                                 </div>
                             </form>
 
@@ -161,10 +161,10 @@ class Login extends Component {
                                     (C) Interviewer, 2017
                                 </li>
                                 <li>
-                                    <Link to="#">Terms of service</Link>
+                                    <Link to="#" id="termsService">Terms of service</Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Help Center</Link>
+                                    <Link to="#" id="helpCenter">Help Center</Link>
                                 </li>
                             </ul>
                         </div>
