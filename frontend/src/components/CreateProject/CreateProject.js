@@ -1,10 +1,12 @@
-import React, {Component, PropTypes} from "react";
+import React, {Component} from "react";
 import TextareaAutosize from "react-autosize-textarea";
+import Helmet from "react-helmet"
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 import {connect} from "react-redux";
 import {createProject} from "../../redux/actions/projectActions";
+
 
 class CreateProject extends Component {
 
@@ -133,78 +135,87 @@ class CreateProject extends Component {
 
     render() {
         return (
-            <div className="row sameheight-container">
-                <div className="col-md-12">
-                    <div className="title-block">
-                        <h3 className="title">Create project</h3>
-                        <Link id="link-to-list"
-                              to="/dashboard/projects"
-                              onClick = {() => this.isFieldsNotEmpty()}
-                              className="title-description">
-                            Back to list
-                        </Link>
+            <div>
+                <Helmet>
+                    <title>Create Project</title>
+                </Helmet>
+                <div className="row sameheight-container">
+                    <div className="col-md-12">
+                        <div className="title-block">
+                            <h3 className="title">Create project</h3>
+                            <Link id="link-to-list"
+                                  to="/dashboard/projects"
+                                  onClick={() => this.isFieldsNotEmpty()}
+                                  className="title-description">
+                                Back to list
+                            </Link>
+                        </div>
+                        <form onSubmit={(event) => this.validateFormFields(event)}>
+                            <div className="form-group has-error">
+                                <label className="control-label form-label">Project Title</label>
+                                <p className="form-sublabel"><small>Maximum 60 characters</small></p>
+                                <input
+                                    id="create-project-title"
+                                    type="text"
+                                    name="title"
+                                    placeholder='Input Title'
+                                    className="form-control boxed"
+                                    maxLength="60"
+                                    value={this.state.projectTitle}
+                                    onChange={(event) => this.handleTitleChange(event)}
+                                    autoFocus
+                                />
+                                <span className="has-error error-message">{this.state.titleError}</span>
+                            </div>
+                            <div className="form-group form-field-margin">
+                                <label className="control-label form-label">Project Description</label>
+                                <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
+                                <TextareaAutosize
+                                    id="create-project-descr"
+                                    name="description"
+                                    placeholder="Input Description"
+                                    className="form-control boxed"
+                                    maxLength="3000"
+                                    rows={10}
+                                    value={this.state.projectDescription}
+                                    onChange={(event) => this.handleDescrChange(event)}
+                                />
+                                <span className="has-error error-message">{this.state.descriptionError}</span>
+                            </div>
+                            <div className="form-group">
+                                <button
+                                    id="create-project-submitBtn"
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    disabled={!this.state.projectTitle || !this.state.projectDescription }
+                                >Create
+                                </button>
+                                <button
+                                    id="create-project-resetBtn"
+                                    type="reset"
+                                    className="btn btn-primary right-project-btn"
+                                    onClick={() => this.isFieldsNotEmpty()}
+                                >Cancel
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <form onSubmit={(event) => this.validateFormFields(event)}>
-                        <div className="form-group has-error">
-                            <label className="control-label">Project Title</label>
-                            <input
-                                id="create-project-title"
-                                type="text"
-                                name="title"
-                                placeholder='Input Title'
-                                className="form-control boxed"
-                                maxLength="60"
-                                value={this.state.projectTitle}
-                                onChange={(event) => this.handleTitleChange(event)}
-                                autoFocus
-                            />
-                            <span className="has-error error-message">{this.state.titleError}</span>
-                        </div>
-                        <div className="form-group form-field-margin">
-                            <label className="control-label">Project Description</label>
-                            <TextareaAutosize
-                                id="create-project-descr"
-                                name="description"
-                                placeholder="Input Description"
-                                className="form-control boxed"
-                                maxLength="3000"
-                                rows={10}
-                                value={this.state.projectDescription}
-                                onChange={(event) => this.handleDescrChange(event)}
-                            />
-                            <span className="has-error error-message">{this.state.descriptionError}</span>
-                        </div>
-                        <div className="form-group">
-                            <button
-                                id="create-project-submitBtn"
-                                type="submit"
-                                className="btn btn-primary"
-                                disabled={!this.state.projectTitle || !this.state.projectDescription }
-                            >Create</button>
-                            <button
-                                id="create-project-resetBtn"
-                                type="reset"
-                                className="btn btn-primary right-project-btn"
-                                onClick = {() => this.isFieldsNotEmpty()}
-                            >Cancel</button>
-                        </div>
-                    </form>
+                    <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                        <Modal.Header closeButton>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p>Are you sure you want to cancel without saving changes?</p>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button
+                                id="modal-confirm-cancel"
+                                onClick={() => this.leaveForm()}>Cancel</Button>
+                            <Button
+                                id="modal-confirm-back"
+                                onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
-                <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>Are you sure you want to cancel without saving changes?</p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button
-                            id="modal-confirm-cancel"
-                            onClick={() => this.leaveForm()}>Cancel</Button>
-                        <Button
-                            id="modal-confirm-back"
-                            onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
-                    </Modal.Footer>
-                </Modal>
             </div>
         )
     }
