@@ -43,11 +43,6 @@ class SideMenu extends Component {
 
         let clickItem = event.target;
 
-        if (clickItem.tagName !== 'A'){
-            clickItem = clickItem.parentNode;
-        }
-
-
         let closeAllCollapseItems = () => {
             let menu = document.getElementById('sidebar-menu');
             menu.querySelectorAll('li').forEach(function (item) {
@@ -58,7 +53,6 @@ class SideMenu extends Component {
                 }
             });
         };
-
 
 
         if (!clickItem.parentNode.parentNode.classList.contains('collapse')){
@@ -81,7 +75,7 @@ class SideMenu extends Component {
 
     render() {
 
-        let changeMenuItems = () => {
+        var changeMenuItems = () => {
             let pathName = window.location.pathname;
 
             if (pathName.indexOf('/settings') === 0) {

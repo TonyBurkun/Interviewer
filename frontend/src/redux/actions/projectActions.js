@@ -1,4 +1,6 @@
 import fetch from "isomorphic-fetch";
+// import 'whatwg-fetch';
+// import Promise from 'promise-polyfill';
 import {showNote} from "../../redux/actions/notificationActions";
 
 export const CREATE_PROJECT = "CREATE_PROJECT";

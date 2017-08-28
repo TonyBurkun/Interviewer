@@ -1,12 +1,9 @@
 import React, {Component} from "react";
-import { browserHistory } from "react-router-dom";
-import {IndexLink} from "react-router-dom";
-import {Link} from "react-router-dom";
+import {browserHistory, Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectDetails.css";
 import {connect} from "react-redux";
-import {removeProject} from "../../redux/actions/projectActions";
-import {showProjects} from "../../redux/actions/projectActions";
+import {removeProject, showProjects} from "../../redux/actions/projectActions";
 
 
 class ProjectDetails extends Component {
