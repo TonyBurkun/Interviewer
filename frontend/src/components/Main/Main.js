@@ -5,7 +5,7 @@ import SideMenu from './../SideMenu';
 import Interviewers from './../Interviewers';
 import InterviewsUpcoming from '../InterviewsUpcoming';
 import InterviewsCompleted from '../InterviewsCompleted';
-import Seekers from './../Seekers';
+import Candidates from './../Candidates';
 import VacanciesOpen from './../VacanciesOpen';
 import VacanciesClosed from './../VacanciesClosed';
 import CreateProject from './../CreateProject';
@@ -81,9 +81,9 @@ class Main extends Component {
                                 component={Interviewers}
                             />
                             <Route
-                                exact path="/dashboard/seekers"
-                                name="Seekers"
-                                component={Seekers}
+                                exact path="/dashboard/candidates"
+                                name="Candidates"
+                                component={Candidates}
                             />
                             <Route
                                 exact path="/dashboard/vacancies_open"

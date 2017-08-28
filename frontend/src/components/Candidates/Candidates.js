@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import './seekers.css';
+import './candidates.css';
 
-class Seekers extends Component{
+class Candidates extends Component{
     render(){
         return (
             <div className="bcgr">
                 <div className="row sameheight-container">
                     <div className="col-md-12">
                         <div className="title-block">
-                            <h3 className="title">Seekers</h3>
+                            <h3 className="title">Candidates</h3>
                         </div>
                     </div>
                 </div>
@@ -18,4 +17,4 @@ class Seekers extends Component{
     }
 }
 
-export default Seekers;
+export default Candidates;

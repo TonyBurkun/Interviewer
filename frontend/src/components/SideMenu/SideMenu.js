@@ -142,8 +142,8 @@ class SideMenu extends Component {
                             </ul>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/seekers" activeClassName='activeLink'>
-                                <i className="fa fa-address-card-o"></i> Seekers
+                            <NavLink to="/dashboard/candidates" activeClassName='activeLink'>
+                                <i className="fa fa-address-card-o"></i> Candidates
                             </NavLink>
                         </li>
                         <li>
