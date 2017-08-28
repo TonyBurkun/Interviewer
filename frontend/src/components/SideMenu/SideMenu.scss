@@ -6,6 +6,9 @@
 
 #sidebar-menu {
   li {
+    a {
+      cursor: pointer;
+    }
     .collapse {
       &.in{}
       a.activeLink {

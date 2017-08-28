@@ -10,108 +10,154 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            showModal: false
+            showModal: false,
+            emailIsEmpty: true
         };
 
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    openModal(){
+    openModal() {
         this.setState({
             showModal: true
         });
     }
 
-    closeModal(){
+    closeModal() {
         this.setState({
             showModal: false
         });
     }
 
 
-
-
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
 
-        let currentForm = event.target;
+        let currentForm = event.target,
+            email = this.refs.login_email,
+            password = this.refs.login_password;
 
-        //-----------------------------------------
-        // THIS CODE WAS USED FOR CUSTOM VALIDATION
-        //-----------------------------------------
-        // var formValidation = {
-        //
-        //     getRequiredFields: function(currentForm){
-        //         let allRequiredField = currentForm.querySelectorAll('.required');
-        //         return allRequiredField;
-        //     },
-        //
-        //     getAllFields: function(currentForm){
-        //         let allFields = currentForm.querySelectorAll('.form-control');
-        //         return allFields;
-        //     },
-        //
-        //     checkFields: function (allRequiredField) {
-        //         let that = this;
-        //
-        //         allRequiredField = Array.prototype.slice.call(allRequiredField);
-        //
-        //         allRequiredField.every(function (item) {
-        //
-        //
-        //             let oneFormGroup = item.parentNode;
-        //
-        //             if (item.value === ''){
-        //                 that.addError(oneFormGroup);
-        //                 return false;
-        //             } else {
-        //
-        //                 let fieldAttribute = item.getAttribute('type');
-        //                 console.log(fieldAttribute);
-        //
-        //                 if (fieldAttribute === 'email'){
-        //                     that.removeError(oneFormGroup);
-        //                     return true;
-        //                    // let emailFieldValue = item.value,
-        //                    //     regext = /.+@.+\..+/i;
-        //
-        //                 } else {
-        //                     that.removeError(oneFormGroup);
-        //                     return true;
-        //                 }
-        //             }
-        //         });
-        //
-        //     },
-        //
-        //     addError: function (field) {
-        //         if (!field.classList.contains('has-error')) {
-        //             let error = document.createElement('span');
-        //             error.className = 'fa fa-times form-control-feedback';
-        //             field.classList.add('has-error');
-        //             field.appendChild(error);
-        //         }
-        //     },
-        //
-        //     removeError: function (field) {
-        //         if (field.classList.contains('has-error')) {
-        //             let error = field.querySelector('.fa.fa-times.form-control-feedback');
-        //             field.classList.remove('has-error');
-        //             field.removeChild(error);
-        //         }
-        //     }
-        //
-        //
-        // };
-        //
-        // let requireFields = formValidation.getRequiredFields(currentForm);
-        // formValidation.checkFields(requireFields);
-        //---------------------
-        //END CUSTOM VALIDATION
-        //---------------------
+        let loginValidationSettings = {
+            rules: {
+                email: {
+                    required: true,
+                    isEmail: true
+                },
+                password: {
+                    required: true
+                }
+            },
+            messages: {
+                email: {
+                    required: "Please enter email",
+                    email: "Please enter a valid email address"
+                },
+                password: {
+                    required: "Please enter password"
+                }
+            }
+        };
+
+        let validate = (loginValidationSettings, email, password, currentForm) => {
+
+            let emailIsEmpty = true,
+                isEmail = false,
+                passwordIsEmpty = true;
+
+            removeAllErrorMessage(currentForm);
+
+            if (loginValidationSettings.rules.email.required) {
+                if (email.value.trim() === '') {
+
+
+                    let errorElem = document.createElement('span');
+                    errorElem.innerHTML = loginValidationSettings.messages.email.required;
+                    errorElem.classList.add('has-error');
+
+                    email.parentNode.classList.add('has-error');
+                    email.parentNode.appendChild(errorElem);
+
+                    emailIsEmpty = true;
+
+                } else {
+                    emailIsEmpty = false;
+                }
+            }else{
+                emailIsEmpty = false;
+            }
+
+            if (!emailIsEmpty) {
+                if (loginValidationSettings.rules.email.isEmail) {
+                    let emailValue = email.value;
+                    let result = emailValue.match(/^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
+
+                    if (!result) {
+
+                        let errorElem = document.createElement('span');
+                        errorElem.innerHTML = loginValidationSettings.messages.email.email;
+                        errorElem.classList.add('has-error');
+
+                        email.parentNode.classList.add('has-error');
+                        email.parentNode.appendChild(errorElem);
+                        isEmail = false;
+                    } else {
+                        isEmail = true;
+                    }
+
+                }else{
+                    isEmail = true;
+                }
+            }
+
+            if (isEmail) {
+                if (loginValidationSettings.rules.password.required) {
+                    if (password.value === '') {
+
+                        let errorElem = document.createElement('span');
+                        errorElem.innerHTML = loginValidationSettings.messages.password.required;
+                        errorElem.classList.add('has-error');
+
+                        password.parentNode.classList.add('has-error');
+                        password.parentNode.appendChild(errorElem);
+                        passwordIsEmpty = true;
+                    } else {
+                        passwordIsEmpty = false;
+                    }
+                }else{
+                    passwordIsEmpty = false;
+                }
+            }
+
+        };
+
+        if (!Element.prototype.remove) {
+            Element.prototype.remove = function remove() {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            };
+        }
+
+        let removeAllErrorMessage = (currentForm) => {
+            console.log(currentForm);
+            let allErrorMessages =  currentForm.querySelectorAll('span.has-error'),
+                allErrorTitles = currentForm.querySelectorAll('div.has-error');
+
+            for (let i = 0; i < allErrorTitles.length; i++){
+                allErrorTitles[i].classList.remove('has-error');
+            }
+
+            for (let i = 0; i < allErrorMessages.length; i++) {
+                allErrorMessages[i].remove();
+            }
+        };
+
+
+        validate(loginValidationSettings, email, password, currentForm);
+
     }
 
     render() {
@@ -122,7 +168,8 @@ class Login extends Component {
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>In order to get access to Interviewer app please contact your system administrator or HR department</p>
+                        <p>In order to get access to Interviewer app please contact your system administrator or HR
+                            department</p>
                     </Modal.Body>
                 </Modal>
                 <div className="auth-container">
@@ -136,23 +183,28 @@ class Login extends Component {
                             <p className="text-xs-center">LOGIN TO CONTINUE</p>
                             <form id="login-form" onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="username">Username</label>
-                                    <input type="email" className="form-control underlined required" name="username"
-                                           id="username" placeholder="Your email address" maxLength='60' required/>
+                                    <label htmlFor="email">Email</label>
+                                    <input type="text" className="form-control underlined required" name="email"
+                                           id="username" placeholder="Your email address" maxLength='60'
+                                           ref='login_email'/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="password">Password</label>
                                     <input type="password" className="form-control underlined required" name="password"
-                                           id="password" placeholder="Your password" required/>
+                                           id="password" placeholder="Your password" maxLength='30'
+                                           ref="login_password"/>
                                 </div>
                                 <div className="form-group submit-btn">
-                                    <button type="submit" id="loginSubmit"  className="btn btn-block btn-primary">Login</button>
+                                    <button type="submit" id="loginSubmit" className="btn btn-block btn-primary">Login
+                                    </button>
                                 </div>
                                 <div className="form-group forgot-pass">
-                                    <Link to="/forgotpassword" className="forgot-btn" id="forgotPassBtn">Forgot password?</Link>
+                                    <Link to="/forgotpassword" className="forgot-btn" id="forgotPassBtn">Forgot
+                                        password?</Link>
                                 </div>
                                 <div className="form-group no-account">
-                                    <p className="text-xs-center" id="noAccount" onClick={this.openModal}>Do not have an account? Click here</p>
+                                    <p className="text-xs-center" id="noAccount" onClick={this.openModal}>Do not have an
+                                        account? Click here</p>
                                 </div>
                             </form>
 

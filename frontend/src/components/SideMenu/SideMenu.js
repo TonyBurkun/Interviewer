@@ -75,7 +75,7 @@ class SideMenu extends Component {
 
     render() {
 
-        var changeMenuItems = () => {
+        let changeMenuItems = () => {
             let pathName = window.location.pathname;
 
             if (pathName.indexOf('/settings') === 0) {
