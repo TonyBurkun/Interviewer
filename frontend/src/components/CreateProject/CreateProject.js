@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import autosize from 'autosize';
 import TextareaAutosize from "react-autosize-textarea";
 import Helmet from "react-helmet"
 import {Link} from "react-router-dom";
@@ -42,6 +43,12 @@ class CreateProject extends Component {
     //-------------------------------------
     //      End of the code
     //--------------------------------------
+
+    componentDidMount(){
+        this.textarea.focus();
+        autosize(this.textarea);
+    }
+
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
@@ -170,17 +177,27 @@ class CreateProject extends Component {
                             <div className="form-group form-field-margin">
                                 <label className="control-label form-label">Project Description</label>
                                 <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
-                                <TextareaAutosize
+                                <textarea
                                     id="create-project-descr"
-                                    name="description"
+                                    ref={c=>this.textarea=c}
                                     placeholder="Input Description"
                                     className="form-control boxed"
-                                    maxLength="3000"
                                     rows={10}
+                                    maxLength="3000"
                                     value={this.state.projectDescription}
                                     onChange={(event) => this.handleDescrChange(event)}
                                 />
-                                <span className="has-error error-message">{this.state.descriptionError}</span>
+                                {/*<TextareaAutosize*/}
+                                    {/*id="create-project-descr"*/}
+                                    {/*name="description"*/}
+                                    {/*placeholder="Input Description"*/}
+                                    {/*className="form-control boxed"*/}
+                                    {/*maxLength="3000"*/}
+                                    {/*rows={10}*/}
+                                    {/*value={this.state.projectDescription}*/}
+                                    {/*onChange={(event) => this.handleDescrChange(event)}*/}
+                                {/*/>*/}
+                                {/*<span className="has-error error-message">{this.state.descriptionError}</span>*/}
                             </div>
                             <div className="form-group">
                                 <button
