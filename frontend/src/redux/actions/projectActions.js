@@ -61,15 +61,15 @@ export function showProjects() {
 }
 
 
-function deleteProjects(date) {
-    return { type: SHOW_PROJECTS, payload: date};
+function deleteProjects(projects) {
+    return { type: REMOVE_PROJECT, payload: projects};
 }
 
 export function removeProject(date) {
     return (dispatch) => {
-        fetch('/api/v1/projects',
+        fetch('/api/v1/projects/' + date.id,
             {
-                method: 'post',
+                method: 'delete',
                 body: JSON.stringify(date),
                 headers: {
                     "Content-Type": "application/json"
@@ -78,17 +78,38 @@ export function removeProject(date) {
             .then(res =>
                 res.json()
             )
-            .then(date => {
-                dispatch(deleteProjects(date));
+            .then(projects => {
+                dispatch(deleteProjects(projects));
+            })
+            .catch(function(err) {
+                alert('Error:'+ err);
             });
     };
 }
 
 
-export function updateProject() {
+function refreshProjects(projects) {
+    return { type: UPDATE_PROJECT, payload: projects};
+}
+
+export function updateProject(date) {
     return (dispatch) => {
-        dispatch({
-            type: UPDATE_PROJECT
-        })
-    }
+        fetch('/api/v1/projects/' + date.id,
+            {
+                method: 'put',
+                body: JSON.stringify(date),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res =>
+                res.json()
+            )
+            .then(projects => {
+                dispatch(refreshProjects(projects));
+            })
+            .catch(function(err) {
+                alert('Error:'+ err);
+            });
+    };
 }

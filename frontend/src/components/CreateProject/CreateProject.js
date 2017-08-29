@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import autosize from 'autosize';
 import TextareaAutosize from "react-autosize-textarea";
-import Helmet from "react-helmet"
+import Helmet from "react-helmet";
 import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
@@ -44,12 +43,6 @@ class CreateProject extends Component {
     //      End of the code
     //--------------------------------------
 
-    componentDidMount(){
-        this.textarea.focus();
-        autosize(this.textarea);
-    }
-
-
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
         this.setState({titleError: ""});
@@ -64,7 +57,7 @@ class CreateProject extends Component {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
-        let wrongCharMessage = "Please use only latin letters, numbers and special symbols"
+        let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
         if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
@@ -90,12 +83,8 @@ class CreateProject extends Component {
         }
     }
 
-
     isTitleUnique() {
-        //const { allProjects } = this.props.newProject.projects;
-
         let projects = this.props.newProject.projects;
-
         let isUnique = true;
         let title = this.state.projectTitle;
         projects.forEach(function(item) {
@@ -117,7 +106,7 @@ class CreateProject extends Component {
         }
     }
 
-     openModalConfirm() {
+    openModalConfirm() {
         this.setState({
             showModalConfirm: true
         });
@@ -177,34 +166,24 @@ class CreateProject extends Component {
                             <div className="form-group form-field-margin">
                                 <label className="control-label form-label">Project Description</label>
                                 <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
-                                <textarea
+                                <TextareaAutosize
                                     id="create-project-descr"
-                                    ref={c=>this.textarea=c}
+                                    name="description"
                                     placeholder="Input Description"
                                     className="form-control boxed"
-                                    rows={10}
                                     maxLength="3000"
+                                    rows={10}
                                     value={this.state.projectDescription}
                                     onChange={(event) => this.handleDescrChange(event)}
                                 />
-                                {/*<TextareaAutosize*/}
-                                    {/*id="create-project-descr"*/}
-                                    {/*name="description"*/}
-                                    {/*placeholder="Input Description"*/}
-                                    {/*className="form-control boxed"*/}
-                                    {/*maxLength="3000"*/}
-                                    {/*rows={10}*/}
-                                    {/*value={this.state.projectDescription}*/}
-                                    {/*onChange={(event) => this.handleDescrChange(event)}*/}
-                                {/*/>*/}
-                                {/*<span className="has-error error-message">{this.state.descriptionError}</span>*/}
+                                <span className="has-error error-message">{this.state.descriptionError}</span>
                             </div>
                             <div className="form-group">
                                 <button
                                     id="create-project-submitBtn"
                                     type="submit"
                                     className="btn btn-primary"
-                                    disabled={!this.state.projectTitle || !this.state.projectDescription }
+                                    disabled={!this.state.projectTitle || !this.state.projectDescription}
                                 >Create
                                 </button>
                                 <button

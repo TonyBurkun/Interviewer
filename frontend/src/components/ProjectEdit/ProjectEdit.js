@@ -5,7 +5,7 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
-import {showProjects} from "../../redux/actions/projectActions";
+import {updateProject, showProjects} from "../../redux/actions/projectActions";
 
 class ProjectEdit extends Component {
 
@@ -15,35 +15,35 @@ class ProjectEdit extends Component {
             projectTitle: "",
             projectDescription: "",
             showModalConfirm: false,
-            showModaLCreateAlert: false,
-            alertText: "",
-            confirmText: ""
+            confirmText: "",
+            titleError:"",
+            descriptionError: "",
+            currentProject: ""
+
         }
     }
 
     componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects())
+        dispatch(showProjects());
+        let projects  = this.props.newProject.projects;
+        let projectId = this.props.match.params.id;
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        this.setState({currentProject: currentProject});
+        this.setState({projectTitle: currentProject.title});
+        this.setState({projectDescription: currentProject.description});
+
     }
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
+        this.setState({descriptionError:""});
     }
 
     handleDescrChange(event) {
+
         this.setState({projectDescription: event.target.value});
-    }
-
-    openModalAlert() {
-        this.setState({
-            showModalAlert: true
-        });
-    }
-
-    closeModalAlert() {
-        this.setState({
-            showModalAlert: false
-        });
+        this.setState({descriptionError:""});
     }
 
     showMConfirmMessage() {
@@ -67,53 +67,36 @@ class ProjectEdit extends Component {
 
     leaveEdit() {
         this.closeModalConfirm();
-        this.props.history.push("/dashboard/projects/project");
+        this.props.history.push("/dashboard/projects/project/" + this.state.currentProject.id);
     }
 
     validateFormFields(event) {
         let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let id = this.state.currentProject.id;
         let title = this.state.projectTitle;
-        let descr = this.state.projectDescription;
-        if (!regex.test(descr) || !regex.test(title)) {
+        let description = this.state.projectDescription;
+        let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
+        if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
-                alertText: "Please use only latin letters, numbers and special symbols"
+                titleError: wrongCharMessage
             });
-            this.openModalAlert();
-        } else if(!this.isTitleUnique()) {
+        }
+        if (!regex.test(description)) {
             event.preventDefault();
             this.setState({
-                alertText: "This title already exists. Please, use only unique titles."
+                descriptionError: wrongCharMessage
             });
-            this.openModalAlert();
-        }else {
-            this.props.history.push("/dashboard/projects/project");
+        }
+        if (regex.test(title) && regex.test(description)) {
+            this.props.history.push("/dashboard/projects");
+            const {dispatch} = this.props;
+            dispatch(updateProject({id: id, title: title, description: description}));
+            this.props.history.push("/dashboard/projects/");
         }
     }
 
-    isTitleUnique() {
-        let projects = this.props.newProject.projects;
-
-        let isUnique = true;
-        let title = this.state.projectTitle;
-        projects.forEach(function(item) {
-            if (item.title === title) {
-                isUnique = false;
-            }
-        });
-        return (isUnique) ? true: false;
-    }
-
     render() {
-        let projects = this.props.newProject.projects;
-        console.log(projects);
-
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
-
-        // this.setState({projectTitle: currentProject.title});
-        // this.setState({projectDescription: currentProject.description});
-
         return (
             <div>
                 <div className="row sameheight-container">
@@ -121,25 +104,27 @@ class ProjectEdit extends Component {
 
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="title-block">
-                                <input // will transform to h3 with className="tittle"
-                                    className="title form-control boxed"
-                                    value={currentProject.title}
+                                <input
+                                    className="title form-control boxed "
+                                    value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
                                     autoFocus
                                 />
+                                <span className="error-message">{this.state.titleError}</span>
                                 <Link to="/dashboard/projects" className="title-description">
                                     Back to list
                                 </Link>
                             </div>
-                            <div className="card card-default">
-                                <TextareaAutosize // will transform to div with className="card-block"
-                                    className="form-control boxed card-block"
+                                <TextareaAutosize
+                                    className="form-control boxed"
                                     maxLength="3000"
                                     rows={10}
-                                    value={currentProject.description}
+                                    value={this.state.projectDescription}
                                     onChange={(event) => this.handleDescrChange(event)}
                                 />
-                            </div>
+                                <span className="error-message project-edit-error">
+                                    {this.state.descriptionError}</span>
+
                             <div className="form-group">
                                 <button
                                     type="submit"
@@ -149,20 +134,13 @@ class ProjectEdit extends Component {
                                 <button
                                     type="reset"
                                     className="btn btn-primary right-project-btn"
-                                    onClick={() => this.showMConfirmMessage()}
+                                    onClick={()=> this.showMConfirmMessage()}
                                 >Cancel
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <Modal show={this.state.showModalAlert} onHide={() => this.closeModalAlert()}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p>{this.state.alertText}</p>
-                    </Modal.Body>
-                </Modal>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
                     <Modal.Header closeButton>
                     </Modal.Header>

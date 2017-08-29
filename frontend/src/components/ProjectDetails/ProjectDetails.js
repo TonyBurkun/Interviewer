@@ -13,13 +13,21 @@ class ProjectDetails extends Component {
         this.state = {
             showModalConfirm: false,
             projectTitle: "",
-            projectDescription: ""
+            projectDescription: "",
+            currentProject: ""
         }
     }
 
     componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects())
+        dispatch(showProjects());
+        let projects  = this.props.newProject.projects;
+        let projectId = this.props.match.params.id;
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        this.setState({currentProject: currentProject});
+        this.setState({projectTitle: currentProject.title});
+        this.setState({projectDescription: currentProject.description});
+
     }
 
     switchToEditMode() {
@@ -40,37 +48,39 @@ class ProjectDetails extends Component {
     }
 
     deleteProject(){
+        this.closeModalConfirm()
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         const {dispatch} = this.props;
-        dispatch(removeProject({title: title, description: description}))
+        dispatch(removeProject(this.state.currentProject));
+        this.props.history.push("/dashboard/projects/");
     }
 
 
     render() {
-        let projects  = this.props.newProject.projects;
+        {/*let projects  = this.props.newProject.projects;*/}
 
 
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
-        //console.log(currentProject)
-
-        // this.setState({projectTitle: currentProject.title});
-        // this.setState({projectDescription: currentProject.description});
+        // let projectId = this.props.match.params.id;
+        // let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        // //console.log(currentProject)
+        //
+        // // this.setState({projectTitle: currentProject.title});
+        // // this.setState({projectDescription: currentProject.description});
 
         return (
             <div>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            <h3 className="title">{currentProject.title}</h3>
+                            <h3 className="title">{this.state.projectTitle}</h3>
                             <Link to="/dashboard/projects" className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block">
-                                    {currentProject.description}
+                                    {this.state.projectDescription}
                                 </div>
                         </div>
                         <div className="form-group">

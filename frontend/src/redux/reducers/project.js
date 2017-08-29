@@ -21,12 +21,11 @@ export default function project(state = initialState, action) {
                 }
             };
         case SHOW_PROJECTS:
-            return { ...state, projects: action.payload}
-
+            return { ...state, projects: action.payload};
         case REMOVE_PROJECT:
-            return {...state, email: '', auth: false};
+            return { ...state, projects: action.payload};
         case UPDATE_PROJECT:
-            return {...state, email: '', auth: false};
+            return { ...state, projects: action.payload};
         default:
             return state;
     }

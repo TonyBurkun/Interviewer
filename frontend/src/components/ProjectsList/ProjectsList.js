@@ -12,6 +12,7 @@ class ProjectsList extends Component {
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(showProjects())
+
     }
 
     onDismiss() {
@@ -20,19 +21,17 @@ class ProjectsList extends Component {
     }
 
     render() {
-       // const { allProjects } = this.props.newProject.projects;
 
         let projects = this.props.newProject.projects;
-
+        // console.log(this.props.newProject.projects);
 
             let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
         };
 
-       let sortedProjects = projects.sort(compareTitle);
-
-        const projectsToDisplay = sortedProjects.map((value, index) =>
+        let sortedProjects = projects.sort(compareTitle);
+        const projectsToDisplay = projects.map((value, index) =>
 
             <div key={index}>
                 <div className="row">
