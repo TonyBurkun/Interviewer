@@ -47,7 +47,11 @@ class Login extends Component {
                     isEmail: true
                 },
                 password: {
-                    required: true
+                    required: true,
+                    minLength: {
+                        checkMinLength: true,
+                        minLengthVal: 6
+                    }
                 }
             },
             messages: {
@@ -56,7 +60,8 @@ class Login extends Component {
                     email: "Please enter a valid email address"
                 },
                 password: {
-                    required: "Please enter password"
+                    required: "Please enter password",
+                    minLength: "Password should contain minimum 6 characters"
                 }
             }
         };
@@ -65,7 +70,8 @@ class Login extends Component {
 
             let emailIsEmpty = true,
                 isEmail = false,
-                passwordIsEmpty = true;
+                passwordIsEmpty = true,
+                minLengthPass = false;
 
             removeAllErrorMessage(currentForm);
 
@@ -85,7 +91,7 @@ class Login extends Component {
                 } else {
                     emailIsEmpty = false;
                 }
-            }else{
+            } else {
                 emailIsEmpty = false;
             }
 
@@ -107,7 +113,7 @@ class Login extends Component {
                         isEmail = true;
                     }
 
-                }else{
+                } else {
                     isEmail = true;
                 }
             }
@@ -126,8 +132,28 @@ class Login extends Component {
                     } else {
                         passwordIsEmpty = false;
                     }
-                }else{
+
+                } else {
                     passwordIsEmpty = false;
+                }
+            }
+
+            if (!passwordIsEmpty) {
+                if (loginValidationSettings.rules.password.minLength.checkMinLength) {
+                    if (password.value.length < loginValidationSettings.rules.password.minLength.minLengthVal) {
+                        let errorElem = document.createElement('span');
+                        errorElem.innerHTML = loginValidationSettings.messages.password.minLength;
+                        errorElem.classList.add('has-error');
+
+                        password.parentNode.classList.add('has-error');
+                        password.parentNode.appendChild(errorElem);
+                        minLengthPass = false;
+                    } else {
+                        minLengthPass = true;
+                    }
+
+                } else {
+                    minLengthPass = true;
                 }
             }
 
@@ -143,10 +169,10 @@ class Login extends Component {
 
         let removeAllErrorMessage = (currentForm) => {
             console.log(currentForm);
-            let allErrorMessages =  currentForm.querySelectorAll('span.has-error'),
+            let allErrorMessages = currentForm.querySelectorAll('span.has-error'),
                 allErrorTitles = currentForm.querySelectorAll('div.has-error');
 
-            for (let i = 0; i < allErrorTitles.length; i++){
+            for (let i = 0; i < allErrorTitles.length; i++) {
                 allErrorTitles[i].classList.remove('has-error');
             }
 
