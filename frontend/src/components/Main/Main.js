@@ -61,7 +61,7 @@ class Main extends Component {
                             />
 
                             <Route
-                                exact path="/dashboard/projects/project/:id/edit/:id"
+                                exact path="/dashboard/projects/project/:id/edit"
                                 name="Project Edit"
                                 component={ProjectEdit}
                             />

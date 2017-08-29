@@ -12,8 +12,8 @@ class ProjectEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            projectTitle: "Project Title",
-            projectDescription: "Lorem ipsum dolor sit amet, nulla quam sapien praesent purus commodo nascetur",
+            projectTitle: "",
+            projectDescription: "",
             showModalConfirm: false,
             showModaLCreateAlert: false,
             alertText: "",
@@ -106,10 +106,13 @@ class ProjectEdit extends Component {
 
     render() {
         let projects = this.props.newProject.projects;
-        console.log(projects)
+        console.log(projects);
 
         let projectId = this.props.match.params.id;
         let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+
+        // this.setState({projectTitle: currentProject.title});
+        // this.setState({projectDescription: currentProject.description});
 
         return (
             <div>

@@ -23,7 +23,8 @@ class ProjectDetails extends Component {
     }
 
     switchToEditMode() {
-        this.props.history.push("/dashboard/projects/project/edit");
+        let projectId = this.props.match.params.id;
+        this.props.history.push("/dashboard/projects/project/" + projectId + "/edit");
     }
 
     openModalConfirm() {
