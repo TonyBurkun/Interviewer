@@ -5,8 +5,7 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
-import { showNote } from '../../redux/actions/notificationActions';
-
+import {showProjects} from "../../redux/actions/projectActions";
 
 class ProjectEdit extends Component {
 
@@ -20,6 +19,11 @@ class ProjectEdit extends Component {
             alertText: "",
             confirmText: ""
         }
+    }
+
+    componentWillMount() {
+        const {dispatch} = this.props;
+        dispatch(showProjects())
     }
 
     handleTitleChange(event) {
