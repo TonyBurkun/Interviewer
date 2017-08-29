@@ -168,7 +168,7 @@ class Login extends Component {
         }
 
         let removeAllErrorMessage = (currentForm) => {
-
+            console.log(currentForm);
             let allErrorMessages = currentForm.querySelectorAll('span.has-error'),
                 allErrorTitles = currentForm.querySelectorAll('div.has-error');
 
