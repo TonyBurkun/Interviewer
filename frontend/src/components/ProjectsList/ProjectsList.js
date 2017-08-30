@@ -31,7 +31,7 @@ class ProjectsList extends Component {
         };
 
         let sortedProjects = projects.sort(compareTitle);
-        const projectsToDisplay = projects.map((value, index) =>
+        const projectsToDisplay = sortedProjects.map((value, index) =>
 
             <div key={index}>
                 <div className="row">
