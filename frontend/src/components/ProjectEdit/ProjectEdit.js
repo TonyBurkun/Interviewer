@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {IndexLink} from "react-router-dom";
 import {Link} from "react-router-dom";
+import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
@@ -28,7 +29,7 @@ class ProjectEdit extends Component {
         dispatch(showProjects());
         let projects  = this.props.newProject.projects;
         let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
         this.setState({currentProject: currentProject});
         this.setState({projectTitle: currentProject.title});
         this.setState({projectDescription: currentProject.description});
@@ -99,18 +100,22 @@ class ProjectEdit extends Component {
     render() {
         return (
             <div>
+                <Helmet>
+                    <title>{this.state.projectTitle}</title>
+                </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
 
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="title-block">
                                 <input
-                                    className="title form-control boxed "
+                                    className=" form-control boxed "
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
                                     autoFocus
                                 />
                                 <span className="error-message">{this.state.titleError}</span>
+                                <p className="form-sublabel"><small>Maximum 60 characters</small></p>
                                 <Link to="/dashboard/projects" className="title-description">
                                     Back to list
                                 </Link>
@@ -122,8 +127,9 @@ class ProjectEdit extends Component {
                                     value={this.state.projectDescription}
                                     onChange={(event) => this.handleDescrChange(event)}
                                 />
-                                <span className="error-message project-edit-error">
+                                <span className="error-message">
                                     {this.state.descriptionError}</span>
+                            <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
 
                             <div className="form-group">
                                 <button

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Link, IndexLink} from "react-router-dom";
+import Helmet from "react-helmet";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
 import {Alert} from "reactstrap";
@@ -23,7 +24,6 @@ class ProjectsList extends Component {
     render() {
 
         let projects = this.props.newProject.projects;
-        // console.log(this.props.newProject.projects);
 
             let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
@@ -36,16 +36,11 @@ class ProjectsList extends Component {
             <div key={index}>
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="card card-default">
                             <Link to={"/dashboard/projects/project/" + value.id}
-                                  className="card-header project-title"
-                                  id={value.id}
+                                  className="card project-link"
                             >
-                                <div className="header-block">
-                                    <p className="title">{value.title}</p>
-                                </div>
+                                <p className="title project-list-item">{value.title}</p>
                             </Link>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -60,6 +55,9 @@ class ProjectsList extends Component {
 
         return (
             <div>
+                <Helmet>
+                    <title>Projects</title>
+                </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {browserHistory, Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
+import Helmet from "react-helmet";
 import "./ProjectDetails.css";
 import {connect} from "react-redux";
 import {removeProject, showProjects} from "../../redux/actions/projectActions";
@@ -23,7 +24,7 @@ class ProjectDetails extends Component {
         dispatch(showProjects());
         let projects  = this.props.newProject.projects;
         let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
+        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
         this.setState({currentProject: currentProject});
         this.setState({projectTitle: currentProject.title});
         this.setState({projectDescription: currentProject.description});
@@ -58,28 +59,21 @@ class ProjectDetails extends Component {
 
 
     render() {
-        {/*let projects  = this.props.newProject.projects;*/}
-
-
-        // let projectId = this.props.match.params.id;
-        // let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; });
-        // //console.log(currentProject)
-        //
-        // // this.setState({projectTitle: currentProject.title});
-        // // this.setState({projectDescription: currentProject.description});
-
         return (
             <div>
+                <Helmet>
+                    <title>{this.state.projectTitle}</title>
+                </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            <h3 className="title">{this.state.projectTitle}</h3>
+                            <h3 className="title project-text">{this.state.projectTitle}</h3>
                             <Link to="/dashboard/projects" className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-default">
-                                <div className="form-control boxed card-block">
+                                <div className="form-control boxed card-block project-text">
                                     {this.state.projectDescription}
                                 </div>
                         </div>
