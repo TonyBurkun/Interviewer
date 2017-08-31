@@ -36,8 +36,10 @@ class ProjectsList extends Component {
             <div key={index}>
                 <div className="row">
                     <div className="col-md-12">
-                            <Link to={"/dashboard/projects/project/" + value.id}
-                                  className="card project-link"
+                            <Link
+                                id="pl-link-to-project"
+                                to={"/dashboard/projects/project/" + value.id}
+                                className="card project-link"
                             >
                                 <p className="title project-list-item">{value.title}</p>
                             </Link>
@@ -65,7 +67,10 @@ class ProjectsList extends Component {
                                toggle={() => this.onDismiss()}>
                             Project {projectToNote} was created!
                         </Alert>
-                        <Link to="/dashboard/projects/create-project">
+                        <Link
+                            id="pl-link-to-create"
+                            to="/dashboard/projects/create-project"
+                        >
                             <button className="btn btn-primary create-button">Create project</button>
                         </Link>
                     </div>

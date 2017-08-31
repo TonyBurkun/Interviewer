@@ -13,19 +13,27 @@ class ProjectDetails extends Component {
         super(props);
         this.state = {
             showModalConfirm: false,
+            projectTitle: "",
+            projectDescription: "",
+            currentProject: ""
+
         }
     }
 
     componentWillMount() {
         const {dispatch} = this.props;
         dispatch(showProjects());
-        // console.log(this.props);
-        // let projects  = this.props.newProject.projects;
-        // let projectId = this.props.match.params.id;
-        // let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
-        // this.setState({currentProject: currentProject});
-        // this.setState({projectTitle: currentProject.title});
-        // this.setState({projectDescription: currentProject.description});
+
+        setTimeout(() => {
+            let projects = this.props.newProject.projects;
+            let projectId = this.props.match.params.id;
+            let currentProject = projects.find(function (currentProject) {
+                    return currentProject.id === +projectId;
+                }) || {};
+            this.setState({currentProject: currentProject});
+            this.setState({projectTitle: currentProject.title});
+            this.setState({projectDescription: currentProject.description});
+        }, 1000);
     }
 
     switchToEditMode() {
@@ -48,21 +56,12 @@ class ProjectDetails extends Component {
     deleteProject(){
         this.closeModalConfirm();
         const {dispatch} = this.props;
-        let projects  = this.props.newProject.projects;
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
-        dispatch(removeProject(currentProject));
+        dispatch(removeProject(this.state.currentProject));
         this.props.history.push("/dashboard/projects/");
     }
 
     render() {
-        let projects  = this.props.newProject.projects;
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
-        let projectTitle = currentProject.title;
-        let projectDescription = currentProject.description;
-
-        return (
+       return (
             <div>
                 <Helmet>
                     <title>{this.state.projectTitle}</title>
@@ -70,27 +69,34 @@ class ProjectDetails extends Component {
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
                         <div className="title-block">
-                            <h3 className="title project-text">{projectTitle}</h3>
-                            <Link to="/dashboard/projects" className="title-description">
+                            <h3 className="title project-text">{this.state.projectTitle}</h3>
+                            <Link
+                                id="pd-link-to-list"
+                                to="/dashboard/projects"
+                                className="title-description">
                                 Back to list
                             </Link>
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block project-text">
-                                    {projectDescription}
+                                    {this.state.projectDescription}
                                 </div>
                         </div>
                         <div className="form-group">
                             <button
+                                id="pd-btn-to-edit"
                                 className="btn btn-primary"
                                 onClick={() => this.switchToEditMode()}
                             >Edit</button>
                             <button
+                                id="pd-btn-to-delete"
                                 type="reset"
                                 className="btn btn-primary right-project-btn"
                                 onClick={() => this.openModalConfirm()}
                             >Delete</button>
-                            <Link to="/dashboard/projects/create-project">
+                            <Link
+                                id="pd-link-to-create"
+                                to="/dashboard/projects/create-project">
                                 <button className="btn btn-primary right-project-btn">Create project</button>
                             </Link>
                         </div>
@@ -103,8 +109,17 @@ class ProjectDetails extends Component {
                         <p>Are you sure you want to delete a project?</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => this.deleteProject()}>Yes</Button>
-                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">No</Button>
+                        <Button
+                            id="pd-btn-modal-yes"
+                            onClick={() => this.deleteProject()}
+                        >Yes
+                        </Button>
+                        <Button
+                            id="pd-btn-modal-no"
+                            onClick={() => this.closeModalConfirm()}
+                            bsStyle="primary"
+                        >No
+                        </Button>
                     </Modal.Footer>
                 </Modal>
             </div>

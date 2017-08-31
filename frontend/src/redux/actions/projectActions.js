@@ -71,6 +71,9 @@ export function removeProject(date) {
             .then(res =>
                 res.json()
             )
+            .then(date => {
+                dispatch(showProjects());
+            })
             .catch(function(err) {
                 alert('Error:'+ err);
             });
@@ -90,6 +93,9 @@ export function updateProject(date) {
             .then(res =>
                 res.json()
             )
+            .then(date => {
+                dispatch(showProjects());
+            })
             .catch(function(err) {
                 alert('Error:'+ err);
             });

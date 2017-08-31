@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {IndexLink} from "react-router-dom";
-import {Link} from "react-router-dom";
+import {IndexLink, Link} from "react-router-dom";
 import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
@@ -15,25 +14,28 @@ class ProjectEdit extends Component {
         this.state = {
             projectTitle: "",
             projectDescription: "",
+            currentProject: "",
             showModalConfirm: false,
             confirmText: "",
             titleError:"",
-            descriptionError: "",
-            currentProject: ""
-
+            descriptionError: ""
         }
     }
 
     componentWillMount() {
         const {dispatch} = this.props;
         dispatch(showProjects());
-        let projects  = this.props.newProject.projects;
-        let projectId = this.props.match.params.id;
-        let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
-        this.setState({currentProject: currentProject});
-        this.setState({projectTitle: currentProject.title});
-        this.setState({projectDescription: currentProject.description});
 
+        setTimeout(() => {
+            let projects = this.props.newProject.projects;
+            let projectId = this.props.match.params.id;
+            let currentProject = projects.find(function (currentProject) {
+                    return currentProject.id === +projectId;
+                }) || {};
+            this.setState({currentProject: currentProject});
+            this.setState({projectTitle: currentProject.title});
+            this.setState({projectDescription: currentProject.description});
+        }, 1000);
     }
 
     handleTitleChange(event) {
@@ -109,6 +111,7 @@ class ProjectEdit extends Component {
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="title-block">
                                 <input
+                                    id="pe-title"
                                     className=" form-control boxed"
                                     maxLength="60"
                                     value={this.state.projectTitle}
@@ -117,11 +120,15 @@ class ProjectEdit extends Component {
                                 />
                                 <span className="error-message">{this.state.titleError}</span>
                                 <p className="form-sublabel"><small>Maximum 60 characters</small></p>
-                                <Link to="/dashboard/projects" className="title-description">
+                                <Link
+                                    id="pe-link-to-list"
+                                    to="/dashboard/projects"
+                                    className="title-description">
                                     Back to list
                                 </Link>
                             </div>
                                 <TextareaAutosize
+                                    id="pe-description"
                                     className="form-control boxed"
                                     maxLength="3000"
                                     rows={10}
@@ -134,11 +141,13 @@ class ProjectEdit extends Component {
 
                             <div className="form-group">
                                 <button
+                                    id="pe-btn-save"
                                     type="submit"
                                     className="btn btn-primary"
                                 >Save
                                 </button>
                                 <button
+                                    id="pe-btn-cancel"
                                     type="reset"
                                     className="btn btn-primary right-project-btn"
                                     onClick={()=> this.showMConfirmMessage()}
@@ -155,8 +164,17 @@ class ProjectEdit extends Component {
                         <p>{this.state.confirmText}</p>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => this.leaveEdit()}>Cancel</Button>
-                        <Button onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                        <Button
+                            id="pe-btn-modal-cancel"
+                            onClick={() => this.leaveEdit()}
+                        >Cancel
+                        </Button>
+                        <Button
+                            id="pe-btn-modal-back"
+                            onClick={() => this.closeModalConfirm()}
+                            bsStyle="primary"
+                        >Back to edit
+                        </Button>
                     </Modal.Footer>
                 </Modal>
             </div>
