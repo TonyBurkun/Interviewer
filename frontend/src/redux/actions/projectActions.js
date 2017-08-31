@@ -1,6 +1,4 @@
 import fetch from "isomorphic-fetch";
-// import 'whatwg-fetch';
-// import Promise from 'promise-polyfill';
 import {showNote} from "../../redux/actions/notificationActions";
 
 export const CREATE_PROJECT = "CREATE_PROJECT";
@@ -30,7 +28,7 @@ export function createProject(date) {
             .then(date => {
                 dispatch(addNewProject(date));
                 dispatch(showProjects());
-                dispatch(showNote({show: true }))
+                dispatch(showNote({show: true }));
                 setInterval(() => {
                     dispatch(showNote({show: false }))
                 }, 4000)
@@ -60,11 +58,6 @@ export function showProjects() {
     };
 }
 
-
-function deleteProjects(projects) {
-    return { type: REMOVE_PROJECT, payload: projects};
-}
-
 export function removeProject(date) {
     return (dispatch) => {
         fetch('/api/v1/projects/' + date.id,
@@ -78,9 +71,6 @@ export function removeProject(date) {
             .then(res =>
                 res.json()
             )
-            .then(projects => {
-               dispatch(deleteProjects(projects));
-            })
             .catch(function(err) {
                 alert('Error:'+ err);
             });

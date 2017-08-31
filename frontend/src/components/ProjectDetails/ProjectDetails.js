@@ -23,12 +23,12 @@ class ProjectDetails extends Component {
         const {dispatch} = this.props;
         dispatch(showProjects());
         let projects  = this.props.newProject.projects;
+        console.log(this.props);
         let projectId = this.props.match.params.id;
         let currentProject = projects.find(function (currentProject) { return currentProject.id === +projectId; }) || {};
         this.setState({currentProject: currentProject});
         this.setState({projectTitle: currentProject.title});
         this.setState({projectDescription: currentProject.description});
-
     }
 
     switchToEditMode() {
@@ -49,7 +49,7 @@ class ProjectDetails extends Component {
     }
 
     deleteProject(){
-        this.closeModalConfirm()
+        this.closeModalConfirm();
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         const {dispatch} = this.props;
