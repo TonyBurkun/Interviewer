@@ -5,14 +5,13 @@
         <listener class-name="utils.ListenerTest"/>
     </listeners>
 
-    <parameter name="myParam" value="This is the value for a parameter"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="implicitWaitInSeconds" value="30"/>
 
-    <test name="Test1">
+    <test name="Email Input Test Group">
         <groups>
             <run>
-                <include name="functest"/>
+                <include name="emailInput"/>
             </run>
         </groups>
         <classes>

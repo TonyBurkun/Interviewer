@@ -1,3 +1,4 @@
+import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -25,8 +26,7 @@ public class Login {
     ListenerTest listenerTest;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
 
-
-    @BeforeTest(groups = {"functest", "login"})
+    @BeforeTest(groups = {"functest", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
     public void before() {
         client.setUser("oksana.gorbachenko.2009@gmail.com");
         client.setPassword("123456QWERTY");
@@ -45,13 +45,7 @@ public class Login {
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }
-    @Test(groups = {"functest", "0"})
-    public void OpenPage() throws IOException {
-        loginPage.open();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
-    }
 
     @Test(groups = {"functest", "2"})
     public void assertElementsOnPage() throws InterruptedException {
@@ -149,30 +143,40 @@ public class Login {
         }
 
     }
-    @Test(groups = {"functest", "8"})
+
+    @Test(groups = {"functest", "8", "wrongEmailOrPasswrd"})
     public void enterWithWrongEmail() throws InterruptedException {
         loginPage.open();
-        loginPage.typeEmailAdress("teskkkkk@test.com");
-        loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.cssSelector("input[type='email']")).isDisplayed());
+        loginPage.clickLoginLink();
+        loginPage.typeEmailAdress("teskkkkktest.com");
+        loginPage.clickLoginButton();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[1]/span")).isDisplayed());
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/3/8", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
     }
 
-    @Test(groups = {"functest", "8.1"})
+    @Test(groups = {"functest", "8.1", "wrongEmailOrPasswrd"})
+    public void enterWithEmptyPassword() throws InterruptedException {
+        loginPage.open();
+        loginPage.clickLoginLink();
+        loginPage.typeEmailAdress("interviewer@test.com");
+        loginPage.typePassword("");
+        loginPage.clickLoginButton();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[2]/span")).isDisplayed());
+    }
+
+    @Test(groups = {"functest", "8.2", "wrongEmailOrPasswrd"})
     public void enterWithWrongPassword() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.typeEmailAdress("interviewer@test.com");
-        loginPage.typePassword("123456@#$%");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        loginPage.typePassword("qwertyu");
+        loginPage.clickLoginButton();
+    //TODO MESSAGE FROM BACKEND---WRONG PASSWORS
+    }
+
+    @Test(dependsOnGroups = {"wrongEmailOrPasswrd"})
+    public void resultForWrongEmailOrPasswrd() throws InterruptedException {
+
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -183,39 +187,41 @@ public class Login {
             e.printStackTrace();
         }
     }
-    @Test(groups = {"functest", "9"})
-    public void enterMinThenMinEmail() throws InterruptedException {
-        loginPage.open();
-        loginPage.typeEmailAdress("inte@test.com");
-        loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
-    }
-    @Test(groups = {"functest", "9.1"})
-    public void enterMinEmail() throws InterruptedException {
-        loginPage.open();
-        loginPage.typeEmailAdress("interv@test.com");
-        loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
-    }
-    @Test(groups = {"functest", "9.2"})
-    public void enterMaxEmail() throws InterruptedException {
-        loginPage.open();
-        loginPage.typeEmailAdress("intervieweintervieweintervieweintervieweintervieweinterviewe@test.com");
-        loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-    }
 
-    @Test(groups = {"functest", "9.3"})
-    public void enterMaxThenMaxEmail() throws InterruptedException {
-        loginPage.open();
-        loginPage.typeEmailAdress("intervieweintervieweintervieweintervieweintervieweinterviewel@test.com");
-        loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
 
+
+        @Test(groups = {"functest","emailInput", "9"})
+        public void enterMinThenMinEmail() throws InterruptedException {
+            loginPage.open();
+            loginPage.clickLoginLink();
+            loginPage.typeEmailAdress("f@m.r");
+            loginPage.clickLoginButton();
+            Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[1]/span")).isDisplayed());
+        }
+
+
+        @Test(groups = {"functest","emailInput", "9.1"})
+        public void enterEmail() throws InterruptedException {
+            loginPage.open();
+            loginPage.clickLoginLink();
+            loginPage.typeEmailAdress("f@jg.rf");
+            loginPage.clickLoginButton();
+            //TODO assert
+            Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
+        }
+
+
+        @Test(groups = {"functest","emailInput", "9.2"})
+        public void enterMaxEmail() throws InterruptedException {
+            loginPage.open();
+            loginPage.clickLoginLink();
+            String lengthForEmail = driver.findElement(By.id("username")).getAttribute("maxlength");
+            Assert.assertEquals(lengthForEmail, "60");
+
+            }
+
+   @Test(dependsOnMethods = {"enterMaxEmail", "enterEmail", "enterMinThenMinEmail"}, groups = {"emailInput"})
+    public void sentResultForEmail() throws InterruptedException {
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -226,34 +232,41 @@ public class Login {
             e.printStackTrace();
         }
     }
-    @Test(groups = {"functest", "10"})
+
+
+    @Test(groups = {"functest", "10", "passwordCheck"})
     public void enterMinThenMinPassword() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.typeEmailAdress("intsa@test.com");
         loginPage.typePassword("12345");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        loginPage.clickLoginButton();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[2]/span")).isDisplayed());
+
     }
-    @Test(groups = {"functest", "10.1"})
+
+    @Test(groups = {"functest", "10.1", "passwordCheck"})
     public void enterMinPassword() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.typeEmailAdress("intsa@test.com");
         loginPage.typePassword("123456");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //  Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        //TODO MESSAGE FROM BACKEND---WRONG PASSWORS
+
     }
-    @Test(groups = {"functest", "10.2"})
+
+    @Test(groups = {"functest", "10.2", "passwordCheck"})
     public void enterMaxPassword() throws InterruptedException {
         loginPage.open();
-        loginPage.typeEmailAdress("intsa@test.com");
-        loginPage.typePassword("123456789123456789123456789123");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-    }
-    @Test(groups = {"functest", "10.3"})
-    public void enterMaxThenMaxPassword() throws InterruptedException {
-        loginPage.open();
-        loginPage.typeEmailAdress("intsa@test.com");
-        loginPage.typePassword("1234567891234567891234567891234");
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        loginPage.clickLoginLink();
+        String lengthForPassword = driver.findElement(By.id("password")).getAttribute("maxlength");
+        Assert.assertEquals(lengthForPassword, "30");
 
+    }
+
+    @Test(dependsOnMethods = {"enterMaxPassword", "enterMinThenMinPassword", "enterMinPassword"}, groups = {"passwordCheck"})
+    public void sentResultForPassword () throws InterruptedException {
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -264,6 +277,10 @@ public class Login {
             e.printStackTrace();
         }
     }
+
+
+
+
 
     @Test(groups = {"functest", "11"})
     public void forgotYourPassword() throws InterruptedException {
@@ -288,9 +305,9 @@ public class Login {
         loginPage.clickLoginLink();
         loginPage.clickdontHaveAccountButton();
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
         loginPage.clickCloseButtonForDontHaveAccount();
-     //   Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[2]")).isEnabled());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div")).isDisplayed());
+
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -304,7 +321,7 @@ public class Login {
     }
 
 
-    @AfterTest
+    @AfterTest(groups = {"functest", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
     public void after() { driver.quit();
 
     }

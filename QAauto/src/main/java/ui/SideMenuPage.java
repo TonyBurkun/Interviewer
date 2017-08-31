@@ -10,20 +10,43 @@ public class SideMenuPage {
     }
 
     By interviewsItem = By.xpath("//*[@id=\"sidebar-menu\"]/li[1]/a");
-    By interviewersItem = By.xpath("//*[@id=\"sidebar-menu\"]/li[2]/a");
-    By vacanciesItem = By.xpath("//*[@id=\"sidebar-menu\"]/li[3]/a");
-    By seekersItem = By.xpath("//*[@id=\"sidebar-menu\"]/li[4]/a");
-    By projectsItem = By.xpath("//*[@id=\"sidebar-menu\"]/li[5]/a");
+        By upcomingItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[1]/ul/li[1]/a");
+        By completedItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[1]/ul/li[2]/a");
+    By interviewersItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[2]/a");
+    By vacanciesItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[3]/a");
+         By openItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[3]/ul/li[1]/a");
+         By closedItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[3]/ul/li[2]/a");
+    By candidatesItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[4]/a");
+    By projectsItem = By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[5]/a");
 
     By sidebarButton = By.id("sidebar-collapse-btn");
 
 
-    public SideMenuPage clickProjectsItem() {
-        driver.findElement(projectsItem).click();
+
+    public SideMenuPage clickCandidatesItem() {
+        driver.findElement(candidatesItem).click();
         return this;
     }
-    public SideMenuPage clickSeekersItem() {
-        driver.findElement(seekersItem).click();
+    public SideMenuPage clickClosedItem() {
+        driver.findElement(closedItem).click();
+        return this;
+    }
+    public SideMenuPage clickOpenItem() {
+        driver.findElement(openItem).click();
+        return this;
+    }
+    public SideMenuPage clickCompletedItem() {
+        driver.findElement(completedItem).click();
+        return this;
+    }
+
+    public SideMenuPage clickUpcomingItem() {
+        driver.findElement(upcomingItem).click();
+        return this;
+    }
+
+    public SideMenuPage clickProjectsItem() {
+        driver.findElement(projectsItem).click();
         return this;
     }
 

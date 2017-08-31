@@ -62,26 +62,71 @@ public class SideMenu {
 
     @Test(groups = {"functest", "18"})
     public void assertIconsOfMenuItems() throws InterruptedException {
-
-       driver.manage().window().maximize();
+        loginPage.open();
+        driver.manage().window().maximize();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[1]/a/i[1]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[1]/ul/li[1]/a/i")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[1]/ul/li[2]/a/i")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[2]/a/i")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[3]/a/i[1]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[3]/a/i[1]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[4]/a/i")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/ul/li[5]/a/i")).isDisplayed());
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/5/18", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Test(groups = {"functest", "19"})
     public void assertChangingTemplateItem() throws InterruptedException {
         driver.manage().window().maximize();
-        sideMenuPage.clickInterviewsItem();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/h3")).isDisplayed());
-        sideMenuPage.clickInterviewersItem();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/h3")).isDisplayed());
-        sideMenuPage.clickVacanciesItem();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/h3")).isDisplayed());
-        sideMenuPage.clickSeekersItem();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/h3")).isDisplayed());
-        sideMenuPage.clickProjectsItem();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div[1]/div/a/button")).isDisplayed());
-        //TODO change assert for Template
 
+        sideMenuPage.clickUpcomingItem();
+        String text_upcoming = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_upcoming, "Upcoming interviews");
+
+        sideMenuPage.clickCompletedItem();
+        String text_completed = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_completed, "Completed interviews");
+
+        sideMenuPage.clickInterviewersItem();
+        String text_interviewers = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_interviewers, "Interviewers");
+
+        sideMenuPage.clickVacanciesItem();
+        sideMenuPage.clickOpenItem();
+        String text_vacancies_open = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_vacancies_open, "Open vacancies");
+
+        sideMenuPage.clickClosedItem();
+        String text_vacancies_closed = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_vacancies_closed, "Closed vacancies");
+
+        sideMenuPage.clickCandidatesItem();
+        String text_candidates = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_candidates, "Candidates");
+
+        sideMenuPage.clickProjectsItem();
+        String text_projects = driver.findElement(By.cssSelector("[class='title']")).getText();
+        Assert.assertEquals(text_projects, "Projects");
+
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/5/19", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -89,24 +134,33 @@ public class SideMenu {
     public void assertActiveItem() throws InterruptedException {
         driver.manage().window().maximize();
 
-        sideMenuPage.clickInterviewsItem();
-        String href_interviews = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
-        Assert.assertEquals(href_interviews, BaseURL+"interviews");
+        sideMenuPage.clickUpcomingItem();
+        String href_upcoming = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+        Assert.assertEquals(href_upcoming, BaseURL+"interviews_upcoming");
+
+        sideMenuPage.clickCompletedItem();
+        String href_completed = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+        Assert.assertEquals(href_completed, BaseURL+"interviews_completed");
 
         sideMenuPage.clickInterviewersItem();
-        String href_interviewers = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        String href_interviewers = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_interviewers, BaseURL+"interviewers");
 
         sideMenuPage.clickVacanciesItem();
-        String href_vacancies = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
-        Assert.assertEquals(href_vacancies, BaseURL+"vacancies");
+        sideMenuPage.clickOpenItem();
+        String href_openItem = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+        Assert.assertEquals(href_openItem, BaseURL+"vacancies_open");
 
-        sideMenuPage.clickSeekersItem();
-        String href_seekers = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
-        Assert.assertEquals(href_seekers, BaseURL+"seekers");
+        sideMenuPage.clickClosedItem();
+        String href_closedItem = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+        Assert.assertEquals(href_closedItem, BaseURL+"vacancies_closed");
+
+        sideMenuPage.clickCandidatesItem();
+        String href_candidates = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+        Assert.assertEquals(href_candidates, BaseURL+"candidates");
 
         sideMenuPage.clickProjectsItem();
-        String href_projects = driver.findElement(By.cssSelector("[class='activeLink']")).getAttribute("href");
+        String href_projects = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_projects, BaseURL+"projects");
 
 
@@ -125,21 +179,30 @@ public class SideMenu {
     public void asserItemLinks() throws InterruptedException {
         driver.manage().window().maximize();
 
-        sideMenuPage.clickInterviewsItem();
-        String interviews_utl = driver.getCurrentUrl();
-        Assert.assertEquals(interviews_utl, BaseURL+"interviews");
+        sideMenuPage.clickUpcomingItem();
+        String interviews_upcoming_utl = driver.getCurrentUrl();
+        Assert.assertEquals(interviews_upcoming_utl, BaseURL+"interviews_upcoming");
+
+        sideMenuPage.clickCompletedItem();
+        String interviews_completed_utl = driver.getCurrentUrl();
+        Assert.assertEquals(interviews_completed_utl, BaseURL+"interviews_completed");
 
         sideMenuPage.clickInterviewersItem();
         String interviewers_url = driver.getCurrentUrl();
         Assert.assertEquals(interviewers_url, BaseURL+"interviewers");
 
         sideMenuPage.clickVacanciesItem();
-        String vacancies_url = driver.getCurrentUrl();
-        Assert.assertEquals(vacancies_url, BaseURL+"vacancies");
+        sideMenuPage.clickOpenItem();
+        String vacancies_open_url = driver.getCurrentUrl();
+        Assert.assertEquals(vacancies_open_url, BaseURL+"vacancies_open");
 
-        sideMenuPage.clickSeekersItem();
-        String seekers_url = driver.getCurrentUrl();
-        Assert.assertEquals(seekers_url, BaseURL+"seekers");
+        sideMenuPage.clickClosedItem();
+        String vacancies_closed_url = driver.getCurrentUrl();
+        Assert.assertEquals(vacancies_closed_url, BaseURL+"vacancies_closed");
+
+        sideMenuPage.clickCandidatesItem();
+        String candidates_url = driver.getCurrentUrl();
+        Assert.assertEquals(candidates_url, BaseURL+"candidates");
 
         sideMenuPage.clickProjectsItem();
         String projects_url = driver.getCurrentUrl();
@@ -164,7 +227,7 @@ public class SideMenu {
     }
 
 
-    @AfterTest
+    @AfterTest(groups = {"functest", "22"})
     public void after() { driver.quit();
 
     }
