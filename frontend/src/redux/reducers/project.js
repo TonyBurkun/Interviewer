@@ -1,4 +1,4 @@
-import {CREATE_PROJECT, SHOW_PROJECTS, REMOVE_PROJECT, UPDATE_PROJECT} from "../actions/projectActions";
+import {CREATE_PROJECT, SHOW_PROJECTS, REMOVE_PROJECT} from "../actions/projectActions";
 
 const initialState = {
 	projects: [],
@@ -23,8 +23,6 @@ export default function project(state = initialState, action) {
         case SHOW_PROJECTS:
             return { ...state, projects: action.payload};
         case REMOVE_PROJECT:
-            return { ...state, projects: action.payload};
-        case UPDATE_PROJECT:
             return { ...state, projects: action.payload};
         default:
             return state;

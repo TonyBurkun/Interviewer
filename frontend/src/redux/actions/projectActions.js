@@ -79,7 +79,7 @@ export function removeProject(date) {
                 res.json()
             )
             .then(projects => {
-                dispatch(deleteProjects(projects));
+               dispatch(deleteProjects(projects));
             })
             .catch(function(err) {
                 alert('Error:'+ err);
@@ -87,12 +87,8 @@ export function removeProject(date) {
     };
 }
 
-
-function refreshProjects(projects) {
-    return { type: UPDATE_PROJECT, payload: projects};
-}
-
 export function updateProject(date) {
+    debugger;
     return (dispatch) => {
         fetch('/api/v1/projects/' + date.id,
             {
@@ -105,9 +101,6 @@ export function updateProject(date) {
             .then(res =>
                 res.json()
             )
-            .then(projects => {
-                dispatch(refreshProjects(projects));
-            })
             .catch(function(err) {
                 alert('Error:'+ err);
             });

@@ -50,9 +50,6 @@ class ProjectsList extends Component {
         const { isNoteVisible } = this.props.newNote.newNote;
         let projectToNote = "'" + projectTitle.slice(0,20) + "..." + "'"
 
-
-
-
         return (
             <div>
                 <Helmet>
