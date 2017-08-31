@@ -29,11 +29,11 @@ class Header extends Component {
             let path = window.location.pathname;
             if (path.indexOf('/dashboard') === 0) {
                 return (
-                    <Link to="/dashboard/interviews_upcoming" className="active">Dashboard</Link>
+                    <Link to="/dashboard/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
                 );
             } else {
                 return (
-                    <Link to="/dashboard/interviews_upcoming">Dashboard</Link>
+                    <Link to="/dashboard/interviews_upcoming" id="headerDashboard">Dashboard</Link>
                 );
             }
         };
@@ -42,11 +42,11 @@ class Header extends Component {
             let path = window.location.pathname;
             if (path.indexOf('/settings') === 0) {
                 return (
-                    <Link to="/settings/username" className="active">My settings</Link>
+                    <Link to="/settings/username" className="active" id="headerSettings">My settings</Link>
                 );
             } else {
                 return (
-                    <NavLink to="/settings/username">My settings</NavLink>
+                    <NavLink to="/settings/username" id="headerSettings">My settings</NavLink>
                 );
             }
         };
@@ -70,10 +70,10 @@ class Header extends Component {
                             {toggleActiveSettings()}
                         </li>
                         <li>
-                            <Link to="/login">Log in</Link>
+                            <Link to="/login" id="headerLogin">Log in</Link>
                         </li>
                         <li>
-                            <Link to="/login">Logout</Link>
+                            <Link to="/login" id="headerLogout">Logout</Link>
                         </li>
                     </ul>
                 </div>

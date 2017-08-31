@@ -97,15 +97,15 @@ class Main extends Component {
                             />
                             <Route
                                 exact path="/settings/username"
-                                name="Settings"
+                                name="Username"
                                 component={Username}
                             />
                             <Route
                                 exact path="/settings/password"
-                                name="Settings"
+                                name="Password"
                                 component={Password}
                             />
-                            <Redirect form="/" to="/dashboard/interviews_upcoming"/>
+                            <Redirect from="/" to="/dashboard/interviews_upcoming"/>
                         </Switch>
                     </article>
                 </div>
