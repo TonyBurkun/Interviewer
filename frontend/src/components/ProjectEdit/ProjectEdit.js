@@ -109,7 +109,8 @@ class ProjectEdit extends Component {
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="title-block">
                                 <input
-                                    className=" form-control boxed "
+                                    className=" form-control boxed"
+                                    maxLength="60"
                                     value={this.state.projectTitle}
                                     onChange={(event) => this.handleTitleChange(event)}
                                     autoFocus
