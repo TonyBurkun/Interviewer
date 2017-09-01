@@ -1,22 +1,29 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel test suite" parallel="tests" thread-count="3">
+    <parameter name="myParam"  value="This is the value for a parameter"/>
+    <parameter name="interactive"  value="false"/>
 
-    <listeners>
-        <listener class-name="utils.ListenerTest"/>
-    </listeners>
-
-    <parameter name="browserName" value="chrome"/>
-    <parameter name="implicitWaitInSeconds" value="30"/>
-
-    <test name="Email Input Test Group">
+    <test name="functestForLoginPage">
         <groups>
             <run>
-                <include name="emailInput"/>
+                <include name="functest"/>
             </run>
         </groups>
         <classes>
             <class name="Login"/>
         </classes>
     </test>
+
+    <test name="functestForSideMenu">
+        <groups>
+            <run>
+                <include name="functest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="SideMenu"/>
+        </classes>
+    </test>
+
 
 </suite>

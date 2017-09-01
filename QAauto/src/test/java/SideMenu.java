@@ -24,7 +24,7 @@ public class SideMenu {
     SideMenuPage sideMenuPage;
     WebDriver driver;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
-    String BaseURL = "https://dev-interviewer.herokuapp.com/dashboard/";
+    String BaseURL = "https://dev-interviewer.herokuapp.com/";
 
 
     @BeforeTest(groups = {"functest", "login"})
@@ -42,8 +42,9 @@ public class SideMenu {
 
 
     }
+
     @Test(groups = {"functest", "14"})
-            public void asserHideMenu() throws InterruptedException {
+    public void asserHideMenu() throws InterruptedException {
         Assert.assertTrue(driver.findElement(By.id("sidebar-collapse-btn")).isDisplayed());
         sideMenuPage.clickSidebarButton();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div")).isDisplayed());
@@ -58,7 +59,6 @@ public class SideMenu {
             e.printStackTrace();
         }
     }
-
 
     @Test(groups = {"functest", "18"})
     public void assertIconsOfMenuItems() throws InterruptedException {
@@ -220,11 +220,12 @@ public class SideMenu {
 
     }
 
-    @Test(groups = {"functest", "22"})
+    @Test(groups = { "22"})
     public void errorForFailFunc() throws InterruptedException {
         driver.manage().window().maximize();
-        //TODO If the functionality fails, the user hits a specific
+
     }
+    //TODO If the functionality fails, the user hits a specific
 
 
     @AfterTest(groups = {"functest", "22"})

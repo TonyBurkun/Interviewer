@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 public class Login {
     LoginPage loginPage;
     WebDriver driver;
-    ListenerTest listenerTest;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
 
     @BeforeTest(groups = {"functest", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
@@ -71,9 +70,12 @@ public class Login {
         }
 
     }
+
+
     @Test(groups = {"functest", "4"})
     public void passwordWithAsterisk() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.typePassword("qwerty");
         Assert.assertTrue(driver.findElement(By.cssSelector("input[type='password']")).isDisplayed());
 
@@ -89,9 +91,12 @@ public class Login {
         }
 
     }
+
+
     @Test(groups = {"functest", "5"})
     public void passwordHolder() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your password']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your email address']")).isDisplayed());
 
@@ -106,7 +111,9 @@ public class Login {
         }
 
     }
-    @Test(groups = {"functest", "6"})
+
+
+    @Test(groups = {"6"})
     public void enterAsHR() throws InterruptedException {
         loginPage.open();
         loginPage.typeEmailAdress("HR@test.com");
@@ -125,7 +132,9 @@ public class Login {
 
 
     }
-    @Test(groups = {"functest", "7"})
+    //TODO
+
+    @Test(groups = {"7"})
     public void enterAsInterviewer() throws InterruptedException {
         loginPage.open();
         loginPage.typeEmailAdress("interviewer@test.com");
@@ -143,6 +152,8 @@ public class Login {
         }
 
     }
+    //TODO
+
 
     @Test(groups = {"functest", "8", "wrongEmailOrPasswrd"})
     public void enterWithWrongEmail() throws InterruptedException {
@@ -174,8 +185,8 @@ public class Login {
     //TODO MESSAGE FROM BACKEND---WRONG PASSWORS
     }
 
-    @Test(dependsOnGroups = {"wrongEmailOrPasswrd"})
-    public void resultForWrongEmailOrPasswrd() throws InterruptedException {
+          @Test(dependsOnMethods = {"enterWithWrongEmail", "enterWithEmptyPassword", "enterWithWrongPassword" })
+          public void resultForWrongEmailOrPasswrd() throws InterruptedException {
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -188,10 +199,8 @@ public class Login {
         }
     }
 
-
-
-        @Test(groups = {"functest","emailInput", "9"})
-        public void enterMinThenMinEmail() throws InterruptedException {
+    @Test(groups = {"functest","emailInput", "9"})
+    public void enterMinThenMinEmail() throws InterruptedException {
             loginPage.open();
             loginPage.clickLoginLink();
             loginPage.typeEmailAdress("f@m.r");
@@ -200,8 +209,8 @@ public class Login {
         }
 
 
-        @Test(groups = {"functest","emailInput", "9.1"})
-        public void enterEmail() throws InterruptedException {
+    @Test(groups = {"functest","emailInput", "9.1"})
+    public void enterEmail() throws InterruptedException {
             loginPage.open();
             loginPage.clickLoginLink();
             loginPage.typeEmailAdress("f@jg.rf");
@@ -210,9 +219,8 @@ public class Login {
             Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
         }
 
-
-        @Test(groups = {"functest","emailInput", "9.2"})
-        public void enterMaxEmail() throws InterruptedException {
+    @Test(groups = {"functest","emailInput", "9.2"})
+    public void enterMaxEmail() throws InterruptedException {
             loginPage.open();
             loginPage.clickLoginLink();
             String lengthForEmail = driver.findElement(By.id("username")).getAttribute("maxlength");
@@ -220,8 +228,8 @@ public class Login {
 
             }
 
-   @Test(dependsOnMethods = {"enterMaxEmail", "enterEmail", "enterMinThenMinEmail"}, groups = {"emailInput"})
-    public void sentResultForEmail() throws InterruptedException {
+             @Test(dependsOnMethods = {"enterMaxEmail", "enterEmail", "enterMinThenMinEmail"}, groups = {"emailInput"})
+             public void sentResultForEmail() throws InterruptedException {
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -265,8 +273,8 @@ public class Login {
 
     }
 
-    @Test(dependsOnMethods = {"enterMaxPassword", "enterMinThenMinPassword", "enterMinPassword"}, groups = {"passwordCheck"})
-    public void sentResultForPassword () throws InterruptedException {
+             @Test(dependsOnMethods = {"enterMaxPassword", "enterMinThenMinPassword", "enterMinPassword"}, groups = {"passwordCheck"})
+             public void sentResultForPassword () throws InterruptedException {
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -278,13 +286,10 @@ public class Login {
         }
     }
 
-
-
-
-
-    @Test(groups = {"functest", "11"})
+    @Test(groups = {"11"})
     public void forgotYourPassword() throws InterruptedException {
         loginPage.open();
+        loginPage.clickLoginLink();
         loginPage.clickforgotPasswordButton();
         Assert.assertTrue(driver.findElement(By.id("")).isDisplayed());
 
@@ -298,6 +303,7 @@ public class Login {
             e.printStackTrace();
         }
     }
+    //TODO
 
     @Test(groups = {"functest", "12"})
     public void dontHaveAccount() throws InterruptedException {

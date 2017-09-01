@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Parallel test suite]" parallel="tests">
+  <parameter name="myParam" value="This is the value for a parameter"/>
+  <parameter name="interactive" value="false"/>
+  <test name="functestForSideMenu(failed)" parallel="tests">
+    <groups>
+      <run>
+        <include name="functest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="SideMenu">
+        <methods>
+          <include name="assertActiveItem"/>
+          <include name="after"/>
+          <include name="before"/>
+          <include name="assertChangingTemplateItem"/>
+        </methods>
+      </class> <!-- SideMenu -->
+    </classes>
+  </test> <!-- functestForSideMenu(failed) -->
+</suite> <!-- Failed suite [Parallel test suite] -->
