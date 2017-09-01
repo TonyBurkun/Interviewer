@@ -25,31 +25,31 @@ class Header extends Component {
 
     render() {
 
-        // let toggleActiveDashboard = () => {
-        //     let path = window.location.pathname;
-        //     if (path.indexOf('/dashboard') === 0) {
-        //         return (
-        //             <Link to="/dashboard/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
-        //         );
-        //     } else {
-        //         return (
-        //             <Link to="/dashboard/interviews_upcoming" id="headerDashboard">Dashboard</Link>
-        //         );
-        //     }
-        // };
-        //
-        // let toggleActiveSettings = () => {
-        //     let path = window.location.pathname;
-        //     if (path.indexOf('/settings') === 0) {
-        //         return (
-        //             <Link to="/settings/username" className="active" id="headerSettings">My settings</Link>
-        //         );
-        //     } else {
-        //         return (
-        //             <Link to="/settings/username" id="headerSettings">My settings</Link>
-        //         );
-        //     }
-        // };
+        let toggleActiveDashboard = () => {
+            let path = window.location.pathname;
+            if (path.indexOf('/username') !== 0 && path.indexOf('/password') !== 0) {
+                return (
+                    <Link to="/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
+                );
+            } else {
+                return (
+                    <Link to="/interviews_upcoming" id="headerDashboard">Dashboard</Link>
+                );
+            }
+        };
+
+        let toggleActiveSettings = () => {
+            let path = window.location.pathname;
+            if (path.indexOf('/username') === 0 || path.indexOf('/password') === 0) {
+                return (
+                    <Link to="/username" className="active" id="headerSettings">My settings</Link>
+                );
+            } else {
+                return (
+                    <Link to="/username" id="headerSettings">My settings</Link>
+                );
+            }
+        };
 
         return (
             <header className="header">
@@ -64,10 +64,10 @@ class Header extends Component {
                             Username
                         </li>
                         <li>
-                            <Link to="/interviews_upcoming" id="headerDashboard">Dashboard</Link>
+                            {toggleActiveDashboard()}
                         </li>
                         <li>
-                            <Link to="/username" id="headerSettings">My settings</Link>
+                            {toggleActiveSettings()}
                         </li>
                         <li>
                             <Link to="/login" id="headerLogin">Log in</Link>
