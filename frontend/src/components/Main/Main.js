@@ -46,66 +46,66 @@ class Main extends Component {
 
                         <Switch>
                             <Route
-                                exact path="/dashboard/projects"
+                                exact path="/projects"
                                 name="Projects List"
                                 component={ProjectsList}/>
                             <Route
-                                exact path="/dashboard/projects/create-project"
+                                exact path="/projects/create-project"
                                 name="Create project"
                                 component={CreateProject}
                             />
                             <Route
-                                exact path="/dashboard/projects/project/:id"
+                                exact path="/projects/project/:id"
                                 name="Project Details"
                                 component={ProjectDetails}
                             />
 
                             <Route
-                                exact path="/dashboard/projects/project/:id/edit"
+                                exact path="/projects/project/:id/edit"
                                 name="Project Edit"
                                 component={ProjectEdit}
                             />
                             <Route
-                                exact path="/dashboard/interviews_upcoming"
+                                exact path="/interviews_upcoming"
                                 name="InterviewsUpcoming"
                                 component={InterviewsUpcoming}
                             />
                             <Route
-                                exact path="/dashboard/interviews_completed"
+                                exact path="/interviews_completed"
                                 name="InterviewsCompleted"
                                 component={InterviewsCompleted}
                             />
                             <Route
-                                exact path="/dashboard/interviewers"
+                                exact path="/interviewers"
                                 name="Interviewers"
                                 component={Interviewers}
                             />
                             <Route
-                                exact path="/dashboard/candidates"
+                                exact path="/candidates"
                                 name="Candidates"
                                 component={Candidates}
                             />
                             <Route
-                                exact path="/dashboard/vacancies_open"
+                                exact path="/vacancies_open"
                                 name="VacanciesOpen"
                                 component={VacanciesOpen}
                             />
                             <Route
-                                exact path="/dashboard/vacancies_closed"
+                                exact path="/vacancies_closed"
                                 name="VacanciesClosed"
                                 component={VacanciesClosed}
                             />
                             <Route
-                                exact path="/settings/username"
+                                exact path="/username"
                                 name="Username"
                                 component={Username}
                             />
                             <Route
-                                exact path="/settings/password"
+                                exact path="/password"
                                 name="Password"
                                 component={Password}
                             />
-                            <Redirect from="/" to="/dashboard/interviews_upcoming"/>
+                            <Redirect from="/" to="/interviews_upcoming"/>
                         </Switch>
                     </article>
                 </div>

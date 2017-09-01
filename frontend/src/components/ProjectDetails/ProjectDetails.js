@@ -38,7 +38,7 @@ class ProjectDetails extends Component {
 
     switchToEditMode() {
         let projectId = this.props.match.params.id;
-        this.props.history.push("/dashboard/projects/project/" + projectId + "/edit");
+        this.props.history.push("/projects/project/" + projectId + "/edit");
     }
 
     openModalConfirm() {
@@ -57,7 +57,7 @@ class ProjectDetails extends Component {
         this.closeModalConfirm();
         const {dispatch} = this.props;
         dispatch(removeProject(this.state.currentProject));
-        this.props.history.push("/dashboard/projects/");
+        this.props.history.push("/projects/");
     }
 
     render() {
@@ -72,7 +72,7 @@ class ProjectDetails extends Component {
                             <h3 className="title project-text">{this.state.projectTitle}</h3>
                             <Link
                                 id="pd-link-to-list"
-                                to="/dashboard/projects"
+                                to="/projects"
                                 className="title-description">
                                 Back to list
                             </Link>
@@ -96,7 +96,7 @@ class ProjectDetails extends Component {
                             >Delete</button>
                             <Link
                                 id="pd-link-to-create"
-                                to="/dashboard/projects/create-project">
+                                to="/projects/create-project">
                                 <button className="btn btn-primary right-project-btn">Create project</button>
                             </Link>
                         </div>

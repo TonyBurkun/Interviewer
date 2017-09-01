@@ -59,19 +59,19 @@ class SideMenu extends Component {
                         {
                             icon: 'square-o',
                             label: 'Upcoming',
-                            to: '/dashboard/interviews_upcoming',
+                            to: '/interviews_upcoming',
                         },
                         {
                             icon: 'check-square-o',
                             label: 'Completed',
-                            to: '/dashboard/interviews_completed',
+                            to: '/interviews_completed',
                         }
                     ]
                 },
                 {
                     icon: 'user-o',
                     label: 'Interviewers',
-                    to: '/dashboard/interviewers',
+                    to: '/interviewers',
                 },
                 {
                     icon: 'binoculars',
@@ -79,23 +79,23 @@ class SideMenu extends Component {
                     content: [
                         {
                             label: 'Open',
-                            to: '/dashboard/vacancies_open',
+                            to: '/vacancies_open',
                         },
                         {
                             label: 'Closed',
-                            to: '/dashboard/vacancies_closed',
+                            to: '/vacancies_closed',
                         }
                     ]
                 },
                 {
                     icon: 'address-card-o',
                     label: 'Candidates',
-                    to: '/dashboard/candidates',
+                    to: '/candidates',
                 },
                 {
                     icon: 'briefcase',
                     label: 'Projects',
-                    to: '/dashboard/projects'
+                    to: '/projects'
                 },
             ];
 
@@ -103,19 +103,19 @@ class SideMenu extends Component {
                 {
                     icon: 'user-circle-o',
                     label: 'Username',
-                    to: '/settings/username',
+                    to: '/username'
                 },
                 {
                     icon: 'lock',
                     label: 'Password',
-                    to: '/settings/password',
+                    to: '/password',
                 }
             ];
 
 
             let pathName = window.location.pathname;
 
-            if (pathName.indexOf('/settings') === 0) {
+            if (pathName.indexOf('/username') === 0 || pathName.indexOf('/password') === 0) {
                 return (
                     <MetisMenu
                         activeLinkFromLocation
@@ -123,11 +123,10 @@ class SideMenu extends Component {
                         LinkComponent={RouterLink}
                         classNameStateIcon="arrow"
                         classNameItemActive="active"
+
                     />
                 );
-            }
-
-            if (pathName.indexOf('/dashboard') === 0) {
+            } else {
                 return (
                     <MetisMenu
                         activeLinkFromLocation
@@ -135,9 +134,22 @@ class SideMenu extends Component {
                         LinkComponent={RouterLink}
                         classNameStateIcon="arrow"
                         classNameItemActive="active"
+                        hasActiveChild
                     />
                 );
             }
+
+            // if (pathName.indexOf('/dashboard') === 0) {
+            //     return (
+            //         <MetisMenu
+            //             activeLinkFromLocation
+            //             content={dashboard}
+            //             LinkComponent={RouterLink}
+            //             classNameStateIcon="arrow"
+            //             classNameItemActive="active"
+            //         />
+            //     );
+            // }
 
         };
 

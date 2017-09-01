@@ -70,7 +70,7 @@ class ProjectEdit extends Component {
 
     leaveEdit() {
         this.closeModalConfirm();
-        this.props.history.push("/dashboard/projects/project/" + this.state.currentProject.id);
+        this.props.history.push("/projects/project/" + this.state.currentProject.id);
     }
 
     validateFormFields(event) {
@@ -92,10 +92,10 @@ class ProjectEdit extends Component {
             });
         }
         if (regex.test(title) && regex.test(description)) {
-            this.props.history.push("/dashboard/projects");
+            this.props.history.push("/projects");
             const {dispatch} = this.props;
             dispatch(updateProject({id: id, title: title, description: description}));
-            this.props.history.push("/dashboard/projects/");
+            this.props.history.push("/projects");
         }
     }
 
@@ -122,7 +122,7 @@ class ProjectEdit extends Component {
                                 <p className="form-sublabel"><small>Maximum 60 characters</small></p>
                                 <Link
                                     id="pe-link-to-list"
-                                    to="/dashboard/projects"
+                                    to="/projects"
                                     className="title-description">
                                     Back to list
                                 </Link>

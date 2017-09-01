@@ -25,31 +25,31 @@ class Header extends Component {
 
     render() {
 
-        let toggleActiveDashboard = () => {
-            let path = window.location.pathname;
-            if (path.indexOf('/dashboard') === 0) {
-                return (
-                    <Link to="/dashboard/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
-                );
-            } else {
-                return (
-                    <Link to="/dashboard/interviews_upcoming" id="headerDashboard">Dashboard</Link>
-                );
-            }
-        };
-
-        let toggleActiveSettings = () => {
-            let path = window.location.pathname;
-            if (path.indexOf('/settings') === 0) {
-                return (
-                    <Link to="/settings/username" className="active" id="headerSettings">My settings</Link>
-                );
-            } else {
-                return (
-                    <NavLink to="/settings/username" id="headerSettings">My settings</NavLink>
-                );
-            }
-        };
+        // let toggleActiveDashboard = () => {
+        //     let path = window.location.pathname;
+        //     if (path.indexOf('/dashboard') === 0) {
+        //         return (
+        //             <Link to="/dashboard/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
+        //         );
+        //     } else {
+        //         return (
+        //             <Link to="/dashboard/interviews_upcoming" id="headerDashboard">Dashboard</Link>
+        //         );
+        //     }
+        // };
+        //
+        // let toggleActiveSettings = () => {
+        //     let path = window.location.pathname;
+        //     if (path.indexOf('/settings') === 0) {
+        //         return (
+        //             <Link to="/settings/username" className="active" id="headerSettings">My settings</Link>
+        //         );
+        //     } else {
+        //         return (
+        //             <Link to="/settings/username" id="headerSettings">My settings</Link>
+        //         );
+        //     }
+        // };
 
         return (
             <header className="header">
@@ -64,10 +64,10 @@ class Header extends Component {
                             Username
                         </li>
                         <li>
-                            {toggleActiveDashboard()}
+                            <Link to="/interviews_upcoming" id="headerDashboard">Dashboard</Link>
                         </li>
                         <li>
-                            {toggleActiveSettings()}
+                            <Link to="/username" id="headerSettings">My settings</Link>
                         </li>
                         <li>
                             <Link to="/login" id="headerLogin">Log in</Link>

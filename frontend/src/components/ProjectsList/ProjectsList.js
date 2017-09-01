@@ -38,7 +38,7 @@ class ProjectsList extends Component {
                     <div className="col-md-12">
                             <Link
                                 id="pl-link-to-project"
-                                to={"/dashboard/projects/project/" + value.id}
+                                to={"/projects/project/" + value.id}
                                 className="card project-link"
                             >
                                 <p className="title project-list-item">{value.title}</p>
@@ -69,7 +69,7 @@ class ProjectsList extends Component {
                         </Alert>
                         <Link
                             id="pl-link-to-create"
-                            to="/dashboard/projects/create-project"
+                            to="/projects/create-project"
                         >
                             <button className="btn btn-primary create-button">Create project</button>
                         </Link>

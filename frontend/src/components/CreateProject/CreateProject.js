@@ -77,7 +77,7 @@ class CreateProject extends Component {
             });
 
         } if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
-            this.props.history.push("/dashboard/projects");
+            this.props.history.push("/projects");
             const {dispatch} = this.props;
             dispatch(createProject({title: title, description: description}));
         }
@@ -102,7 +102,7 @@ class CreateProject extends Component {
             });
             let confirm = this.openModalConfirm();
         } else {
-            this.props.history.push("/dashboard/projects");
+            this.props.history.push("/projects");
         }
     }
 
@@ -121,7 +121,7 @@ class CreateProject extends Component {
     leaveForm() {
         this.resetFormFields();
         this.closeModalConfirm();
-        this.props.history.push("/dashboard/projects");
+        this.props.history.push("/projects");
     }
 
     resetFormFields() {
@@ -140,7 +140,7 @@ class CreateProject extends Component {
                         <div className="title-block">
                             <h3 className="title">Create project</h3>
                             <Link id="link-to-list"
-                                  to="/dashboard/projects"
+                                  to="/projects"
                                   onClick={() => this.isFieldsNotEmpty()}
                                   className="title-description">
                                 Back to list
