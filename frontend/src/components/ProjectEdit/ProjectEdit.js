@@ -5,7 +5,7 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
-import {updateProject, showProjects} from "../../redux/actions/projectActions";
+import {updateProject, showProjects, getProjects} from "../../redux/actions/projectActions";
 
 class ProjectEdit extends Component {
 
@@ -24,10 +24,16 @@ class ProjectEdit extends Component {
 
     componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects());
-
-        setTimeout(() => {
-            let projects = this.props.newProject.projects;
+        if (this.props.projects.length < 1) {
+            dispatch(getProjects(this.props.match.params.id));
+            setTimeout(() => {
+                let currentProject = this.props.currentProject;
+                this.setState({currentProject: currentProject});
+                this.setState({projectTitle: currentProject.title});
+                this.setState({projectDescription: currentProject.description});
+            }, 1000);
+        } else {
+            let projects = this.props.projects;
             let projectId = this.props.match.params.id;
             let currentProject = projects.find(function (currentProject) {
                     return currentProject.id === +projectId;
@@ -35,7 +41,8 @@ class ProjectEdit extends Component {
             this.setState({currentProject: currentProject});
             this.setState({projectTitle: currentProject.title});
             this.setState({projectDescription: currentProject.description});
-        }, 1000);
+        } 
+
     }
 
     handleTitleChange(event) {
@@ -184,7 +191,8 @@ class ProjectEdit extends Component {
 
 function mapStateToProps (state) {
     return {
-        newProject: state.project,
+        projects: state.project.projects,
+        currentProject: state.project.currentProject,
         newNote: state.notifications
     }
 }

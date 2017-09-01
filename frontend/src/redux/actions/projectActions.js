@@ -5,6 +5,7 @@ export const CREATE_PROJECT = "CREATE_PROJECT";
 export const SHOW_PROJECTS = "SHOW_PROJECTS";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const UPDATE_PROJECT = "UPDATE_PROJECT";
+export const SET_PROJECT = "SET_PROJECT";
 
 
 function addNewProject(date) {
@@ -43,6 +44,10 @@ function addProjects(projects) {
     return { type: SHOW_PROJECTS, payload: projects};
 }
 
+function setCurrentProject(project) {
+    return { type: SET_PROJECT, payload: project};
+}
+
 export function showProjects() {
     return (dispatch) => {
         fetch("/api/v1/projects")
@@ -51,6 +56,21 @@ export function showProjects() {
             )
             .then(projects => {
                 dispatch(addProjects(projects.data));
+            })
+            .catch(function(err) {
+                alert('Error:'+ err);
+            })
+    };
+}
+
+export function getProjects(id) {
+    return (dispatch) => {
+        fetch("/api/v1/projects/" + id)
+            .then(res =>
+                res.json()
+            )
+            .then(project => {
+                dispatch(setCurrentProject(project.data));
             })
             .catch(function(err) {
                 alert('Error:'+ err);
