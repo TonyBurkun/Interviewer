@@ -4,7 +4,7 @@ import {Modal, Button} from "react-bootstrap";
 import Helmet from "react-helmet";
 import "./ProjectDetails.css";
 import {connect} from "react-redux";
-import {removeProject, showProjects} from "../../redux/actions/projectActions";
+import {removeProject, getProjects} from "../../redux/actions/projectActions";
 
 
 class ProjectDetails extends Component {
@@ -16,25 +16,30 @@ class ProjectDetails extends Component {
             projectTitle: "",
             projectDescription: "",
             currentProject: ""
-
         }
     }
 
-    componentWillMount() {
-        const {dispatch} = this.props;
-        dispatch(showProjects());
-
-        setTimeout(() => {
-            let projects = this.props.newProject.projects;
-            let projectId = this.props.match.params.id;
-            let currentProject = projects.find(function (currentProject) {
-                    return currentProject.id === +projectId;
-                }) || {};
-            this.setState({currentProject: currentProject});
-            this.setState({projectTitle: currentProject.title});
-            this.setState({projectDescription: currentProject.description});
-        }, 1000);
-    }
+        componentWillMount() {
+            const {dispatch} = this.props;
+            if (this.props.newProject.projects.length < 1) {
+                dispatch(getProjects(this.props.match.params.id));
+                setTimeout(() => {
+                    let currentProject = this.props.newProject.currentProject;
+                    this.setState({currentProject: currentProject});
+                    this.setState({projectTitle: currentProject.title});
+                    this.setState({projectDescription: currentProject.description});
+                }, 1000);
+            } else {
+                let projects = this.props.newProject.projects;
+                let projectId = this.props.match.params.id;
+                let currentProject = projects.find(function (currentProject) {
+                        return currentProject.id === +projectId;
+                    }) || {};
+                this.setState({currentProject: currentProject});
+                this.setState({projectTitle: currentProject.title});
+                this.setState({projectDescription: currentProject.description});
+            }
+        }
 
     switchToEditMode() {
         let projectId = this.props.match.params.id;
@@ -70,12 +75,7 @@ class ProjectDetails extends Component {
                     <div className="col-md-12 component-container">
                         <div className="title-block">
                             <h3 className="title project-text">{this.state.projectTitle}</h3>
-                            <Link
-                                id="pd-link-to-list"
-                                to="/projects"
-                                className="title-description">
-                                Back to list
-                            </Link>
+
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block project-text">
@@ -100,6 +100,12 @@ class ProjectDetails extends Component {
                                 <button className="btn btn-primary right-project-btn">Create project</button>
                             </Link>
                         </div>
+                        <Link
+                            id="pd-link-to-list"
+                            to="/projects"
+                            className="title-description">
+                            Back to list
+                        </Link>
                     </div>
                 </div>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
@@ -116,6 +122,7 @@ class ProjectDetails extends Component {
                         </Button>
                         <Button
                             id="pd-btn-modal-no"
+                            className="right-project-btn"
                             onClick={() => this.closeModalConfirm()}
                             bsStyle="primary"
                         >No

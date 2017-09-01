@@ -5,7 +5,7 @@ import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
-import {updateProject, showProjects} from "../../redux/actions/projectActions";
+import {updateProject, getProjects} from "../../redux/actions/projectActions";
 
 class ProjectEdit extends Component {
 
@@ -24,10 +24,16 @@ class ProjectEdit extends Component {
 
     componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects());
-
-        setTimeout(() => {
-            let projects = this.props.newProject.projects;
+        if (this.props.projects.length < 1) {
+            dispatch(getProjects(this.props.match.params.id));
+            setTimeout(() => {
+                let currentProject = this.props.currentProject;
+                this.setState({currentProject: currentProject});
+                this.setState({projectTitle: currentProject.title});
+                this.setState({projectDescription: currentProject.description});
+            }, 1000);
+        } else {
+            let projects = this.props.projects;
             let projectId = this.props.match.params.id;
             let currentProject = projects.find(function (currentProject) {
                     return currentProject.id === +projectId;
@@ -35,12 +41,12 @@ class ProjectEdit extends Component {
             this.setState({currentProject: currentProject});
             this.setState({projectTitle: currentProject.title});
             this.setState({projectDescription: currentProject.description});
-        }, 1000);
+        }
     }
 
     handleTitleChange(event) {
         this.setState({projectTitle: event.target.value});
-        this.setState({descriptionError:""});
+        this.setState({titleError:""});
     }
 
     handleDescrChange(event) {
@@ -92,10 +98,9 @@ class ProjectEdit extends Component {
             });
         }
         if (regex.test(title) && regex.test(description)) {
-            this.props.history.push("/projects");
             const {dispatch} = this.props;
             dispatch(updateProject({id: id, title: title, description: description}));
-            this.props.history.push("/projects");
+            this.props.history.push("/projects/");
         }
     }
 
@@ -107,8 +112,10 @@ class ProjectEdit extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
-
-                        <form onSubmit={(event) => this.validateFormFields(event)}>
+                        <form
+                            className="form-pe"
+                            onSubmit={(event) => this.validateFormFields(event)}
+                        >
                             <div className="title-block">
                                 <input
                                     id="pe-title"
@@ -119,23 +126,18 @@ class ProjectEdit extends Component {
                                     autoFocus
                                 />
                                 <span className="error-message">{this.state.titleError}</span>
-                                <p className="form-sublabel"><small>Maximum 60 characters</small></p>
-                                <Link
-                                    id="pe-link-to-list"
-                                    to="/projects"
-                                    className="title-description">
-                                    Back to list
-                                </Link>
+                                <p className="form-sublabel no-margin"><small>Maximum 60 characters</small></p>
+
                             </div>
-                                <TextareaAutosize
-                                    id="pe-description"
-                                    className="form-control boxed"
-                                    maxLength="3000"
-                                    rows={10}
-                                    value={this.state.projectDescription}
-                                    onChange={(event) => this.handleDescrChange(event)}
-                                />
-                                <span className="error-message">
+                            <TextareaAutosize
+                                id="pe-description"
+                                className="form-control boxed"
+                                maxLength="3000"
+                                rows={10}
+                                value={this.state.projectDescription}
+                                onChange={(event) => this.handleDescrChange(event)}
+                            />
+                            <span className="error-message">
                                     {this.state.descriptionError}</span>
                             <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
 
@@ -155,6 +157,12 @@ class ProjectEdit extends Component {
                                 </button>
                             </div>
                         </form>
+                        <Link
+                            id="pe-link-to-list"
+                            to="/projects"
+                            className="title-description link-pe">
+                            Back to list
+                        </Link>
                     </div>
                 </div>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
@@ -171,6 +179,7 @@ class ProjectEdit extends Component {
                         </Button>
                         <Button
                             id="pe-btn-modal-back"
+                            className="right-project-btn"
                             onClick={() => this.closeModalConfirm()}
                             bsStyle="primary"
                         >Back to edit
@@ -184,7 +193,8 @@ class ProjectEdit extends Component {
 
 function mapStateToProps (state) {
     return {
-        newProject: state.project,
+        projects: state.project.projects,
+        currentProject: state.project.currentProject,
         newNote: state.notifications
     }
 }

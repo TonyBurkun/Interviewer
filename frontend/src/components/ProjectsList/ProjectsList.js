@@ -48,7 +48,7 @@ class ProjectsList extends Component {
             </div>
         );
 
-        const { projectTitle, projectDescription } = this.props.newProject.newProject;
+        const { projectTitle } = this.props.newProject.newProject;
         const { isNoteVisible } = this.props.newNote.newNote;
         let projectToNote = "'" + projectTitle.slice(0,20) + "..." + "'"
 

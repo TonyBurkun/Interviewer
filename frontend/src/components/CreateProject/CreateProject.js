@@ -139,12 +139,7 @@ class CreateProject extends Component {
                     <div className="col-md-12">
                         <div className="title-block">
                             <h3 className="title">Create project</h3>
-                            <Link id="link-to-list"
-                                  to="/projects"
-                                  onClick={() => this.isFieldsNotEmpty()}
-                                  className="title-description">
-                                Back to list
-                            </Link>
+
                         </div>
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="form-group has-error">
@@ -195,6 +190,12 @@ class CreateProject extends Component {
                                 </button>
                             </div>
                         </form>
+                        <Link id="link-to-list"
+                              to="/projects"
+                              onClick={() => this.isFieldsNotEmpty()}
+                              className="title-description">
+                            Back to list
+                        </Link>
                     </div>
                     <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
                         <Modal.Header closeButton>
@@ -208,7 +209,8 @@ class CreateProject extends Component {
                                 onClick={() => this.leaveForm()}>Cancel</Button>
                             <Button
                                 id="modal-confirm-back"
-                                onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                                className="right-project-btn"
+                                onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to Create Project</Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
