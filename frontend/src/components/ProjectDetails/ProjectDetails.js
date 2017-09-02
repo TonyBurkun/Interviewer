@@ -76,7 +76,8 @@ class ProjectDetails extends Component {
                         <Link
                             id="pd-link-to-list"
                             to="/projects"
-                            className="title-description">
+                            className="back-link"
+                        >
                             Back to list
                         </Link>
                         <div className="title-block block-space">

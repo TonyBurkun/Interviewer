@@ -150,7 +150,7 @@ class CreateProject extends Component {
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="form-group has-error">
                                 <label className="control-label form-label">Project Title</label>
-                                <p className="form-sublabel"><small>Maximum 60 characters</small></p>
+                                <p className="form-sublabel back-link">Maximum 60 characters</p>
                                 <input
                                     id="create-project-title"
                                     type="text"
@@ -166,7 +166,7 @@ class CreateProject extends Component {
                             </div>
                             <div className="form-group form-field-margin">
                                 <label className="control-label form-label">Project Description</label>
-                                <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
+                                <p className="form-sublabel back-link">Maximum 3000 characters</p>
                                 <TextareaAutosize
                                     id="create-project-descr"
                                     name="description"
