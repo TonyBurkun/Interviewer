@@ -35,7 +35,7 @@ public class Login {
        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         // capabilities.setCapability("marionette", true);
-        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
         driver = new ChromeDriver(capabilities);
        // listenerTest = new ListenerTest();
        // driver = new FirefoxDriver(capabilities);

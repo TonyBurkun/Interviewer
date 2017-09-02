@@ -60,7 +60,7 @@ public class LoginPage {
         return this;
     }
     public LoginPage open() {
-        driver.get("https://dev-interviewer.herokuapp.com");
+        driver.get("https://qa-interviewer.herokuapp.com");
         return this;
     }
 

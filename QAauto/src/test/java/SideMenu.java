@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,9 +19,10 @@ import java.util.concurrent.TimeUnit;
 public class SideMenu {
     LoginPage loginPage;
     SideMenuPage sideMenuPage;
+    ProjectsPage projectsPage;
     WebDriver driver;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
-    String BaseURL = "https://dev-interviewer.herokuapp.com/";
+    String BaseURL = "https://qa-interviewer.herokuapp.com/";
 
 
     @BeforeTest(groups = {"functest", "login"})
@@ -33,7 +31,7 @@ public class SideMenu {
         client.setPassword("123456QWERTY");
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
         driver = new ChromeDriver(capabilities);
         loginPage = new LoginPage(driver);
         sideMenuPage = new SideMenuPage(driver);
@@ -45,6 +43,8 @@ public class SideMenu {
 
     @Test(groups = {"functest", "14"})
     public void asserHideMenu() throws InterruptedException {
+
+        driver.manage().window().setSize(new Dimension(700, 1000));
         Assert.assertTrue(driver.findElement(By.id("sidebar-collapse-btn")).isDisplayed());
         sideMenuPage.clickSidebarButton();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div")).isDisplayed());
@@ -88,6 +88,7 @@ public class SideMenu {
     public void assertChangingTemplateItem() throws InterruptedException {
         driver.manage().window().maximize();
 
+        loginPage.open();
         sideMenuPage.clickUpcomingItem();
         String text_upcoming = driver.findElement(By.cssSelector("[class='title']")).getText();
         Assert.assertEquals(text_upcoming, "Upcoming interviews");
@@ -117,7 +118,6 @@ public class SideMenu {
         String text_projects = driver.findElement(By.cssSelector("[class='title']")).getText();
         Assert.assertEquals(text_projects, "Projects");
 
-
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
         try {
@@ -133,7 +133,7 @@ public class SideMenu {
     @Test(groups = {"functest", "20"})
     public void assertActiveItem() throws InterruptedException {
         driver.manage().window().maximize();
-
+        loginPage.open();
         sideMenuPage.clickUpcomingItem();
         String href_upcoming = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_upcoming, BaseURL+"interviews_upcoming");
@@ -163,6 +163,9 @@ public class SideMenu {
         String href_projects = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_projects, BaseURL+"projects");
 
+                projectsPage.clickCreateProjectButton();
+                String project_button = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+                Assert.assertEquals(project_button, BaseURL+"projects");
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");

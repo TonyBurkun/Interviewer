@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>functestForSideMenu</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Sep 01 18:03:20 EEST 2017</td>
+<td>Started on:</td><td>Sat Sep 02 19:45:43 EEST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>42 seconds (42168 ms)</td>
+<tr><td>Total time:</td><td>40 seconds (40169 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>functest </td>
 </tr><tr>
@@ -75,114 +75,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='SideMenu.assertActiveItem()'><b>assertActiveItem</b><br>Test class: SideMenu</td>
-<td><div><pre>org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 162 milliseconds
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;DESKTOP-D6S82PI&apos;, ip: &apos;192.168.230.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir7008_398}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b5b3c5c5de5f61650519d2d29d48958e
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-	at ui.SideMenuPage.clickUpcomingItem(SideMenuPage.java:44)
-	at SideMenu.assertActiveItem(SideMenu.java:137)
+<td title='SideMenu.asserHideMenu()'><b>asserHideMenu</b><br>Test class: SideMenu</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at SideMenu.asserHideMenu(SideMenu.java:47)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1983020048", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1983020048'><pre>org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 162 milliseconds
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;DESKTOP-D6S82PI&apos;, ip: &apos;192.168.230.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir7008_398}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b5b3c5c5de5f61650519d2d29d48958e
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-	at ui.SideMenuPage.clickUpcomingItem(SideMenuPage.java:44)
-	at SideMenu.assertActiveItem(SideMenu.java:137)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:414)
-	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-</pre></div></td>
-<td>0</td>
-<td>SideMenu@6d78f375</td></tr>
-<tr>
-<td title='SideMenu.assertChangingTemplateItem()'><b>assertChangingTemplateItem</b><br>Test class: SideMenu</td>
-<td><div><pre>org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 210 milliseconds
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;DESKTOP-D6S82PI&apos;, ip: &apos;192.168.230.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir7008_398}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b5b3c5c5de5f61650519d2d29d48958e
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-	at ui.SideMenuPage.clickUpcomingItem(SideMenuPage.java:44)
-	at SideMenu.assertChangingTemplateItem(SideMenu.java:91)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace968170661", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace968170661'><pre>org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=60.0.3112.113)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 210 milliseconds
-Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
-System info: host: &apos;DESKTOP-D6S82PI&apos;, ip: &apos;192.168.230.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir7008_398}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: b5b3c5c5de5f61650519d2d29d48958e
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-	at ui.SideMenuPage.clickUpcomingItem(SideMenuPage.java:44)
-	at SideMenu.assertChangingTemplateItem(SideMenu.java:91)
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1673003999", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1673003999'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at org.testng.Assert.assertTrue(Assert.java:51)
+	at SideMenu.asserHideMenu(SideMenu.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -215,19 +121,24 @@ Session ID: b5b3c5c5de5f61650519d2d29d48958e
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='SideMenu.asserHideMenu()'><b>asserHideMenu</b><br>Test class: SideMenu</td>
+<td title='SideMenu.asserItemLinks()'><b>asserItemLinks</b><br>Test class: SideMenu</td>
 <td></td>
-<td>3</td>
+<td>6</td>
 <td>SideMenu@6d78f375</td></tr>
 <tr>
-<td title='SideMenu.asserItemLinks()'><b>asserItemLinks</b><br>Test class: SideMenu</td>
+<td title='SideMenu.assertActiveItem()'><b>assertActiveItem</b><br>Test class: SideMenu</td>
+<td></td>
+<td>8</td>
+<td>SideMenu@6d78f375</td></tr>
+<tr>
+<td title='SideMenu.assertChangingTemplateItem()'><b>assertChangingTemplateItem</b><br>Test class: SideMenu</td>
 <td></td>
 <td>7</td>
 <td>SideMenu@6d78f375</td></tr>
 <tr>
 <td title='SideMenu.assertIconsOfMenuItems()'><b>assertIconsOfMenuItems</b><br>Test class: SideMenu</td>
 <td></td>
-<td>5</td>
+<td>3</td>
 <td>SideMenu@6d78f375</td></tr>
 </table><p>
 </body>
