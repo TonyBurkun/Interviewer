@@ -73,9 +73,14 @@ class ProjectDetails extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
-                        <div className="title-block">
+                        <Link
+                            id="pd-link-to-list"
+                            to="/projects"
+                            className="title-description">
+                            Back to list
+                        </Link>
+                        <div className="title-block block-space">
                             <h3 className="title project-text">{this.state.projectTitle}</h3>
-
                         </div>
                         <div className="card card-default">
                                 <div className="form-control boxed card-block project-text">
@@ -94,18 +99,8 @@ class ProjectDetails extends Component {
                                 className="btn btn-primary right-project-btn"
                                 onClick={() => this.openModalConfirm()}
                             >Delete</button>
-                            <Link
-                                id="pd-link-to-create"
-                                to="/projects/create-project">
-                                <button className="btn btn-primary right-project-btn">Create project</button>
-                            </Link>
                         </div>
-                        <Link
-                            id="pd-link-to-list"
-                            to="/projects"
-                            className="title-description">
-                            Back to list
-                        </Link>
+
                     </div>
                 </div>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>

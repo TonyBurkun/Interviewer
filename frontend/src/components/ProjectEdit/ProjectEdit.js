@@ -112,8 +112,14 @@ class ProjectEdit extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
+                        <Link
+                            id="pe-link-to-list"
+                            to="/projects"
+                            className="back-link">
+                            Back to list
+                        </Link>
                         <form
-                            className="form-pe"
+                            className="form-pe block-space"
                             onSubmit={(event) => this.validateFormFields(event)}
                         >
                             <div className="title-block">
@@ -157,12 +163,7 @@ class ProjectEdit extends Component {
                                 </button>
                             </div>
                         </form>
-                        <Link
-                            id="pe-link-to-list"
-                            to="/projects"
-                            className="title-description link-pe">
-                            Back to list
-                        </Link>
+
                     </div>
                 </div>
                 <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
