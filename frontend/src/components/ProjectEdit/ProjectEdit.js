@@ -12,9 +12,10 @@ class ProjectEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            projectTitle: "",
-            projectDescription: "",
             currentProject: "",
+            projectTitle: "",
+            initProjectTitle: "",
+            projectDescription: "",
             showModalConfirm: false,
             confirmText: "",
             titleError:"",
@@ -97,11 +98,31 @@ class ProjectEdit extends Component {
                 descriptionError: wrongCharMessage
             });
         }
-        if (regex.test(title) && regex.test(description)) {
+        if (!this.isTitleUnique()) {
+            event.preventDefault();
+            this.setState({
+                titleError: "This title already exists. Please, use only unique titles"
+            });
+        }
+
+        if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
             const {dispatch} = this.props;
             dispatch(updateProject({id: id, title: title, description: description}));
             this.props.history.push("/projects/");
         }
+    }
+
+    isTitleUnique() {
+        let projects = this.props.projects;
+        let id = this.state.currentProject.id;
+        let isUnique = true;
+        let title = this.state.projectTitle;
+        projects.forEach(function(item) {
+            if (item.title === title && item.id != id) {
+                isUnique = false;
+            }
+        });
+        return (isUnique) ? true: false;
     }
 
     render() {
