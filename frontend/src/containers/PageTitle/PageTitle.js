@@ -21,7 +21,7 @@ class PageTitle extends Component{
         let showBackButton = (showBackBtn) => {
             if (showBackBtn) {
                 return (
-                    <span onClick={()=>history.goBack()} className="back-btn"> « Back to list </span>
+                    <span onClick={()=>history.goBack()} className="back-btn" id="back-btn"> « Back to list </span>
                 )
             }
         };
@@ -30,7 +30,7 @@ class PageTitle extends Component{
           if (showButton){
               return (
                   <Link to={linkForButton}>
-                      <button type="button" className="btn btn-primary"> {titleForButton} </button>
+                      <button type="button" className="btn btn-primary" id="create-btn"> {titleForButton} </button>
                   </Link>
 
               )
