@@ -7,7 +7,6 @@ import "./CreateProject.css";
 import {connect} from "react-redux";
 import {createProject} from "../../redux/actions/projectActions";
 
-
 class CreateProject extends Component {
 
     constructor(props) {
@@ -21,7 +20,7 @@ class CreateProject extends Component {
             alertText: "",
             confirmText: "",
             titleError:"",
-            descriptionError: ""
+            descriptionError: "",
         };
     }
     //----------------------------------
@@ -222,7 +221,7 @@ class CreateProject extends Component {
 
 function mapStateToProps (state) {
     return {
-        newProject: state.project
+        newProject: state.project,
     }
 }
 

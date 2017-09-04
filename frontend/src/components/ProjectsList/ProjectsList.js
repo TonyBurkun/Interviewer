@@ -13,7 +13,6 @@ class ProjectsList extends Component {
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(showProjects())
-
     }
 
     onDismiss() {

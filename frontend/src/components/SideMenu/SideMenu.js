@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {Link, activeClassName} from "react-router-dom";
 import "./sideMenu.css";
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as pageActions from '../../redux/actions/sideBarActions';
-import MetisMenu from 'react-metismenu';
-import RouterLink from 'react-metismenu-router-link';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as pageActions from "../../redux/actions/sideBarActions";
+import MetisMenu from "react-metismenu";
+import RouterLink from "react-metismenu-router-link";
 
 class SideMenu extends Component {
 
@@ -126,6 +126,17 @@ class SideMenu extends Component {
 
                     />
                 );
+            } else if (pathName.indexOf('/projects') === 0) {
+                return (
+                    <MetisMenu
+                        activeLinkLabel='Projects'
+                        content={dashboard}
+                        LinkComponent={RouterLink}
+                        classNameStateIcon="arrow"
+                        classNameItemActive="active"
+                        hasActiveChild
+                    />
+                );
             } else {
                 return (
                     <MetisMenu
@@ -177,7 +188,7 @@ class SideMenu extends Component {
 
 function mapStateToProps(state) {
     return {
-        sideBar: state.sideBar.status
+        sideBar: state.sideBar.status,
     }
 }
 
