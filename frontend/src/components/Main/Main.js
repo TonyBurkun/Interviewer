@@ -8,6 +8,7 @@ import InterviewsCompleted from '../InterviewsCompleted';
 import Candidates from './../Candidates';
 import VacanciesOpen from './../VacanciesOpen';
 import VacanciesClosed from './../VacanciesClosed';
+import CreateVacancy from './../CreateVacancy';
 import CreateProject from './../CreateProject';
 import ProjectsList from './../ProjectsList';
 import ProjectDetails from './../ProjectDetails';
@@ -66,12 +67,12 @@ class Main extends Component {
                                 component={ProjectEdit}
                             />
                             <Route
-                                exact path="/interviews_upcoming"
+                                exact path="/interviews-upcoming"
                                 name="InterviewsUpcoming"
                                 component={InterviewsUpcoming}
                             />
                             <Route
-                                exact path="/interviews_completed"
+                                exact path="/interviews-completed"
                                 name="InterviewsCompleted"
                                 component={InterviewsCompleted}
                             />
@@ -86,14 +87,19 @@ class Main extends Component {
                                 component={Candidates}
                             />
                             <Route
-                                exact path="/vacancies_open"
+                                exact path="/vacancies-open"
                                 name="VacanciesOpen"
                                 component={VacanciesOpen}
                             />
                             <Route
-                                exact path="/vacancies_closed"
+                                exact path="/vacancies-closed"
                                 name="VacanciesClosed"
                                 component={VacanciesClosed}
+                            />
+                            <Route
+                                exact path="/create-vacancy"
+                                name="CreateVacancy"
+                                component={CreateVacancy}
                             />
                             <Route
                                 exact path="/username"
@@ -105,7 +111,7 @@ class Main extends Component {
                                 name="Password"
                                 component={Password}
                             />
-                            <Redirect from="/" to="/interviews_upcoming"/>
+                            <Redirect from="/" to="/interviews-upcoming"/>
                         </Switch>
                     </article>
                 </div>
