@@ -141,6 +141,7 @@ class Login extends Component {
             if (!passwordIsEmpty) {
                 if (loginValidationSettings.rules.password.minLength.checkMinLength) {
                     if (password.value.length < loginValidationSettings.rules.password.minLength.minLengthVal) {
+
                         let errorElem = document.createElement('span');
                         errorElem.innerHTML = loginValidationSettings.messages.password.minLength;
                         errorElem.classList.add('has-error');

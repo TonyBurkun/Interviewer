@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './header.css';
 
 import {connect} from 'react-redux';
@@ -29,11 +29,11 @@ class Header extends Component {
             let path = window.location.pathname;
             if (path.indexOf('/username') !== 0 && path.indexOf('/password') !== 0) {
                 return (
-                    <Link to="/interviews_upcoming" id="headerDashboard" className="active">Dashboard</Link>
+                    <Link to="/interviews-upcoming" id="headerDashboard" className="active">Dashboard</Link>
                 );
             } else {
                 return (
-                    <Link to="/interviews_upcoming" id="headerDashboard">Dashboard</Link>
+                    <Link to="/interviews-upcoming" id="headerDashboard">Dashboard</Link>
                 );
             }
         };

@@ -59,12 +59,12 @@ class SideMenu extends Component {
                         {
                             icon: 'square-o',
                             label: 'Upcoming',
-                            to: '/interviews_upcoming',
+                            to: '/interviews-upcoming',
                         },
                         {
                             icon: 'check-square-o',
                             label: 'Completed',
-                            to: '/interviews_completed',
+                            to: '/interviews-completed',
                         }
                     ]
                 },
@@ -79,11 +79,11 @@ class SideMenu extends Component {
                     content: [
                         {
                             label: 'Open',
-                            to: '/vacancies_open',
+                            to: '/vacancies-open',
                         },
                         {
                             label: 'Closed',
-                            to: '/vacancies_closed',
+                            to: '/vacancies-closed',
                         }
                     ]
                 },

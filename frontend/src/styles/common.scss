@@ -1,0 +1,37 @@
+* {
+  outline: none !important;
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100%;
+}
+
+.btn{
+  margin-right: 10px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.back-btn{
+  cursor: pointer;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #969696;
+
+  &:hover{
+    text-decoration: underline;
+    color: #70b02b;
+  }
+}
+
+form{
+  .filter-block{
+    background: #85CE36;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+}
