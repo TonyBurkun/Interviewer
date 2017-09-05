@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link, activeClassName} from "react-router-dom";
+import {activeClassName, Link} from "react-router-dom";
 import "./sideMenu.css";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -53,15 +53,18 @@ class SideMenu extends Component {
 
             const dashboard = [
                 {
+                    name: '/interviews',
                     icon: 'handshake-o',
                     label: 'Interviews',
                     content: [
                         {
+                            name: '/interviews-upcoming',
                             icon: 'square-o',
                             label: 'Upcoming',
                             to: '/interviews-upcoming',
                         },
                         {
+                            name: '/interviews-completed',
                             icon: 'check-square-o',
                             label: 'Completed',
                             to: '/interviews-completed',
@@ -69,30 +72,36 @@ class SideMenu extends Component {
                     ]
                 },
                 {
+                    name: '/interviewers',
                     icon: 'user-o',
                     label: 'Interviewers',
                     to: '/interviewers',
                 },
                 {
+                    name: '/vacancies',
                     icon: 'binoculars',
                     label: 'Vacancies',
                     content: [
                         {
+                            name: '/vacancies-open',
                             label: 'Open',
                             to: '/vacancies-open',
                         },
                         {
+                            name: '/vacancies-closed',
                             label: 'Closed',
                             to: '/vacancies-closed',
                         }
                     ]
                 },
                 {
+                    name: '/candidates',
                     icon: 'address-card-o',
                     label: 'Candidates',
                     to: '/candidates',
                 },
                 {
+                    name: '/projects',
                     icon: 'briefcase',
                     label: 'Projects',
                     to: '/projects'
@@ -115,6 +124,37 @@ class SideMenu extends Component {
 
             let pathName = window.location.pathname;
 
+            let items = [
+                {name: "/interviews", label: "Interviews"},
+                {name: "/interviews-upcoming", label: "Upcoming"},
+                {name: "/interviews-completed", label: "Completed"},
+
+                {name: "/interviewers", label: "Interviewers"},
+
+                {name: "/vacancies", label: "Vacancies"},
+                {name: "/vacancies-open", label: "Open"},
+                {name: "/vacancies-closed", label: "Closed"},
+
+                {name: '/candidates', label: "Candidates"},
+                {name: '/projects', label: "Projects"},
+            ]
+
+            let menuItem = items.find(function (item) {
+                return pathName === item.name;
+            });
+
+            if (!menuItem) {
+                menuItem = items.find(function (item) {
+                    let itemName = pathName.split("/")[1];
+                    return item.name.indexOf(itemName) != -1 ;
+                });
+            }
+
+            let label;
+            if (menuItem) {
+                label = menuItem.label;
+            }
+
             if (pathName.indexOf('/username') === 0 || pathName.indexOf('/password') === 0) {
                 return (
                     <MetisMenu
@@ -126,10 +166,10 @@ class SideMenu extends Component {
 
                     />
                 );
-            } else if (pathName.indexOf('/projects') === 0) {
+            } else if (menuItem) {
                 return (
                     <MetisMenu
-                        activeLinkLabel='Projects'
+                        activeLinkLabel={label}
                         content={dashboard}
                         LinkComponent={RouterLink}
                         classNameStateIcon="arrow"
@@ -137,7 +177,21 @@ class SideMenu extends Component {
                         hasActiveChild
                     />
                 );
-            } else {
+            }
+
+            // } else if (parentMenuItem) {
+            //     return (
+            //         <MetisMenu
+            //             activeLinkLabel={parentLabel}
+            //             content={dashboard}
+            //             LinkComponent={RouterLink}
+            //             classNameStateIcon="arrow"
+            //             classNameItemActive="active"
+            //             hasActiveChild
+            //         />
+            //     );
+            // }
+            else {
                 return (
                     <MetisMenu
                         activeLinkFromLocation
@@ -149,6 +203,7 @@ class SideMenu extends Component {
                     />
                 );
             }
+            ;
 
             // if (pathName.indexOf('/dashboard') === 0) {
             //     return (
@@ -161,8 +216,8 @@ class SideMenu extends Component {
             //         />
             //     );
             // }
-
         };
+
 
 
         return (

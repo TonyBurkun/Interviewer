@@ -97,7 +97,7 @@ class Main extends Component {
                                 component={VacanciesClosed}
                             />
                             <Route
-                                exact path="/create-vacancy"
+                                exact path="/vacancies-open/create-vacancy"
                                 name="CreateVacancy"
                                 component={CreateVacancy}
                             />
