@@ -102,6 +102,11 @@ class Main extends Component {
                                 component={CreateVacancy}
                             />
                             <Route
+                                exact path="/vacancies-closed/create-vacancy"
+                                name="CreateVacancy"
+                                component={CreateVacancy}
+                            />
+                            <Route
                                 exact path="/username"
                                 name="Username"
                                 component={Username}

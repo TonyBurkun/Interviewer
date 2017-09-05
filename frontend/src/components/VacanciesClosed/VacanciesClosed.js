@@ -20,7 +20,7 @@ class VacanciesClosed extends Component{
                             showBackBtn={false}
                             showButton={true}
                             titleForButton='Create vacancy'
-                            linkForButton='/create-vacancy'
+                            linkForButton='/vacancies-closed/create-vacancy'
                         />
                         <Filters
                             project={true}
