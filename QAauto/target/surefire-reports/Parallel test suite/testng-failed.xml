@@ -12,9 +12,12 @@
     <classes>
       <class name="SideMenu">
         <methods>
+          <include name="assertActiveItem"/>
           <include name="after"/>
           <include name="before"/>
+          <include name="assertIconsOfMenuItems"/>
           <include name="asserHideMenu"/>
+          <include name="assertChangingTemplateItem"/>
         </methods>
       </class> <!-- SideMenu -->
     </classes>

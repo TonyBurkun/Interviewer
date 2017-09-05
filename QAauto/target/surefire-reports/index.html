@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">18 methods, 1 failed,   17 passed</span>
+                    <span class="method-stats">18 methods, 4 failed,   14 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,6 +103,21 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="asserHideMenu">asserHideMenu</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertActiveItem">assertActiveItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertChangingTemplateItem">assertChangingTemplateItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertIconsOfMenuItems">assertIconsOfMenuItems</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Parallel_test_suite -->
@@ -121,22 +136,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertActiveItem">assertActiveItem</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertChangingTemplateItem">assertChangingTemplateItem</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="Login" hash-for-method="assertElementsOnPage">assertElementsOnPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="SideMenu" hash-for-method="assertIconsOfMenuItems">assertIconsOfMenuItems</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -223,7 +223,95 @@
                   </a> <!-- asserHideMenu -->
                   <span class="method-name">asserHideMenu</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at SideMenu.asserHideMenu(SideMenu.java:47)
+	at SideMenu.asserHideMenu(SideMenu.java:48)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertActiveItem">
+                  </a> <!-- assertActiveItem -->
+                  <span class="method-name">assertActiveItem</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Error:TypeError: Failed to fetch}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 56 milliseconds: null
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;DESKTOP-II50ODI&apos;, ip: &apos;192.168.31.114&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir5456_8461}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 843ad67b75bd65450a6241580f4e9ef1
+*** Element info: {Using=xpath, value=//*[@id=&quot;app&quot;]/div/div[1]/div/div[2]/div/ul/li[1]/ul/li[1]/a}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:173)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at ui.SideMenuPage.clickUpcomingItem(SideMenuPage.java:44)
+	at SideMenu.assertActiveItem(SideMenu.java:137)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertChangingTemplateItem">
+                  </a> <!-- assertChangingTemplateItem -->
+                  <span class="method-name">assertChangingTemplateItem</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Error:TypeError: Failed to fetch}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 38 milliseconds: null
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;DESKTOP-II50ODI&apos;, ip: &apos;192.168.31.114&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir5456_8461}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 843ad67b75bd65450a6241580f4e9ef1
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:173)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:364)
+	at ui.LoginPage.open(LoginPage.java:63)
+	at SideMenu.assertChangingTemplateItem(SideMenu.java:91)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertIconsOfMenuItems">
+                  </a> <!-- assertIconsOfMenuItems -->
+                  <span class="method-name">assertIconsOfMenuItems</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Error:TypeError: Failed to fetch}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 78 milliseconds: null
+Build info: version: &apos;3.4.0&apos;, revision: &apos;unknown&apos;, time: &apos;unknown&apos;
+System info: host: &apos;DESKTOP-II50ODI&apos;, ip: &apos;192.168.31.114&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\3671~1\AppData\Local\Temp\scoped_dir5456_8461}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 843ad67b75bd65450a6241580f4e9ef1
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:173)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:364)
+	at ui.LoginPage.open(LoginPage.java:63)
+	at SideMenu.assertIconsOfMenuItems(SideMenu.java:65)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
@@ -245,27 +333,6 @@
                   <a name="asserItemLinks">
                   </a> <!-- asserItemLinks -->
                   <span class="method-name">asserItemLinks</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="assertActiveItem">
-                  </a> <!-- assertActiveItem -->
-                  <span class="method-name">assertActiveItem</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="assertChangingTemplateItem">
-                  </a> <!-- assertChangingTemplateItem -->
-                  <span class="method-name">assertChangingTemplateItem</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="assertIconsOfMenuItems">
-                  </a> <!-- assertIconsOfMenuItems -->
-                  <span class="method-name">assertIconsOfMenuItems</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -713,80 +780,80 @@ data.addRows(18);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'assertElementsOnPage')
 data.setCell(0, 2, 'Login')
-data.setCell(0, 3, 9481);
+data.setCell(0, 3, 39919);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'assertActiveItem')
+data.setCell(1, 1, 'asserItemLinks')
 data.setCell(1, 2, 'SideMenu')
-data.setCell(1, 3, 8500);
+data.setCell(1, 3, 10861);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'assertChangingTemplateItem')
-data.setCell(2, 2, 'SideMenu')
-data.setCell(2, 3, 7526);
+data.setCell(2, 1, 'dontHaveAccount')
+data.setCell(2, 2, 'Login')
+data.setCell(2, 3, 5105);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'asserItemLinks')
-data.setCell(3, 2, 'SideMenu')
-data.setCell(3, 3, 6369);
+data.setCell(3, 1, 'enterEmail')
+data.setCell(3, 2, 'Login')
+data.setCell(3, 3, 3184);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'dontHaveAccount')
+data.setCell(4, 1, 'enterWithWrongPassword')
 data.setCell(4, 2, 'Login')
-data.setCell(4, 3, 3635);
+data.setCell(4, 3, 3066);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'assertIconsOfMenuItems')
-data.setCell(5, 2, 'SideMenu')
-data.setCell(5, 3, 3116);
+data.setCell(5, 1, 'enterMinThenMinPassword')
+data.setCell(5, 2, 'Login')
+data.setCell(5, 3, 2785);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'enterWithEmptyPassword')
 data.setCell(6, 2, 'Login')
-data.setCell(6, 3, 2495);
+data.setCell(6, 3, 2658);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'enterMinThenMinPassword')
+data.setCell(7, 1, 'enterWithWrongEmail')
 data.setCell(7, 2, 'Login')
-data.setCell(7, 3, 2436);
+data.setCell(7, 3, 2643);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'enterWithWrongPassword')
+data.setCell(8, 1, 'passwordWithAsterisk')
 data.setCell(8, 2, 'Login')
-data.setCell(8, 3, 2399);
+data.setCell(8, 3, 2206);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'enterEmail')
+data.setCell(9, 1, 'enterMinThenMinEmail')
 data.setCell(9, 2, 'Login')
-data.setCell(9, 3, 2319);
+data.setCell(9, 3, 2191);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'enterMinPassword')
+data.setCell(10, 1, 'passwordHolder')
 data.setCell(10, 2, 'Login')
-data.setCell(10, 3, 2037);
+data.setCell(10, 3, 2158);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'enterWithWrongEmail')
+data.setCell(11, 1, 'enterMinPassword')
 data.setCell(11, 2, 'Login')
-data.setCell(11, 3, 1910);
+data.setCell(11, 3, 2142);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'enterMinThenMinEmail')
+data.setCell(12, 1, 'enterMaxEmail')
 data.setCell(12, 2, 'Login')
-data.setCell(12, 3, 1864);
+data.setCell(12, 3, 1638);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'passwordWithAsterisk')
+data.setCell(13, 1, 'enterMaxPassword')
 data.setCell(13, 2, 'Login')
-data.setCell(13, 3, 1665);
+data.setCell(13, 3, 1601);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'passwordHolder')
-data.setCell(14, 2, 'Login')
-data.setCell(14, 3, 1551);
+data.setCell(14, 1, 'assertActiveItem')
+data.setCell(14, 2, 'SideMenu')
+data.setCell(14, 3, 1154);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'enterMaxEmail')
-data.setCell(15, 2, 'Login')
-data.setCell(15, 3, 951);
+data.setCell(15, 1, 'asserHideMenu')
+data.setCell(15, 2, 'SideMenu')
+data.setCell(15, 3, 994);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'enterMaxPassword')
-data.setCell(16, 2, 'Login')
-data.setCell(16, 3, 916);
+data.setCell(16, 1, 'assertChangingTemplateItem')
+data.setCell(16, 2, 'SideMenu')
+data.setCell(16, 3, 226);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'asserHideMenu')
+data.setCell(17, 1, 'assertIconsOfMenuItems')
 data.setCell(17, 2, 'SideMenu')
-data.setCell(17, 3, 570);
+data.setCell(17, 3, 82);
 window.suiteTableData['Parallel_test_suite']= { tableData: data, tableDiv: 'times-div-Parallel_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 59 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Parallel_test_suite">
               </div> <!-- times-div-Parallel_test_suite -->
             </div> <!-- times-div -->
@@ -836,13 +903,6 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">before</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">before</span>
@@ -851,9 +911,13 @@ return data;
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">before</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">assertElementsOnPage</span>
-                <span class="method-start">4865 ms</span>
+                <span class="method-start">5363 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
@@ -862,106 +926,100 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">asserHideMenu</span>
-                <span class="method-start">11291 ms</span>
+                <span class="method-start">42338 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">asserItemLinks</span>
-                <span class="method-start">11868 ms</span>
+                <span class="method-start">43383 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">dontHaveAccount</span>
-                <span class="method-start">14346 ms</span>
+                <span class="method-start">45283 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterEmail</span>
-                <span class="method-start">17981 ms</span>
+                <span class="method-start">50390 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">assertActiveItem</span>
-                <span class="method-start">18239 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">enterMaxEmail</span>
-                <span class="method-start">20301 ms</span>
+                <span class="method-start">53576 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">assertActiveItem</span>
+                <span class="method-start">54246 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">enterMaxPassword</span>
-                <span class="method-start">21252 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">enterMinPassword</span>
-                <span class="method-start">22168 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">enterMinThenMinEmail</span>
-                <span class="method-start">24206 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">enterMinThenMinPassword</span>
-                <span class="method-start">26071 ms</span>
+                <span class="method-start">55214 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">assertChangingTemplateItem</span>
-                <span class="method-start">26740 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">enterWithEmptyPassword</span>
-                <span class="method-start">28507 ms</span>
+                <span class="method-start">55476 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">enterWithWrongEmail</span>
-                <span class="method-start">31002 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">enterWithWrongPassword</span>
-                <span class="method-start">32913 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">assertIconsOfMenuItems</span>
-                <span class="method-start">34266 ms</span>
+                <span class="method-start">55705 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">passwordHolder</span>
-                <span class="method-start">35313 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">passwordWithAsterisk</span>
-                <span class="method-start">36865 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">SideMenu</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">after</span>
-                <span class="method-start">37383 ms</span>
+                <span class="method-start">55799 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">enterMinPassword</span>
+                <span class="method-start">56819 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMinThenMinEmail</span>
+                <span class="method-start">58962 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMinThenMinPassword</span>
+                <span class="method-start">61155 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterWithEmptyPassword</span>
+                <span class="method-start">63942 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterWithWrongEmail</span>
+                <span class="method-start">66600 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterWithWrongPassword</span>
+                <span class="method-start">69243 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">passwordHolder</span>
+                <span class="method-start">72310 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">passwordWithAsterisk</span>
+                <span class="method-start">74468 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">after</span>
-                <span class="method-start">38531 ms</span>
+                <span class="method-start">76675 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

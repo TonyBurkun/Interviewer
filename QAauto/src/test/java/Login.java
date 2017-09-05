@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class Login {
     LoginPage loginPage;
     WebDriver driver;
+    ListenerTest listenerTest;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
 
     @BeforeTest(groups = {"functest", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
