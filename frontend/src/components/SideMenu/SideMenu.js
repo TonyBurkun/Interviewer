@@ -12,9 +12,6 @@ class SideMenu extends Component {
     constructor(props) {
         super(props);
 
-        this.handleCloseSideBarClick = this.handleCloseSideBarClick.bind(this);
-        this.handleMenuClick = this.handleMenuClick.bind(this);
-        this.handleClickLogo = this.handleClickLogo.bind(this);
     }
 
     handleCloseSideBarClick() {
@@ -110,34 +107,47 @@ class SideMenu extends Component {
 
             const settings = [
                 {
+                    name: '/username',
                     icon: 'user-circle-o',
                     label: 'Username',
                     to: '/username'
                 },
                 {
+                    name: '/password',
                     icon: 'lock',
                     label: 'Password',
                     to: '/password',
                 }
             ];
 
+            let pathName = window.location.pathname,
+                items = dashboard.concat(settings);
 
-            let pathName = window.location.pathname;
+            items.forEach(function (item) {
+                if (item.content){
+                    for (let i = 0; i < item.content.length; i++){
+                        items.push(item.content[i]);
+                    }
+                }
+            });
 
-            let items = [
-                {name: "/interviews", label: "Interviews"},
-                {name: "/interviews-upcoming", label: "Upcoming"},
-                {name: "/interviews-completed", label: "Completed"},
-
-                {name: "/interviewers", label: "Interviewers"},
-
-                {name: "/vacancies", label: "Vacancies"},
-                {name: "/vacancies-open", label: "Open"},
-                {name: "/vacancies-closed", label: "Closed"},
-
-                {name: '/candidates', label: "Candidates"},
-                {name: '/projects', label: "Projects"},
-            ]
+            // let items = [
+            //     {name: "/interviews", label: "Interviews"},
+            //     {name: "/interviews-upcoming", label: "Upcoming"},
+            //     {name: "/interviews-completed", label: "Completed"},
+            //
+            //     {name: "/interviewers", label: "Interviewers"},
+            //
+            //     {name: "/vacancies", label: "Vacancies"},
+            //     {name: "/vacancies-open", label: "Open"},
+            //     {name: "/vacancies-closed", label: "Closed"},
+            //
+            //     {name: '/candidates', label: "Candidates"},
+            //     {name: '/projects', label: "Projects"},
+            //
+            //     {name: '/password', label: "Password"},
+            //     {name: '/username', label: "Username"},
+            // ];
 
             let menuItem = items.find(function (item) {
                 return pathName === item.name;
@@ -146,7 +156,7 @@ class SideMenu extends Component {
             if (!menuItem) {
                 menuItem = items.find(function (item) {
                     let itemName = pathName.split("/")[1];
-                    return item.name.indexOf(itemName) != -1 ;
+                    return item.name.indexOf(itemName) !== -1 ;
                 });
             }
 
@@ -158,7 +168,7 @@ class SideMenu extends Component {
             if (pathName.indexOf('/username') === 0 || pathName.indexOf('/password') === 0) {
                 return (
                     <MetisMenu
-                        activeLinkFromLocation
+                        activeLinkLabel={label}
                         content={settings}
                         LinkComponent={RouterLink}
                         classNameStateIcon="arrow"
@@ -166,7 +176,7 @@ class SideMenu extends Component {
 
                     />
                 );
-            } else if (menuItem) {
+            } else {
                 return (
                     <MetisMenu
                         activeLinkLabel={label}
@@ -174,51 +184,11 @@ class SideMenu extends Component {
                         LinkComponent={RouterLink}
                         classNameStateIcon="arrow"
                         classNameItemActive="active"
-                        hasActiveChild
                     />
                 );
             }
 
-            // } else if (parentMenuItem) {
-            //     return (
-            //         <MetisMenu
-            //             activeLinkLabel={parentLabel}
-            //             content={dashboard}
-            //             LinkComponent={RouterLink}
-            //             classNameStateIcon="arrow"
-            //             classNameItemActive="active"
-            //             hasActiveChild
-            //         />
-            //     );
-            // }
-            else {
-                return (
-                    <MetisMenu
-                        activeLinkFromLocation
-                        content={dashboard}
-                        LinkComponent={RouterLink}
-                        classNameStateIcon="arrow"
-                        classNameItemActive="active"
-                        hasActiveChild
-                    />
-                );
-            }
-            ;
-
-            // if (pathName.indexOf('/dashboard') === 0) {
-            //     return (
-            //         <MetisMenu
-            //             activeLinkFromLocation
-            //             content={dashboard}
-            //             LinkComponent={RouterLink}
-            //             classNameStateIcon="arrow"
-            //             classNameItemActive="active"
-            //         />
-            //     );
-            // }
         };
-
-
 
         return (
             <div className="sidebar-section">
@@ -226,15 +196,15 @@ class SideMenu extends Component {
                     <div className="sidebar-container">
                         <div className="sidebar-header">
                             <div className="brand">
-                                <Link to="/" id="sideMenuLogo" onClick={this.handleClickLogo}>Logo</Link>
+                                <Link to="/" id="sideMenuLogo" onClick={() => this.handleClickLogo()}>Logo</Link>
                             </div>
                         </div>
-                        <div className="sidebar-menu" id="metisMenu" onClick={this.handleMenuClick}>
+                        <div className="sidebar-menu" id="metisMenu" onClick={(event) => this.handleMenuClick(event)}>
                             {changeMenuItems()}
                         </div>
                     </div>
                 </div>
-                <div className="sidebar-overlay" id="sidebar-overlay" onClick={this.handleCloseSideBarClick}/>
+                <div className="sidebar-overlay" id="sidebar-overlay" onClick={() => this.handleCloseSideBarClick()}/>
             </div>
         )
     }

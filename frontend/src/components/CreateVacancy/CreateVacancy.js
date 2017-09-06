@@ -167,7 +167,7 @@ class CreateVacancy extends Component{
                                             </div>
                                             <div className="form-group">
                                                 <select className="form-control form-control-sm" id="position-filter">
-                                                    <option>All Position</option>
+                                                    <option>All Positions</option>
                                                     <option>QA</option>
                                                     <option>Frontend</option>
                                                     <option>Backend</option>
@@ -225,7 +225,7 @@ class CreateVacancy extends Component{
                                         onClick={() => this.leaveForm()}>Cancel</Button>
                                     <Button
                                         id="modal-confirm-back"
-                                        onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to edit</Button>
+                                        onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to Create Vacancy</Button>
                                 </Modal.Footer>
                             </Modal>
                         </div>
