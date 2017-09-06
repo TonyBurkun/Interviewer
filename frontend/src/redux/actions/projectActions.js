@@ -29,9 +29,9 @@ export function createProject(date) {
             .then(date => {
                 dispatch(addNewProject(date));
                 dispatch(showProjects());
-                dispatch(showNote({show: true }));
+                dispatch(showNote({show: true}));
                 setInterval(() => {
-                    dispatch(showNote({show: false }))
+                    dispatch(showNote({show: false}))
                 }, 4000)
             })
             .catch(function(err) {

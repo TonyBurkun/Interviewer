@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
 import {Alert} from "reactstrap";
-import {showNote} from "../../redux/actions/notificationActions";
+import {showNote, makeNote} from "../../redux/actions/notificationActions";
 import {showProjects} from "../../redux/actions/projectActions";
 
 
@@ -20,9 +20,16 @@ class ProjectsList extends Component {
         dispatch(showNote({show: false}))
     }
 
+    test(status, text) {
+        const {dispatch} = this.props;
+        dispatch(makeNote({status: status, text: text, show: true}))
+    }
+
+
     render() {
 
         let projects = this.props.newProject.projects;
+        console.log(this.props.notifications);
 
             let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
@@ -61,11 +68,15 @@ class ProjectsList extends Component {
                         <div className="title-block">
                             <h3 className="title">Projects</h3>
                         </div>
-                        <Alert className="col-md-7 alert-custom"
+                        {/*<button onClick={() => this.test("success", "test1")}>TEST</button>*/}
+                        {/*<button onClick={() => this.test("warning", "test2")}>TEST</button>*/}
+                        <div className="notification-container">
+                            <Alert className="notification"
                                isOpen={isNoteVisible}
                                toggle={() => this.onDismiss()}>
                             Project {projectToNote} was created!
-                        </Alert>
+                            </Alert>
+                        </div>
                         <Link
                             id="pl-link-to-create"
                             to="/projects/create-project"
@@ -84,7 +95,8 @@ class ProjectsList extends Component {
 function mapStateToProps (state) {
     return {
         newProject: state.project,
-        newNote: state.notifications
+        newNote: state.notifications,
+        notifications: state.notifications
     }
 }
 

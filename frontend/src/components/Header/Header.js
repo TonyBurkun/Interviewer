@@ -5,6 +5,7 @@ import './header.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as pageActions from '../../redux/actions/sideBarActions';
+import Notifications from '../../containers/Notifications';
 
 
 class Header extends Component {
@@ -77,6 +78,7 @@ class Header extends Component {
                         </li>
                     </ul>
                 </div>
+                <Notifications/>
             </header>
         );
     }

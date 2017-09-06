@@ -7,7 +7,7 @@ const initialState = {
         projectDescription: "initDiscr",
     },
     currentProject: {}
-}
+};
 
 
 export default function project(state = initialState, action) {
