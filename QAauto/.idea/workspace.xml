@@ -2,37 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a37e78-76c3-4262-865f-83a5941872aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Login.class" afterPath="$PROJECT_DIR$/target/test-classes/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/SideMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/SideMenu.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/testng-failed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-Login.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-SideMenu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/Login.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/SideMenu.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QAauto.iml" afterPath="$PROJECT_DIR$/QAauto.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java" afterPath="$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" afterPath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Login.java" afterPath="$PROJECT_DIR$/src/test/java/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.html" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.html" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/testng-failed.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/testng-failed.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-Login.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-Login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-SideMenu.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-SideMenu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/classes.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/classes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForLoginPage.properties" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForLoginPage.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForSideMenu.properties" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForSideMenu.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/groups.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/groups.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-alphabetical.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-alphabetical.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-not-run.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-not-run.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/testng.xml.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/testng.xml.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/toc.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/toc.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../package.json" afterPath="$PROJECT_DIR$/../package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/Login.java" afterPath="$PROJECT_DIR$/src/test/java/ui/Login.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/SideMenu.java" afterPath="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +51,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="ProjectsPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectsPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            <state relative-caret-position="105">
+              <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SideMenu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="933">
+              <caret line="191" column="49" lean-forward="false" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
+              <folding>
+                <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertDashboerd#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SideMenuPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/SideMenuPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -85,6 +115,7 @@
         <option value="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
       </list>
     </option>
   </component>
@@ -96,10 +127,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="11" />
-    <option name="width" value="2327" />
-    <option name="height" value="2110" />
+    <option name="x" value="792" />
+    <option name="width" value="1103" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -117,8 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,6 +178,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -225,10 +257,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
-  <component name="RunManager" selected="TestNG.SideMenu">
+  <component name="RunManager" selected="TestNG.SideMenu.assertActiveItem (1)">
     <configuration default="false" name="SideMenu.asserHideMenu" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="QAauto" />
@@ -266,34 +300,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SideMenu" />
       <option name="METHOD_NAME" value="assertActiveItem" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="SideMenu.assertChangingTemplateItem" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="QAauto" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SideMenu" />
-      <option name="METHOD_NAME" value="assertChangingTemplateItem" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -352,6 +358,39 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="SideMenu.assertActiveItem (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="QAauto" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ui" />
+      <option name="MAIN_CLASS_NAME" value="ui.SideMenu" />
+      <option name="METHOD_NAME" value="assertActiveItem" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -621,17 +660,17 @@
       <item index="0" class="java.lang.String" itemvalue="Maven.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.SideMenu.asserHideMenu" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.SideMenu.assertActiveItem" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.SideMenu.assertChangingTemplateItem" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.SideMenu.asserItemLinks" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.SideMenu" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.SideMenu.asserItemLinks" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.SideMenu" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.SideMenu.assertActiveItem (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.SideMenu" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.SideMenu.asserHideMenu" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.SideMenu.assertActiveItem" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.SideMenu.asserItemLinks" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.SideMenu.assertChangingTemplateItem" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.SideMenu.assertActiveItem (1)" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.SideMenu" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.SideMenu.asserHideMenu" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.SideMenu.assertActiveItem" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.SideMenu.asserItemLinks" />
       </list>
     </recent_temporary>
   </component>
@@ -649,18 +688,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SideMenu - 2017.09.02 at 19h 40m 58s.xml">
-      <configuration name="SideMenu" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SideMenu_asserHideMenu - 2017.09.02 at 18h 05m 13s.xml">
-      <configuration name="SideMenu.asserHideMenu" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SideMenu_asserHideMenu - 2017.09.02 at 18h 05m 52s.xml">
-      <configuration name="SideMenu.asserHideMenu" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SideMenu_asserHideMenu - 2017.09.02 at 18h 38m 33s.xml">
-      <configuration name="SideMenu.asserHideMenu" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SideMenu_asserHideMenu - 2017.09.02 at 18h 59m 22s.xml">
       <configuration name="SideMenu.asserHideMenu" configurationId="TestNG" />
     </history-entry>
@@ -679,33 +706,45 @@
     <history-entry file="SideMenu_assertActiveItem - 2017.09.02 at 18h 25m 40s.xml">
       <configuration name="SideMenu.assertActiveItem" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SideMenu_assertActiveItem_(1) - 2017.09.06 at 16h 21m 23s.xml">
+      <configuration name="SideMenu.assertActiveItem (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SideMenu_assertActiveItem_(1) - 2017.09.06 at 16h 23m 42s.xml">
+      <configuration name="SideMenu.assertActiveItem (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SideMenu_assertActiveItem_(1) - 2017.09.06 at 16h 27m 17s.xml">
+      <configuration name="SideMenu.assertActiveItem (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SideMenu_assertActiveItem_(1) - 2017.09.06 at 16h 29m 27s.xml">
+      <configuration name="SideMenu.assertActiveItem (1)" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="11" width="2327" height="2110" extended-state="0" />
+    <frame x="792" y="0" width="1103" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32621783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32583067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27722773" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17148982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26147044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20182233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06136146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -749,7 +788,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -758,6 +797,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2652">
@@ -800,14 +847,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIClient.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/SideMenuPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -816,49 +855,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SideMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="method#before#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-          <folding>
-            <element signature="method#assertElementsOnPage#0;class#Login#0" expanded="false" />
-            <element signature="method#passwordWithAsterisk#0;class#Login#0" expanded="false" />
-            <element signature="method#passwordHolder#0;class#Login#0" expanded="false" />
-            <element signature="method#enterAsHR#0;class#Login#0" expanded="false" />
-            <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#resultForWrongEmailOrPasswrd#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SideMenu.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Login.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1526">
@@ -871,7 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +877,7 @@
         <state relative-caret-position="255">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -893,11 +890,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/SideMenuPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="105">
+          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="933">
+          <caret line="191" column="49" lean-forward="false" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
+          <folding>
+            <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertDashboerd#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

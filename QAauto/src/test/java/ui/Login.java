@@ -1,3 +1,5 @@
+package ui;
+
 import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,6 +44,7 @@ public class Login {
        // driver = new FirefoxDriver(capabilities);
        // driver = new ChromeDriver(capabilities);
         loginPage = new LoginPage(driver);
+        listenerTest = new ListenerTest();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }

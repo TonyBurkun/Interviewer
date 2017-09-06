@@ -1,3 +1,5 @@
+package ui;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,6 +12,7 @@ import org.testng.log4testng.Logger;
 import ui.*;
 import utils.*;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.util.Map;
 import java.util.HashMap;
 import org.json.simple.JSONObject;
@@ -33,8 +36,11 @@ public class SideMenu {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
         driver = new ChromeDriver(capabilities);
+
         loginPage = new LoginPage(driver);
         sideMenuPage = new SideMenuPage(driver);
+        projectsPage = new ProjectsPage(driver);
+
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
         loginPage.open();
 
@@ -130,42 +136,76 @@ public class SideMenu {
 
     }
 
+    public void assertDashboerd(){
+        String href_dashboard = driver.findElement(By.cssSelector("[class='active']")).getAttribute("href");
+        Assert.assertEquals(href_dashboard, BaseURL+"interviews-upcoming");
+
+
+    }
+
     @Test(groups = {"functest", "20"})
     public void assertActiveItem() throws InterruptedException {
         driver.manage().window().maximize();
         loginPage.open();
         sideMenuPage.clickUpcomingItem();
         String href_upcoming = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
-        Assert.assertEquals(href_upcoming, BaseURL+"interviews_upcoming");
+        Assert.assertEquals(href_upcoming, BaseURL+"interviews-upcoming");
+            assertDashboerd();
 
         sideMenuPage.clickCompletedItem();
         String href_completed = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
-        Assert.assertEquals(href_completed, BaseURL+"interviews_completed");
+        Assert.assertEquals(href_completed, BaseURL+"interviews-completed");
+            assertDashboerd();
 
         sideMenuPage.clickInterviewersItem();
         String href_interviewers = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_interviewers, BaseURL+"interviewers");
+            assertDashboerd();
+
 
         sideMenuPage.clickVacanciesItem();
         sideMenuPage.clickOpenItem();
         String href_openItem = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
-        Assert.assertEquals(href_openItem, BaseURL+"vacancies_open");
+        Assert.assertEquals(href_openItem, BaseURL+"vacancies-open");
+            assertDashboerd();
 
         sideMenuPage.clickClosedItem();
         String href_closedItem = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
-        Assert.assertEquals(href_closedItem, BaseURL+"vacancies_closed");
+        Assert.assertEquals(href_closedItem, BaseURL+"vacancies-closed");
+            assertDashboerd();
 
         sideMenuPage.clickCandidatesItem();
         String href_candidates = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_candidates, BaseURL+"candidates");
+            assertDashboerd();
 
         sideMenuPage.clickProjectsItem();
         String href_projects = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
         Assert.assertEquals(href_projects, BaseURL+"projects");
+            assertDashboerd();
 
-                projectsPage.clickCreateProjectButton();
+                projectsPage.clickMainCreateProjectButton();
                 String project_button = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
                 Assert.assertEquals(project_button, BaseURL+"projects");
+                    assertDashboerd();
+
+                sideMenuPage.clickProjectsItem();
+                projectsPage.clickSomeProjectButton();
+                String link_on_project = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+                Assert.assertEquals(link_on_project, BaseURL+"projects");
+                    assertDashboerd();
+
+                projectsPage.clickEditProjectButton();
+                String edit_project_button = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+                Assert.assertEquals(edit_project_button, BaseURL+"projects");
+                    assertDashboerd();
+
+                projectsPage.clickSaveAftterEditButton();
+                String save_after_edit_project_button = driver.findElement(By.cssSelector("[class='metismenu-link active']")).getAttribute("href");
+                Assert.assertEquals(save_after_edit_project_button, BaseURL+"projects");
+                    assertDashboerd();
+
+
 
         JSONObject body = new JSONObject();
         body.put("status_id", "1");
@@ -184,11 +224,11 @@ public class SideMenu {
 
         sideMenuPage.clickUpcomingItem();
         String interviews_upcoming_utl = driver.getCurrentUrl();
-        Assert.assertEquals(interviews_upcoming_utl, BaseURL+"interviews_upcoming");
+        Assert.assertEquals(interviews_upcoming_utl, BaseURL+"interviews-upcoming");
 
         sideMenuPage.clickCompletedItem();
         String interviews_completed_utl = driver.getCurrentUrl();
-        Assert.assertEquals(interviews_completed_utl, BaseURL+"interviews_completed");
+        Assert.assertEquals(interviews_completed_utl, BaseURL+"interviews-completed");
 
         sideMenuPage.clickInterviewersItem();
         String interviewers_url = driver.getCurrentUrl();
@@ -197,11 +237,11 @@ public class SideMenu {
         sideMenuPage.clickVacanciesItem();
         sideMenuPage.clickOpenItem();
         String vacancies_open_url = driver.getCurrentUrl();
-        Assert.assertEquals(vacancies_open_url, BaseURL+"vacancies_open");
+        Assert.assertEquals(vacancies_open_url, BaseURL+"vacancies-open");
 
         sideMenuPage.clickClosedItem();
         String vacancies_closed_url = driver.getCurrentUrl();
-        Assert.assertEquals(vacancies_closed_url, BaseURL+"vacancies_closed");
+        Assert.assertEquals(vacancies_closed_url, BaseURL+"vacancies-closed");
 
         sideMenuPage.clickCandidatesItem();
         String candidates_url = driver.getCurrentUrl();

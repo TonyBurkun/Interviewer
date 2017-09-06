@@ -10,7 +10,7 @@
             </run>
         </groups>
         <classes>
-            <class name="Login"/>
+            <class name="ui.Login"/>
         </classes>
     </test>
 
@@ -21,7 +21,7 @@
             </run>
         </groups>
         <classes>
-            <class name="SideMenu"/>
+            <class name="ui.SideMenu"/>
         </classes>
     </test>
 

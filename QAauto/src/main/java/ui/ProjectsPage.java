@@ -16,7 +16,7 @@ public class ProjectsPage {
     By backToListButton = By.id("link-to-list");
     By finalCeateProjectButton = By.id("create-project-submitBtn");
     By cancelButton = By.id("create-project-resetBtn");
-    By someProjectButton = By.className("card project-link");
+    By someProjectButton = By.id("pl-link-to-project");
 
     By editProjectButton = By.id("pd-btn-to-edit");
     By deleteProjectButton = By.id("pd-btn-to-delete");
