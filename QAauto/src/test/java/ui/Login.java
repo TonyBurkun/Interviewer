@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class Login {
     LoginPage loginPage;
     WebDriver driver;
-    ListenerTest listenerTest;
+    //ListenerTest listenerTest;
     APIClient client = new APIClient("https://interviewer.testrail.net/");
 
     @BeforeTest(groups = {"functest", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
@@ -44,7 +44,7 @@ public class Login {
        // driver = new FirefoxDriver(capabilities);
        // driver = new ChromeDriver(capabilities);
         loginPage = new LoginPage(driver);
-        listenerTest = new ListenerTest();
+       // listenerTest = new ListenerTest();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }
