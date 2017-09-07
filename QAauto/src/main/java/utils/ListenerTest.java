@@ -1,16 +1,19 @@
 package utils;
 
 import org.apache.log4j.Logger;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class ListenerTest implements ITestListener {
 
     final static Logger logger = Logger.getLogger(ListenerTest.class);
+    APIClient client = new APIClient("https://interviewer.testrail.net/");
 
 
 
@@ -18,8 +21,8 @@ public class ListenerTest implements ITestListener {
         String testCaseName = iTestResult.getName();
         logger.info("TEST: " + testCaseName + " STARTED");
 
-        String browserName = iTestResult.getTestContext().getCurrentXmlTest().getParameter("browserName");
-        String implicitWaitInSeconds = iTestResult.getTestContext().getCurrentXmlTest().getParameter("implicitWaitInSeconds");
+       String browserName = iTestResult.getTestContext().getCurrentXmlTest().getParameter("browserName");
+       String implicitWaitInSeconds = iTestResult.getTestContext().getCurrentXmlTest().getParameter("implicitWaitInSeconds");
 //
 //        WebDriver driver = RemoteWebDriverFactory.createInstance(browserName);
 //        RemoteDriverManager.setWebDriver(driver);
@@ -45,6 +48,17 @@ public class ListenerTest implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         logger.error("TEST: " + iTestResult.getName() + " FAILED");
         logger.error(iTestResult.getThrowable().fillInStackTrace());
+
+
+//        JSONObject body = new JSONObject();
+//        body.put("status_id", "1");
+//        try {
+//            client.sendPost("add_result_for_case/" + iTestResult., body);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (APIException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
