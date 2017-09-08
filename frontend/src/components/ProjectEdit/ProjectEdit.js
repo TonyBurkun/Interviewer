@@ -217,7 +217,6 @@ function mapStateToProps (state) {
     return {
         projects: state.project.projects,
         currentProject: state.project.currentProject,
-        newNote: state.notifications
     }
 }
 

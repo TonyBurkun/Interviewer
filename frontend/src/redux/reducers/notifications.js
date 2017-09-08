@@ -1,24 +1,34 @@
-import { SHOW_NOTE, DISPLAY_NOTE, HIDE_NOTE } from '../actions/notificationActions';
+import {SHOW_NOTE, HIDE_NOTE} from "../actions/notificationActions";
 
 const initialState = {
     notifications: [],
-    newNote: {
-        isNoteVisible: false
-    }
 };
 
 
 export default function project(state = initialState, action) {
     switch (action.type) {
+
         case SHOW_NOTE:
-            return {...state,
-                newNote: {...state, isNoteVisible: action.payload.show}};
-        case DISPLAY_NOTE:
-            return {...state,
-                notifications: [...state.notifications, action.payload]};
+            let note = {};
+            note.status = action.payload.status;
+            note.text = action.payload.text;
+            note.id = action.payload.id;
+            note.show = true;
+
+            return {
+                ...state,
+                notifications: [...state.notifications, note],
+            };
+
         case HIDE_NOTE:
+            let notesArray = state.notifications;
+            let currentID = action.payload.id;
+            let currentNote = notesArray.find(function (item) {
+                return item.id === currentID ;
+            });
+            currentNote.show = false;
             return {...state,
-                notifications: [...state.notifications, action.payload]};
+                notifications: [...state.notifications]};
         default:
             return state;
     }

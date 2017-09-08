@@ -1,5 +1,5 @@
 import fetch from "isomorphic-fetch";
-import {showNote} from "../../redux/actions/notificationActions";
+import {makeNote} from "./notificationActions";
 
 export const CREATE_PROJECT = "CREATE_PROJECT";
 export const SHOW_PROJECTS = "SHOW_PROJECTS";
@@ -13,7 +13,6 @@ function addNewProject(date) {
 }
 
 export function createProject(date) {
-
     return (dispatch) => {
         fetch("/api/v1/projects",
             {
@@ -29,16 +28,19 @@ export function createProject(date) {
             .then(date => {
                 dispatch(addNewProject(date));
                 dispatch(showProjects());
-                dispatch(showNote({show: true}));
-                setInterval(() => {
-                    dispatch(showNote({show: false}))
-                }, 4000)
+                dispatch(makeNote(
+                    {
+                        status: "success",
+                        text: "Project " + "'" + date.data.title.slice(0, 20) + "'" + "... was created!"
+                    }
+                ))
             })
-            .catch(function(err) {
-                alert('Error:'+ err);
+            .catch(function (err) {
+                alert('Error:' + err);
             })
-    };
+    }
 }
+
 
 function addProjects(projects) {
     return { type: SHOW_PROJECTS, payload: projects};

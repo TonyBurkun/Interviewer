@@ -1,27 +1,26 @@
-import React, {Component} from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
-import Header from './../Header';
-import SideMenu from './../SideMenu';
-import Interviewers from './../Interviewers';
-import InterviewsUpcoming from '../InterviewsUpcoming';
-import InterviewsCompleted from '../InterviewsCompleted';
-import Candidates from './../Candidates';
-import VacanciesOpen from './../VacanciesOpen';
-import VacanciesClosed from './../VacanciesClosed';
-import CreateVacancy from './../CreateVacancy';
-import CreateProject from './../CreateProject';
-import ProjectsList from './../ProjectsList';
-import ProjectDetails from './../ProjectDetails';
-import ProjectEdit from './../ProjectEdit';
-import Username from './../Username';
-import Password from './../Password';
-
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as pageActions from '../../redux/actions/sideBarActions';
+import React, {Component} from "react";
+import {Switch, Route, Redirect} from "react-router-dom";
+import Header from "./../Header";
+import SideMenu from "./../SideMenu";
+import Interviewers from "./../Interviewers";
+import InterviewsUpcoming from "../InterviewsUpcoming";
+import InterviewsCompleted from "../InterviewsCompleted";
+import Candidates from "./../Candidates";
+import VacanciesOpen from "./../VacanciesOpen";
+import VacanciesClosed from "./../VacanciesClosed";
+import CreateVacancy from "./../CreateVacancy";
+import CreateProject from "./../CreateProject";
+import ProjectsList from "./../ProjectsList";
+import ProjectDetails from "./../ProjectDetails";
+import ProjectEdit from "./../ProjectEdit";
+import Username from "./../Username";
+import Password from "./../Password";
+import {makeNote} from "../../redux/actions/notificationActions";
+import {connect} from "react-redux";
 
 
 class Main extends Component {
+
 
     componentDidUpdate() {
 
@@ -35,6 +34,10 @@ class Main extends Component {
         }
     }
 
+    handleNote(status, text) {
+        const {dispatch} = this.props;
+        dispatch(makeNote({status: status, text: text}));
+    }
 
     render() {
 
@@ -49,72 +52,101 @@ class Main extends Component {
                             <Route
                                 exact path="/projects"
                                 name="Projects List"
-                                component={ProjectsList}/>
+                                render={(props) =>
+                                    <ProjectsList {...props}
+                                                  callNote={(status, text) => this.handleNote(status, text)}/>}
+                            />
                             <Route
                                 exact path="/projects/create-project"
                                 name="Create project"
-                                component={CreateProject}
+                                render={(props) =>
+                                    <CreateProject {...props}
+                                                   callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/projects/project/:id"
                                 name="Project Details"
-                                component={ProjectDetails}
+                                render={(props) =>
+                                    <ProjectDetails {...props}
+                                                    callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
 
                             <Route
                                 exact path="/projects/project/:id/edit"
                                 name="Project Edit"
-                                component={ProjectEdit}
+                                render={(props) =>
+                                    <ProjectEdit {...props}
+                                                 callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/interviews-upcoming"
                                 name="InterviewsUpcoming"
-                                component={InterviewsUpcoming}
+                                render={(props) =>
+                                    <InterviewsUpcoming {...props}
+                                                        callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/interviews-completed"
                                 name="InterviewsCompleted"
-                                component={InterviewsCompleted}
+                                render={(props) =>
+                                    <InterviewsCompleted {...props}
+                                                         callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/interviewers"
                                 name="Interviewers"
-                                component={Interviewers}
+                                render={(props) =>
+                                    <Interviewers {...props}
+                                                  callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/candidates"
                                 name="Candidates"
-                                component={Candidates}
+                                render={(props) =>
+                                    <Candidates {...props}
+                                                callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/vacancies-open"
                                 name="VacanciesOpen"
-                                component={VacanciesOpen}
+                                render={(props) =>
+                                    <VacanciesOpen {...props}
+                                                   callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/vacancies-closed"
                                 name="VacanciesClosed"
-                                component={VacanciesClosed}
+                                render={(props) =>
+                                    <VacanciesClosed {...props}
+                                                     callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/vacancies-open/create-vacancy"
                                 name="CreateVacancy"
-                                component={CreateVacancy}
+                                render={(props) =>
+                                    <CreateVacancy {...props}
+                                                   callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/vacancies-closed/create-vacancy"
                                 name="CreateVacancy"
-                                component={CreateVacancy}
+                                render={(props) =>
+                                    <CreateVacancy {...props}
+                                                   callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/username"
                                 name="Username"
-                                component={Username}
+                                render={(props) =>
+                                    <Username {...props}
+                                              callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Route
                                 exact path="/password"
                                 name="Password"
-                                component={Password}
+                                render={(props) =>
+                                    <Password {...props}
+                                              callNote={(status, text) => this.handleNote(status, text)}/>}
                             />
                             <Redirect from="/" to="/interviews-upcoming"/>
                         </Switch>
@@ -128,14 +160,15 @@ class Main extends Component {
 
 function mapStateToProps(state) {
     return {
-        sideBar: state.sideBar.status
+        sideBar: state.sideBar.status,
+        notifications: state.notifications
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        pageActions: bindActionCreators(pageActions, dispatch)
-    }
-}
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         pageActions: bindActionCreators(pageActions, dispatch)
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(mapStateToProps)(Main)
