@@ -53,7 +53,9 @@ public class ListenerTest implements ITestListener {
 //        JSONObject body = new JSONObject();
 //        body.put("status_id", "1");
 //        try {
-//            client.sendPost("add_result_for_case/" + iTestResult., body);
+//           Object tr = client.sendGet("");
+//           Object tc = client.sendGet("");
+//            client.sendPost("add_result_for_case/" + tr +"/" + tc, body);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        } catch (APIException e) {
@@ -76,7 +78,7 @@ public class ListenerTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         // Invoked after all the tests have run and all their Configuration methods have been called.
         WebDriver driver = RemoteDriverManager.getDriver();
-
+        logger.error("===end of test run===");
         if (driver != null) {
             logger.info("Restoring implicit wait to default value");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

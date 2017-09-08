@@ -2,189 +2,189 @@
 <testng-results skipped="0" failed="0" ignored="7" total="25" passed="18">
   <reporter-output>
   </reporter-output>
-  <suite name="Parallel test suite" duration-ms="99583" started-at="2017-09-06T12:40:02Z" finished-at="2017-09-06T12:41:42Z">
+  <suite name="Parallel test suite" duration-ms="59386" started-at="2017-09-08T14:06:45Z" finished-at="2017-09-08T14:07:45Z">
     <groups>
       <group name="12">
-        <method signature="Login.dontHaveAccount()[pri:0, instance:ui.Login@7946e1f4]" name="dontHaveAccount" class="ui.Login"/>
+        <method signature="Login.dontHaveAccount()[pri:0, instance:ui.Login@5442a311]" name="dontHaveAccount" class="ui.Login"/>
       </group> <!-- 12 -->
       <group name="14">
-        <method signature="SideMenu.asserHideMenu()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserHideMenu" class="ui.SideMenu"/>
+        <method signature="SideMenu.asserHideMenu()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserHideMenu" class="ui.SideMenu"/>
       </group> <!-- 14 -->
       <group name="18">
-        <method signature="SideMenu.assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertIconsOfMenuItems" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertIconsOfMenuItems" class="ui.SideMenu"/>
       </group> <!-- 18 -->
       <group name="19">
-        <method signature="SideMenu.assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertChangingTemplateItem" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertChangingTemplateItem" class="ui.SideMenu"/>
       </group> <!-- 19 -->
       <group name="emailInput">
-        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterEmail" class="ui.Login"/>
-        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxEmail" class="ui.Login"/>
-        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinEmail" class="ui.Login"/>
+        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@5442a311]" name="enterEmail" class="ui.Login"/>
+        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMaxEmail" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinEmail" class="ui.Login"/>
       </group> <!-- emailInput -->
       <group name="wrongEmailOrPasswrd">
-        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithEmptyPassword" class="ui.Login"/>
-        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongEmail" class="ui.Login"/>
-        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongPassword" class="ui.Login"/>
+        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithEmptyPassword" class="ui.Login"/>
+        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongEmail" class="ui.Login"/>
+        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongPassword" class="ui.Login"/>
       </group> <!-- wrongEmailOrPasswrd -->
       <group name="2">
-        <method signature="Login.assertElementsOnPage()[pri:0, instance:ui.Login@7946e1f4]" name="assertElementsOnPage" class="ui.Login"/>
+        <method signature="Login.assertElementsOnPage()[pri:0, instance:ui.Login@5442a311]" name="assertElementsOnPage" class="ui.Login"/>
       </group> <!-- 2 -->
       <group name="10.2">
-        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxPassword" class="ui.Login"/>
+        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMaxPassword" class="ui.Login"/>
       </group> <!-- 10.2 -->
       <group name="4">
-        <method signature="Login.passwordWithAsterisk()[pri:0, instance:ui.Login@7946e1f4]" name="passwordWithAsterisk" class="ui.Login"/>
+        <method signature="Login.passwordWithAsterisk()[pri:0, instance:ui.Login@5442a311]" name="passwordWithAsterisk" class="ui.Login"/>
       </group> <!-- 4 -->
       <group name="10.1">
-        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinPassword" class="ui.Login"/>
+        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinPassword" class="ui.Login"/>
       </group> <!-- 10.1 -->
       <group name="5">
-        <method signature="Login.passwordHolder()[pri:0, instance:ui.Login@7946e1f4]" name="passwordHolder" class="ui.Login"/>
+        <method signature="Login.passwordHolder()[pri:0, instance:ui.Login@5442a311]" name="passwordHolder" class="ui.Login"/>
       </group> <!-- 5 -->
       <group name="passwordCheck">
-        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxPassword" class="ui.Login"/>
-        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinPassword" class="ui.Login"/>
-        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinPassword" class="ui.Login"/>
+        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMaxPassword" class="ui.Login"/>
+        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinPassword" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinPassword" class="ui.Login"/>
       </group> <!-- passwordCheck -->
       <group name="8">
-        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongEmail" class="ui.Login"/>
+        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongEmail" class="ui.Login"/>
       </group> <!-- 8 -->
       <group name="functest">
-        <method signature="Login.assertElementsOnPage()[pri:0, instance:ui.Login@7946e1f4]" name="assertElementsOnPage" class="ui.Login"/>
-        <method signature="Login.dontHaveAccount()[pri:0, instance:ui.Login@7946e1f4]" name="dontHaveAccount" class="ui.Login"/>
-        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterEmail" class="ui.Login"/>
-        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxEmail" class="ui.Login"/>
-        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxPassword" class="ui.Login"/>
-        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinPassword" class="ui.Login"/>
-        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinEmail" class="ui.Login"/>
-        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinPassword" class="ui.Login"/>
-        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithEmptyPassword" class="ui.Login"/>
-        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongEmail" class="ui.Login"/>
-        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongPassword" class="ui.Login"/>
-        <method signature="Login.passwordHolder()[pri:0, instance:ui.Login@7946e1f4]" name="passwordHolder" class="ui.Login"/>
-        <method signature="Login.passwordWithAsterisk()[pri:0, instance:ui.Login@7946e1f4]" name="passwordWithAsterisk" class="ui.Login"/>
-        <method signature="SideMenu.asserHideMenu()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserHideMenu" class="ui.SideMenu"/>
-        <method signature="SideMenu.asserItemLinks()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserItemLinks" class="ui.SideMenu"/>
-        <method signature="SideMenu.assertActiveItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertActiveItem" class="ui.SideMenu"/>
-        <method signature="SideMenu.assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertChangingTemplateItem" class="ui.SideMenu"/>
-        <method signature="SideMenu.assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertIconsOfMenuItems" class="ui.SideMenu"/>
+        <method signature="Login.assertElementsOnPage()[pri:0, instance:ui.Login@5442a311]" name="assertElementsOnPage" class="ui.Login"/>
+        <method signature="Login.dontHaveAccount()[pri:0, instance:ui.Login@5442a311]" name="dontHaveAccount" class="ui.Login"/>
+        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@5442a311]" name="enterEmail" class="ui.Login"/>
+        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMaxEmail" class="ui.Login"/>
+        <method signature="Login.enterMaxPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMaxPassword" class="ui.Login"/>
+        <method signature="Login.enterMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinPassword" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinEmail" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinPassword" class="ui.Login"/>
+        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithEmptyPassword" class="ui.Login"/>
+        <method signature="Login.enterWithWrongEmail()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongEmail" class="ui.Login"/>
+        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongPassword" class="ui.Login"/>
+        <method signature="Login.passwordHolder()[pri:0, instance:ui.Login@5442a311]" name="passwordHolder" class="ui.Login"/>
+        <method signature="Login.passwordWithAsterisk()[pri:0, instance:ui.Login@5442a311]" name="passwordWithAsterisk" class="ui.Login"/>
+        <method signature="SideMenu.asserHideMenu()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserHideMenu" class="ui.SideMenu"/>
+        <method signature="SideMenu.asserItemLinks()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserItemLinks" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertActiveItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertActiveItem" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertChangingTemplateItem" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertIconsOfMenuItems" class="ui.SideMenu"/>
       </group> <!-- functest -->
       <group name="9">
-        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinEmail" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinEmail" class="ui.Login"/>
       </group> <!-- 9 -->
       <group name="8.1">
-        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithEmptyPassword" class="ui.Login"/>
+        <method signature="Login.enterWithEmptyPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithEmptyPassword" class="ui.Login"/>
       </group> <!-- 8.1 -->
       <group name="9.1">
-        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterEmail" class="ui.Login"/>
+        <method signature="Login.enterEmail()[pri:0, instance:ui.Login@5442a311]" name="enterEmail" class="ui.Login"/>
       </group> <!-- 9.1 -->
       <group name="8.2">
-        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongPassword" class="ui.Login"/>
+        <method signature="Login.enterWithWrongPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongPassword" class="ui.Login"/>
       </group> <!-- 8.2 -->
       <group name="9.2">
-        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxEmail" class="ui.Login"/>
+        <method signature="Login.enterMaxEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMaxEmail" class="ui.Login"/>
       </group> <!-- 9.2 -->
       <group name="20">
-        <method signature="SideMenu.assertActiveItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertActiveItem" class="ui.SideMenu"/>
+        <method signature="SideMenu.assertActiveItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertActiveItem" class="ui.SideMenu"/>
       </group> <!-- 20 -->
       <group name="10">
-        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinPassword" class="ui.Login"/>
+        <method signature="Login.enterMinThenMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinPassword" class="ui.Login"/>
       </group> <!-- 10 -->
       <group name="21">
-        <method signature="SideMenu.asserItemLinks()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserItemLinks" class="ui.SideMenu"/>
+        <method signature="SideMenu.asserItemLinks()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserItemLinks" class="ui.SideMenu"/>
       </group> <!-- 21 -->
     </groups>
-    <test name="functestForLoginPage" duration-ms="99483" started-at="2017-09-06T12:40:02Z" finished-at="2017-09-06T12:41:42Z">
+    <test name="functestForLoginPage" duration-ms="59205" started-at="2017-09-08T14:06:45Z" finished-at="2017-09-08T14:07:45Z">
       <class name="ui.Login">
-        <test-method status="PASS" signature="before()[pri:0, instance:ui.Login@7946e1f4]" name="before" is-config="true" duration-ms="9585" started-at="2017-09-06T15:40:02Z" finished-at="2017-09-06T15:40:12Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:ui.Login@5442a311]" name="before" is-config="true" duration-ms="12997" started-at="2017-09-08T17:06:45Z" finished-at="2017-09-08T17:06:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="assertElementsOnPage()[pri:0, instance:ui.Login@7946e1f4]" name="assertElementsOnPage" duration-ms="24416" started-at="2017-09-06T15:40:12Z" finished-at="2017-09-06T15:40:37Z">
+        <test-method status="PASS" signature="assertElementsOnPage()[pri:0, instance:ui.Login@5442a311]" name="assertElementsOnPage" duration-ms="13372" started-at="2017-09-08T17:06:58Z" finished-at="2017-09-08T17:07:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertElementsOnPage -->
-        <test-method status="PASS" signature="dontHaveAccount()[pri:0, instance:ui.Login@7946e1f4]" name="dontHaveAccount" duration-ms="12095" started-at="2017-09-06T15:40:37Z" finished-at="2017-09-06T15:40:49Z">
+        <test-method status="PASS" signature="dontHaveAccount()[pri:0, instance:ui.Login@5442a311]" name="dontHaveAccount" duration-ms="4078" started-at="2017-09-08T17:07:12Z" finished-at="2017-09-08T17:07:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dontHaveAccount -->
-        <test-method status="PASS" signature="enterEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterEmail" duration-ms="4895" started-at="2017-09-06T15:40:49Z" finished-at="2017-09-06T15:40:54Z">
+        <test-method status="PASS" signature="enterEmail()[pri:0, instance:ui.Login@5442a311]" name="enterEmail" duration-ms="2552" started-at="2017-09-08T17:07:16Z" finished-at="2017-09-08T17:07:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterEmail -->
-        <test-method status="PASS" signature="enterMaxEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxEmail" duration-ms="1446" started-at="2017-09-06T15:40:54Z" finished-at="2017-09-06T15:40:55Z">
+        <test-method status="PASS" signature="enterMaxEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMaxEmail" duration-ms="1809" started-at="2017-09-08T17:07:18Z" finished-at="2017-09-08T17:07:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterMaxEmail -->
-        <test-method status="PASS" signature="enterMaxPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMaxPassword" duration-ms="2467" started-at="2017-09-06T15:40:55Z" finished-at="2017-09-06T15:40:58Z">
+        <test-method status="PASS" signature="enterMaxPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMaxPassword" duration-ms="974" started-at="2017-09-08T17:07:20Z" finished-at="2017-09-08T17:07:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterMaxPassword -->
-        <test-method status="PASS" signature="enterMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinPassword" duration-ms="6593" started-at="2017-09-06T15:40:58Z" finished-at="2017-09-06T15:41:04Z">
+        <test-method status="PASS" signature="enterMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinPassword" duration-ms="2729" started-at="2017-09-08T17:07:21Z" finished-at="2017-09-08T17:07:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterMinPassword -->
-        <test-method status="PASS" signature="enterMinThenMinEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinEmail" duration-ms="4207" started-at="2017-09-06T15:41:04Z" finished-at="2017-09-06T15:41:08Z">
+        <test-method status="PASS" signature="enterMinThenMinEmail()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinEmail" duration-ms="2429" started-at="2017-09-08T17:07:24Z" finished-at="2017-09-08T17:07:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterMinThenMinEmail -->
-        <test-method status="PASS" signature="enterMinThenMinPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterMinThenMinPassword" duration-ms="4545" started-at="2017-09-06T15:41:08Z" finished-at="2017-09-06T15:41:13Z">
+        <test-method status="PASS" signature="enterMinThenMinPassword()[pri:0, instance:ui.Login@5442a311]" name="enterMinThenMinPassword" duration-ms="3215" started-at="2017-09-08T17:07:26Z" finished-at="2017-09-08T17:07:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterMinThenMinPassword -->
-        <test-method status="PASS" signature="enterWithEmptyPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithEmptyPassword" duration-ms="6099" started-at="2017-09-06T15:41:13Z" finished-at="2017-09-06T15:41:19Z">
+        <test-method status="PASS" signature="enterWithEmptyPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithEmptyPassword" duration-ms="3503" started-at="2017-09-08T17:07:30Z" finished-at="2017-09-08T17:07:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterWithEmptyPassword -->
-        <test-method status="PASS" signature="enterWithWrongEmail()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongEmail" duration-ms="2751" started-at="2017-09-06T15:41:19Z" finished-at="2017-09-06T15:41:22Z">
+        <test-method status="PASS" signature="enterWithWrongEmail()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongEmail" duration-ms="2786" started-at="2017-09-08T17:07:33Z" finished-at="2017-09-08T17:07:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterWithWrongEmail -->
-        <test-method status="PASS" signature="enterWithWrongPassword()[pri:0, instance:ui.Login@7946e1f4]" name="enterWithWrongPassword" duration-ms="4083" started-at="2017-09-06T15:41:22Z" finished-at="2017-09-06T15:41:26Z">
+        <test-method status="PASS" signature="enterWithWrongPassword()[pri:0, instance:ui.Login@5442a311]" name="enterWithWrongPassword" duration-ms="2734" started-at="2017-09-08T17:07:36Z" finished-at="2017-09-08T17:07:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterWithWrongPassword -->
-        <test-method status="PASS" signature="passwordHolder()[pri:0, instance:ui.Login@7946e1f4]" name="passwordHolder" duration-ms="2878" started-at="2017-09-06T15:41:26Z" finished-at="2017-09-06T15:41:29Z">
+        <test-method status="PASS" signature="passwordHolder()[pri:0, instance:ui.Login@5442a311]" name="passwordHolder" duration-ms="1717" started-at="2017-09-08T17:07:39Z" finished-at="2017-09-08T17:07:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- passwordHolder -->
-        <test-method status="PASS" signature="passwordWithAsterisk()[pri:0, instance:ui.Login@7946e1f4]" name="passwordWithAsterisk" duration-ms="1729" started-at="2017-09-06T15:41:29Z" finished-at="2017-09-06T15:41:30Z">
+        <test-method status="PASS" signature="passwordWithAsterisk()[pri:0, instance:ui.Login@5442a311]" name="passwordWithAsterisk" duration-ms="1680" started-at="2017-09-08T17:07:40Z" finished-at="2017-09-08T17:07:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- passwordWithAsterisk -->
-        <test-method status="PASS" signature="after()[pri:0, instance:ui.Login@7946e1f4]" name="after" is-config="true" duration-ms="11553" started-at="2017-09-06T15:41:30Z" finished-at="2017-09-06T15:41:42Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:ui.Login@5442a311]" name="after" is-config="true" duration-ms="2580" started-at="2017-09-08T17:07:42Z" finished-at="2017-09-08T17:07:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
       </class> <!-- ui.Login -->
     </test> <!-- functestForLoginPage -->
-    <test name="functestForSideMenu" duration-ms="99474" started-at="2017-09-06T12:40:03Z" finished-at="2017-09-06T12:41:42Z">
+    <test name="functestForSideMenu" duration-ms="59378" started-at="2017-09-08T14:06:45Z" finished-at="2017-09-08T14:07:45Z">
       <class name="ui.SideMenu">
-        <test-method status="PASS" signature="before()[pri:0, instance:ui.SideMenu@6d78f375]" name="before" is-config="true" duration-ms="28020" started-at="2017-09-06T15:40:03Z" finished-at="2017-09-06T15:40:31Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:ui.SideMenu@59ec2012]" name="before" is-config="true" duration-ms="22447" started-at="2017-09-08T17:06:45Z" finished-at="2017-09-08T17:07:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="asserHideMenu()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserHideMenu" duration-ms="6505" started-at="2017-09-06T15:40:31Z" finished-at="2017-09-06T15:40:37Z">
+        <test-method status="PASS" signature="asserHideMenu()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserHideMenu" duration-ms="4213" started-at="2017-09-08T17:07:08Z" finished-at="2017-09-08T17:07:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- asserHideMenu -->
-        <test-method status="PASS" signature="asserItemLinks()[pri:0, instance:ui.SideMenu@6d78f375]" name="asserItemLinks" duration-ms="7485" started-at="2017-09-06T15:40:37Z" finished-at="2017-09-06T15:40:45Z">
+        <test-method status="PASS" signature="asserItemLinks()[pri:0, instance:ui.SideMenu@59ec2012]" name="asserItemLinks" duration-ms="6380" started-at="2017-09-08T17:07:12Z" finished-at="2017-09-08T17:07:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- asserItemLinks -->
-        <test-method status="PASS" signature="assertActiveItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertActiveItem" duration-ms="14802" started-at="2017-09-06T15:40:45Z" finished-at="2017-09-06T15:40:59Z">
+        <test-method status="PASS" signature="assertActiveItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertActiveItem" duration-ms="11284" started-at="2017-09-08T17:07:19Z" finished-at="2017-09-08T17:07:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertActiveItem -->
-        <test-method status="PASS" signature="assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertChangingTemplateItem" duration-ms="12374" started-at="2017-09-06T15:40:59Z" finished-at="2017-09-06T15:41:12Z">
+        <test-method status="PASS" signature="assertChangingTemplateItem()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertChangingTemplateItem" duration-ms="6343" started-at="2017-09-08T17:07:30Z" finished-at="2017-09-08T17:07:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertChangingTemplateItem -->
-        <test-method status="PASS" signature="assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@6d78f375]" name="assertIconsOfMenuItems" duration-ms="5797" started-at="2017-09-06T15:41:12Z" finished-at="2017-09-06T15:41:18Z">
+        <test-method status="PASS" signature="assertIconsOfMenuItems()[pri:0, instance:ui.SideMenu@59ec2012]" name="assertIconsOfMenuItems" duration-ms="2136" started-at="2017-09-08T17:07:36Z" finished-at="2017-09-08T17:07:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertIconsOfMenuItems -->
-        <test-method status="PASS" signature="after()[pri:0, instance:ui.SideMenu@6d78f375]" name="after" is-config="true" duration-ms="24484" started-at="2017-09-06T15:41:18Z" finished-at="2017-09-06T15:41:42Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:ui.SideMenu@59ec2012]" name="after" is-config="true" duration-ms="6563" started-at="2017-09-08T17:07:38Z" finished-at="2017-09-08T17:07:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->

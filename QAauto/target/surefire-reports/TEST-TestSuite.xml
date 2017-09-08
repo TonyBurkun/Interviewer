@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="68.782" tests="18" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="35.847" tests="18" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -62,22 +62,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="assertElementsOnPage" classname="ui.Login" time="27.584"/>
-  <testcase name="asserHideMenu" classname="ui.SideMenu" time="1.025"/>
-  <testcase name="asserItemLinks" classname="ui.SideMenu" time="28.564"/>
-  <testcase name="dontHaveAccount" classname="ui.Login" time="2.498"/>
-  <testcase name="enterEmail" classname="ui.Login" time="1.69"/>
-  <testcase name="enterMaxEmail" classname="ui.Login" time="0.712"/>
-  <testcase name="enterMaxPassword" classname="ui.Login" time="0.795"/>
-  <testcase name="assertActiveItem" classname="ui.SideMenu" time="0.835"/>
-  <testcase name="enterMinPassword" classname="ui.Login" time="1.283"/>
-  <testcase name="enterMinThenMinEmail" classname="ui.Login" time="1.481"/>
-  <testcase name="assertChangingTemplateItem" classname="ui.SideMenu" time="1.124"/>
-  <testcase name="enterMinThenMinPassword" classname="ui.Login" time="0.281"/>
-  <testcase name="assertIconsOfMenuItems" classname="ui.SideMenu" time="0.409"/>
-  <testcase name="enterWithEmptyPassword" classname="ui.Login" time="0.428"/>
-  <testcase name="enterWithWrongEmail" classname="ui.Login" time="0.023"/>
-  <testcase name="enterWithWrongPassword" classname="ui.Login" time="0.022"/>
-  <testcase name="passwordHolder" classname="ui.Login" time="0.014"/>
-  <testcase name="passwordWithAsterisk" classname="ui.Login" time="0.014"/>
+  <testcase name="assertElementsOnPage" classname="ui.Login" time="3.943"/>
+  <testcase name="asserHideMenu" classname="ui.SideMenu" time="0.197"/>
+  <testcase name="dontHaveAccount" classname="ui.Login" time="3.808"/>
+  <testcase name="enterEmail" classname="ui.Login" time="2.47"/>
+  <testcase name="asserItemLinks" classname="ui.SideMenu" time="0.009"/>
+  <testcase name="enterMaxEmail" classname="ui.Login" time="1.79"/>
+  <testcase name="enterMaxPassword" classname="ui.Login" time="0.971"/>
+  <testcase name="enterMinPassword" classname="ui.Login" time="2.725"/>
+  <testcase name="enterMinThenMinEmail" classname="ui.Login" time="2.42"/>
+  <testcase name="enterMinThenMinPassword" classname="ui.Login" time="3.216"/>
+  <testcase name="assertActiveItem" classname="ui.SideMenu" time="0.133"/>
+  <testcase name="enterWithEmptyPassword" classname="ui.Login" time="3.304"/>
+  <testcase name="enterWithWrongEmail" classname="ui.Login" time="2.783"/>
+  <testcase name="assertChangingTemplateItem" classname="ui.SideMenu" time="0.19"/>
+  <testcase name="assertIconsOfMenuItems" classname="ui.SideMenu" time="2.062"/>
+  <testcase name="enterWithWrongPassword" classname="ui.Login" time="2.469"/>
+  <testcase name="passwordHolder" classname="ui.Login" time="1.683"/>
+  <testcase name="passwordWithAsterisk" classname="ui.Login" time="1.674"/>
 </testsuite>
