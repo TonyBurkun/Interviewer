@@ -17,17 +17,19 @@ class ProjectsList extends Component {
 
         let projects = this.props.newProject.projects;
 
-            let compareTitle = (a, b) => {
+        let compareTitle = (a, b) => {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
         };
+        let projectsToDisplay;
 
-        let sortedProjects = projects.sort(compareTitle);
-        const projectsToDisplay = sortedProjects.map((value, index) =>
+        if (projects) {
+            let sortedProjects = projects.sort(compareTitle) || {};
+            projectsToDisplay = sortedProjects.map((value, index) =>
 
-            <div key={index}>
-                <div className="row">
-                    <div className="col-md-12">
+                <div key={index}>
+                    <div className="row">
+                        <div className="col-md-12">
                             <Link
                                 id="pl-link-to-project"
                                 to={"/projects/project/" + value.id}
@@ -35,10 +37,13 @@ class ProjectsList extends Component {
                             >
                                 <p className="title project-list-item">{value.title}</p>
                             </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            projectsToDisplay = "";
+        }
 
         return (
             <div>

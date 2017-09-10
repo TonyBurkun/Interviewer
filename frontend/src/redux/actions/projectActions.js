@@ -1,5 +1,5 @@
 import fetch from "isomorphic-fetch";
-import {makeNote} from "./notificationActions";
+import {makeNote, showNote} from "./notificationActions";
 
 export const CREATE_PROJECT = "CREATE_PROJECT";
 export const SHOW_PROJECTS = "SHOW_PROJECTS";
@@ -36,7 +36,12 @@ export function createProject(date) {
                 ))
             })
             .catch(function (err) {
-                alert('Error:' + err);
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
             })
     }
 }
@@ -52,7 +57,13 @@ function setCurrentProject(project) {
 
 export function showProjects() {
     return (dispatch) => {
-        fetch("/api/v1/projects")
+        fetch("/api/v1/projects",
+            {
+                method: 'get',
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
             .then(res =>
                 res.json()
             )
@@ -60,7 +71,12 @@ export function showProjects() {
                 dispatch(addProjects(projects.data));
             })
             .catch(function(err) {
-                alert('Error:'+ err);
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
             })
     };
 }
@@ -75,7 +91,12 @@ export function getProjects(id) {
                 dispatch(setCurrentProject(project.data));
             })
             .catch(function(err) {
-                alert('Error:'+ err);
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
             })
     };
 }
@@ -97,7 +118,12 @@ export function removeProject(date) {
                 dispatch(showProjects());
             })
             .catch(function(err) {
-                alert('Error:'+ err);
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
             });
     };
 }
@@ -119,7 +145,12 @@ export function updateProject(date) {
                 dispatch(showProjects());
             })
             .catch(function(err) {
-                alert('Error:'+ err);
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
             });
     };
 }

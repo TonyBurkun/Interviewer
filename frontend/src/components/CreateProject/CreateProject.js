@@ -99,7 +99,7 @@ class CreateProject extends Component {
             this.setState({
                 confirmText: "Are you sure you want to cancel without saving changes?"
             });
-            let confirm = this.openModalConfirm();
+          this.openModalConfirm();
         } else {
             this.props.history.push("/projects");
         }

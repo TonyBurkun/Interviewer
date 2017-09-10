@@ -1,4 +1,4 @@
-import {CREATE_PROJECT, SHOW_PROJECTS, REMOVE_PROJECT, SET_PROJECT} from "../actions/projectActions";
+import {CREATE_PROJECT, SHOW_PROJECTS, SET_PROJECT} from "../actions/projectActions";
 
 const initialState = {
     projects: [],

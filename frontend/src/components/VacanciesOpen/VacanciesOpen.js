@@ -6,9 +6,6 @@ import PageTitle from './../../containers/PageTitle';
 import Filters from './../../components/Filters';
 
 class VacanciesOpen extends Component{
-    constructor(props) {
-        super(props);
-    }
 
     render(){
         return (

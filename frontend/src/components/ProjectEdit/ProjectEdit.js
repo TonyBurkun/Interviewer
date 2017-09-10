@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {IndexLink, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
@@ -118,7 +118,7 @@ class ProjectEdit extends Component {
         let isUnique = true;
         let title = this.state.projectTitle;
         projects.forEach(function(item) {
-            if (item.title === title && item.id != id) {
+            if (item.title === title && item.id !== id) {
                 isUnique = false;
             }
         });

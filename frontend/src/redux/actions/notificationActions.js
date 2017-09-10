@@ -7,8 +7,8 @@ let id = 0;
 export function makeNote(note) {
 
     return (dispatch) => {
-        id += 1;
-        note.id = id;
+        // id += 1;
+        // note.id = id;
         dispatch(showNote(note));
          setInterval(() => {
              dispatch(hideNote({id: note.id}));
@@ -17,6 +17,8 @@ export function makeNote(note) {
 }
 
 export function showNote(note) {
+    id += 1;
+    note.id = id;
     return {
         type: 'DISPLAY_NOTE',
         payload: note

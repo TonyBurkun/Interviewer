@@ -1,7 +1,7 @@
 import {SHOW_NOTE, HIDE_NOTE} from "../actions/notificationActions";
 
 const initialState = {
-    notifications: [],
+    notifications: []
 };
 
 
@@ -17,7 +17,7 @@ export default function project(state = initialState, action) {
 
             return {
                 ...state,
-                notifications: [...state.notifications, note],
+                notifications: [...state.notifications, note]
             };
 
         case HIDE_NOTE:
@@ -27,8 +27,10 @@ export default function project(state = initialState, action) {
                 return item.id === currentID ;
             });
             currentNote.show = false;
-            return {...state,
-                notifications: [...state.notifications]};
+            return {
+                ...state,
+                notifications: [...state.notifications]
+            };
         default:
             return state;
     }

@@ -3,9 +3,6 @@ import './interviewsCompleted.css';
 
 
 class InterviewsCompleted extends Component{
-    constructor(props) {
-        super(props);
-    }
 
     render(){
         return (

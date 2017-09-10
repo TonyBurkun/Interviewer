@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {activeClassName, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./sideMenu.css";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -8,11 +8,6 @@ import MetisMenu from "react-metismenu";
 import RouterLink from "react-metismenu-router-link";
 
 class SideMenu extends Component {
-
-    constructor(props) {
-        super(props);
-
-    }
 
     handleCloseSideBarClick() {
         this.props.pageActions.hideSideBar(false);

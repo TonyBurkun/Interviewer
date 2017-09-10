@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {browserHistory, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import Helmet from "react-helmet";
 import "./ProjectDetails.css";
