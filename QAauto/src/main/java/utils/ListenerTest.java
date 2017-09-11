@@ -78,7 +78,7 @@ public class ListenerTest implements ITestListener {
     public void onFinish(ITestContext iTestContext) {
         // Invoked after all the tests have run and all their Configuration methods have been called.
         WebDriver driver = RemoteDriverManager.getDriver();
-        logger.error("===end of test run===");
+        logger.error("===End of test run===");
         if (driver != null) {
             logger.info("Restoring implicit wait to default value");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

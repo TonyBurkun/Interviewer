@@ -2,19 +2,15 @@ package ui;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
-import ui.*;
+import ui.Projects.ProjectsPage;
 import utils.*;
 import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.util.Map;
-import java.util.HashMap;
+
 import org.json.simple.JSONObject;
 
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package ui;
+package ui.Projects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -86,6 +86,10 @@ public class ProjectsPage {
         return this;
     }
 
+    public ProjectsPage open() {
+        driver.get("http://qa-interviewer.herokuapp.com/projects");
+        return this;
+    }
 
 
 }
