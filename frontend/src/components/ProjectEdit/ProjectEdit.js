@@ -51,7 +51,6 @@ class ProjectEdit extends Component {
     }
 
     handleDescrChange(event) {
-
         this.setState({projectDescription: event.target.value});
         this.setState({descriptionError:""});
     }
