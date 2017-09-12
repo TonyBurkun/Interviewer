@@ -31,7 +31,7 @@ class CreateVacancy extends Component{
 
         console.log('send form');
         let currentForm = event.target,
-            regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/,
+            regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/,
             descriptionField = this.refs.vacancy_desc.textarea,
             descriptionValue = this.refs.vacancy_desc.currentValue;
 
@@ -127,7 +127,7 @@ class CreateVacancy extends Component{
             return (
                 <div className="form-group">
                     <select className="form-control form-control-sm" id="project-filter">
-                        <option>All Projects</option>
+                        <option>Select Projects</option>
                         {options}
                     </select>
                 </div>
@@ -151,23 +151,24 @@ class CreateVacancy extends Component{
                 <section className="section">
                     <div className="row sameheight-container">
                         <div className="col-md-12">
-                            <div className="card card-block sameheight-item">
+                            <div className="card card-block sameheight-item page-block">
                                 <form onSubmit={(event) => this.handleSubmitForm(event)}>
 
-                                    <div className="filter-block">
-                                        <div className="filter-block__title">Filters:</div>
-                                        <div className="filter-block__selects">
+                                    <div className="form-filter-block">
+
+                                        <label className="form-filter-block__title">Vacancy parameters</label>
+                                        <div className="form-filter-block__selects-block">
                                             <div className="form-group">
                                                 <select className="form-control form-control-sm" id="level-filter">
-                                                    <option>All Levels</option>
+                                                    <option>Select Levels</option>
                                                     <option>Junior</option>
-                                                    <option>Moddle</option>
+                                                    <option>Middle</option>
                                                     <option>Senior</option>
                                                 </select>
                                             </div>
                                             <div className="form-group">
                                                 <select className="form-control form-control-sm" id="position-filter">
-                                                    <option>All Positions</option>
+                                                    <option>Select Positions</option>
                                                     <option>QA</option>
                                                     <option>Frontend</option>
                                                     <option>Backend</option>

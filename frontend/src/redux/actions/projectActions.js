@@ -31,7 +31,7 @@ export function createProject(date) {
                 dispatch(makeNote(
                     {
                         status: "success",
-                        text: "Project " + "'" + date.data.title.slice(0, 20) + "'" + "... was created!"
+                        text: "Project '" + date.data.title.slice(0, 20) + "' ... was created!"
                     }
                 ))
             })

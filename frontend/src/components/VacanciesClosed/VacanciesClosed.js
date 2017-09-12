@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import './vacanciesClosed.scss';
+import './vacanciesClosed.css';
 import Helmet from "react-helmet";
 
 import PageTitle from './../../containers/PageTitle';
 import Filters from './../../components/Filters';
+import Panels from './../../components/Panels';
 
 class VacanciesClosed extends Component{
 
     render(){
+
         return(
             <div className="bcgr">
                 <Helmet>
@@ -28,6 +30,10 @@ class VacanciesClosed extends Component{
                             level={true}
                             date={false}
                         />
+                        <Panels
+                            titleForActionBtn="Reopen vacancy"
+                        />
+
                     </div>
                 </div>
             </div>

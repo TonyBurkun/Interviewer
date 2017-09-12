@@ -4,10 +4,12 @@ import Helmet from "react-helmet";
 
 import PageTitle from './../../containers/PageTitle';
 import Filters from './../../components/Filters';
+import Panels from './../../components/Panels';
 
-class VacanciesOpen extends Component{
+class VacanciesOpen extends Component {
 
-    render(){
+    render() {
+
         return (
             <div className="bcgr">
                 <Helmet>
@@ -28,6 +30,11 @@ class VacanciesOpen extends Component{
                             level={true}
                             date={false}
                         />
+
+                       <Panels
+                            titleForActionBtn='Close vacancy'
+                       />
+
                     </div>
                 </div>
             </div>

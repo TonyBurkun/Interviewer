@@ -65,7 +65,7 @@ class Filters extends Component{
                         <select className="form-control form-control-sm" id="level-filter">
                             <option>All Levels</option>
                             <option>Junior</option>
-                            <option>Moddle</option>
+                            <option>Middle</option>
                             <option>Senior</option>
                         </select>
                     </div>
@@ -106,7 +106,7 @@ class Filters extends Component{
 
 
         return (
-            <section className="filters-section">
+            <div className="filters-section">
                 <div className="filter-block">
                     <div className="filter-block__title">Filters:</div>
                     <div className="filter-block__selects">
@@ -116,7 +116,7 @@ class Filters extends Component{
                     </div>
                     {showDateFilter(dateFilter)}
                 </div>
-            </section>
+            </div>
         );
     }
 

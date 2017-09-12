@@ -70,8 +70,8 @@ class Login extends Component {
 
             let emailIsEmpty = true,
                 isEmail = false,
-                passwordIsEmpty = true,
-                minLengthPass = false;
+                passwordIsEmpty = true;
+                // minLengthPass = false;
 
             removeAllErrorMessage(currentForm);
 
@@ -98,7 +98,7 @@ class Login extends Component {
             if (!emailIsEmpty) {
                 if (loginValidationSettings.rules.email.isEmail) {
                     let emailValue = email.value;
-                    let result = emailValue.match(/^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
+                    let result = emailValue.match(/^[0-9a-z-.]+@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
 
                     if (!result) {
 
@@ -148,13 +148,13 @@ class Login extends Component {
 
                         password.parentNode.classList.add('has-error');
                         password.parentNode.appendChild(errorElem);
-                        minLengthPass = false;
+                        // minLengthPass = false;
                     } else {
-                        minLengthPass = true;
+                        // minLengthPass = true;
                     }
 
                 } else {
-                    minLengthPass = true;
+                    // minLengthPass = true;
                 }
             }
 
