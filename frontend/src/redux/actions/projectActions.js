@@ -26,12 +26,13 @@ export function createProject(date) {
                 res.json()
             )
             .then(date => {
+                let noteData = "'" + date.data.title.slice(0, 20) + "'";
                 dispatch(addNewProject(date));
                 dispatch(showProjects());
                 dispatch(makeNote(
                     {
                         status: "success",
-                        text: "Project " + "'" + date.data.title.slice(0, 20) + "'" + "... was created!"
+                        text: "Project " + noteData + "... was created!"
                     }
                 ))
             })

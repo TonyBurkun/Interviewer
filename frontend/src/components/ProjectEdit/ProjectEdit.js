@@ -80,7 +80,7 @@ class ProjectEdit extends Component {
     }
 
     validateFormFields(event) {
-        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=[\]{};‘:“\\|,.<>/?]*$/;
         let id = this.state.currentProject.id;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;

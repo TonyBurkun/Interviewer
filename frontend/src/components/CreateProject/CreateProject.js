@@ -53,7 +53,7 @@ class CreateProject extends Component {
     }
 
     validateFormFields(event) {
-        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        let regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=[\]{};‘:“\\|,.<>/?]*$/;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
