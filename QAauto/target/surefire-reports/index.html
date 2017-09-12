@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Parallel_test_suite">
+              <span class="suite-name border-passed">Parallel test suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Parallel_test_suite">
+                    <span>E:\interviwer\Interviewer\QAauto\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Parallel_test_suite">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Parallel_test_suite">
+                    <span>22 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Parallel_test_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Parallel_test_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Parallel_test_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Parallel_test_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">18 methods,   18 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Parallel_test_suite" class="hide-methods passed suite-Parallel_test_suite"> (hide)</a> <!-- hide-methods passed suite-Parallel_test_suite -->
+                      <a href="#" panel-name="suite-Parallel_test_suite" class="show-methods passed suite-Parallel_test_suite"> (show)</a> <!-- show-methods passed suite-Parallel_test_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Parallel_test_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.SideMenu" hash-for-method="asserHideMenu">asserHideMenu</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.SideMenu" hash-for-method="asserItemLinks">asserItemLinks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.SideMenu" hash-for-method="assertActiveItem">assertActiveItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.SideMenu" hash-for-method="assertChangingTemplateItem">assertChangingTemplateItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="assertElementsOnPage">assertElementsOnPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.SideMenu" hash-for-method="assertIconsOfMenuItems">assertIconsOfMenuItems</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="dontHaveAccount">dontHaveAccount</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterEmail">enterEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterMaxEmail">enterMaxEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterMaxPassword">enterMaxPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterMinPassword">enterMinPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterMinThenMinEmail">enterMinThenMinEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterMinThenMinPassword">enterMinThenMinPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterWithEmptyPassword">enterWithEmptyPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterWithWrongEmail">enterWithWrongEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="enterWithWrongPassword">enterWithWrongPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="passwordHolder">passwordHolder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_test_suite" title="ui.Login" hash-for-method="passwordWithAsterisk">passwordWithAsterisk</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Parallel_test_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Parallel_test_suite" class="panel Parallel_test_suite">
+          <div class="suite-Parallel_test_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ui.SideMenu</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="asserHideMenu">
+                  </a> <!-- asserHideMenu -->
+                  <span class="method-name">asserHideMenu</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="asserItemLinks">
+                  </a> <!-- asserItemLinks -->
+                  <span class="method-name">asserItemLinks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertActiveItem">
+                  </a> <!-- assertActiveItem -->
+                  <span class="method-name">assertActiveItem</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertChangingTemplateItem">
+                  </a> <!-- assertChangingTemplateItem -->
+                  <span class="method-name">assertChangingTemplateItem</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertIconsOfMenuItems">
+                  </a> <!-- assertIconsOfMenuItems -->
+                  <span class="method-name">assertIconsOfMenuItems</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Parallel_test_suite-class-passed -->
+          <div class="suite-Parallel_test_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ui.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="assertElementsOnPage">
+                  </a> <!-- assertElementsOnPage -->
+                  <span class="method-name">assertElementsOnPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dontHaveAccount">
+                  </a> <!-- dontHaveAccount -->
+                  <span class="method-name">dontHaveAccount</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterEmail">
+                  </a> <!-- enterEmail -->
+                  <span class="method-name">enterEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterMaxEmail">
+                  </a> <!-- enterMaxEmail -->
+                  <span class="method-name">enterMaxEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterMaxPassword">
+                  </a> <!-- enterMaxPassword -->
+                  <span class="method-name">enterMaxPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterMinPassword">
+                  </a> <!-- enterMinPassword -->
+                  <span class="method-name">enterMinPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterMinThenMinEmail">
+                  </a> <!-- enterMinThenMinEmail -->
+                  <span class="method-name">enterMinThenMinEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterMinThenMinPassword">
+                  </a> <!-- enterMinThenMinPassword -->
+                  <span class="method-name">enterMinThenMinPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterWithEmptyPassword">
+                  </a> <!-- enterWithEmptyPassword -->
+                  <span class="method-name">enterWithEmptyPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterWithWrongEmail">
+                  </a> <!-- enterWithWrongEmail -->
+                  <span class="method-name">enterWithWrongEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterWithWrongPassword">
+                  </a> <!-- enterWithWrongPassword -->
+                  <span class="method-name">enterWithWrongPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="passwordHolder">
+                  </a> <!-- passwordHolder -->
+                  <span class="method-name">passwordHolder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="passwordWithAsterisk">
+                  </a> <!-- passwordWithAsterisk -->
+                  <span class="method-name">passwordWithAsterisk</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Parallel_test_suite-class-passed -->
+        </div> <!-- panel Parallel_test_suite -->
+        <div panel-name="test-xml-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">E:\interviwer\Interviewer\QAauto\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Parallel test suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;parameter name=&quot;implicitWaitInSeconds&quot; value=&quot;30&quot;/&gt;
+  &lt;parameter name=&quot;myParam&quot; value=&quot;This is the value for a parameter&quot;/&gt;
+  &lt;parameter name=&quot;browserName&quot; value=&quot;chrome&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;utils.ListenerTest&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;functestForLoginPage&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;functest&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ui.Login&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- functestForLoginPage --&gt;
+  &lt;test name=&quot;functestForSideMenu&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;functest&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ui.SideMenu&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- functestForSideMenu --&gt;
+&lt;/suite&gt; &lt;!-- Parallel test suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Parallel test suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">functestForLoginPage (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">functestForSideMenu (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Parallel test suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">10</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">10.1</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">10.2</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">12</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">dontHaveAccount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">14</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">asserHideMenu</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">18</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertIconsOfMenuItems</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">19</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertChangingTemplateItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">2</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertElementsOnPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">20</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertActiveItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">21</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">asserItemLinks</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">4</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">passwordWithAsterisk</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">5</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">passwordHolder</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">8</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">8.1</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithEmptyPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">8.2</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">9</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">9.1</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">9.2</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">emailInput</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">functest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">asserHideMenu</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">asserItemLinks</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertActiveItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertChangingTemplateItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertElementsOnPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">assertIconsOfMenuItems</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dontHaveAccount</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithEmptyPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">passwordHolder</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">passwordWithAsterisk</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">passwordCheck</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMaxPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterMinThenMinPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">wrongEmailOrPasswrd</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithEmptyPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">enterWithWrongPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Parallel test suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Parallel_test_suite');
+function tableData_Parallel_test_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(18);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'assertElementsOnPage')
+data.setCell(0, 2, 'ui.Login')
+data.setCell(0, 3, 13372);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'assertActiveItem')
+data.setCell(1, 2, 'ui.SideMenu')
+data.setCell(1, 3, 11284);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'asserItemLinks')
+data.setCell(2, 2, 'ui.SideMenu')
+data.setCell(2, 3, 6380);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'assertChangingTemplateItem')
+data.setCell(3, 2, 'ui.SideMenu')
+data.setCell(3, 3, 6343);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'asserHideMenu')
+data.setCell(4, 2, 'ui.SideMenu')
+data.setCell(4, 3, 4213);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'dontHaveAccount')
+data.setCell(5, 2, 'ui.Login')
+data.setCell(5, 3, 4078);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'enterWithEmptyPassword')
+data.setCell(6, 2, 'ui.Login')
+data.setCell(6, 3, 3503);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'enterMinThenMinPassword')
+data.setCell(7, 2, 'ui.Login')
+data.setCell(7, 3, 3215);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'enterWithWrongEmail')
+data.setCell(8, 2, 'ui.Login')
+data.setCell(8, 3, 2786);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'enterWithWrongPassword')
+data.setCell(9, 2, 'ui.Login')
+data.setCell(9, 3, 2734);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'enterMinPassword')
+data.setCell(10, 2, 'ui.Login')
+data.setCell(10, 3, 2729);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'enterEmail')
+data.setCell(11, 2, 'ui.Login')
+data.setCell(11, 3, 2552);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'enterMinThenMinEmail')
+data.setCell(12, 2, 'ui.Login')
+data.setCell(12, 3, 2429);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'assertIconsOfMenuItems')
+data.setCell(13, 2, 'ui.SideMenu')
+data.setCell(13, 3, 2136);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'enterMaxEmail')
+data.setCell(14, 2, 'ui.Login')
+data.setCell(14, 3, 1809);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'passwordHolder')
+data.setCell(15, 2, 'ui.Login')
+data.setCell(15, 3, 1717);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'passwordWithAsterisk')
+data.setCell(16, 2, 'ui.Login')
+data.setCell(16, 3, 1680);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'enterMaxPassword')
+data.setCell(17, 2, 'ui.Login')
+data.setCell(17, 3, 974);
+window.suiteTableData['Parallel_test_suite']= { tableData: data, tableDiv: 'times-div-Parallel_test_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-Parallel_test_suite">
+              </div> <!-- times-div-Parallel_test_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Parallel test suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">7 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">ui.SideMenu</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">errorForFailFunc</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">ui.Login</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">sentResultForPassword</span>
+                <br/>
+                <span class="ignored-method-name">sentResultForEmail</span>
+                <br/>
+                <span class="ignored-method-name">forgotYourPassword</span>
+                <br/>
+                <span class="ignored-method-name">enterAsHR</span>
+                <br/>
+                <span class="ignored-method-name">enterAsInterviewer</span>
+                <br/>
+                <span class="ignored-method-name">resultForWrongEmailOrPasswrd</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Parallel_test_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">before</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">before</span>
+                <span class="method-start">5 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">assertElementsOnPage</span>
+                <span class="method-start">13029 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">asserHideMenu</span>
+                <span class="method-start">22455 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">dontHaveAccount</span>
+                <span class="method-start">26403 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">asserItemLinks</span>
+                <span class="method-start">26669 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">enterEmail</span>
+                <span class="method-start">30482 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMaxEmail</span>
+                <span class="method-start">33035 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">assertActiveItem</span>
+                <span class="method-start">33051 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">enterMaxPassword</span>
+                <span class="method-start">34845 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMinPassword</span>
+                <span class="method-start">35820 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMinThenMinEmail</span>
+                <span class="method-start">38551 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterMinThenMinPassword</span>
+                <span class="method-start">40982 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterWithEmptyPassword</span>
+                <span class="method-start">44197 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">assertChangingTemplateItem</span>
+                <span class="method-start">44336 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">enterWithWrongEmail</span>
+                <span class="method-start">47701 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">enterWithWrongPassword</span>
+                <span class="method-start">50489 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.SideMenu</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">assertIconsOfMenuItems</span>
+                <span class="method-start">50680 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">after</span>
+                <span class="method-start">52820 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ui.Login</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">passwordHolder</span>
+                <span class="method-start">53224 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">passwordWithAsterisk</span>
+                <span class="method-start">54941 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">after</span>
+                <span class="method-start">56622 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel test suite" parallel="tests" thread-count="3">
+
+    <listeners>
+        <listener class-name="utils.ListenerTest"/>
+    </listeners>
+
+    <parameter name="myParam" value="This is the value for a parameter"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="implicitWaitInSeconds" value="30"/>
+
+
+    <test name="functestForLoginPage">
+        <groups>
+            <run>
+                <include name="functest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ui.Login"/>
+        </classes>
+    </test>
+
+    <test name="functestForSideMenu">
+        <groups>
+            <run>
+                <include name="functest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ui.SideMenu"/>
+        </classes>
+    </test>
+
+
+</suite>
