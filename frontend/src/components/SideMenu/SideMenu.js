@@ -115,7 +115,7 @@ class SideMenu extends Component {
                 }
             ];
 
-            let pathName = window.location.pathname,
+            let pathName = window.location.hash,
                 items = dashboard.concat(settings);
 
             items.forEach(function (item) {
