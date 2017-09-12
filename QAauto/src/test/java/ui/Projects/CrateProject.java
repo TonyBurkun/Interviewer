@@ -192,10 +192,8 @@ public class CrateProject {
         projectsPage.typeTitle("Test");
         projectsPage.typeDescr("TestTest");
         projectsPage.clickFinalCeateProjectButton();
-       // Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"2\"]")).isDisplayed());
         String uri = driver.getCurrentUrl();
-   //    Assert.assertEquals(uri, BaseURL+"projects");
-       Assert.assertTrue(driver.findElement(By.id("2")).isDisplayed());
+        Assert.assertEquals(uri, BaseURL+"projects");
 
 //        Assert.assertTrue(driver.findElement(By.name("Test")).isDisplayed());
 
