@@ -2,7 +2,10 @@ E:\interviwer\Interviewer\QAauto\src\main\java\ui\SideMenuPage.java
 E:\interviwer\Interviewer\QAauto\src\main\java\utils\ListenerTest.java
 E:\interviwer\Interviewer\QAauto\src\main\java\utils\RemoteDriverManager.java
 E:\interviwer\Interviewer\QAauto\src\main\java\utils\APIException.java
-E:\interviwer\Interviewer\QAauto\src\main\java\ui\ProjectsPage.java
+E:\interviwer\Interviewer\QAauto\src\main\java\utils\TestCase.java
+E:\interviwer\Interviewer\QAauto\src\main\java\ui\Projects\ProjectsPage.java
+E:\interviwer\Interviewer\QAauto\src\main\java\ui\Projects\CreateProjectPage.java
 E:\interviwer\Interviewer\QAauto\src\main\java\utils\RemoteWebDriverFactory.java
 E:\interviwer\Interviewer\QAauto\src\main\java\ui\LoginPage.java
 E:\interviwer\Interviewer\QAauto\src\main\java\utils\APIClient.java
+E:\interviwer\Interviewer\QAauto\src\main\java\ui\Projects\backend\Create.java

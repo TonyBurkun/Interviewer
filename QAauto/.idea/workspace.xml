@@ -2,14 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a37e78-76c3-4262-865f-83a5941872aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/backend/login.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/backend/projects/Create.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/ui/SideMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/ui/SideMenu.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/utils/TestCase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/testrun.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForSideMenu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-ui.SideMenu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForSideMenu.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/ListenerTest.class" afterPath="$PROJECT_DIR$/target/classes/utils/ListenerTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/ui/Login.class" afterPath="$PROJECT_DIR$/target/test-classes/ui/Login.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QAauto.iml" afterPath="$PROJECT_DIR$/QAauto.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java" afterPath="$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" afterPath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ui/Login.java" afterPath="$PROJECT_DIR$/src/test/java/ui/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.html" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-ui.Login.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-ui.Login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/classes.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/classes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForLoginPage.properties" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForLoginPage.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/groups.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/groups.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-alphabetical.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-alphabetical.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-not-run.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-not-run.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/testng.xml.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/testng.xml.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/toc.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/toc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +50,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="Create.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/backend/projects/Create.java">
+      <file leaf-file-name="ListenerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="-512">
+              <caret line="55" column="67" lean-forward="true" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,24 +62,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Create.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java">
+      <file leaf-file-name="testrun.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/testrun.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="84" column="21" lean-forward="false" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ui/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
+                <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
+                <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
+                <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
+                <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
+                <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
+                <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,6 +102,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -85,9 +123,6 @@
         <option value="$PROJECT_DIR$/src/test/java/Login.java" />
         <option value="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/ui/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/ProjectsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/CreateProjectPage.java" />
@@ -96,6 +131,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java" />
         <option value="$PROJECT_DIR$/src/test/java/backend/projects/Create.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/TestCaseID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/TestCaseID.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/testrun.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/ui/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
       </list>
     </option>
   </component>
@@ -107,10 +148,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="801" />
-    <option name="y" value="11" />
-    <option name="width" value="1060" />
-    <option name="height" value="1037" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -272,6 +313,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -360,14 +405,280 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/AutoQA/UIBasedOn/sampleUIBasedOnLR15" />
+    <property name="last_opened_file_path" value="E:/Java/Listener" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ui.Projects" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ui" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.CrateProject.assertExistenceOfCreatedProject">
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Gemfile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Gemfile.lock</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/backend/projects/Create.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/controllers/application_controller.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/routes.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/seeds.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/package-lock.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/public/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/index.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/controllers/api/v1/projects_controller.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/admin.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/level.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/position.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/project.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/user.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/confirmations/new.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/confirmation_instructions.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/email_changed.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/password_change.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/reset_password_instructions.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/unlock_instructions.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/passwords/edit.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/passwords/new.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/registrations/edit.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/registrations/new.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/sessions/new.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/shared/_links.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/unlocks/new.html.erb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/initializers/devise.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/initializers/rails_admin.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/locales/devise.en.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170808220059_create_admins.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170808220205_add_devise_to_admins.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170814222743_create_projects.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822225216_create_levels.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822225530_create_positions.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822230304_devise_create_users.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822231146_add_surname_to_users.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235028_add_level_ref_to_user.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235059_add_position_ref_to_user.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235341_add_name_to_user.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/schema.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/Candidates.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/candidates.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/CreateProject.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/CreateProject.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Dashboard/Dashboard.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Dashboard/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/Header.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/header.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/Interviewers.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/interviewers.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/InterviewsCompleted.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/interviewsCompleted.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/InterviewsUpcoming.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/interviewsUpcoming.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/Login.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/login.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Main/Main.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Main/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/Password.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/password.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/ProjectDetails.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/ProjectDetails.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/ProjectEdit.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/ProjectEdit.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/ProjectsList.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/ProjectsList.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/SideMenu.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/sideMenu.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/Username.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/username.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/Vacancies.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/vacancies.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/VacanciesClosed.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/vacanciesClosed.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/VacanciesOpen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/vacanciesOpen.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/notificationActions.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/projectActions.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/sideBarActions.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/notifications.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/project.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/sideBar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/store/configureStore.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/routes.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/_common.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/FontAwesome.otf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/index.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-blue.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-custom.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-green.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-orange.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-purple.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-red.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-seagreen.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/vendor.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/tests/App.test.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../git</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../master</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../package-lock.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/fixtures/admins.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/fixtures/projects.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/models/admin_test.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/models/project_test.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../tmp/pids/server.pid</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../tmp/restart.txt</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.test.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/FontAwesome.otf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/index.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/logo.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-blue.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-custom.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-green.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-orange.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-purple.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-red.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-seagreen.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/vendor.css</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunManager" selected="TestNG.test">
     <configuration default="false" name="CrateProject.assertBackToListButton" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -467,7 +778,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="CrateProject.assertExistenceOfCreatedProject" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="test" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ui.Projects.*" />
@@ -477,16 +788,16 @@
       <module name="QAauto" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="ui.Projects" />
-      <option name="MAIN_CLASS_NAME" value="ui.Projects.CrateProject" />
-      <option name="METHOD_NAME" value="assertExistenceOfCreatedProject" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="test" />
+      <option name="TEST_OBJECT" value="GROUP" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -494,7 +805,7 @@
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
+      <option name="PROPERTIES_FILE" value="" />
       <envs />
       <properties />
       <listeners />
@@ -786,12 +1097,12 @@
       <item index="1" class="java.lang.String" itemvalue="TestNG.CrateProject.assertBackToListButton" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.CrateProject.assertCancelForEmptyForm" />
       <item index="3" class="java.lang.String" itemvalue="TestNG.CrateProject.assertCancelForFilledForm" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.CrateProject.assertExistenceOfCreatedProject" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.test" />
       <item index="5" class="java.lang.String" itemvalue="TestNG.CrateProject.assertChangeForCreateButton" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.CrateProject.assertExistenceOfCreatedProject" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.test" />
         <item index="1" class="java.lang.String" itemvalue="TestNG.CrateProject.assertChangeForCreateButton" />
         <item index="2" class="java.lang.String" itemvalue="TestNG.CrateProject.assertCancelForFilledForm" />
         <item index="3" class="java.lang.String" itemvalue="TestNG.CrateProject.assertCancelForEmptyForm" />
@@ -824,19 +1135,17 @@
       <option name="project" value="LOCAL" />
       <updated>1505146724964</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="api tests">
+      <created>1505236259980</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1505236259980</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CrateProject_assertBackToListButton - 2017.09.11 at 14h 34m 39s.xml">
-      <configuration name="CrateProject.assertBackToListButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CrateProject_assertCancelForEmptyForm - 2017.09.11 at 15h 16m 28s.xml">
-      <configuration name="CrateProject.assertCancelForEmptyForm" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CrateProject_assertCancelForFilledForm - 2017.09.11 at 15h 20m 30s.xml">
-      <configuration name="CrateProject.assertCancelForFilledForm" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CrateProject_assertChangeForCreateButton - 2017.09.11 at 16h 28m 47s.xml">
       <configuration name="CrateProject.assertChangeForCreateButton" configurationId="TestNG" />
     </history-entry>
@@ -858,27 +1167,36 @@
     <history-entry file="CrateProject_assertExistenceOfCreatedProject - 2017.09.11 at 17h 47m 38s.xml">
       <configuration name="CrateProject.assertExistenceOfCreatedProject" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="Test - 2017.09.13 at 15h 38m 40s.xml">
+      <configuration name="Test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Test - 2017.09.13 at 15h 47m 44s.xml">
+      <configuration name="Test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="test - 2017.09.13 at 15h 48m 51s.xml">
+      <configuration name="test" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="801" y="11" width="1060" height="1037" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32475883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32411504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.076327436" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2636656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17256163" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22829582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26147044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21268657" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -947,11 +1265,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="onFail" />
     <MESSAGE value="creating of Project: Create" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating of Project: Create" />
+    <MESSAGE value="api tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="api tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ui/Login.java</url>
+          <line>169</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -973,7 +1300,7 @@
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#passwordWithAsterisk#0;class#Login#0" expanded="false" />
             <element signature="method#passwordHolder#0;class#Login#0" expanded="false" />
             <element signature="method#enterAsHR#0;class#Login#0" expanded="false" />
@@ -984,11 +1311,9 @@
             <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
             <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
             <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForEmail#0;class#Login#0" expanded="false" />
             <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
             <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
             <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForPassword#0;class#Login#0" expanded="false" />
             <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
             <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
           </folding>
@@ -1099,26 +1424,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestListener.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,35 +1452,6 @@
             <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
             <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
             <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="234" column="118" lean-forward="true" selection-start-line="234" selection-start-column="19" selection-end-line="234" selection-end-column="118" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#assertElementsOnPage#0;class#Login#0" expanded="false" />
-            <element signature="method#passwordWithAsterisk#0;class#Login#0" expanded="false" />
-            <element signature="method#passwordHolder#0;class#Login#0" expanded="false" />
-            <element signature="method#enterAsHR#0;class#Login#0" expanded="false" />
-            <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#resultForWrongEmailOrPasswrd#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#sentResultForPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1219,14 +1499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1462">
@@ -1255,21 +1527,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="51">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/backend/projects/Create.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="339" column="29" lean-forward="false" selection-start-line="339" selection-start-column="29" selection-end-line="339" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-512">
+          <caret line="55" column="67" lean-forward="true" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/backend/projects/Create.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/testrun.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

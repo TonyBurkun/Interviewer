@@ -13,7 +13,7 @@
     <test name="functestForLoginPage">
         <groups>
             <run>
-                <include name="functest"/>
+                <include name="test"/>
             </run>
         </groups>
         <classes>
@@ -21,16 +21,16 @@
         </classes>
     </test>
 
-    <test name="functestForSideMenu">
-        <groups>
-            <run>
-                <include name="functest"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="ui.SideMenu"/>
-        </classes>
-    </test>
+    <!--<test name="functestForSideMenu">-->
+        <!--<groups>-->
+            <!--<run>-->
+                <!--<include name="functest"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+        <!--<classes>-->
+            <!--<class name="ui.SideMenu"/>-->
+        <!--</classes>-->
+    <!--</test>-->
 
 
 </suite>

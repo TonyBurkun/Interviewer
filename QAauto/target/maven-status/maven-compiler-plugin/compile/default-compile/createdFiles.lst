@@ -1,8 +1,11 @@
+ui\Projects\backend\Create.class
 utils\APIException.class
 utils\ListenerTest.class
 ui\LoginPage.class
 ui\SideMenuPage.class
+utils\TestCase.class
+ui\Projects\CreateProjectPage.class
+ui\Projects\ProjectsPage.class
 utils\APIClient.class
 utils\RemoteWebDriverFactory.class
 utils\RemoteDriverManager.class
-ui\ProjectsPage.class
