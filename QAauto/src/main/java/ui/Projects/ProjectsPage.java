@@ -27,7 +27,14 @@ public class ProjectsPage {
     By cancelEditPopup = By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/button/span[1]");
     By cancelEditPopupButton = By.id("pe-btn-modal-cancel");
     By backToEditButton = By.id("pe-btn-modal-back");
+    By YesOnDeletePopup = By.id("pd-btn-modal-yes");
+    By NoOnDeletePopup = By.id("pd-btn-modal-no");
 
+
+    public ProjectsPage clickYesOnDeletePopup() {
+        driver.findElement(YesOnDeletePopup).click();
+        return this;
+    }
 
 
     public ProjectsPage clickBackToEditButton() {

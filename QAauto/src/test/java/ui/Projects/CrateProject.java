@@ -1,6 +1,7 @@
 package ui.Projects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -17,8 +18,8 @@ import org.json.simple.JSONObject;
 import java.util.concurrent.TimeUnit;
 
 
-
 public class CrateProject {
+
     WebDriver driver;
     ProjectsPage projectsPage;
     LoginPage loginPage;
@@ -43,6 +44,8 @@ public class CrateProject {
         crateProjectPage = new  CreateProjectPage(driver);
 
     }
+
+    ///////////////////////=========== Project:Create=============////////////////////////
 
     @Test(groups = {"functest", "47", "UI"})
     public void assertElementsOnCreateProjectPage() throws InterruptedException {
@@ -182,6 +185,7 @@ public class CrateProject {
 
     }
 
+
     @Test(groups = {"functest", "146"})
     public void assertExistenceOfCreatedProject() throws InterruptedException {
 
@@ -189,52 +193,163 @@ public class CrateProject {
         driver.manage().window().maximize();
         sideMenuPage.clickProjectsItem();
         projectsPage.clickMainCreateProjectButton();
-        projectsPage.typeTitle("Test");
+        projectsPage.typeTitle("1Test");
         projectsPage.typeDescr("TestTest");
         projectsPage.clickFinalCeateProjectButton();
-        String uri = driver.getCurrentUrl();
-        Assert.assertEquals(uri, BaseURL+"projects");
+      //  Assert.assertTrue(driver.findElement(By.className("alert")).isDisplayed());
+      //  notification alert alert-success alert-dismissible
+        String uriProj = driver.getCurrentUrl();
+        Assert.assertEquals(uriProj, BaseURL+"#/projects");
+        String test = driver.findElement(By.linkText("1Test")).getAttribute("href");
+        driver.get(test);
+        projectsPage.clickDeleteProjectButton();
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div")).isDisplayed());
+        projectsPage.clickYesOnDeletePopup();
 
-//        Assert.assertTrue(driver.findElement(By.name("Test")).isDisplayed());
 
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/35/146", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/146", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
 
 
 
 
     }
 
-    //TODO assert for created project
+    //TODO ALERT for created project
 
 
-    @Test(groups = {"functest", "144"})
+    @Test(groups = {"functest", "147"})
     public void assertChangeForCreateButton() throws InterruptedException {
 
         loginPage.open();
         driver.manage().window().maximize();
         sideMenuPage.clickProjectsItem();
         projectsPage.clickMainCreateProjectButton();
+        Assert.assertFalse( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
         projectsPage.typeTitle("Test");
             String DiabledButton = driver.findElement(By.id("create-project-submitBtn")).getAttribute("disabled");
         Assert.assertEquals(DiabledButton, "true");
         projectsPage.typeDescr("TestTest");
-       //  String AbledButton = driver.findElement(By.id("create-project-submitBtn")).getAttribute("button");
-       // Assert.assertEquals(AbledButton, "false");
+        Assert.assertTrue( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/147", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
 
     }
-    //TODO
 
 
+///////////===================SUB-CASE Fields VALIDATION=================////////////////////////
 
+    @Test(groups = {"functest", "136"})
+    public void assertMaxLeghtForProjectTitle() throws InterruptedException {
 
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        projectsPage.clickMainCreateProjectButton();
+        projectsPage.typeTitle("Test");
+        String lengthForProjectTitle = driver.findElement(By.id("create-project-title")).getAttribute("maxlength");
+        Assert.assertEquals(lengthForProjectTitle, "60");
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/136", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test(groups = {"functest", "137and135"})
+    public void assertMinLeghtForProjectDescriptionAndDesc() throws InterruptedException {
+
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        projectsPage.clickMainCreateProjectButton();
+        String createDiabledButton = driver.findElement(By.id("create-project-submitBtn")).getAttribute("disabled");
+        Assert.assertEquals(createDiabledButton, "true");
+        projectsPage.typeTitle("T");
+        projectsPage.typeDescr("T");
+        Assert.assertTrue( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/137", body);
+            client.sendPost("add_result_for_case/35/135", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test(groups = {"functest", "138"})
+    public void assertMaxLeghtForProjectDesc() throws InterruptedException {
+
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        projectsPage.clickMainCreateProjectButton();
+        String lengthForProjectDesc = driver.findElement(By.id("create-project-descr")).getAttribute("maxlength");
+        Assert.assertEquals(lengthForProjectDesc, "3000");
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/138", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test(groups = {"functest", "139"})
+    public void assertSupportOfSymbolsInFieldTitleAndDesc() throws InterruptedException {
+
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        projectsPage.clickMainCreateProjectButton();
+        projectsPage.typeTitle("йцукенгг");
+        projectsPage.typeDescr("йцукенг");
+        projectsPage.clickFinalCeateProjectButton();
+        driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/form/div[1]/span")).isDisplayed();
+        driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/form/div[2]/span")).isDisplayed();
+
+        JSONObject body = new JSONObject();
+        body.put("status_id", "1");
+        try {
+            client.sendPost("add_result_for_case/35/139", body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
         @AfterTest(groups = {"functest"})
