@@ -20,8 +20,31 @@ class ProjectDetails extends Component {
     }
 
         componentWillMount() {
+
             const {dispatch} = this.props;
             if (this.props.newProject.projects.length < 1) {
+
+                // let promise = new Promise((resolve, reject) => {
+                //     dispatch(getProjects(this.props.match.params.id));
+                //     let currentProject = this.props.newProject.currentProject;
+                //     resolve(currentProject);
+                // });
+                //
+                //
+                // promise.then(
+                //     result => {
+                //         let currentProject = this.props.newProject.currentProject;
+                //         console.log(result);
+                //         this.setState({currentProject: currentProject});
+                //         this.setState({projectTitle: currentProject.title});
+                //         this.setState({projectDescription: currentProject.description});
+                //     },
+                //     error => {
+                //         alert("error")
+                //     }
+                // );
+
+
                 dispatch(getProjects(this.props.match.params.id));
                 setTimeout(() => {
                     let currentProject = this.props.newProject.currentProject;

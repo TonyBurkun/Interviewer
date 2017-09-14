@@ -76,6 +76,7 @@ class CreateProject extends Component {
             });
 
         } if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
+            event.preventDefault();
             this.props.history.push("/projects");
             const {dispatch} = this.props;
             dispatch(createProject({title: title, description: description}));
