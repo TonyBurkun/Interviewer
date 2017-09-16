@@ -116,7 +116,14 @@ export function removeProject(date) {
                 res.json()
             )
             .then(date => {
+                let noteData = "'" + date.data.title.slice(0, 20) + "'";
                 dispatch(showProjects());
+                dispatch(makeNote(
+                    {
+                        status: "success",
+                        text: "Project " + noteData + "... was deleted!"
+                    }
+                ))
             })
             .catch(function(err) {
                 dispatch(showNote(
@@ -143,7 +150,14 @@ export function updateProject(date) {
                 res.json()
             )
             .then(date => {
+                let noteData = "'" + date.data.title.slice(0, 20) + "'";
                 dispatch(showProjects());
+                dispatch(makeNote(
+                    {
+                        status: "success",
+                        text: "Project " + noteData + "... was updated!"
+                    }
+                ))
             })
             .catch(function(err) {
                 dispatch(showNote(

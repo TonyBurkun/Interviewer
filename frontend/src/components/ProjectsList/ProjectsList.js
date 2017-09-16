@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Helmet from "react-helmet";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
+import PageTitle from './../../containers/PageTitle';
 import {showProjects} from "../../redux/actions/projectActions";
 
 
@@ -52,15 +53,13 @@ class ProjectsList extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
-                        <div className="title-block">
-                            <h3 className="title">Projects</h3>
-                        </div>
-                        <Link
-                            id="pl-link-to-create"
-                            to="/projects/create-project"
-                        >
-                            <button className="btn btn-primary create-button">Create project</button>
-                        </Link>
+                        <PageTitle
+                            pageTitle='Projects'
+                            showBackBtn={false}
+                            showButton={true}
+                            titleForButton='Create project'
+                            linkForButton='/projects/create-project'
+                        />
                     </div>
                 </div>
                 {projectsToDisplay}

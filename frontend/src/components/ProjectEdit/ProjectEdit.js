@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
@@ -80,11 +79,15 @@ class ProjectEdit extends Component {
     }
 
     validateFormFields(event) {
-        let regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=[\]{};‘:“\\|,.<>/?]*$/;
+        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let id = this.state.currentProject.id;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
+        let emptyFieldMessage = "Please fill the field";
+        let existTitleMessage = "This title already exists. Please, use only unique titles";
+        let emptyTitle = !title || title.match(/^\s*$/);
+        let emptyDescription = !description || description.match(/^\s*$/)
         if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
@@ -100,11 +103,26 @@ class ProjectEdit extends Component {
         if (!this.isTitleUnique()) {
             event.preventDefault();
             this.setState({
-                titleError: "This title already exists. Please, use only unique titles"
+                titleError: existTitleMessage
             });
         }
-
-        if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
+        if (emptyTitle) {
+            event.preventDefault();
+            this.setState({
+                titleError: emptyFieldMessage
+            });
+        }
+        if (emptyDescription) {
+            event.preventDefault();
+            this.setState({
+                descriptionError: emptyFieldMessage
+            });
+        }
+        if (!emptyTitle && !emptyDescription &&
+            regex.test(title) &&
+            regex.test(description) &&
+            this.isTitleUnique()) {
+            event.preventDefault();
             const {dispatch} = this.props;
             dispatch(updateProject({id: id, title: title, description: description}));
             this.props.history.push("/projects/");
@@ -132,12 +150,6 @@ class ProjectEdit extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
-                        <Link
-                            id="pe-link-to-list"
-                            to="/projects"
-                            className="back-link">
-                            Back to list
-                        </Link>
                         <form
                             className="form-pe block-space"
                             onSubmit={(event) => this.validateFormFields(event)}
@@ -177,7 +189,7 @@ class ProjectEdit extends Component {
                                 <button
                                     id="pe-btn-cancel"
                                     type="reset"
-                                    className="btn btn-primary right-project-btn"
+                                    className="btn btn-danger"
                                     onClick={()=> this.showMConfirmMessage()}
                                 >Cancel
                                 </button>
@@ -195,15 +207,15 @@ class ProjectEdit extends Component {
                     <Modal.Footer>
                         <Button
                             id="pe-btn-modal-cancel"
+                            className="btn btn-primary"
                             onClick={() => this.leaveEdit()}
-                        >Cancel
+                        >Yes
                         </Button>
                         <Button
                             id="pe-btn-modal-back"
-                            className="right-project-btn"
+                            className="btn btn-danger"
                             onClick={() => this.closeModalConfirm()}
-                            bsStyle="primary"
-                        >Back to edit
+                        >No
                         </Button>
                     </Modal.Footer>
                 </Modal>

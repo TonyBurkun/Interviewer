@@ -1,3 +1,5 @@
+$border-color-primary:#85CE36;
+
 .component-container {
   position: relative;
 }
@@ -13,4 +15,8 @@
 .project-list-item {
   word-wrap: break-word;
   padding: 15px;
+}
+
+.project-list-item:hover {
+  border: 1px solid $border-color-primary;
 }

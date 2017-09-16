@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import TextareaAutosize from "react-autosize-textarea";
 import Helmet from "react-helmet";
-import {Link} from "react-router-dom";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 import {connect} from "react-redux";
@@ -53,10 +52,14 @@ class CreateProject extends Component {
     }
 
     validateFormFields(event) {
-        let regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=[\]{};‘:“\\|,.<>/?]*$/;
+        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
+        let emptyFieldMessage = "Please fill the field";
+        let existTitleMessage = "This title already exists. Please, use only unique titles";
+        let emptyTitle = !title || title.match(/^\s*$/);
+        let emptyDescription = !description || description.match(/^\s*$/)
         if (!regex.test(title)) {
             event.preventDefault();
             this.setState({
@@ -72,10 +75,26 @@ class CreateProject extends Component {
         if (!this.isTitleUnique()) {
             event.preventDefault();
             this.setState({
-                titleError: "This title already exists. Please, use only unique titles"
+                titleError: existTitleMessage
+            });
+        }
+        if (emptyTitle) {
+            event.preventDefault();
+            this.setState({
+                titleError: emptyFieldMessage
+            });
+        }
+        if (emptyDescription) {
+            event.preventDefault();
+            this.setState({
+                descriptionError: emptyFieldMessage
             });
 
-        } if (regex.test(title) && regex.test(description) && this.isTitleUnique()) {
+        }
+        if (!emptyTitle && !emptyDescription &&
+            regex.test(title) &&
+            regex.test(description) &&
+            this.isTitleUnique()) {
             event.preventDefault();
             this.props.history.push("/projects");
             const {dispatch} = this.props;
@@ -138,13 +157,6 @@ class CreateProject extends Component {
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12">
-                        <Link id="link-to-list"
-                              to="/projects"
-                              className="back-link"
-                              onClick={() => this.isFieldsNotEmpty()}
-                            >
-                            Back to list
-                        </Link>
                         <div className="title-block block-space ">
                             <h3 className="title">Create project</h3>
                         </div>
@@ -191,7 +203,7 @@ class CreateProject extends Component {
                                 <button
                                     id="create-project-resetBtn"
                                     type="reset"
-                                    className="btn btn-primary right-project-btn"
+                                    className="btn btn-danger"
                                     onClick={() => this.isFieldsNotEmpty()}
                                 >Cancel
                                 </button>
@@ -208,11 +220,16 @@ class CreateProject extends Component {
                         <Modal.Footer>
                             <Button
                                 id="modal-confirm-cancel"
-                                onClick={() => this.leaveForm()}>Cancel</Button>
+                                className="btn btn-primary"
+                                onClick={() => this.leaveForm()}
+                            >Yes
+                            </Button>
                             <Button
                                 id="modal-confirm-back"
-                                className="right-project-btn"
-                                onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to Create Project</Button>
+                                className="btn btn-danger"
+                                onClick={() => this.closeModalConfirm()} bsStyle="primary"
+                            >No
+                            </Button>
                         </Modal.Footer>
                     </Modal>
                 </div>

@@ -120,7 +120,7 @@ class ProjectDetails extends Component {
                             <button
                                 id="pd-btn-to-delete"
                                 type="reset"
-                                className="btn btn-primary right-project-btn"
+                                className="btn btn-danger"
                                 onClick={() => this.openModalConfirm()}
                             >Delete</button>
                         </div>
@@ -136,12 +136,13 @@ class ProjectDetails extends Component {
                     <Modal.Footer>
                         <Button
                             id="pd-btn-modal-yes"
+                            className="btn btn-primary"
                             onClick={() => this.deleteProject()}
                         >Yes
                         </Button>
                         <Button
                             id="pd-btn-modal-no"
-                            className="right-project-btn"
+                            className="btn btn-danger"
                             onClick={() => this.closeModalConfirm()}
                             bsStyle="primary"
                         >No
