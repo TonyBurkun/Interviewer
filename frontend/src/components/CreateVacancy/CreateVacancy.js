@@ -16,6 +16,7 @@ class CreateVacancy extends Component{
             vacancyDescription:"",
             confirmText: "Are you sure you want to cancel without saving changes?",
             wrongCharMessage: "Please use only latin letters, numbers and special symbols",
+            emptySelectsMessage: "Please set the parameter",
             showModalConfirm: false
         };
 
@@ -29,22 +30,7 @@ class CreateVacancy extends Component{
     handleSubmitForm(event){
         event.preventDefault();
 
-        console.log('send form');
-        let currentForm = event.target,
-            regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/,
-            descriptionField = this.refs.vacancy_desc.textarea,
-            descriptionValue = this.refs.vacancy_desc.currentValue;
-
-
-        let createErrorElem = (errorMessage) => {
-            let errorElem = document.createElement('span');
-                errorElem.innerHTML = errorMessage;
-                errorElem.classList.add('has-error');
-
-            return errorElem;
-        };
-
-
+        let currentForm = event.target;
 
         let removeAllErrorMessage = (currentForm) => {
             let allErrorMessages = currentForm.querySelectorAll('span.has-error'),
@@ -59,23 +45,83 @@ class CreateVacancy extends Component{
             }
         };
 
+        let createErrorElem = (errorMessage) => {
+            let errorElem = document.createElement('span');
+            errorElem.innerHTML = errorMessage;
+            errorElem.classList.add('has-error');
+            errorElem.classList.add('custom-error');
+
+            return errorElem;
+        };
+
+
         removeAllErrorMessage(currentForm);
 
+        console.log('send form');
+
+        //THE SELECTS BOXES CHECKING
+        let mainSelectsDiv = document.getElementById('select-block'),
+            selects = mainSelectsDiv.querySelectorAll('select'),
+            selectsPassValidation = false;
+
+
+        for (let i = 0; i < selects.length; i++){
+            let selectItem = selects[i],
+                index = selectItem.selectedIndex,
+                counter = 0;
+
+            if (!index) {
+                counter -= 1;
+                selectItem.parentNode.classList.add('has-error');
+                selectItem.parentNode.appendChild(createErrorElem(this.state.emptySelectsMessage));
+            } else {
+                counter += 1;
+            }
+
+            if (counter === selects.length){
+                selectsPassValidation = true;
+            }
+        }
+        //----------------------------
+
+
+        //TEXT_AREA FIELD CHECKING
+
+        let regex =/^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/,
+            descriptionField = this.refs.vacancy_desc.textarea,
+            descriptionValue = this.refs.vacancy_desc.currentValue,
+            descriptionPassValidation = false;
+
+
         if (!regex.test(descriptionValue)) {
+            descriptionPassValidation = false;
             descriptionField.parentNode.classList.add('has-error');
             descriptionField.parentNode.appendChild(createErrorElem(this.state.wrongCharMessage));
         } else {
+            descriptionPassValidation = true;
+        }
+        //-------------------------
+
+
+        if (selectsPassValidation && descriptionPassValidation){
             this.resetFormFields();
             history.goBack();
         }
 
+    }
 
+    handleSelectChange(event){
+        if (event.target.nextSibling !== null){
+            event.target.parentNode.classList.remove('has-error');
+            event.target.nextSibling.remove();
+        }
 
     }
 
     handleDescriptionChange(event){
         this.setState({vacancyDescription: event.target.value});
         if (event.target.nextSibling !== null){
+            event.target.parentNode.classList.remove('has-error');
             event.target.nextSibling.remove();
         }
 
@@ -126,7 +172,7 @@ class CreateVacancy extends Component{
 
             return (
                 <div className="form-group">
-                    <select className="form-control form-control-sm" id="project-filter">
+                    <select className="form-control form-control-sm" id="project-filter" onChange={(event) => {this.handleSelectChange(event)}}>
                         <option>Select Projects</option>
                         {options}
                     </select>
@@ -157,9 +203,9 @@ class CreateVacancy extends Component{
                                     <div className="form-filter-block">
 
                                         <label className="form-filter-block__title">Vacancy parameters</label>
-                                        <div className="form-filter-block__selects-block">
+                                        <div className="form-filter-block__selects-block" id="select-block">
                                             <div className="form-group">
-                                                <select className="form-control form-control-sm" id="level-filter">
+                                                <select className="form-control form-control-sm" id="level-filter" onChange={(event) => {this.handleSelectChange(event)}}>
                                                     <option>Select Levels</option>
                                                     <option>Junior</option>
                                                     <option>Middle</option>
@@ -167,7 +213,7 @@ class CreateVacancy extends Component{
                                                 </select>
                                             </div>
                                             <div className="form-group">
-                                                <select className="form-control form-control-sm" id="position-filter">
+                                                <select className="form-control form-control-sm" id="position-filter" onChange={(event) => {this.handleSelectChange(event)}}>
                                                     <option>Select Positions</option>
                                                     <option>QA</option>
                                                     <option>Frontend</option>

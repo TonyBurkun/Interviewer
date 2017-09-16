@@ -2,8 +2,20 @@
   outline: none !important;
 }
 
-select{
+select {
   cursor: pointer;
+}
+
+.custom-error {
+  clear: both;
+}
+
+div.has-error {
+  span.has-error {
+    color: #FF4444;
+    font-size: 13px;
+    display: block !important;
+  }
 }
 
 .app {
@@ -11,14 +23,14 @@ select{
   min-height: 100%;
 }
 
-.btn{
+.btn {
   margin-right: 10px;
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
 }
 
-.back-btn{
+.back-btn {
   cursor: pointer;
   margin: 0;
   font-size: 0.9rem;
@@ -26,57 +38,60 @@ select{
   text-decoration: underline;
   color: #969696;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
     color: #70b02b;
   }
 }
 
-.page-block{
+.page-block {
   padding-top: 2rem;
 }
-
-
 
 //-----------------------------------------
 // Filters styles for in forms or pages
 //-----------------------------------------
 
-.form-filter-block{
+.form-filter-block {
   background-color: transparent;
   margin-bottom: 2.5rem;
   overflow: hidden;
 
-  &__title{
+  &__title {
     margin-bottom: 1rem;
   }
 
-  &__selects-block{
+  &__selects-block {
     overflow: hidden;
 
-    .form-control:focus{
+    .form-control:focus {
       border-color: #85CE36;
     }
   }
 
-  .form-group{
-    float: left;
-    margin-bottom: 0;
+  .form-group {
+    //float: left;
+    display: inline-table;
+    width: 200px;
+    margin-bottom: 10px;
     margin-right: 10px;
-
-    &:last-child{
-      margin-right: 0;
+    @media (max-width: 580px) {
+      width: 100%;
     }
 
-    .form-control{
-      width: 140px;
+    &:last-of-type{
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      width: 100%
 
     }
   }
 }
 
 //-----------------------------------------
-
 
 .back-link {
   font-size: 0.9rem !important;
@@ -91,28 +106,26 @@ select{
 //Custom panel group styles
 //-----------------------------------------
 
-.custom-panel-group{
+.custom-panel-group {
   position: relative;
   margin-top: 20px;
 
-  .panel{
+  .panel {
 
-
-    &+.panel{
+    & + .panel {
       margin-top: 10px;
     }
 
-    .panel-heading{
+    .panel-heading {
 
       padding: 15px 20px;
 
-      h4{
+      h4 {
         margin-bottom: 0;
         padding: 10px;
         overflow: hidden;
 
-
-        a{
+        a {
           border: 1px solid black;
           display: block;
           float: right;
@@ -123,14 +136,14 @@ select{
       }
     }
 
-    .panel-body{
+    .panel-body {
       padding: 40px 20px 20px 20px;
       border-top: 1px solid #d7dde4;
     }
 
-    .panel-collapse{
+    .panel-collapse {
 
-      &.collapse{
+      &.collapse {
 
       }
     }
