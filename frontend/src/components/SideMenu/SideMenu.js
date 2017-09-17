@@ -126,23 +126,6 @@ class SideMenu extends Component {
                 }
             });
 
-            // let items = [
-            //     {name: "/interviews", label: "Interviews"},
-            //     {name: "/interviews-upcoming", label: "Upcoming"},
-            //     {name: "/interviews-completed", label: "Completed"},
-            //
-            //     {name: "/interviewers", label: "Interviewers"},
-            //
-            //     {name: "/vacancies", label: "Vacancies"},
-            //     {name: "/vacancies-open", label: "Open"},
-            //     {name: "/vacancies-closed", label: "Closed"},
-            //
-            //     {name: '/candidates', label: "Candidates"},
-            //     {name: '/projects', label: "Projects"},
-            //
-            //     {name: '/password', label: "Password"},
-            //     {name: '/username', label: "Username"},
-            // ];
 
             let menuItem = items.find(function (item) {
                 return pathName === item.name;
@@ -160,7 +143,7 @@ class SideMenu extends Component {
                 label = menuItem.label;
             }
 
-            if (pathName.indexOf('/username') === 0 || pathName.indexOf('/password') === 0) {
+            if (pathName.indexOf('#/username') === 0 || pathName.indexOf('#/password') === 0) {
                 return (
                     <MetisMenu
                         activeLinkLabel={label}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './vacanciesClosed.css';
 import Helmet from "react-helmet";
+import {PanelGroup} from 'react-bootstrap';
 
 import PageTitle from './../../containers/PageTitle';
 import Filters from './../../components/Filters';
@@ -9,6 +10,24 @@ import Panels from './../../components/Panels';
 class VacanciesClosed extends Component{
 
     render(){
+
+        const panelTitle = (
+            <div className="custom-panel-title">
+                <div className="custom-panel-title__right-side">
+                    <div className="panel-collapse-btn">
+                        <span className="panel-collapse-btn__title btn-js">Expand</span>
+                        <span className="fa fa-angle-right panel-collapse-btn__arrow arrow-js"/>
+                    </div>
+                </div>
+                <div className="custom-panel-title__left-side">
+                    <div className="vacancy-info-block">
+                        <div className="vacancy-info-block__item">Project</div>
+                        <div className="vacancy-info-block__item">Position</div>
+                        <div className="vacancy-info-block__item">Level</div>
+                    </div>
+                </div>
+            </div>
+        );
 
         return(
             <div className="bcgr">
@@ -30,9 +49,16 @@ class VacanciesClosed extends Component{
                             level={true}
                             date={false}
                         />
-                        <Panels
-                            titleForActionBtn="Reopen vacancy"
-                        />
+                        <PanelGroup bsClass='custom-panel-group'>
+                            <Panels
+                                showActionBtn={true}
+                                titleForActionBtn='Reopen vacancy'
+                                titleConst = {panelTitle}
+                                showEditBtn={true}
+                                showDuplicateBtn={true}
+                                showDeleteBtn={true}
+                            />
+                        </PanelGroup>
 
                     </div>
                 </div>

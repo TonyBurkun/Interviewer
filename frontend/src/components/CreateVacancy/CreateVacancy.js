@@ -62,13 +62,14 @@ class CreateVacancy extends Component{
         //THE SELECTS BOXES CHECKING
         let mainSelectsDiv = document.getElementById('select-block'),
             selects = mainSelectsDiv.querySelectorAll('select'),
-            selectsPassValidation = false;
+            selectsPassValidation = false,
+            counter = 0;
 
 
         for (let i = 0; i < selects.length; i++){
             let selectItem = selects[i],
-                index = selectItem.selectedIndex,
-                counter = 0;
+                index = selectItem.selectedIndex;
+
 
             if (!index) {
                 counter -= 1;
@@ -197,69 +198,66 @@ class CreateVacancy extends Component{
                 <section className="section">
                     <div className="row sameheight-container">
                         <div className="col-md-12">
-                            <div className="card card-block sameheight-item page-block">
-                                <form onSubmit={(event) => this.handleSubmitForm(event)}>
+                            <form onSubmit={(event) => this.handleSubmitForm(event)}>
 
-                                    <div className="form-filter-block">
-
-                                        <label className="form-filter-block__title">Vacancy parameters</label>
-                                        <div className="form-filter-block__selects-block" id="select-block">
-                                            <div className="form-group">
-                                                <select className="form-control form-control-sm" id="level-filter" onChange={(event) => {this.handleSelectChange(event)}}>
-                                                    <option>Select Levels</option>
-                                                    <option>Junior</option>
-                                                    <option>Middle</option>
-                                                    <option>Senior</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <select className="form-control form-control-sm" id="position-filter" onChange={(event) => {this.handleSelectChange(event)}}>
-                                                    <option>Select Positions</option>
-                                                    <option>QA</option>
-                                                    <option>Frontend</option>
-                                                    <option>Backend</option>
-                                                </select>
-                                            </div>
-                                            {showProjectFilter()}
+                                <div className="form-group form-filter-block">
+                                    <label className="form-filter-block__title">Vacancy parameters</label>
+                                    <div className="form-filter-block__selects-block" id="select-block">
+                                        <div className="form-group">
+                                            <select className="form-control form-control-sm" id="level-filter" onChange={(event) => {this.handleSelectChange(event)}}>
+                                                <option>Select Levels</option>
+                                                <option>Junior</option>
+                                                <option>Middle</option>
+                                                <option>Senior</option>
+                                            </select>
                                         </div>
-
+                                        <div className="form-group">
+                                            <select className="form-control form-control-sm" id="position-filter" onChange={(event) => {this.handleSelectChange(event)}}>
+                                                <option>Select Positions</option>
+                                                <option>QA</option>
+                                                <option>Frontend</option>
+                                                <option>Backend</option>
+                                            </select>
+                                        </div>
+                                        {showProjectFilter()}
                                     </div>
 
+                                </div>
 
 
-                                    <div className="form-group">
-                                        <label className="control-label form-label">Vacancy Description</label>
-                                        <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
-                                        <TextareaAutosize
-                                            id="create-vacancy-description"
-                                            name="description"
-                                            placeholder="Input Description"
-                                            className="form-control boxed"
-                                            maxLength="3000"
-                                            rows={10}
-                                            ref="vacancy_desc"
-                                            value={this.state.vacancyDescription}
-                                            onChange={(event) => this.handleDescriptionChange(event)}
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <button
-                                            id="create-vacancy-submitBtn"
-                                            type="submit"
-                                            className="btn btn-primary"
-                                            disabled={this.state.vacancyDescription.length < 5}
-                                        >Create
-                                        </button>
-                                        <button
-                                            id="create-vacancy-resetBtn"
-                                            type="reset"
-                                            className="btn btn-primary"
-                                            onClick={() => this.isFieldsNotEmpty()}
-                                        >Cancel
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+
+                                <div className="form-group">
+                                    <label className="control-label form-label">Vacancy Description</label>
+                                    <p className="form-sublabel"><small>Maximum 3000 characters</small></p>
+                                    <TextareaAutosize
+                                        id="create-vacancy-description"
+                                        name="description"
+                                        placeholder="Input Description"
+                                        className="form-control boxed"
+                                        maxLength="3000"
+                                        rows={10}
+                                        ref="vacancy_desc"
+                                        value={this.state.vacancyDescription}
+                                        onChange={(event) => this.handleDescriptionChange(event)}
+                                    />
+                                </div>
+                                <div className="form-group custom-btn-group">
+                                    <button
+                                        id="create-vacancy-submitBtn"
+                                        type="submit"
+                                        className="btn btn-primary"
+                                        disabled={this.state.vacancyDescription.length < 5}
+                                    >Create
+                                    </button>
+                                    <button
+                                        id="create-vacancy-resetBtn"
+                                        type="reset"
+                                        className="btn btn-primary"
+                                        onClick={() => this.isFieldsNotEmpty()}
+                                    >Cancel
+                                    </button>
+                                </div>
+                            </form>
                             <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
                                 <Modal.Header closeButton>
                                 </Modal.Header>
@@ -267,12 +265,14 @@ class CreateVacancy extends Component{
                                     <p>Are you sure you want to cancel without saving changes?</p>
                                 </Modal.Body>
                                 <Modal.Footer>
-                                    <Button
-                                        id="modal-confirm-cancel"
-                                        onClick={() => this.leaveForm()}>Cancel</Button>
-                                    <Button
-                                        id="modal-confirm-back"
-                                        onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to Create Vacancy</Button>
+                                   <div className="custom-btn-group">
+                                       <Button
+                                           id="modal-confirm-cancel"
+                                           onClick={() => this.leaveForm()}>Cancel</Button>
+                                       <Button
+                                           id="modal-confirm-back"
+                                           onClick={() => this.closeModalConfirm()} bsStyle="primary">Back to Create Vacancy</Button>
+                                   </div>
                                 </Modal.Footer>
                             </Modal>
                         </div>

@@ -27,8 +27,8 @@ class Header extends Component {
     render() {
 
         let toggleActiveDashboard = () => {
-            let path = window.location.pathname;
-            if (path.indexOf('/username') !== 0 && path.indexOf('/password') !== 0) {
+            let path = window.location.hash;
+            if (path.indexOf('#/username') !== 0 && path.indexOf('#/password') !== 0) {
                 return (
                     <Link to="/interviews-upcoming" id="headerDashboard" className="active">Dashboard</Link>
                 );
@@ -40,8 +40,8 @@ class Header extends Component {
         };
 
         let toggleActiveSettings = () => {
-            let path = window.location.pathname;
-            if (path.indexOf('/username') === 0 || path.indexOf('/password') === 0) {
+            let path = window.location.hash;
+            if (path.indexOf('#/username') === 0 || path.indexOf('#/password') === 0) {
                 return (
                     <Link to="/username" className="active" id="headerSettings">My settings</Link>
                 );

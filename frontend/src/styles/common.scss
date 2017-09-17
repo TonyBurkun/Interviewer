@@ -23,12 +23,17 @@ div.has-error {
   min-height: 100%;
 }
 
-.btn {
-  margin-right: 10px;
-  &:last-child {
-    margin-right: 0;
+.custom-btn-group{
+
+  .btn {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
+
+
 
 .back-btn {
   cursor: pointer;
@@ -54,7 +59,7 @@ div.has-error {
 
 .form-filter-block {
   background-color: transparent;
-  margin-bottom: 2.5rem;
+  //margin-bottom: 2.5rem;
   overflow: hidden;
 
   &__title {
@@ -70,7 +75,6 @@ div.has-error {
   }
 
   .form-group {
-    //float: left;
     display: inline-table;
     width: 200px;
     margin-bottom: 10px;
@@ -118,7 +122,13 @@ div.has-error {
 
     .panel-heading {
 
-      padding: 15px 20px;
+      & a{
+        overflow: hidden;
+        display: block;
+        padding: 15px 20px;
+        cursor: pointer;
+        user-select: none;
+      }
 
       h4 {
         margin-bottom: 0;
@@ -149,5 +159,32 @@ div.has-error {
     }
   }
 }
+
+.panel-collapse-btn{
+  position: relative;
+  user-select: none;
+
+  &__title{
+    display: block;
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+
+  &__arrow{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 24px;
+    transition: transform 0.3s;
+
+    &.rotate-plus-90{
+      transition: transform 0.3s;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
 
 //-----------------------------------------

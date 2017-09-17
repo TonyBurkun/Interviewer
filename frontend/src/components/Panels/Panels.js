@@ -1,137 +1,128 @@
 import React, {Component} from 'react';
-import {PanelGroup, Panel} from 'react-bootstrap';
+import {Panel} from 'react-bootstrap';
 import {PropTypes} from 'prop-types';
 import './panels.css';
 
 class Panels extends Component {
 
-
-
     handlePanelCollapseClick(event) {
 
         let clickTarget = event.target;
 
-        if (clickTarget.classList.contains('btn-js')) {
-            let collapseLink = clickTarget.parentNode.parentNode.classList.contains('collapsed');
-            collapseLink ? clickTarget.innerHTML = 'Collapsed': clickTarget.innerHTML = 'Expand';
+
+        while (!clickTarget.classList.contains('custom-panel-title') && !clickTarget.classList.contains('panel-collapse')) {
+            clickTarget = clickTarget.parentNode;
+
+        }
+
+        if (clickTarget.classList.contains('custom-panel-title')) {
+            let collapseBtn = clickTarget.querySelector('.btn-js'),
+                arrowIco = clickTarget.querySelector('.arrow-js'),
+                collapsed = clickTarget.firstChild.classList.contains('collapsed');
+
+            collapsed ? collapseBtn.innerHTML = 'Collapsed' : collapseBtn.innerHTML = 'Expand';
+            collapsed ? arrowIco.classList.add('rotate-plus-90') : arrowIco.classList.remove('rotate-plus-90');
         }
 
     }
 
+    render() {
+
+        let showActionBtn = this.props.showActionBtn,
+            titleForActionBtn = this.props.titleForActionBtn,
+            panelTitle = this.props.titleConst,
+            showEditBtn = this. props.showEditBtn,
+            showDuplicateBtn = this. props.showDuplicateBtn,
+            showDeleteBtn = this. props.showDeleteBtn;
 
 
-    render(){
+        let toShowActionBtn = (showActionBtn, titleBtn) => {
+            if (showActionBtn){
+              return (
+                  <button type="button" className="btn btn-primary">{titleBtn}</button>
+              );
+            }
+        };
 
-        let titleForActionBtn = this.props.titleForActionBtn;
+        let toShowEditBtn = (showEditBtn) => {
+            if (showEditBtn) {
+                return (
+                    <div className="btn btn-primary">Edit</div>
+                )
+            }
+        };
 
-        const panelTitle = (
-            <div className="custom-panel-title">
-                <div className="custom-panel-title__right-side">
-                    <div className="btn btn-primary btn-sm custom-panel-title__btn btn-js">Expand</div>
-                </div>
-                <div className="custom-panel-title__left-side" onClick={(event) => {
-                    event.stopPropagation()
-                }}>
-                    <div className="vacancy-info-block">
-                        <div className="vacancy-info-block__item">Project</div>
-                        <div className="vacancy-info-block__item">Position</div>
-                        <div className="vacancy-info-block__item">Level</div>
+        let toShowDuplicateBtn = (showDuplicateBtn) => {
+            if (showDuplicateBtn) {
+                return (
+                    <div className="btn btn-info">Duplicate</div>
+                )
+            }
+        };
+
+        let toShowDeleteBtn = (showDeleteBtn) => {
+            if (showDeleteBtn) {
+                return (
+                    <div className="btn btn-danger">Delete</div>
+                )
+            }
+        };
+
+        return (
+            <Panel collapsible header={panelTitle} eventKey="1"
+                   onClick={(event) => this.handlePanelCollapseClick(event)}>
+                <div className="custom-panel-body">
+                    <div className="custom-panel-body__left">
+                        <div className="vacancy-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
+                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
+                            quos rerum soluta sunt ut voluptatibus.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
+                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
+                            quos rerum soluta sunt ut voluptatibus.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
+                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
+                            quos rerum soluta sunt ut voluptatibus.
+                        </div>
+                    </div>
+                    <div className="custom-panel-body__right">
+                        {toShowActionBtn(showActionBtn, titleForActionBtn)}
+                    </div>
+                    <div className="custom-panel-body__vacancy-controls btn-group custom-btn-group">
+                        {toShowEditBtn(showEditBtn)}
+                        {toShowDuplicateBtn(showDuplicateBtn)}
+                        {toShowDeleteBtn(showDeleteBtn)}
+
                     </div>
                 </div>
-            </div>
-        );
-
-        return(
-
-            <PanelGroup bsClass='custom-panel-group'>
-                <Panel collapsible header={panelTitle} eventKey="1"
-                       onClick={(event) => this.handlePanelCollapseClick(event)}>
-                    <div className="custom-panel-body">
-                        <div className="custom-panel-body__left">
-                            <div className="vacancy-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                            </div>
-                        </div>
-                        <div className="custom-panel-body__right">
-                            <button type="button" className="btn btn-primary">{titleForActionBtn}</button>
-                        </div>
-                        <div className="custom-panel-body__vacancy-controls btn-group">
-                            <div className="btn btn-primary">Edit</div>
-                            <div className="btn btn-info">Duplicate</div>
-                            <div className="btn btn-danger">Delete</div>
-                        </div>
-                    </div>
-                </Panel>
-
-                <Panel collapsible header={panelTitle} eventKey="2"
-                       onClick={(event) => this.handlePanelCollapseClick(event)}>
-                    <div className="custom-panel-body">
-                        <div className="custom-panel-body__left">
-                            <div className="vacancy-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                            </div>
-                        </div>
-                        <div className="custom-panel-body__right">
-                            <button type="button" className="btn btn-primary">{titleForActionBtn}</button>
-                        </div>
-                        <div className="custom-panel-body__vacancy-controls btn-group">
-                            <div className="btn btn-primary">Edit</div>
-                            <div className="btn btn-info">Duplicate</div>
-                            <div className="btn btn-danger">Delete</div>
-                        </div>
-                    </div>
-                </Panel>
-
-                <Panel collapsible header={panelTitle} eventKey="3"
-                       onClick={(event) => this.handlePanelCollapseClick(event)}>
-                    <div className="custom-panel-body">
-                        <div className="custom-panel-body__left">
-                            <div className="vacancy-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                                blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                                quos rerum soluta sunt ut voluptatibus.
-                            </div>
-                        </div>
-                        <div className="custom-panel-body__right">
-                            <button type="button" className="btn btn-primary">{titleForActionBtn}</button>
-                        </div>
-                        <div className="custom-panel-body__vacancy-controls btn-group">
-                            <div className="btn btn-primary">Edit</div>
-                            <div className="btn btn-info">Duplicate</div>
-                            <div className="btn btn-danger">Delete</div>
-                        </div>
-                    </div>
-                </Panel>
-            </PanelGroup>
+            </Panel>
 
         );
     }
 }
 
+Panels.defaultProps = {
+    showActionBtn : false,
+    titleForActionBtn: 'action btn',
+    titleConst:
+        <div className="custom-panel-title">
+            <div className="custom-panel-title__right-side">
+                <div className="panel-collapse-btn">
+                    <span className="panel-collapse-btn__title btn-js">Expand</span>
+                    <span className="fa fa-angle-right panel-collapse-btn__arrow arrow-js"/>
+                </div>
+            </div>
+            <div className="custom-panel-title__left-side">
+            </div>
+        </div>
+};
+
 Panels.propTypes = {
-    titleForActionBtn: PropTypes.string.isRequired
+    showActionBtn: PropTypes.bool,
+    showEditBtn: PropTypes.bool,
+    showDuplicateBtn: PropTypes.bool,
+    showDeleteBtn: PropTypes.bool,
+    titleForActionBtn: PropTypes.string
 };
 
 export default Panels;
