@@ -98,7 +98,7 @@ class CreateProject extends Component {
             event.preventDefault();
             this.props.history.push("/projects");
             const {dispatch} = this.props;
-            dispatch(createProject({title: title, description: description}));
+            dispatch(createProject({title: title.trim(), description: description.trim()}));
         }
     }
 

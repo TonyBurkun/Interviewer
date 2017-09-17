@@ -124,7 +124,7 @@ class ProjectEdit extends Component {
             this.isTitleUnique()) {
             event.preventDefault();
             const {dispatch} = this.props;
-            dispatch(updateProject({id: id, title: title, description: description}));
+            dispatch(updateProject({id: id, title: title.trim(), description: description.trim()}));
             this.props.history.push("/projects/");
         }
     }
