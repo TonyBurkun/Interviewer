@@ -155,7 +155,7 @@ class CreateProject extends Component {
                 <Helmet>
                     <title>Create Project</title>
                 </Helmet>
-                <div className="row sameheight-container">
+                <div className="row sameheight-container custom-btn-group">
                     <div className="col-md-12">
                         <div className="title-block block-space ">
                             <h3 className="title">Create project</h3>
@@ -211,7 +211,9 @@ class CreateProject extends Component {
                         </form>
 
                     </div>
-                    <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                    <Modal className="custom-btn-group"
+                           show={this.state.showModalConfirm}
+                           onHide={() => this.closeModalConfirm()}>
                         <Modal.Header closeButton>
                         </Modal.Header>
                         <Modal.Body>

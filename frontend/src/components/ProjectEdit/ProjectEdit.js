@@ -75,7 +75,7 @@ class ProjectEdit extends Component {
 
     leaveEdit() {
         this.closeModalConfirm();
-        this.props.history.push("/projects/project/" + this.state.currentProject.id);
+        this.props.history.push("/projects/");
     }
 
     validateFormFields(event) {
@@ -148,7 +148,7 @@ class ProjectEdit extends Component {
                 <Helmet>
                     <title>{this.state.projectTitle}</title>
                 </Helmet>
-                <div className="row sameheight-container">
+                <div className="row sameheight-container custom-btn-group">
                     <div className="col-md-12 component-container">
                         <form
                             className="form-pe block-space"
@@ -198,7 +198,9 @@ class ProjectEdit extends Component {
 
                     </div>
                 </div>
-                <Modal show={this.state.showModalConfirm} onHide={() => this.closeModalConfirm()}>
+                <Modal className="custom-btn-group"
+                       show={this.state.showModalConfirm}
+                       onHide={() => this.closeModalConfirm()}>
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>

@@ -26,6 +26,14 @@ class Panels extends Component {
 
     }
 
+    onDelete() {
+        this.props.callDelete()
+    }
+
+    onEdit() {
+        this.props.callEdit()
+    }
+
     render() {
 
         let showActionBtn = this.props.showActionBtn,
@@ -48,7 +56,11 @@ class Panels extends Component {
         let toShowEditBtn = (showEditBtn) => {
             if (showEditBtn) {
                 return (
-                    <div className="btn btn-primary">Edit</div>
+                    <div className="btn btn-primary"
+                         onClick={()=>this.onEdit()}
+                    >
+                        Edit
+                    </div>
                 )
             }
         };
@@ -64,7 +76,11 @@ class Panels extends Component {
         let toShowDeleteBtn = (showDeleteBtn) => {
             if (showDeleteBtn) {
                 return (
-                    <div className="btn btn-danger">Delete</div>
+                    <div className="btn btn-danger"
+                         onClick={()=>this.onDelete()}
+                    >
+                        Delete
+                    </div>
                 )
             }
         };
