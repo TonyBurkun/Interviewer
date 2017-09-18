@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
-import {showProjects, removeProject} from "../../redux/actions/projectActions";
+import {showProjects, removeProject, getProjects} from "../../redux/actions/projectActions";
 import Helmet from "react-helmet";
 import PageTitle from "./../../containers/PageTitle";
 import Panels from "../Panels/Panels";
@@ -14,6 +14,7 @@ class ProjectsList extends Component {
         super(props);
         this.state = {
             showModalConfirm: false,
+            currentProjectID: ""
         }
     }
 
@@ -26,7 +27,10 @@ class ProjectsList extends Component {
         this.props.history.push("/projects/project/" + currentID + "/edit");
     }
 
-    openModalConfirm() {
+    openModalConfirm(currentID) {
+        this.setState({
+            currentProjectID: currentID
+        });
         this.setState({
             showModalConfirm: true
         });
@@ -41,7 +45,10 @@ class ProjectsList extends Component {
     deleteProject(){
         this.closeModalConfirm();
         const {dispatch} = this.props;
-        dispatch(removeProject(this.state.currentProject));
+        dispatch(getProjects(this.state.currentProjectID));
+        let currentProject = this.props.newProject.currentProject;
+        console.log(this.props);
+        dispatch(removeProject(currentProject));
         this.props.history.push("/projects/");
     }
 
@@ -65,7 +72,7 @@ class ProjectsList extends Component {
                     description={value.description}
                     showEditBtn={true}
                     showDeleteBtn={true}
-                    callDelete={() => this.openModalConfirm()}
+                    callDelete={(event) => this.openModalConfirm(value.id)}
                     callEdit={(event) => this.switchToEditMode(value.id)}
                 />
             );
