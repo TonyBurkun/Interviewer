@@ -33,7 +33,8 @@ class Panels extends Component {
             panelTitle = this.props.titleConst,
             showEditBtn = this. props.showEditBtn,
             showDuplicateBtn = this. props.showDuplicateBtn,
-            showDeleteBtn = this. props.showDeleteBtn;
+            showDeleteBtn = this. props.showDeleteBtn,
+            description = this.props.description;
 
 
         let toShowActionBtn = (showActionBtn, titleBtn) => {
@@ -74,15 +75,7 @@ class Panels extends Component {
                 <div className="custom-panel-body">
                     <div className="custom-panel-body__left">
                         <div className="vacancy-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                            quos rerum soluta sunt ut voluptatibus.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                            quos rerum soluta sunt ut voluptatibus.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab aliquam atque
-                            blanditiis dolore ea eaque earum, esse magnam maiores neque, qui quidem quis
-                            quos rerum soluta sunt ut voluptatibus.
+                            {description}
                         </div>
                     </div>
                     <div className="custom-panel-body__right">

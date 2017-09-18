@@ -29,6 +29,8 @@ class VacanciesOpen extends Component {
             </div>
         );
 
+        let description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque beatae culpa enim necessitatibus nesciunt perferendis, quisquam quod reiciendis temporibus? Distinctio id praesentium quia ratione saepe. Asperiores natus similique ullam.';
+
         return (
             <div className="bcgr">
                 <Helmet>
@@ -54,10 +56,11 @@ class VacanciesOpen extends Component {
                             <Panels
                                 showActionBtn={true}
                                 titleForActionBtn='Close vacancy'
-                                titleConst = {panelTitle}
+                                titleConst={panelTitle}
                                 showEditBtn={true}
                                 showDuplicateBtn={true}
                                 showDeleteBtn={true}
+                                description={description}
                             />
                         </PanelGroup>
                     </div>

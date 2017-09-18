@@ -29,6 +29,8 @@ class VacanciesClosed extends Component{
             </div>
         );
 
+        let description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque beatae culpa enim necessitatibus nesciunt perferendis, quisquam quod reiciendis temporibus? Distinctio id praesentium quia ratione saepe. Asperiores natus similique ullam.';
+
         return(
             <div className="bcgr">
                 <Helmet>
@@ -57,6 +59,7 @@ class VacanciesClosed extends Component{
                                 showEditBtn={true}
                                 showDuplicateBtn={true}
                                 showDeleteBtn={true}
+                                description={description}
                             />
                         </PanelGroup>
 
