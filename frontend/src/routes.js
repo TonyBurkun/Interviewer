@@ -6,12 +6,12 @@ import Main from './components/Main';
 class Routes extends Component {
     render() {
         return (
-            <HashRouter>
+            <BrowserRouter>
                 <Switch>
                     <Route exact path='/login' name="Login page" component={Login}/>
                     <Route path='/' name="Home" component={Main}/>
                 </Switch>
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 }
