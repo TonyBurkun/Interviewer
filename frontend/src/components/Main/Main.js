@@ -88,7 +88,7 @@ class Main extends Component {
                                                  callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
                             />
                             <Route
-                                exact path="/interviews-upcoming"
+                                exact path="/"
                                 name="InterviewsUpcoming"
                                 render={(props) =>
                                     <InterviewsUpcoming {...props}
@@ -167,7 +167,7 @@ class Main extends Component {
                                               callMakeNote={(status, text) => this.handleMakeNote(status, text)}
                                               callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
                             />
-                            <Redirect from="/" to="/interviews-upcoming"/>
+                            <Route component={SimpleExample}/>
                         </Switch>
                     </article>
                 </div>
@@ -176,6 +176,16 @@ class Main extends Component {
     }
 }
 
+class SimpleExample extends React.Component {
+    // React components are simple functions that take in props and state, and render HTML
+    render() {
+        return (
+            <div>
+            test text
+            </div>
+        );
+    }
+}
 
 function mapStateToProps(state) {
     return {
