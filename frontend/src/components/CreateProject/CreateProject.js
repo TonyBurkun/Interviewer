@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import TextareaAutosize from "react-autosize-textarea";
 import Helmet from "react-helmet";
+import PageTitle from "./../../containers/PageTitle";
 import {Modal, Button} from "react-bootstrap";
 import "./CreateProject.css";
 import {connect} from "react-redux";
@@ -157,9 +158,13 @@ class CreateProject extends Component {
                 </Helmet>
                 <div className="row sameheight-container custom-btn-group">
                     <div className="col-md-12">
-                        <div className="title-block block-space ">
-                            <h3 className="title">Create project</h3>
-                        </div>
+                        <PageTitle
+                            pageTitle='Create Projects'
+                            showBackBtn={true}
+                            showButton={false}
+                            titleForButton=''
+                            linkForButton=''
+                        />
                         <form onSubmit={(event) => this.validateFormFields(event)}>
                             <div className="form-group has-error">
                                 <label className="control-label form-label">Project Title</label>

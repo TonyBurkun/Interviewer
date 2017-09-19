@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./ProjectsList.css";
 import {connect} from "react-redux";
-import {showProjects, removeProject, getProjects} from "../../redux/actions/projectActions";
+import {showProjects, deleteProject, getProjects} from "../../redux/actions/projectActions";
 import Helmet from "react-helmet";
 import PageTitle from "./../../containers/PageTitle";
 import Panels from "../Panels/Panels";
@@ -45,10 +45,8 @@ class ProjectsList extends Component {
     deleteProject() {
         this.closeModalConfirm();
         const {dispatch} = this.props;
-        dispatch(getProjects(this.state.currentProjectID));
-        let currentProject = this.props.newProject.currentProject;
-        console.log(this.props);
-        dispatch(removeProject(currentProject));
+        dispatch(deleteProject(this.state.currentProjectID));
+        console.log(this.state.currentProjectID)
         this.props.history.push("/projects/");
     }
 
@@ -68,7 +66,7 @@ class ProjectsList extends Component {
             projectsToDisplay = sortedProjects.map((value, index) => {
 
                     const panelTitle = (
-                        <div className="custom-panel-title project-list-item">
+                        <div className="custom-panel-title panel-list-item">
                             <div className="custom-panel-title__right-side">
                                 <div className="panel-collapse-btn">
                                     <span className="panel-collapse-btn__title btn-js">Expand</span>

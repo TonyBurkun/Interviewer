@@ -103,6 +103,7 @@ export function getProjects(id) {
 }
 
 export function removeProject(date) {
+    debugger;
     return (dispatch) => {
         fetch('/api/v1/projects/' + date.id,
             {
@@ -135,6 +136,32 @@ export function removeProject(date) {
             });
     };
 }
+
+export function deleteProject(id) {
+    return (dispatch) => {
+        fetch("/api/v1/projects/" + id)
+            .then(res =>
+                res.json()
+            )
+            .then(project => {
+                dispatch(removeProject(project.data));
+            })
+            .catch(function(err) {
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: "+ err
+                    }
+                ));
+            })
+    };
+}
+
+
+
+
+
+
 
 export function updateProject(date) {
     return (dispatch) => {

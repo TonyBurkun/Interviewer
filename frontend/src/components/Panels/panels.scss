@@ -1,3 +1,5 @@
+$border-color-primary:#85CE36;
+
 .panel{
   background: #fff;
   border: none;
@@ -83,4 +85,13 @@
   }
 
 
+}
+
+.panel-list-item  {
+  word-wrap: break-word;
+  border: 1px solid white;
+
+  &:hover {
+    border: 1px solid $border-color-primary;
+  }
 }

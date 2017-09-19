@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
+import PageTitle from "./../../containers/PageTitle";
 import "./ProjectEdit.css";
 import {connect} from "react-redux";
 import {updateProject, getProjects} from "../../redux/actions/projectActions";
@@ -150,6 +151,13 @@ class ProjectEdit extends Component {
                 </Helmet>
                 <div className="row sameheight-container custom-btn-group">
                     <div className="col-md-12 component-container">
+                        <PageTitle
+                            pageTitle='Edit Projects'
+                            showBackBtn={true}
+                            showButton={false}
+                            titleForButton=''
+                            linkForButton=''
+                        />
                         <form
                             className="form-pe block-space"
                             onSubmit={(event) => this.validateFormFields(event)}

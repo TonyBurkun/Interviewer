@@ -1,4 +1,4 @@
-$border-color-primary:#85CE36;
+
 
 .component-container {
   position: relative;
@@ -11,11 +11,12 @@ $border-color-primary:#85CE36;
 .create-button {
   margin-bottom: 20px;
 }
-
-.project-list-item {
-  word-wrap: break-word;
-}
-
-.project-list-item:hover {
-  border: 1px solid $border-color-primary;
-}
+//
+//.panel-list-item {
+//  word-wrap: break-word;
+//  border: 1px solid white;
+//}
+//
+//.panel-list-item:hover {
+//  border: 1px solid $border-color-primary;
+//}
