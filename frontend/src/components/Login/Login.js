@@ -15,9 +15,9 @@ class Login extends Component {
         };
 
 
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.openModal = this.openModal.bind(this);
+        // this.closeModal = this.closeModal.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     openModal() {
@@ -68,10 +68,10 @@ class Login extends Component {
 
         let validate = (loginValidationSettings, email, password, currentForm) => {
 
-            let emailIsEmpty = true,
-                isEmail = false,
-                passwordIsEmpty = true;
-                // minLengthPass = false;
+            let passCheckOnEmptyEmail = false,
+                passCheckOnEmail = false,
+                passCheckOnEmptyPass = false,
+                passCheckOnMinPass = false;
 
             removeAllErrorMessage(currentForm);
 
@@ -86,16 +86,16 @@ class Login extends Component {
                     email.parentNode.classList.add('has-error');
                     email.parentNode.appendChild(errorElem);
 
-                    emailIsEmpty = true;
+                    passCheckOnEmptyEmail = false;
 
                 } else {
-                    emailIsEmpty = false;
+                    passCheckOnEmptyEmail = true;
                 }
             } else {
-                emailIsEmpty = false;
+                passCheckOnEmptyEmail = true;
             }
 
-            if (!emailIsEmpty) {
+            if (passCheckOnEmptyEmail) {
                 if (loginValidationSettings.rules.email.isEmail) {
                     let emailValue = email.value;
                     let result = emailValue.match(/^[0-9a-z-.]+@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
@@ -108,17 +108,17 @@ class Login extends Component {
 
                         email.parentNode.classList.add('has-error');
                         email.parentNode.appendChild(errorElem);
-                        isEmail = false;
+                        passCheckOnEmail = false;
                     } else {
-                        isEmail = true;
+                        passCheckOnEmail = true;
                     }
 
                 } else {
-                    isEmail = true;
+                    passCheckOnEmail = true;
                 }
             }
 
-            if (isEmail) {
+            if (passCheckOnEmail) {
                 if (loginValidationSettings.rules.password.required) {
                     if (password.value === '') {
 
@@ -128,17 +128,17 @@ class Login extends Component {
 
                         password.parentNode.classList.add('has-error');
                         password.parentNode.appendChild(errorElem);
-                        passwordIsEmpty = true;
+                        passCheckOnEmptyPass = false;
                     } else {
-                        passwordIsEmpty = false;
+                        passCheckOnEmptyPass = true;
                     }
 
                 } else {
-                    passwordIsEmpty = false;
+                    passCheckOnEmptyPass = true;
                 }
             }
 
-            if (!passwordIsEmpty) {
+            if (passCheckOnEmptyPass) {
                 if (loginValidationSettings.rules.password.minLength.checkMinLength) {
                     if (password.value.length < loginValidationSettings.rules.password.minLength.minLengthVal) {
 
@@ -148,15 +148,23 @@ class Login extends Component {
 
                         password.parentNode.classList.add('has-error');
                         password.parentNode.appendChild(errorElem);
-                        // minLengthPass = false;
+                        passCheckOnMinPass = false;
                     } else {
-                        // minLengthPass = true;
+                        passCheckOnMinPass = true;
                     }
 
                 } else {
-                    // minLengthPass = true;
+                    passCheckOnMinPass = true;
                 }
             }
+
+
+            if (passCheckOnEmptyEmail && passCheckOnEmail && passCheckOnEmptyPass && passCheckOnMinPass) {
+                return (true);
+            } else {
+                return (false);
+            }
+
 
         };
 
@@ -169,7 +177,6 @@ class Login extends Component {
         }
 
         let removeAllErrorMessage = (currentForm) => {
-            console.log(currentForm);
             let allErrorMessages = currentForm.querySelectorAll('span.has-error'),
                 allErrorTitles = currentForm.querySelectorAll('div.has-error');
 
@@ -183,7 +190,11 @@ class Login extends Component {
         };
 
 
-        validate(loginValidationSettings, email, password, currentForm);
+        let isPassValidation =  validate(loginValidationSettings, email, password, currentForm);
+
+        if (isPassValidation){
+
+        }
 
     }
 
@@ -191,7 +202,7 @@ class Login extends Component {
 
         return (
             <div className="auth">
-                <Modal show={this.state.showModal} onHide={this.closeModal} id="noAccountModal">
+                <Modal show={this.state.showModal} onHide={() => this.closeModal()} id="noAccountModal">
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
@@ -208,7 +219,7 @@ class Login extends Component {
                         </header>
                         <div className="auth-content">
                             <p className="text-xs-center">LOGIN TO CONTINUE</p>
-                            <form id="login-form" onSubmit={this.handleSubmit}>
+                            <form id="login-form" onSubmit={(event) => this.handleSubmit(event)}>
                                 <div className="form-group">
                                     <label htmlFor="email">Email</label>
                                     <input type="text" className="form-control underlined required" name="email"
@@ -230,7 +241,7 @@ class Login extends Component {
                                         password?</Link>
                                 </div>
                                 <div className="form-group no-account">
-                                    <p className="text-xs-center" id="noAccount" onClick={this.openModal}>Do not have an
+                                    <p className="text-xs-center" id="noAccount" onClick={() => this.openModal()}>Do not have an
                                         account? Click here</p>
                                 </div>
                             </form>
