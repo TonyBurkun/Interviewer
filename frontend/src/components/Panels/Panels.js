@@ -39,9 +39,9 @@ class Panels extends Component {
         let showActionBtn = this.props.showActionBtn,
             titleForActionBtn = this.props.titleForActionBtn,
             panelTitle = this.props.titleConst,
-            showEditBtn = this. props.showEditBtn,
-            showDuplicateBtn = this. props.showDuplicateBtn,
-            showDeleteBtn = this. props.showDeleteBtn,
+            showEditBtn = this.props.showEditBtn,
+            showDuplicateBtn = this.props.showDuplicateBtn,
+            showDeleteBtn = this.props.showDeleteBtn,
             description = this.props.description;
 
 
