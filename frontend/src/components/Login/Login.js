@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
+import {bindActionCreators} from "redux";
+import {connect} from 'react-redux';
 import './login.css';
 
+import * as pageActions from "../../redux/actions/authenticationActions";
 
 class Login extends Component {
 
@@ -13,11 +16,6 @@ class Login extends Component {
             showModal: false,
             emailIsEmpty: true
         };
-
-
-        // this.openModal = this.openModal.bind(this);
-        // this.closeModal = this.closeModal.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     openModal() {
@@ -194,11 +192,18 @@ class Login extends Component {
 
         if (isPassValidation){
 
+            let authData = {
+                "email": email.value,
+                "password": password.value
+            };
+            this.props.pageActions.doLogin(authData);
         }
 
     }
 
     render() {
+
+        console.log(this);
 
         return (
             <div className="auth">
@@ -265,4 +270,20 @@ class Login extends Component {
     }
 }
 
-export default Login;
+
+function mapStateToProps(state) {
+
+    return{
+        user: state.authentication.user
+    }
+    
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        pageActions: bindActionCreators(pageActions, dispatch)
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
