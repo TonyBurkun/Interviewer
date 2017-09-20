@@ -12,7 +12,7 @@ class VacanciesOpen extends Component {
     render() {
 
         const panelTitle = (
-            <div className="custom-panel-title">
+            <div className="custom-panel-title panel-list-item">
                 <div className="custom-panel-title__right-side">
                     <div className="panel-collapse-btn">
                         <span className="panel-collapse-btn__title btn-js">Expand</span>
