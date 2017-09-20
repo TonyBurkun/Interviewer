@@ -1,11 +1,14 @@
 import React, {Component} from "react";
-import "./ProjectsList.css";
 import {connect} from "react-redux";
-import {showProjects, deleteProject, getProjects} from "../../redux/actions/projectActions";
+import {Modal, Button, PanelGroup} from "react-bootstrap";
 import Helmet from "react-helmet";
+
+import "./ProjectsList.css";
+import {showProjects, deleteProject} from "../../redux/actions/projectActions";
 import PageTitle from "./../../containers/PageTitle";
 import Panels from "../Panels/Panels";
-import {Modal, Button, PanelGroup} from "react-bootstrap";
+
+
 
 
 class ProjectsList extends Component {
@@ -46,7 +49,6 @@ class ProjectsList extends Component {
         this.closeModalConfirm();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
-        console.log(this.state.currentProjectID)
         this.props.history.push("/projects/");
     }
 

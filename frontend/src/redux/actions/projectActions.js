@@ -157,12 +157,6 @@ export function deleteProject(id) {
     };
 }
 
-
-
-
-
-
-
 export function updateProject(date) {
     return (dispatch) => {
         fetch('/api/v1/projects/' + date.id,

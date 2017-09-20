@@ -2,10 +2,12 @@ import React, {Component} from "react";
 import Helmet from "react-helmet";
 import TextareaAutosize from "react-autosize-textarea";
 import {Modal, Button} from "react-bootstrap";
-import PageTitle from "./../../containers/PageTitle";
-import "./ProjectEdit.css";
 import {connect} from "react-redux";
+
+import "./ProjectEdit.css";
+import PageTitle from "./../../containers/PageTitle";
 import {updateProject, getProjects} from "../../redux/actions/projectActions";
+import {fieldCharRegex, fieldSpaceRegex} from "../../config"
 
 class ProjectEdit extends Component {
 
@@ -80,22 +82,21 @@ class ProjectEdit extends Component {
     }
 
     validateFormFields(event) {
-        let regex = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         let id = this.state.currentProject.id;
         let title = this.state.projectTitle;
         let description = this.state.projectDescription;
         let wrongCharMessage = "Please use only latin letters, numbers and special symbols";
         let emptyFieldMessage = "Please fill the field";
         let existTitleMessage = "This title already exists. Please, use only unique titles";
-        let emptyTitle = !title || title.match(/^\s*$/);
-        let emptyDescription = !description || description.match(/^\s*$/)
-        if (!regex.test(title)) {
+        let emptyTitle = !title || title.match(fieldSpaceRegex);
+        let emptyDescription = !description || description.match(fieldSpaceRegex)
+        if (!fieldCharRegex.test(title)) {
             event.preventDefault();
             this.setState({
                 titleError: wrongCharMessage
             });
         }
-        if (!regex.test(description)) {
+        if (!fieldCharRegex.test(description)) {
             event.preventDefault();
             this.setState({
                 descriptionError: wrongCharMessage
@@ -120,8 +121,8 @@ class ProjectEdit extends Component {
             });
         }
         if (!emptyTitle && !emptyDescription &&
-            regex.test(title) &&
-            regex.test(description) &&
+            fieldCharRegex.test(title) &&
+            fieldCharRegex.test(description) &&
             this.isTitleUnique()) {
             event.preventDefault();
             const {dispatch} = this.props;
