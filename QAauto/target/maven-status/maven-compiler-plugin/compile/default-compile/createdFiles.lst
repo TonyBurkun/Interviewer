@@ -3,6 +3,7 @@ utils\APIException.class
 utils\ListenerTest.class
 ui\LoginPage.class
 ui\SideMenuPage.class
+utils\TestRun.class
 utils\TestCase.class
 ui\Projects\CreateProjectPage.class
 ui\Projects\ProjectsPage.class

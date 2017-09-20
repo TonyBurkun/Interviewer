@@ -2,9 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a37e78-76c3-4262-865f-83a5941872aa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/utils/TestRun.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ui/Projects/ListOfProject.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/Parallel test suite/functestForLoginPage.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/bullet_point.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/collapseall.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/failed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-ui.Login.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/navigator-bullet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/functestForLoginPage.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/groups.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-alphabetical.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods-not-run.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/methods.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/reporter-output.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/testng.xml.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/Parallel test suite/toc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/passed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/skipped.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/ui/Login.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/ui/SideMenu.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/ListenerTest.class" afterPath="$PROJECT_DIR$/target/classes/utils/ListenerTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ui/Projects/ProjectsPage.java" afterPath="$PROJECT_DIR$/src/main/java/ui/Projects/ProjectsPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QAauto.iml" afterPath="$PROJECT_DIR$/QAauto.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" afterPath="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/testrun.properties" afterPath="$PROJECT_DIR$/src/main/resources/testrun.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ui/Login.java" afterPath="$PROJECT_DIR$/src/test/java/ui/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java" afterPath="$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" afterPath="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,27 +63,52 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="CrateProject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java">
+      <file leaf-file-name="SideMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
+                <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestCase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="47" column="82" lean-forward="false" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListenerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1599">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
-                <element signature="method#before#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertElementsOnCreateProjectPage#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertUniquenessProjectName#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertBackToListButton#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertCancelForEmptyForm#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertCancelForFilledForm#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertCancelForFilledDesc#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#sentResultForEmail#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertExistenceOfCreatedProject#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertChangeForCreateButton#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertMaxLeghtForProjectTitle#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertMinLeghtForProjectDescriptionAndDesc#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertMaxLeghtForProjectDesc#0;class#CrateProject#0" expanded="false" />
-                <element signature="method#assertSupportOfSymbolsInFieldTitleAndDesc#0;class#CrateProject#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestRun.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestRun.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,6 +122,12 @@
         <option value="AnnotationType" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>remo</find>
+      <find>dri</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -70,22 +144,26 @@
         <option value="$PROJECT_DIR$/src/main/java/ui/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/test/java/Login.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ProjectsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/CreateProjectPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/backend/login.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java" />
         <option value="$PROJECT_DIR$/src/test/java/backend/projects/Create.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/TestCaseID.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/TestCaseID.java" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/testrun.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/ui/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Projects/ProjectsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Projects/ListOfProjectsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ui/Projects/ListOfProject.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/testrun.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/TestRun.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ui/Login.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/ui/SideMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/ListenerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/TestRun.java" />
       </list>
     </option>
   </component>
@@ -97,10 +175,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="3872" />
+    <option name="height" value="2116" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -118,9 +196,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,40 +288,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QAauto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QAauto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -260,6 +304,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,6 +330,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,269 +407,6 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ui" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Gemfile</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Gemfile.lock</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ui/Projects/backend/Create.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/backend/projects/Create.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/controllers/application_controller.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/routes.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/seeds.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/package-lock.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/public/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/index.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/controllers/api/v1/projects_controller.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/admin.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/level.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/position.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/project.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/models/user.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/confirmations/new.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/confirmation_instructions.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/email_changed.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/password_change.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/reset_password_instructions.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/mailer/unlock_instructions.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/passwords/edit.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/passwords/new.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/registrations/edit.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/registrations/new.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/sessions/new.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/shared/_links.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../app/views/devise/unlocks/new.html.erb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/initializers/devise.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/initializers/rails_admin.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../config/locales/devise.en.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170808220059_create_admins.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170808220205_add_devise_to_admins.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170814222743_create_projects.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822225216_create_levels.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822225530_create_positions.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822230304_devise_create_users.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822231146_add_surname_to_users.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235028_add_level_ref_to_user.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235059_add_position_ref_to_user.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/migrate/20170822235341_add_name_to_user.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../db/schema.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/Candidates.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/candidates.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Candidates/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/CreateProject.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/CreateProject.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/CreateProject/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Dashboard/Dashboard.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Dashboard/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/Header.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/header.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Header/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/Interviewers.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Interviewers/interviewers.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/InterviewsCompleted.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsCompleted/interviewsCompleted.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/InterviewsUpcoming.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/InterviewsUpcoming/interviewsUpcoming.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/Login.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Login/login.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Main/Main.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Main/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/Password.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Password/password.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/ProjectDetails.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/ProjectDetails.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectDetails/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/ProjectEdit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/ProjectEdit.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectEdit/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/ProjectsList.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/ProjectsList.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/ProjectsList/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/SideMenu.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/SideMenu/sideMenu.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/Username.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Username/username.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/Vacancies.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/Vacancies/vacancies.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/VacanciesClosed.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesClosed/vacanciesClosed.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/VacanciesOpen.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/components/VacanciesOpen/vacanciesOpen.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/notificationActions.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/projectActions.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/actions/sideBarActions.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/notifications.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/project.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/reducers/sideBar.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/redux/store/configureStore.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/routes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/_common.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/FontAwesome.otf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/fonts/fontawesome-webfont.woff2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/index.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-blue.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-custom.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-green.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-orange.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-purple.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-red.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app-seagreen.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/app.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/styles/theme-styles/vendor.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/tests/App.test.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../git</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../master</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../package-lock.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/fixtures/admins.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/fixtures/projects.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/models/admin_test.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../test/models/project_test.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../tmp/pids/server.pid</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../tmp/restart.txt</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/App.test.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/FontAwesome.otf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/fonts/fontawesome-webfont.woff2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/index.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/logo.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-blue.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-custom.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-green.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-orange.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-purple.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-red.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app-seagreen.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/app.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../frontend/src/theme-styles/vendor.css</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="TestNG.CrateProject.assertChangeForCreateButton">
     <configuration default="false" name="CrateProject.assertMinLeghtForProjectDescriptionAndDesc" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
@@ -1126,67 +915,67 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="-16" y="-16" width="3872" height="2116" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11716171" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34512326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17256163" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34512326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26147044" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1977612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18315507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21729611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11716171" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368702" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34512326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17256163" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26147044" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18315507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1221,19 +1010,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ui/Login.java</url>
-          <line>169</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java</url>
           <line>149</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1242,11 +1025,71 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1989">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#before#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertElementsOnCreateProjectPage#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertUniquenessProjectName#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertBackToListButton#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertCancelForEmptyForm#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertCancelForFilledForm#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertCancelForFilledDesc#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#sentResultForEmail#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertExistenceOfCreatedProject#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertChangeForCreateButton#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertMaxLeghtForProjectTitle#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertMinLeghtForProjectDescriptionAndDesc#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertMaxLeghtForProjectDesc#0;class#CrateProject#0" expanded="false" />
+            <element signature="method#assertSupportOfSymbolsInFieldTitleAndDesc#0;class#CrateProject#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,10 +1098,6 @@
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#passwordWithAsterisk#0;class#Login#0" expanded="false" />
-            <element signature="method#passwordHolder#0;class#Login#0" expanded="false" />
-            <element signature="method#enterAsHR#0;class#Login#0" expanded="false" />
             <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
             <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
             <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
@@ -1280,9 +1119,8 @@
         <state relative-caret-position="765">
           <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="false" />
+            <element signature="e#235#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1292,9 +1130,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
             <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertDashboerd#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
             <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
             <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
             <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
@@ -1315,9 +1154,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="false" />
+            <element signature="e#235#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1375,7 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,52 +1223,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="65" column="69" lean-forward="false" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
-          <folding>
-            <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertDashboerd#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
-            <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1462">
-          <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/backend/login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="84" column="21" lean-forward="false" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,7 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,80 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="339" column="29" lean-forward="false" selection-start-line="339" selection-start-column="29" selection-end-line="339" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/testrun.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="55" column="67" lean-forward="true" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2546">
-          <caret line="279" column="7" lean-forward="false" selection-start-line="279" selection-start-column="7" selection-end-line="280" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
-            <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1528,7 +1248,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,30 +1259,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Projects/ListOfProjectsPage.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Projects/ProjectsPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="false" />
+            <element signature="e#235#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Projects/CreateProjectPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        <state relative-caret-position="816">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="22" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/APIClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4029">
+          <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.4.0/selenium-chrome-driver-3.4.0.jar!/org/openqa/selenium/chrome/ChromeDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ui/Projects/CrateProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="47" column="82" lean-forward="false" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+        <state relative-caret-position="625">
+          <caret line="27" column="72" lean-forward="false" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#before#0;class#CrateProject#0" expanded="false" />
             <element signature="method#assertElementsOnCreateProjectPage#0;class#CrateProject#0" expanded="false" />
             <element signature="method#assertUniquenessProjectName#0;class#CrateProject#0" expanded="false" />
@@ -1579,6 +1331,108 @@
             <element signature="method#assertMaxLeghtForProjectDesc#0;class#CrateProject#0" expanded="false" />
             <element signature="method#assertSupportOfSymbolsInFieldTitleAndDesc#0;class#CrateProject#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Projects/ListOfProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="27" column="72" lean-forward="false" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="967" column="18" lean-forward="false" selection-start-line="967" selection-start-column="18" selection-end-line="967" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2191">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="76" column="3" lean-forward="true" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="23" />
+          <folding>
+            <element signature="method#enterAsInterviewer#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithWrongEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithEmptyPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterWithWrongPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinThenMinEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMaxEmail#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinThenMinPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMinPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#enterMaxPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#forgotYourPassword#0;class#Login#0" expanded="false" />
+            <element signature="method#dontHaveAccount#0;class#Login#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/testrun.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ui/SideMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#asserHideMenu#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertIconsOfMenuItems#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertChangingTemplateItem#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#assertActiveItem#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#asserItemLinks#0;class#SideMenu#0" expanded="false" />
+            <element signature="method#errorForFailFunc#0;class#SideMenu#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ListenerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1599">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TestRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -25,13 +25,13 @@ public class CrateProject {
     LoginPage loginPage;
     SideMenuPage sideMenuPage;
     CreateProjectPage crateProjectPage;
-    APIClient client = new APIClient("https://interviewer.testrail.net/");
+    APIClient client = new APIClient("https://interviewer1.testrail.net/");
     String BaseURL = "https://qa-interviewer.herokuapp.com/";
 
     @BeforeTest(groups = {"functest"})
     public void before() {
         client.setUser("oksana.gorbachenko.2009@gmail.com");
-        client.setPassword("123456QWERTY");
+        client.setPassword("123456QWERTy");
 
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();

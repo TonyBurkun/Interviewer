@@ -13,11 +13,11 @@
     <test name="functestForLoginPage">
         <groups>
             <run>
-                <include name="test"/>
+                <include name="functest"/>
             </run>
         </groups>
         <classes>
-            <class name="ui.Login"/>
+            <class name="ui.SideMenu"/>
         </classes>
     </test>
 

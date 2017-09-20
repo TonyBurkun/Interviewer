@@ -9,87 +9,51 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.*;
-import java.io.IOException;
-
-import org.json.simple.JSONObject;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class Login {
     LoginPage loginPage;
     WebDriver driver;
-    //ListenerTest listenerTest;
-    APIClient client = new APIClient("https://interviewer.testrail.net/");
+    APIClient client = new APIClient("https://interviewer1.testrail.net/");
 
-    @BeforeTest(groups = {"test", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
+
+    @BeforeTest(groups = {"functest", "login", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
     public void before() {
+
         client.setUser("oksana.gorbachenko.2009@gmail.com");
-        client.setPassword("123456QWERTY");
+        client.setPassword("123456QWERTy");
 
-
-        //System.setProperty("webdriver.gecko.driver", "C:\\selenium\\chromedriver.exe");
-       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        // capabilities.setCapability("marionette", true);
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
         driver = new ChromeDriver(capabilities);
-       // listenerTest = new ListenerTest();
-       // driver = new FirefoxDriver(capabilities);
-       // driver = new ChromeDriver(capabilities);
         loginPage = new LoginPage(driver);
-       // listenerTest = new ListenerTest();
-        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }
 
+    @TestRun(id = "7")
     @TestCase(id = "2")
-    @Test(groups = {"test", "2"})
+    @Test(groups = {"functest", "2"})
     public void assertElementsOnPage() throws InterruptedException {
         loginPage.open();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage.clickLoginLink();
-        Assert.assertTrue(driver.findElement(By.id("usernamee")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("username")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("password")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("loginSubmit")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("forgotPassBtn")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("noAccount")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("termsService")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("helpCenter")).isDisplayed());
-
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/2", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-
     }
-
+    @TestRun(id = "7")
     @TestCase(id = "4")
-    @Test(groups = {"p", "4"})
+    @Test(groups = {"functest", "4"})
     public void passwordWithAsterisk() throws InterruptedException {
         loginPage.open();
         loginPage.clickLoginLink();
         loginPage.typePassword("qwerty");
         Assert.assertTrue(driver.findElement(By.cssSelector("input[type='password']")).isDisplayed());
-
-
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/4", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-
     }
-
+    @TestRun(id = "7")
     @TestCase(id = "5")
     @Test(groups = {"functest", "5"})
     public void passwordHolder() throws InterruptedException {
@@ -98,18 +62,8 @@ public class Login {
         Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your password']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector("[placeholder='Your email address']")).isDisplayed());
 
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/5", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-
     }
-
+    @TestRun(id = "7")
     @TestCase(id = "6")
     @Test(groups = {"6"})
     public void enterAsHR() throws InterruptedException {
@@ -117,20 +71,9 @@ public class Login {
         loginPage.typeEmailAdress("HR@test.com");
         loginPage.typePassword("123456");
         Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/6", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-
-
     }
     //TODO
+    @TestRun(id = "7")
     @TestCase(id = "7")
     @Test(groups = {"7"})
     public void enterAsInterviewer() throws InterruptedException {
@@ -153,6 +96,7 @@ public class Login {
     //TODO
 
 
+    @TestRun(id = "7")
     @TestCase(id = "8")
     @Test(groups = {"functest", "8", "wrongEmailOrPasswrd"})
     public void enterWithWrongEmail() throws InterruptedException {
@@ -164,6 +108,7 @@ public class Login {
 
     }
 
+    @TestRun(id = "7")
     @TestCase(id = "8")
     @Test(groups = {"functest", "8.1", "wrongEmailOrPasswrd"})
     public void enterWithEmptyPassword() throws InterruptedException {
@@ -175,6 +120,7 @@ public class Login {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[2]/span")).isDisplayed());
     }
 
+    @TestRun(id = "7")
     @TestCase(id = "8")
     @Test(groups = {"functest", "8.2", "wrongEmailOrPasswrd"})
     public void enterWithWrongPassword() throws InterruptedException {
@@ -185,22 +131,9 @@ public class Login {
         loginPage.clickLoginButton();
     //TODO MESSAGE FROM BACKEND---WRONG PASSWORS
     }
-//          @TestCase(id = "8")
-//          @Test(dependsOnMethods = {"enterWithWrongEmail", "enterWithEmptyPassword", "enterWithWrongPassword" })
-//          public void resultForWrongEmailOrPasswrd() throws InterruptedException {
-//
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/8", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
 
+    @TestRun(id = "7")
     @TestCase(id = "9")
     @Test(groups = {"functest","emailInput", "9"})
     public void enterMinThenMinEmail() throws InterruptedException {
@@ -212,6 +145,7 @@ public class Login {
         }
 
 
+    @TestRun(id = "7")
     @TestCase(id = "9")
     @Test(groups = {"functest","emailInput", "9.1"})
     public void enterEmail() throws InterruptedException {
@@ -223,6 +157,7 @@ public class Login {
             Assert.assertTrue(driver.findElement(By.cssSelector("[maxlength='60']")).isDisplayed());
         }
 
+    @TestRun(id = "7")
     @TestCase(id = "9")
     @Test(groups = {"functest","emailInput", "9.2"})
     public void enterMaxEmail() throws InterruptedException {
@@ -232,22 +167,9 @@ public class Login {
             Assert.assertEquals(lengthForEmail, "60");
 
             }
-//
-//             @TestCase(id = "9")
-//             @Test(dependsOnMethods = {"enterMaxEmail", "enterEmail", "enterMinThenMinEmail"}, groups = {"emailInput"})
-//             public void sentResultForEmail() throws InterruptedException {
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/9", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
 
+    @TestRun(id = "7")
     @TestCase(id = "10")
     @Test(groups = {"functest", "10", "passwordCheck"})
     public void enterMinThenMinPassword() throws InterruptedException {
@@ -260,6 +182,8 @@ public class Login {
 
     }
 
+
+    @TestRun(id = "7")
     @TestCase(id = "10")
     @Test(groups = {"functest", "10.1", "passwordCheck"})
     public void enterMinPassword() throws InterruptedException {
@@ -272,6 +196,8 @@ public class Login {
 
     }
 
+
+    @TestRun(id = "7")
     @TestCase(id = "10")
     @Test(groups = {"functest", "10.2", "passwordCheck"})
     public void enterMaxPassword() throws InterruptedException {
@@ -281,21 +207,9 @@ public class Login {
         Assert.assertEquals(lengthForPassword, "30");
 
     }
-//
-//             @TestCase(id = "10")
-//             @Test(dependsOnMethods = {"enterMaxPassword", "enterMinThenMinPassword", "enterMinPassword"}, groups = {"passwordCheck"})
-//             public void sentResultForPassword () throws InterruptedException {
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/10", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
+
+    @TestRun(id = "7")
     @TestCase(id = "11")
     @Test(groups = {"11"})
     public void forgotYourPassword() throws InterruptedException {
@@ -303,19 +217,10 @@ public class Login {
         loginPage.clickLoginLink();
         loginPage.clickforgotPasswordButton();
         Assert.assertTrue(driver.findElement(By.id("")).isDisplayed());
-
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/11", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
     }
     //TODO
 
+    @TestRun(id = "7")
     @TestCase(id = "12")
     @Test(groups = {"functest", "12"})
     public void dontHaveAccount() throws InterruptedException {
@@ -326,20 +231,10 @@ public class Login {
         loginPage.clickCloseButtonForDontHaveAccount();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div")).isDisplayed());
 
-
-//        JSONObject body = new JSONObject();
-//        body.put("status_id", "1");
-//        try {
-//            client.sendPost("add_result_for_case/3/12", body);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (APIException e) {
-//            e.printStackTrace();
-//        }
     }
 
 
-    @AfterTest(groups = {"test", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
+    @AfterTest(groups = {"functest", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
     public void after() { driver.quit();
 
     }
