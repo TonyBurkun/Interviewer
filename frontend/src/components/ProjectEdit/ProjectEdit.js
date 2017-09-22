@@ -28,23 +28,25 @@ class ProjectEdit extends Component {
     componentWillMount() {
         const {dispatch} = this.props;
         if (this.props.projects.length < 1) {
-            dispatch(getProjects(this.props.match.params.id));
-            setTimeout(() => {
+            dispatch(getProjects(this.props.match.params.id)).then(() => {
                 let currentProject = this.props.currentProject;
-                this.setState({currentProject: currentProject});
-                this.setState({projectTitle: currentProject.title});
-                this.setState({projectDescription: currentProject.description});
-            }, 1000);
+                this.setStates(currentProject);
+            });
         } else {
             let projects = this.props.projects;
             let projectId = this.props.match.params.id;
             let currentProject = projects.find(function (currentProject) {
                     return currentProject.id === +projectId;
                 }) || {};
-            this.setState({currentProject: currentProject});
-            this.setState({projectTitle: currentProject.title});
-            this.setState({projectDescription: currentProject.description});
+            this.setStates(currentProject);
+
         }
+    }
+
+    setStates(currentProject) {
+        this.setState({currentProject: currentProject});
+        this.setState({projectTitle: currentProject.title});
+        this.setState({projectDescription: currentProject.description});
     }
 
     handleTitleChange(event) {

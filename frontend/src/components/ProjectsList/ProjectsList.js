@@ -49,7 +49,7 @@ class ProjectsList extends Component {
         this.closeModalConfirm();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
-        this.props.history.push("/projects/");
+        //this.props.history.push("/projects/");
     }
 
     render() {
@@ -119,7 +119,7 @@ class ProjectsList extends Component {
                         />
                     </div>
                 </div>
-                <PanelGroup bsClass='custom-panel-group'>
+                <PanelGroup bsClass='custom-panel-group' accordion>
                     {projectsToDisplay}
                 </PanelGroup>
                 <Modal show={this.state.showModalConfirm}
