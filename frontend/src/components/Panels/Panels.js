@@ -8,14 +8,16 @@ class Panels extends Component {
     constructor(...args) {
         super(...args);
         this.state = {
-            open: false
+            open: false,
+            token: false
         };
+
     }
 
 
     handlePanelCollapseClick(event) {
 
-        this.setState({ open: !this.state.open })
+        this.setState({ open: !this.state.open });
 
         let clickTarget = event.target;
 
@@ -37,8 +39,10 @@ class Panels extends Component {
     }
 
     onDelete() {
+        this.setState({token: true})
         this.props.callDelete();
-        this.setState({ open: !this.state.open })
+        this.setState({token: false})
+
     }
 
     onEdit() {
@@ -57,7 +61,14 @@ class Panels extends Component {
             showEditBtn = this.props.showEditBtn,
             showDuplicateBtn = this.props.showDuplicateBtn,
             showDeleteBtn = this.props.showDeleteBtn,
-            description = this.props.description;
+            description = this.props.description,
+            token = this.state.token,
+            openProps = this.props.open,
+            openState = this.state.open,
+
+            test = token ? openProps : openState;
+
+
 
 
         let toShowActionBtn = (showActionBtn, titleBtn) => {
@@ -103,7 +114,7 @@ class Panels extends Component {
         return (
             <Panel collapsible header={panelTitle} eventKey="1"
                    onClick={(event) => this.handlePanelCollapseClick(event)}
-                   expanded = {this.state.open}
+                   expanded = {test}
                 >
                 <div className="custom-panel-body">
                     <div className="custom-panel-body__left">
@@ -128,6 +139,7 @@ class Panels extends Component {
 }
 
 Panels.defaultProps = {
+    openProps: false,
     showActionBtn : false,
     titleForActionBtn: 'action btn',
     titleConst:
@@ -145,6 +157,7 @@ Panels.defaultProps = {
 };
 
 Panels.propTypes = {
+    openProps: PropTypes.bool,
     showActionBtn: PropTypes.bool,
     showEditBtn: PropTypes.bool,
     showDuplicateBtn: PropTypes.bool,

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
+import Notifications from '../../containers/Notifications';
 import './login.css';
 
 
@@ -198,6 +199,10 @@ class Login extends Component {
 
     }
 
+    onCallShowNote(status, text) {
+        this.props.callShowNote(status, text)
+    }
+
     render() {
 
         return (
@@ -210,6 +215,7 @@ class Login extends Component {
                             department</p>
                     </Modal.Body>
                 </Modal>
+                <Notifications/>
                 <div className="auth-container">
                     <div className="card">
                         <header className="auth-header">

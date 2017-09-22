@@ -18,6 +18,7 @@ class ProjectsList extends Component {
         this.state = {
             showModalConfirm: false,
             currentProjectID: "",
+            open: false
         }
     }
 
@@ -47,10 +48,13 @@ class ProjectsList extends Component {
 
     deleteProject() {
         this.closeModalConfirm();
+        this.forceUpdate();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
         this.setState({open: false})
+
     }
+
 
     render() {
 
@@ -91,9 +95,9 @@ class ProjectsList extends Component {
                             description={value.description}
                             showEditBtn={true}
                             showDeleteBtn={true}
-                            open={this.state.open}
                             callDelete={(event) => this.openModalConfirm(value.id)}
                             callEdit={(event) => this.switchToEditMode(value.id)}
+                           // open={this.state.open}
                         />
                     )
 
