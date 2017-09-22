@@ -1,11 +1,18 @@
 const initialState = {
-    user: 'Unknown token'
+    userData: {},
+    loggedUser: false
 };
 
 export default function login(state = initialState, action) {
     switch (action.type) {
         case 'DO_LOGIN':
-            return {...state, user: action.payload };
+            return {...state, userData: action.payload };
+
+        case 'AUTH_CHECK':
+            return {...state, userData: action.payload};
+
+        case 'LOGGED_USER':
+            return {...state, loggedUser: action.payload};
 
         default:
             return state;

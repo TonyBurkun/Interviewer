@@ -16,6 +16,7 @@ import ProjectEdit from "./../ProjectEdit";
 import Username from "./../Username";
 import Password from "./../Password";
 import {makeNote, showNote} from "../../redux/actions/notificationActions";
+import {authorizationCheck} from "../../redux/actions/authenticationActions";
 import {connect} from "react-redux";
 
 
@@ -23,15 +24,34 @@ class Main extends Component {
 
 
     componentDidUpdate() {
+        console.log('did update');
 
-        let status = this.props.sideBar,
+
+    //-- CHECKING STATUS OF SIDEBAR ----------------
+
+        let sideBarStatus = this.props.sideBar,
             app = document.getElementById('app');
 
-        if (status) {
+        if (sideBarStatus) {
             app.classList.add('sidebar-open');
         } else {
             app.classList.remove('sidebar-open');
         }
+
+    //-- END CHECKING STATUS OF SIDEBAR --------------
+
+
+
+    }
+
+    componentWillMount(){
+
+    //-- CHECKING STATUS OF SIDEBAR ----------------
+        const {dispatch} = this.props;
+        dispatch(authorizationCheck());
+
+
+    //-- END CHECKING STATUS OF SIDEBAR ----------------
     }
 
     handleMakeNote(status, text) {
@@ -46,6 +66,8 @@ class Main extends Component {
 
     render() {
 
+        console.log(this);
+
         return (
             <div className="main-wrapper">
                 <div className="app" id="app">
@@ -54,39 +76,6 @@ class Main extends Component {
                     <article className="content dashboard-page">
 
                         <Switch>
-                            <Route
-                                exact path="/projects"
-                                name="Projects List"
-                                render={(props) =>
-                                    <ProjectsList {...props}
-                                                  callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                  callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
-                            />
-                            <Route
-                                exact path="/projects/create-project"
-                                name="Create project"
-                                render={(props) =>
-                                    <CreateProject {...props}
-                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
-                            />
-                            <Route
-                                exact path="/projects/project/:id"
-                                name="Project Details"
-                                render={(props) =>
-                                    <ProjectDetails {...props}
-                                                    callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                    callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
-                            />
-
-                            <Route
-                                exact path="/projects/project/:id/edit"
-                                name="Project Edit"
-                                render={(props) =>
-                                    <ProjectEdit {...props}
-                                                 callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                 callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
-                            />
                             <Route
                                 exact path="/interviews-upcoming"
                                 name="InterviewsUpcoming"
@@ -167,6 +156,39 @@ class Main extends Component {
                                               callMakeNote={(status, text) => this.handleMakeNote(status, text)}
                                               callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
                             />
+                            <Route
+                                exact path="/projects"
+                                name="Projects List"
+                                render={(props) =>
+                                    <ProjectsList {...props}
+                                                  callMakeNote={(status, text) => this.handleMakeNote(status, text)}
+                                                  callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                            />
+                            <Route
+                                exact path="/projects/create-project"
+                                name="Create project"
+                                render={(props) =>
+                                    <CreateProject {...props}
+                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
+                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                            />
+                            <Route
+                                exact path="/projects/project/:id"
+                                name="Project Details"
+                                render={(props) =>
+                                    <ProjectDetails {...props}
+                                                    callMakeNote={(status, text) => this.handleMakeNote(status, text)}
+                                                    callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                            />
+
+                            <Route
+                                exact path="/projects/project/:id/edit"
+                                name="Project Edit"
+                                render={(props) =>
+                                    <ProjectEdit {...props}
+                                                 callMakeNote={(status, text) => this.handleMakeNote(status, text)}
+                                                 callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                            />
                             <Redirect from="/" to="/interviews-upcoming"/>
                         </Switch>
                     </article>
@@ -180,7 +202,9 @@ class Main extends Component {
 function mapStateToProps(state) {
     return {
         sideBar: state.sideBar.status,
-        notifications: state.notifications
+        notifications: state.notifications,
+        userData: state.authentication.userData,
+        loggedUser: state.authentication.loggedUser
     }
 }
 

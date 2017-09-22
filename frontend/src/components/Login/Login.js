@@ -5,6 +5,7 @@ import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
 import './login.css';
 
+
 import * as pageActions from "../../redux/actions/authenticationActions";
 
 class Login extends Component {
@@ -16,6 +17,15 @@ class Login extends Component {
             showModal: false,
             emailIsEmpty: true
         };
+    }
+
+    componentDidUpdate(){
+        let loggedUser = this.props.loggedUser,
+            locationTarget = '#/';
+
+        if (loggedUser) {
+            window.location.replace(locationTarget);
+        }
     }
 
     openModal() {
@@ -37,6 +47,7 @@ class Login extends Component {
         let currentForm = event.target,
             email = this.refs.login_email,
             password = this.refs.login_password;
+
 
         let loginValidationSettings = {
             rules: {
@@ -63,6 +74,10 @@ class Login extends Component {
                 }
             }
         };
+
+    //----------------------------------
+    //LOGIN FORM VALIDATION
+    //----------------------------------
 
         let validate = (loginValidationSettings, email, password, currentForm) => {
 
@@ -166,6 +181,10 @@ class Login extends Component {
 
         };
 
+    //----------------------------------
+    //END LOGIN FORM VALIDATION
+    //----------------------------------
+
         if (!Element.prototype.remove) {
             Element.prototype.remove = function remove() {
                 if (this.parentNode) {
@@ -193,11 +212,13 @@ class Login extends Component {
         if (isPassValidation){
 
             let authData = {
-                "email": email.value,
-                "password": password.value
+                email: email.value,
+                password: password.value
             };
+
             this.props.pageActions.doLogin(authData);
         }
+
 
     }
 
@@ -273,8 +294,9 @@ class Login extends Component {
 
 function mapStateToProps(state) {
 
-    return{
-        user: state.authentication.user
+    return {
+        userData: state.authentication.userData,
+        loggedUser: state.authentication.loggedUser
     }
     
 }
