@@ -83,23 +83,26 @@ export function showProjects() {
 }
 
 export function getProjects(id) {
-    return (dispatch) => {
+    return (dispatch) => new Promise(function(resolve, reject) {
         fetch("/api/v1/projects/" + id)
-            .then(res =>
-                res.json()
-            )
-            .then(project => {
-                dispatch(setCurrentProject(project.data));
+            .then(function(response) {
+                return response.text();
             })
-            .catch(function(err) {
+            .then(function(project) {
+                dispatch(setCurrentProject(JSON.parse(project).data));
+                resolve(JSON.parse(project).data);
+            })
+            .catch(function(error) {
                 dispatch(showNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ error
                     }
                 ));
-            })
-    };
+                resolve();
+            });
+
+    });
 }
 
 export function removeProject(date) {

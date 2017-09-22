@@ -17,13 +17,14 @@ class ProjectsList extends Component {
         super(props);
         this.state = {
             showModalConfirm: false,
-            currentProjectID: ""
+            currentProjectID: "",
+            open: false
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects())
+        dispatch(showProjects());
     }
 
     switchToEditMode(currentID) {
@@ -47,10 +48,13 @@ class ProjectsList extends Component {
 
     deleteProject() {
         this.closeModalConfirm();
+        this.forceUpdate();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
-        this.props.history.push("/projects/");
+        this.setState({open: false})
+
     }
+
 
     render() {
 
@@ -93,6 +97,7 @@ class ProjectsList extends Component {
                             showDeleteBtn={true}
                             callDelete={(event) => this.openModalConfirm(value.id)}
                             callEdit={(event) => this.switchToEditMode(value.id)}
+                           // open={this.state.open}
                         />
                     )
 
@@ -107,6 +112,7 @@ class ProjectsList extends Component {
             <div>
                 <Helmet>
                     <title>Projects</title>
+
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">
@@ -119,7 +125,7 @@ class ProjectsList extends Component {
                         />
                     </div>
                 </div>
-                <PanelGroup bsClass='custom-panel-group'>
+                <PanelGroup bsClass='custom-panel-group' accordion>
                     {projectsToDisplay}
                 </PanelGroup>
                 <Modal show={this.state.showModalConfirm}

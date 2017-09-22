@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
+import Notifications from '../../containers/Notifications';
 import './login.css';
 
 
@@ -222,6 +223,10 @@ class Login extends Component {
 
     }
 
+    onCallShowNote(status, text) {
+        this.props.callShowNote(status, text)
+    }
+
     render() {
 
         console.log(this);
@@ -236,6 +241,7 @@ class Login extends Component {
                             department</p>
                     </Modal.Body>
                 </Modal>
+                <Notifications/>
                 <div className="auth-container">
                     <div className="card">
                         <header className="auth-header">
@@ -298,7 +304,7 @@ function mapStateToProps(state) {
         userData: state.authentication.userData,
         loggedUser: state.authentication.loggedUser
     }
-    
+
 }
 
 function mapDispatchToProps(dispatch) {

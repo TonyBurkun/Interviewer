@@ -5,7 +5,19 @@ import './panels.css';
 
 class Panels extends Component {
 
+    constructor(...args) {
+        super(...args);
+        this.state = {
+            open: false,
+            token: false
+        };
+
+    }
+
+
     handlePanelCollapseClick(event) {
+
+        this.setState({ open: !this.state.open });
 
         let clickTarget = event.target;
 
@@ -27,11 +39,18 @@ class Panels extends Component {
     }
 
     onDelete() {
-        this.props.callDelete()
+        this.setState({token: true})
+        this.props.callDelete();
+        this.setState({token: false})
+
     }
 
     onEdit() {
         this.props.callEdit()
+    }
+
+    onClick() {
+        this.props.callClick()
     }
 
     render() {
@@ -42,7 +61,14 @@ class Panels extends Component {
             showEditBtn = this.props.showEditBtn,
             showDuplicateBtn = this.props.showDuplicateBtn,
             showDeleteBtn = this.props.showDeleteBtn,
-            description = this.props.description;
+            description = this.props.description,
+            token = this.state.token,
+            openProps = this.props.open,
+            openState = this.state.open,
+
+            test = token ? openProps : openState;
+
+
 
 
         let toShowActionBtn = (showActionBtn, titleBtn) => {
@@ -87,7 +113,9 @@ class Panels extends Component {
 
         return (
             <Panel collapsible header={panelTitle} eventKey="1"
-                   onClick={(event) => this.handlePanelCollapseClick(event)}>
+                   onClick={(event) => this.handlePanelCollapseClick(event)}
+                   expanded = {test}
+                >
                 <div className="custom-panel-body">
                     <div className="custom-panel-body__left">
                         <div className="vacancy-description">
@@ -111,6 +139,7 @@ class Panels extends Component {
 }
 
 Panels.defaultProps = {
+    openProps: false,
     showActionBtn : false,
     titleForActionBtn: 'action btn',
     titleConst:
@@ -124,9 +153,11 @@ Panels.defaultProps = {
             <div className="custom-panel-title__left-side">
             </div>
         </div>
+
 };
 
 Panels.propTypes = {
+    openProps: PropTypes.bool,
     showActionBtn: PropTypes.bool,
     showEditBtn: PropTypes.bool,
     showDuplicateBtn: PropTypes.bool,
