@@ -17,13 +17,13 @@ class ProjectsList extends Component {
         super(props);
         this.state = {
             showModalConfirm: false,
-            currentProjectID: ""
+            currentProjectID: "",
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const {dispatch} = this.props;
-        dispatch(showProjects())
+        dispatch(showProjects());
     }
 
     switchToEditMode(currentID) {
@@ -49,7 +49,7 @@ class ProjectsList extends Component {
         this.closeModalConfirm();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
-        //this.props.history.push("/projects/");
+        this.setState({open: false})
     }
 
     render() {
@@ -91,6 +91,7 @@ class ProjectsList extends Component {
                             description={value.description}
                             showEditBtn={true}
                             showDeleteBtn={true}
+                            open={this.state.open}
                             callDelete={(event) => this.openModalConfirm(value.id)}
                             callEdit={(event) => this.switchToEditMode(value.id)}
                         />
@@ -107,6 +108,7 @@ class ProjectsList extends Component {
             <div>
                 <Helmet>
                     <title>Projects</title>
+
                 </Helmet>
                 <div className="row sameheight-container">
                     <div className="col-md-12 component-container">

@@ -5,7 +5,17 @@ import './panels.css';
 
 class Panels extends Component {
 
+    constructor(...args) {
+        super(...args);
+        this.state = {
+            open: false
+        };
+    }
+
+
     handlePanelCollapseClick(event) {
+
+        this.setState({ open: !this.state.open })
 
         let clickTarget = event.target;
 
@@ -27,11 +37,16 @@ class Panels extends Component {
     }
 
     onDelete() {
-        this.props.callDelete()
+        this.props.callDelete();
+        this.setState({ open: !this.state.open })
     }
 
     onEdit() {
         this.props.callEdit()
+    }
+
+    onClick() {
+        this.props.callClick()
     }
 
     render() {
@@ -39,9 +54,9 @@ class Panels extends Component {
         let showActionBtn = this.props.showActionBtn,
             titleForActionBtn = this.props.titleForActionBtn,
             panelTitle = this.props.titleConst,
-            showEditBtn = this. props.showEditBtn,
-            showDuplicateBtn = this. props.showDuplicateBtn,
-            showDeleteBtn = this. props.showDeleteBtn,
+            showEditBtn = this.props.showEditBtn,
+            showDuplicateBtn = this.props.showDuplicateBtn,
+            showDeleteBtn = this.props.showDeleteBtn,
             description = this.props.description;
 
 
@@ -87,7 +102,9 @@ class Panels extends Component {
 
         return (
             <Panel collapsible header={panelTitle} eventKey="1"
-                   onClick={(event) => this.handlePanelCollapseClick(event)}>
+                   onClick={(event) => this.handlePanelCollapseClick(event)}
+                   expanded = {this.state.open}
+                >
                 <div className="custom-panel-body">
                     <div className="custom-panel-body__left">
                         <div className="vacancy-description">
@@ -124,6 +141,7 @@ Panels.defaultProps = {
             <div className="custom-panel-title__left-side">
             </div>
         </div>
+
 };
 
 Panels.propTypes = {
