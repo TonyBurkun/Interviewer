@@ -32,15 +32,17 @@ export function createProject(date) {
                 dispatch(makeNote(
                     {
                         status: "success",
-                        text: "Project " + noteData + "... was created!"
+                        text: "Project " + noteData + "... was created!",
+                        hide: true
                     }
                 ))
             })
             .catch(function (err) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ err,
+                        hide: false
                     }
                 ));
             })
@@ -72,10 +74,11 @@ export function showProjects() {
                 dispatch(addProjects(projects.data));
             })
             .catch(function(err) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ err,
+                        hide: false
                     }
                 ));
             })
@@ -93,10 +96,11 @@ export function getProjects(id) {
                 resolve(JSON.parse(project).data);
             })
             .catch(function(error) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ error
+                        text: "Error: "+ error,
+                        hide: false
                     }
                 ));
                 resolve();
@@ -106,7 +110,6 @@ export function getProjects(id) {
 }
 
 export function removeProject(date) {
-    debugger;
     return (dispatch) => {
         fetch('/api/v1/projects/' + date.id,
             {
@@ -125,15 +128,17 @@ export function removeProject(date) {
                 dispatch(makeNote(
                     {
                         status: "success",
-                        text: "Project " + noteData + "... was deleted!"
+                        text: "Project " + noteData + "... was deleted!",
+                        hide: true
                     }
                 ))
             })
             .catch(function(err) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ err,
+                        hide: false
                     }
                 ));
             });
@@ -150,10 +155,11 @@ export function deleteProject(id) {
                 dispatch(removeProject(project.data));
             })
             .catch(function(err) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ err,
+                        hide: false
                     }
                 ));
             })
@@ -179,15 +185,17 @@ export function updateProject(date) {
                 dispatch(makeNote(
                     {
                         status: "success",
-                        text: "Project " + noteData + "... was updated!"
+                        text: "Project " + noteData + "... was updated!",
+                        hide: true
                     }
                 ))
             })
             .catch(function(err) {
-                dispatch(showNote(
+                dispatch(makeNote(
                     {
                         status: "danger",
-                        text: "Error: "+ err
+                        text: "Error: "+ err,
+                        hide: false
                     }
                 ));
             });

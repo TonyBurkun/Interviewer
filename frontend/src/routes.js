@@ -2,19 +2,14 @@ import React, {Component} from 'react';
 import {Route, Switch, BrowserRouter, HashRouter} from 'react-router-dom';
 import Login from './components/Login';
 import Main from './components/Main';
-import {makeNote, showNote} from "./redux/actions/notificationActions";
+import {makeNote} from "./redux/actions/notificationActions";
 import {connect} from "react-redux";
 
 class Routes extends Component {
 
-    handleMakeNote(status, text) {
+    handleMakeNote(status, text, hide) {
         const {dispatch} = this.props;
-        dispatch(makeNote({status: status, text: text}));
-    }
-
-    handleShowNote(status, text) {
-        const {dispatch} = this.props;
-        dispatch(showNote({status: status, text: text}));
+        dispatch(makeNote({status: status, text: text, hide: hide}));
     }
 
     render() {
@@ -24,14 +19,14 @@ class Routes extends Component {
                     <Route exact path='/login' name="Login page"
                            render={(props) =>
                                <Login {...props}
-                                     callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                     callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                      callMakeNote={(status, text, hide) =>
+                                          this.handleMakeNote(status, text, hide)}/>}
                     />
                     <Route path='/' name="Home"
                            render={(props) =>
                                <Main {...props}
-                                     callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                     callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                     callMakeNote={(status, text, hide) =>
+                                         this.handleMakeNote(status, text, hide)}/>}
                     />
                 </Switch>
             </HashRouter>

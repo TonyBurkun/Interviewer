@@ -15,7 +15,7 @@ import ProjectDetails from "./../ProjectDetails";
 import ProjectEdit from "./../ProjectEdit";
 import Username from "./../Username";
 import Password from "./../Password";
-import {makeNote, showNote} from "../../redux/actions/notificationActions";
+import {makeNote} from "../../redux/actions/notificationActions";
 import {connect} from "react-redux";
 
 
@@ -34,14 +34,9 @@ class Main extends Component {
         }
     }
 
-    handleMakeNote(status, text) {
+    handleMakeNote(status, text, hide) {
         const {dispatch} = this.props;
-        dispatch(makeNote({status: status, text: text}));
-    }
-
-    handleShowNote(status, text) {
-        const {dispatch} = this.props;
-        dispatch(showNote({status: status, text: text}));
+        dispatch(makeNote({status: status, text: text, hide: hide}));
     }
 
     render() {
@@ -59,24 +54,24 @@ class Main extends Component {
                                 name="Projects List"
                                 render={(props) =>
                                     <ProjectsList {...props}
-                                                  callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                  callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                  callMakeNote={(status, text, hide) =>
+                                                      this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/projects/create-project"
                                 name="Create project"
                                 render={(props) =>
                                     <CreateProject {...props}
-                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                   callMakeNote={(status, text, hide) =>
+                                                       this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/projects/project/:id"
                                 name="Project Details"
                                 render={(props) =>
                                     <ProjectDetails {...props}
-                                                    callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                    callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                    callMakeNote={(status, text, hide) =>
+                                                        this.handleMakeNote(status, text, hide)}/>}
                             />
 
                             <Route
@@ -84,88 +79,88 @@ class Main extends Component {
                                 name="Project Edit"
                                 render={(props) =>
                                     <ProjectEdit {...props}
-                                                 callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                 callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                 callMakeNote={(status, text, hide) =>
+                                                     this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/interviews-upcoming"
                                 name="InterviewsUpcoming"
                                 render={(props) =>
                                     <InterviewsUpcoming {...props}
-                                                        callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                        callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                        callMakeNote={(status, text, hide) =>
+                                                            this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/interviews-completed"
                                 name="InterviewsCompleted"
                                 render={(props) =>
                                     <InterviewsCompleted {...props}
-                                                         callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                         callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                         callMakeNote={(status, text, hide) =>
+                                                             this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/interviewers"
                                 name="Interviewers"
                                 render={(props) =>
                                     <Interviewers {...props}
-                                                  callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                  callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                  callMakeNote={(status, text, hide) =>
+                                                      this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/candidates"
                                 name="Candidates"
                                 render={(props) =>
                                     <Candidates {...props}
-                                                callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                callMakeNote={(status, text, hide) =>
+                                                    this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/vacancies-open"
                                 name="VacanciesOpen"
                                 render={(props) =>
                                     <VacanciesOpen {...props}
-                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                   callMakeNote={(status, text, hide) =>
+                                                       this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/vacancies-closed"
                                 name="VacanciesClosed"
                                 render={(props) =>
                                     <VacanciesClosed {...props}
-                                                     callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                     callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                     callMakeNote={(status, text, hide) =>
+                                                         this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/vacancies-open/create-vacancy"
                                 name="CreateVacancy"
                                 render={(props) =>
                                     <CreateVacancy {...props}
-                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                   callMakeNote={(status, text, hide) =>
+                                                       this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/vacancies-closed/create-vacancy"
                                 name="CreateVacancy"
                                 render={(props) =>
                                     <CreateVacancy {...props}
-                                                   callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                                   callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                                   callMakeNote={(status, text, hide) =>
+                                                       this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/username"
                                 name="Username"
                                 render={(props) =>
                                     <Username {...props}
-                                              callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                              callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                              callMakeNote={(status, text, hide) =>
+                                                  this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Route
                                 exact path="/password"
                                 name="Password"
                                 render={(props) =>
                                     <Password {...props}
-                                              callMakeNote={(status, text) => this.handleMakeNote(status, text)}
-                                              callShowNote={(status, text) => this.handleShowNote(status, text)}/>}
+                                              callMakeNote={(status, text, hide) =>
+                                                  this.handleMakeNote(status, text, hide)}/>}
                             />
                             <Redirect from="/" to="/interviews-upcoming"/>
                         </Switch>

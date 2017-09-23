@@ -18,7 +18,6 @@ class ProjectsList extends Component {
         this.state = {
             showModalConfirm: false,
             currentProjectID: "",
-            open: false
         }
     }
 
@@ -51,8 +50,6 @@ class ProjectsList extends Component {
         this.forceUpdate();
         const {dispatch} = this.props;
         dispatch(deleteProject(this.state.currentProjectID));
-        this.setState({open: false})
-
     }
 
 
@@ -89,7 +86,7 @@ class ProjectsList extends Component {
 
                     return (
                         <Panels
-                            key={index}
+                            key={value.id}
                             id={value.id}
                             titleConst={panelTitle}
                             description={value.description}
@@ -97,7 +94,6 @@ class ProjectsList extends Component {
                             showDeleteBtn={true}
                             callDelete={(event) => this.openModalConfirm(value.id)}
                             callEdit={(event) => this.switchToEditMode(value.id)}
-                           // open={this.state.open}
                         />
                     )
 
@@ -105,7 +101,7 @@ class ProjectsList extends Component {
             )
 
         } else {
-            projectsToDisplay = "";
+            projectsToDisplay = "No projects";
         }
 
         return (
