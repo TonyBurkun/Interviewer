@@ -67,7 +67,8 @@ export function doLogin(data) {
                     dispatch(makeNote(
                         {
                             status: "warning",
-                            text: data.errors[0]
+                            text: data.errors[0],
+                            hide: true
                         }
                     ));
                 } else {
