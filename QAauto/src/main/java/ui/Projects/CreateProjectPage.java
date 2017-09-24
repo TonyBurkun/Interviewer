@@ -12,7 +12,7 @@ public class CreateProjectPage {
     By backToListButton = By.id("link-to-list");
     By createTitleField = By.id("create-project-title");
     By createDescField = By.id("create-project-descr");
-    By createProjectButton = By.id("create-project-submitBtn");
+    By createProjectButton = By.id("create-btn");
     By cancelOfCreatingProjectButton = By.id("create-project-resetBtn");
 
 

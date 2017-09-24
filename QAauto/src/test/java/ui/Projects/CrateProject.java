@@ -46,34 +46,29 @@ public class CrateProject {
     }
 
     ///////////////////////=========== Project:Create=============////////////////////////
-
-    @Test(groups = {"functest", "47", "UI"})
+    @TestRun(id = "17")
+    @TestCase(id = "23")
+    @Test(groups = {"functest","UI"})
     public void assertElementsOnCreateProjectPage() throws InterruptedException {
 
         loginPage.open();
         driver.manage().window().maximize();
         sideMenuPage.clickProjectsItem();
         projectsPage.clickMainCreateProjectButton();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/h3")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"link-to-list\"]")).isDisplayed());
+        //title
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/div/div[1]/h3")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("back-btn")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("create-project-title")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("create-project-descr")).isDisplayed());
             String createDiabledButton = driver.findElement(By.id("create-project-submitBtn")).getAttribute("disabled");
         Assert.assertEquals(createDiabledButton, "true");
         Assert.assertTrue(driver.findElement(By.id("create-project-resetBtn")).isDisplayed());
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/47", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
     }
 
-    @Test(groups = {"functest", "141"})
+    @TestRun(id = "17")
+    @TestCase(id = "26")
+    @Test(groups = {"functest"})
     public void assertUniquenessProjectName() throws InterruptedException {
 
         loginPage.open();
@@ -85,18 +80,11 @@ public class CrateProject {
         crateProjectPage.clickCreateProjectButton();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/form/div[1]/span")).isDisplayed());
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/141", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
     }
 
-    @Test(groups = {"functest", "142"})
+    @TestRun(id = "17")
+    @TestCase(id = "27")
+    @Test(groups = {"functest"})
     public void assertBackToListButton() throws InterruptedException {
 
         loginPage.open();
@@ -105,22 +93,12 @@ public class CrateProject {
         projectsPage.clickMainCreateProjectButton();
         projectsPage.clickBackToListButton();
         String uri = driver.getCurrentUrl();
-        Assert.assertEquals(uri, BaseURL+"projects");
-
-
-
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/142", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(uri, BaseURL+"#/projects");
     }
 
-    @Test(groups = {"functest", "143"})
+    @TestRun(id = "17")
+    @TestCase(id = "28")
+    @Test(groups = {"functest"})
     public void assertCancelForEmptyForm() throws InterruptedException {
 
         loginPage.open();
@@ -129,22 +107,12 @@ public class CrateProject {
         projectsPage.clickMainCreateProjectButton();
         projectsPage.clickCancelButton();
         String uri = driver.getCurrentUrl();
-        Assert.assertEquals(uri, BaseURL+"projects");
-
-
-
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/143", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(uri, BaseURL+"#/projects");
     }
 
-    @Test(groups = {"functest", "144"})
+    @TestRun(id = "17")
+    @TestCase(id = "29")
+    @Test(groups = {"functest"})
     public void assertCancelForFilledForm() throws InterruptedException {
 
         loginPage.open();
@@ -157,7 +125,9 @@ public class CrateProject {
 
     }
 
-    @Test(groups = {"functest", "144"})
+    @TestRun(id = "17")
+    @TestCase(id = "29")
+    @Test(groups = {"functest"})
     public void assertCancelForFilledDesc() throws InterruptedException {
 
         loginPage.open();
@@ -170,23 +140,10 @@ public class CrateProject {
 
     }
 
-         @Test(dependsOnMethods = {"assertCancelForFilledForm", "assertCancelForFilledDesc"}, groups = {"144"})
-         public void sentResultForEmail() throws InstantiationException {
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/144", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-    @Test(groups = {"functest", "146"})
+    @TestRun(id = "17")
+    @TestCase(id = "31")
+    @Test(groups = {"functest"})
     public void assertExistenceOfCreatedProject() throws InterruptedException {
 
         loginPage.open();
@@ -206,27 +163,14 @@ public class CrateProject {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div")).isDisplayed());
         projectsPage.clickYesOnDeletePopup();
 
+            }
+
+    //TODO ALERT for created project !!!!!!
 
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/146", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-    }
-
-    //TODO ALERT for created project
-
-
-    @Test(groups = {"functest", "147"})
+    @TestRun(id = "17")
+    @TestCase(id = "32")
+    @Test(groups = {"functest"})
     public void assertChangeForCreateButton() throws InterruptedException {
 
         loginPage.open();
@@ -240,22 +184,14 @@ public class CrateProject {
         projectsPage.typeDescr("TestTest");
         Assert.assertTrue( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/147", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-
     }
 
 
 ///////////===================SUB-CASE Fields VALIDATION=================////////////////////////
 
-    @Test(groups = {"functest", "136"})
+    @TestRun(id = "17")
+    @TestCase(id = "33")
+    @Test(groups = {"functest"})
     public void assertMaxLeghtForProjectTitle() throws InterruptedException {
 
         loginPage.open();
@@ -266,20 +202,12 @@ public class CrateProject {
         String lengthForProjectTitle = driver.findElement(By.id("create-project-title")).getAttribute("maxlength");
         Assert.assertEquals(lengthForProjectTitle, "60");
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/136", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
-
     }
 
-    @Test(groups = {"functest", "137and135"})
-    public void assertMinLeghtForProjectDescriptionAndDesc() throws InterruptedException {
+    @TestRun(id = "17")
+    @TestCase(id = "34")
+    @Test(groups = {"functest"})
+    public void assertMinLeghtForProjectDescription() throws InterruptedException {
 
         loginPage.open();
         driver.manage().window().maximize();
@@ -290,20 +218,28 @@ public class CrateProject {
         projectsPage.typeTitle("T");
         projectsPage.typeDescr("T");
         Assert.assertTrue( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
+            }
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/137", body);
-            client.sendPost("add_result_for_case/35/135", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
 
+    @TestRun(id = "17")
+    @TestCase(id = "37")
+    @Test(groups = {"functest"})
+    public void assertMinLeghtForProjectTitle() throws InterruptedException {
+
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        projectsPage.clickMainCreateProjectButton();
+        String createDiabledButton = driver.findElement(By.id("create-project-submitBtn")).getAttribute("disabled");
+        Assert.assertEquals(createDiabledButton, "true");
+        projectsPage.typeTitle("T");
+        projectsPage.typeDescr("T");
+        Assert.assertTrue( driver.findElement(By.id("create-project-submitBtn")).isEnabled());
     }
 
+
+    @TestRun(id = "17")
+    @TestCase(id = "35")
     @Test(groups = {"functest", "138"})
     public void assertMaxLeghtForProjectDesc() throws InterruptedException {
 
@@ -326,7 +262,9 @@ public class CrateProject {
 
     }
 
-    @Test(groups = {"functest", "139"})
+    @TestRun(id = "17")
+    @TestCase(id = "36")
+    @Test(groups = {"functest"})
     public void assertSupportOfSymbolsInFieldTitleAndDesc() throws InterruptedException {
 
         loginPage.open();
@@ -339,15 +277,6 @@ public class CrateProject {
         driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/form/div[1]/span")).isDisplayed();
         driver.findElement(By.xpath("//*[@id=\"app\"]/article/div/div/div/form/div[2]/span")).isDisplayed();
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/139", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
 
     }
 

@@ -10,16 +10,16 @@ public class ProjectsPage {
         this.driver = driver;
     }
 
-    By mainCreateProjectButton = By.xpath("//*[@id=\"pl-link-to-create\"]/button");
+    By mainCreateProjectButton = By.id("create-btn");
     By createProjectTitleField = By.id("create-project-title");
     By createProjectDescrField = By.id("create-project-descr");
-    By backToListButton = By.id("link-to-list");
+    By backToListButton = By.id("back-btn");
     By finalCeateProjectButton = By.id("create-project-submitBtn");
     By cancelButton = By.id("create-project-resetBtn");
     By someProjectButton = By.id("pl-link-to-project");
 
     By editProjectButton = By.id("pd-btn-to-edit");
-    By deleteProjectButton = By.id("pd-btn-to-delete");
+    By deleteProjectButton = By.xpath("//*[@id=\"2\"]/div/div/div[3]/div[2]");
     By saveAftterEditButton = By.id("pe-btn-save");
     By cancelAftterEditButton = By.id("pe-btn-cancel");
 

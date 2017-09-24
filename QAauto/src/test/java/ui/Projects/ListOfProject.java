@@ -45,7 +45,10 @@ public class ListOfProject {
 
     }
 
-    @Test(groups = {"functest", "47", "UI"})
+
+    @TestRun(id = "19")
+    @TestCase(id = "38")
+    @Test(groups = {"functest", "UI"})
     public void assertElementsOnCreateProjectPage() throws InterruptedException {
 
         loginPage.open();
@@ -60,16 +63,86 @@ public class ListOfProject {
         Assert.assertEquals(createDiabledButton, "true");
         Assert.assertTrue(driver.findElement(By.id("create-project-resetBtn")).isDisplayed());
 
-        JSONObject body = new JSONObject();
-        body.put("status_id", "1");
-        try {
-            client.sendPost("add_result_for_case/35/47", body);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
     }
 
 
+    @TestRun(id = "19")
+    @TestCase(id = "39")
+    @Test(groups = {"functest"})
+    public void assertClickOnProjectOpenDesc() throws InterruptedException {
+
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+
+    }
+
+    //TODO click on proj
+
+    @TestRun(id = "19")
+    @TestCase(id = "40")
+    @Test(groups = {"functest"})
+    public void assertClickOnCreate() throws InterruptedException {
+
+
+
+    }
+    //TODO click on create
+
+    @TestRun(id = "19")
+    @TestCase(id = "44")
+    @Test(groups = {"functest"})
+    public void assertCreateProjectListUpdate() throws InterruptedException {
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        crateProjectPage.clickCreateProjectButton();
+        projectsPage.typeTitle("1Test");
+        projectsPage.typeDescr("TestTest");
+        projectsPage.clickFinalCeateProjectButton();
+        //  Assert.assertTrue(driver.findElement(By.className("alert")).isDisplayed());
+        //  notification alert alert-success alert-dismissible
+        String uriProj = driver.getCurrentUrl();
+        Assert.assertEquals(uriProj, BaseURL+"#/projects");
+        String test = driver.findElement(By.linkText("1Test")).getAttribute("href");
+        driver.get(test);
+        projectsPage.clickDeleteProjectButton();
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div")).isDisplayed());
+        projectsPage.clickYesOnDeletePopup();
+
+    }
+// todo accert alert
+
+    @TestRun(id = "19")
+    @TestCase(id = "45")
+    @Test(groups = {"functest"})
+    public void assertDeleteProjectListUpdate() throws InterruptedException {
+        loginPage.open();
+        driver.manage().window().maximize();
+        sideMenuPage.clickProjectsItem();
+        crateProjectPage.clickCreateProjectButton();
+        projectsPage.typeTitle("1Test");
+        projectsPage.typeDescr("TestTest");
+        projectsPage.clickFinalCeateProjectButton();
+        //  Assert.assertTrue(driver.findElement(By.className("alert")).isDisplayed());
+        //  notification alert alert-success alert-dismissible
+//        Assert.assertTrue(driver.findElement(By.linkText("1Test")).isDisplayed());
+        driver.findElement(By.linkText("1Test")).click();
+        String ele = driver.findElement(By.linkText("1Test")).getAttribute("aria-expanded");
+        Assert.assertEquals(ele, false);
+        projectsPage.clickDeleteProjectButton();
+        projectsPage.clickYesOnDeletePopup();
+        Assert.assertFalse(driver.findElement(By.linkText("1Test")).isDisplayed());
+
+    }
+// todo accert alert
+
+
+
+
+    @AfterTest(groups = {"functest", "emailInput", "wrongEmailOrPasswrd", "passwordCheck"})
+    public void after() { driver.quit();
+
+    }
 }
+

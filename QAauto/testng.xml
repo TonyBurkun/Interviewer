@@ -17,7 +17,7 @@
             </run>
         </groups>
         <classes>
-            <class name="ui.SideMenu"/>
+            <class name="ui.Projects.CrateProject"/>
         </classes>
     </test>
 

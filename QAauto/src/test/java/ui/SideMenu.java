@@ -25,10 +25,6 @@ public class SideMenu {
     String BaseURL = "https://qa-interviewer.herokuapp.com/";
 
 
-
-    @TestRun(id = "8")
-
-
     @BeforeSuite(groups = {"functest", "login"})
     public void beforeSuite(){client.setUser("oksana.gorbachenko.2009@gmail.com");
         client.setPassword("123456QWERTy");
@@ -44,7 +40,7 @@ public class SideMenu {
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
         loginPage.open();
     }
-
+    @TestRun(id = "8")
     @TestCase(id = "14")
     @Test(groups = {"functest", "14"})
     public void asserHideMenu() throws InterruptedException {
@@ -56,7 +52,7 @@ public class SideMenu {
 
     }
 
-
+    @TestRun(id = "8")
     @TestCase(id = "18")
     @Test(groups = {"functest", "18"})
     public void assertIconsOfMenuItems() throws InterruptedException {
@@ -73,7 +69,7 @@ public class SideMenu {
 
     }
 
-
+    @TestRun(id = "8")
     @TestCase(id = "19")
     @Test(groups = {"functest", "19"})
     public void assertChangingTemplateItem() throws InterruptedException {
@@ -117,7 +113,7 @@ public class SideMenu {
         Assert.assertEquals(href_dashboard, BaseURL+"interviews-upcoming");
 
     }
-
+    @TestRun(id = "8")
     @TestCase(id = "20")
     @Test(groups = {"functest", "20"})
     public void assertActiveItem() throws InterruptedException {
@@ -182,7 +178,7 @@ public class SideMenu {
                     assertDashboerd();
     }
 
-
+    @TestRun(id = "8")
     @TestCase(id = "21")
     @Test(groups = {"functest", "21"})
     public void asserItemLinks() throws InterruptedException {
@@ -220,7 +216,7 @@ public class SideMenu {
 
     }
 
-
+    @TestRun(id = "8")
     @TestCase(id = "22")
     @Test(groups = { "22"})
     public void errorForFailFunc() throws InterruptedException {
