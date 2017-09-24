@@ -1,21 +1,23 @@
 import fetch from "isomorphic-fetch";
 import {makeNote, showNote} from "./notificationActions";
 
+
+export function loggedUser(data) {
+    return {
+        type: 'LOGGED_USER',
+        payload: data
+    }
+}
+
+export function setUserData(data) {
+    return {
+        type: 'SET_USER_DATA',
+        payload: JSON.stringify(data.data)
+    }
+}
+
 export function doLogin(data) {
 
-    function addUserData(data){
-        return {
-            type: 'DO_LOGIN',
-            payload: data.data
-        }
-    }
-
-    function loggedUser(data) {
-        return {
-            type: 'LOGGED_USER',
-            payload: data
-        }
-    }
     return (dispatch) => {
         fetch('/auth/sign_in',
             {
@@ -25,16 +27,21 @@ export function doLogin(data) {
                     "Content-Type": "application/json",
                 }
             })
-            .then(function (response) {
+            .then(response => {
 
-                switch (response.status){
+                switch (response.status) {
                     case 200:
                     case 201:
                         let accessToken = response.headers.get('access-token'),
-                            tokenExpiry = response.headers.get('expiry');
+                            expiry = response.headers.get('expiry'),
+                            uid = response.headers.get('uid'),
+                            client = response.headers.get('client');
 
-                        localStorage.setItem('token', accessToken);
-                        localStorage.setItem('tokenExpiry', tokenExpiry);
+                        expiry = new Date(expiry * 1000);
+
+                        document.cookie = "access-token=" + accessToken + "; path=/; expires=" + expiry;
+                        document.cookie = "uid=" + uid + "; path=/; expires=" + expiry;
+                        document.cookie = "client=" + client + "; path=/; expires=" + expiry;
 
 
                         dispatch(loggedUser(true));
@@ -43,59 +50,151 @@ export function doLogin(data) {
                     case 401:
                         return response.json();
 
+                    case 500:
+                        return response.json();
 
 
                     default:
                         dispatch(loggedUser(false));
-                        return {data: 'no-data'};
+                        return {data: {}};
+
                 }
 
             })
             .then((data) => {
 
-            if (data.data === undefined){
-                console.log(data.errors[0]);
-                alert(data.errors[0]);
-            } else{
-                dispatch(addUserData(data));
-            }
+                if (data.data === undefined) {
+                    dispatch(makeNote(
+                        {
+                            status: "warning",
+                            text: data.errors[0]
+                        }
+                    ));
+                } else {
+                    localStorage.setItem('userData', JSON.stringify(data.data));
+                    dispatch(setUserData(data));
 
-
-
+                }
             })
-            .catch(alert);
+            .catch(err => {
+                dispatch(showNote(
+                    {
+                        status: "danger",
+                        text: "Error: " + err
+                    }
+                ));
+            });
     }
 
 }
 
+export function getCookies() {
+    let cookies = document.cookie.split('; '),
+        cookiesObj = {};
+
+    for (let i = 0; i < cookies.length; i++) {
+        let result = cookies[i].split('=');
+        cookiesObj[result[0]] = result[1];
+    }
+
+    return cookiesObj;
+}
+
+
 export function authorizationCheck() {
 
-    let accessToken = localStorage.getItem('token'),
-        tokenExpiry = localStorage.getItem('tokenExpiry'),
-        locationTarget = '#/login',
-        currentDate = new Date().getTime(),
-        currentDateInSeconds = Math.floor(currentDate/1000);
+    let cookiesObj = getCookies();
 
-    if (accessToken !== null){
-        if (tokenExpiry !== null){
-            if (tokenExpiry < currentDateInSeconds){
-                window.location.replace(locationTarget);
-                localStorage.removeItem('token');
-                localStorage.removeItem('tokenExpiry');
+    let accessToken = cookiesObj['access-token'],
+        uid = cookiesObj['uid'],
+        client = cookiesObj['client'],
+        isUserLogged = true,
+        userData = localStorage.getItem('userData');
 
-            }
-        } else {
-            window.location.replace(locationTarget);
-        }
-    } else {
-        window.location.replace(locationTarget);
+
+    if (!(accessToken && client && uid)) {
+        isUserLogged = false;
+        userData = {};
+
+        let date = new Date(0);
+
+        document.cookie = 'access-token=; expires='+ date.toUTCString();
+        document.cookie = 'client=; expires=' + date.toUTCString();
+        document.cookie = 'uid=; expires=' + date.toUTCString();
+
+        localStorage.removeItem('userData');
+
     }
 
 
     return {
         type: 'AUTH_CHECK',
-        payload: 'no-data'
+        payload: {
+            loggedUser: isUserLogged,
+            userData: userData
+        }
     }
 
+
 }
+
+export function logOut() {
+
+    let cookiesObj = getCookies(),
+        accessToken = cookiesObj['access-token'],
+        uid = cookiesObj['uid'],
+        client = cookiesObj['client'];
+
+        fetch('/auth/sign_out',
+            {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'uid': uid,
+                    'client': client,
+                    'access-token': accessToken
+                }
+            })
+            .then(response => {
+
+                switch (response.status){
+                    case 200:
+                    case 201:
+
+                        return response.json();
+
+                    default:
+                        return response.json();
+                }
+            })
+            .catch(err => {
+                showNote(
+                    {
+                        status: "danger",
+                        text: "Error: " + err
+                    }
+                );
+            });
+
+
+    let date = new Date(0);
+
+    document.cookie = 'access-token=; expires='+ date.toUTCString();
+    document.cookie = 'client=; expires=' + date.toUTCString();
+    document.cookie = 'uid=; expires=' + date.toUTCString();
+
+    localStorage.removeItem('userData');
+
+    return (dispatch) => {
+        dispatch(setUserData({data: {}}));
+        dispatch(loggedUser(false));
+    }
+
+
+
+
+
+
+}
+
 

@@ -24,10 +24,8 @@ class Main extends Component {
 
 
     componentDidUpdate() {
-        console.log('did update');
 
-
-    //-- CHECKING STATUS OF SIDEBAR ----------------
+        //-- CHECKING STATUS OF SIDEBAR ----------------
 
         let sideBarStatus = this.props.sideBar,
             app = document.getElementById('app');
@@ -38,20 +36,24 @@ class Main extends Component {
             app.classList.remove('sidebar-open');
         }
 
-    //-- END CHECKING STATUS OF SIDEBAR --------------
-
-
+        //-- END CHECKING STATUS OF SIDEBAR --------------
 
     }
 
-    componentWillMount(){
+    componentWillMount() {
 
-    //-- CHECKING STATUS OF SIDEBAR ----------------
+        //-- CHECKING IS USER LOGGED ----------------
+
         const {dispatch} = this.props;
         dispatch(authorizationCheck());
 
+        let loggedUser = this.props.loggedUser;
+        if (!loggedUser){
+            this.props.history.push('/login');
+        }
 
-    //-- END CHECKING STATUS OF SIDEBAR ----------------
+        //-- END CHECKING IS USER LOGGED ----------------
+
     }
 
     handleMakeNote(status, text) {
@@ -66,7 +68,7 @@ class Main extends Component {
 
     render() {
 
-        console.log(this);
+        console.log(this.props);
 
         return (
             <div className="main-wrapper">
@@ -203,8 +205,9 @@ function mapStateToProps(state) {
     return {
         sideBar: state.sideBar.status,
         notifications: state.notifications,
+        loggedUser: state.authentication.loggedUser,
         userData: state.authentication.userData,
-        loggedUser: state.authentication.loggedUser
+        sessionData: state.authentication.sessionData
     }
 }
 

@@ -7,7 +7,7 @@ export function makeNote(note) {
 
     return (dispatch) => {
         dispatch(showNote(note));
-         setInterval(() => {
+         setTimeout(() => {
              dispatch(hideNote({id: note.id}));
         }, 4000)
     }
