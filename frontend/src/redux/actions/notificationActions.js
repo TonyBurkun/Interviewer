@@ -2,14 +2,14 @@ export const SHOW_NOTE = 'DISPLAY_NOTE';
 export const HIDE_NOTE = 'HIDE_NOTE';
 
 
-
 export function makeNote(note) {
-
     return (dispatch) => {
         dispatch(showNote(note));
-         setTimeout(() => {
-             dispatch(hideNote({id: note.id}));
-        }, 4000)
+        if (note.hide) {
+            setTimeout(() => {
+                dispatch(hideNote({id: note.id}));
+            }, 4000)
+        }
     }
 }
 

@@ -12,6 +12,7 @@ export default function project(state = initialState, action) {
             let note = {};
             note.status = action.payload.status;
             note.text = action.payload.text;
+            note.hide = action.payload.hide;
             note.id = action.payload.id;
             note.show = true;
 
