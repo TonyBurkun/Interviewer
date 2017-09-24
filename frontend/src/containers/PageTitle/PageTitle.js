@@ -15,13 +15,20 @@ class PageTitle extends Component{
             showBackBtn = this.props.showBackBtn,
             showButton = this.props.showButton,
             titleForButton = this.props.titleForButton,
-            linkForButton = this.props.linkForButton;
+            linkForButton = this.props.linkForButton,
+            backBtnId = this.props.backBtnId,
+            buttonId = this.props.buttonId;
 
 
         let showBackButton = (showBackBtn) => {
             if (showBackBtn) {
                 return (
-                    <span onClick={()=>history.goBack()} className="back-btn" id="back-btn"> « Back to list </span>
+                    <span onClick={()=>history.goBack()}
+                          className="back-btn"
+                          id={backBtnId}
+                    >
+                        « Back to list
+                    </span>
                 )
             }
         };
@@ -30,7 +37,12 @@ class PageTitle extends Component{
           if (showButton){
               return (
                   <Link to={linkForButton}>
-                      <button type="button" className="btn btn-primary" id="create-btn"> {titleForButton} </button>
+                      <button type="button"
+                              className="btn btn-primary"
+                              id={buttonId}
+                      >
+                          {titleForButton}
+                      </button>
                   </Link>
 
               )
@@ -56,6 +68,8 @@ PageTitle.propTypes = {
     pageTitle: PropTypes.string.isRequired,
     showBackBtn: PropTypes.bool.isRequired,
     showButton: PropTypes.bool.isRequired,
+    backBtnId: PropTypes.string,
+    buttonId: PropTypes.string,
     titleForButton: PropTypes.string.isRequired,
     linkForButton: PropTypes.string.isRequired
 

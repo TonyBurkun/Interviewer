@@ -68,6 +68,8 @@ class ProjectsList extends Component {
             sortedProjects = projects.sort(compareTitle) || {};
             projectsToDisplay = sortedProjects.map((value, index) => {
 
+                let id = value.id;
+
                     const panelTitle = (
                         <div className="custom-panel-title panel-list-item">
                             <div className="custom-panel-title__right-side">
@@ -86,17 +88,18 @@ class ProjectsList extends Component {
 
                     return (
                         <Panels
-                            key={value.id}
-                            id={value.id}
+                            key={id}
+                            id={id}
                             titleConst={panelTitle}
                             description={value.description}
                             showEditBtn={true}
                             showDeleteBtn={true}
-                            callDelete={(event) => this.openModalConfirm(value.id)}
-                            callEdit={(event) => this.switchToEditMode(value.id)}
+                            editBtnId={"edit-project-"+id}
+                            deleteBtnId={"delete-project-"+id}
+                            callDelete={(event) => this.openModalConfirm(id)}
+                            callEdit={(event) => this.switchToEditMode(id)}
                         />
                     )
-
                 }
             )
 
@@ -116,6 +119,7 @@ class ProjectsList extends Component {
                             pageTitle='Projects'
                             showBackBtn={false}
                             showButton={true}
+                            buttonId="create-project"
                             titleForButton='Create project'
                             linkForButton='/projects/create-project'
                         />
@@ -135,13 +139,13 @@ class ProjectsList extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button
-                            id="pd-btn-modal-yes"
+                            id={"pd-btn-modal-yes-"+this.state.currentProjectID}
                             className="btn btn-primary"
                             onClick={() => this.deleteProject()}
                         >Yes
                         </Button>
                         <Button
-                            id="pd-btn-modal-no"
+                            id={"pd-btn-modal-no-"+this.state.currentProjectID}
                             className="btn btn-danger"
                             onClick={() => this.closeModalConfirm()}
                             bsStyle="primary"

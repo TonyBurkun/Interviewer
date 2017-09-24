@@ -22,7 +22,7 @@ class Panels extends Component {
                 arrowIco = clickTarget.querySelector('.arrow-js'),
                 collapsed = clickTarget.firstChild.classList.contains('collapsed');
 
-            collapsed ? collapseBtn.innerHTML = 'Collapsed' : collapseBtn.innerHTML = 'Expand';
+            collapsed ? collapseBtn.innerHTML = 'Collapse' : collapseBtn.innerHTML = 'Expand';
             collapsed ? arrowIco.classList.add('rotate-plus-90') : arrowIco.classList.remove('rotate-plus-90');
         }
 
@@ -36,10 +36,6 @@ class Panels extends Component {
         this.props.callEdit()
     }
 
-    onClick() {
-        this.props.callClick()
-    }
-
     render() {
 
         let showActionBtn = this.props.showActionBtn,
@@ -48,6 +44,9 @@ class Panels extends Component {
             showEditBtn = this.props.showEditBtn,
             showDuplicateBtn = this.props.showDuplicateBtn,
             showDeleteBtn = this.props.showDeleteBtn,
+            editBtnId = this.props.editBtnId,
+            dublicateBtnId = this.props.dublicateBtnId,
+            deleteBtnId = this.props.deleteBtnId,
             description = this.props.description,
             id = this.props.id;
 
@@ -64,6 +63,7 @@ class Panels extends Component {
             if (showEditBtn) {
                 return (
                     <div className="btn btn-primary"
+                         id = {editBtnId}
                          onClick={()=>this.onEdit()}
                     >
                         Edit
@@ -75,7 +75,11 @@ class Panels extends Component {
         let toShowDuplicateBtn = (showDuplicateBtn) => {
             if (showDuplicateBtn) {
                 return (
-                    <div className="btn btn-info">Duplicate</div>
+                    <div className="btn btn-info"
+                         id = {dublicateBtnId}
+                    >
+                        Duplicate
+                    </div>
                 )
             }
         };
@@ -84,6 +88,7 @@ class Panels extends Component {
             if (showDeleteBtn) {
                 return (
                     <div className="btn btn-danger"
+                         id = {deleteBtnId}
                          onClick={()=>this.onDelete()}
                     >
                         Delete
@@ -142,7 +147,10 @@ Panels.propTypes = {
     showEditBtn: PropTypes.bool,
     showDuplicateBtn: PropTypes.bool,
     showDeleteBtn: PropTypes.bool,
-    titleForActionBtn: PropTypes.string
+    titleForActionBtn: PropTypes.string,
+    editBtnId: PropTypes.string,
+    dublicateBtnId: PropTypes.string,
+    deleteBtnId: PropTypes.string
 
 };
 

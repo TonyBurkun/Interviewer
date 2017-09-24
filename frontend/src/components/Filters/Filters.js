@@ -18,7 +18,13 @@ class Filters extends Component{
         let projectFilter = this.props.project,
             positionFilter = this.props.position,
             levelFilter = this.props.level,
-            dateFilter = this.props.date;
+            dateFilter = this.props.date,
+            projectFilterId = this.props.projectId,
+            positionFilterId = this.props.positionId,
+            levelFilterId = this.props.levelId,
+            dateFromFilterId = this.props.dateFromId,
+            dateToFilterId = this.props.dateToId;
+
 
 
 
@@ -34,7 +40,9 @@ class Filters extends Component{
 
                 return (
                     <div className="form-group">
-                        <select className="form-control form-control-sm" id="project-filter">
+                        <select className="form-control form-control-sm"
+                                id={projectFilterId}
+                        >
                             <option>All Projects</option>
                             {options}
                         </select>
@@ -47,7 +55,9 @@ class Filters extends Component{
             if (position){
                 return (
                     <div className="form-group">
-                        <select className="form-control form-control-sm" id="position-filter">
+                        <select className="form-control form-control-sm"
+                                id={positionFilterId}
+                        >
                             <option>All Positions</option>
                             <option>QA</option>
                             <option>Frontend</option>
@@ -62,7 +72,9 @@ class Filters extends Component{
             if (level){
                 return (
                     <div className="form-group">
-                        <select className="form-control form-control-sm" id="level-filter">
+                        <select className="form-control form-control-sm"
+                                id={levelFilterId}
+                        >
                             <option>All Levels</option>
                             <option>Junior</option>
                             <option>Middle</option>
@@ -81,7 +93,8 @@ class Filters extends Component{
                         <div className="filter-block__title">Date:</div>
                         <div className="filter-block__selects">
                             <div className="form-group">
-                                <select className="form-control form-control-sm" id="date-from-filter">
+                                <select className="form-control form-control-sm"
+                                        id={dateFromFilterId}>
                                     <option>Option one</option>
                                     <option>Option two</option>
                                     <option>Option three</option>
@@ -89,7 +102,8 @@ class Filters extends Component{
                                 </select>
                             </div>
                             <div className="form-group">
-                                <select className="form-control form-control-sm" id="date-to-filter">
+                                <select className="form-control form-control-sm"
+                                        id={dateToFilterId}>
                                     <option>Option one</option>
                                     <option>Option two</option>
                                     <option>Option three</option>
@@ -126,7 +140,13 @@ Filters.propTypes = {
     project: PropTypes.bool,
     position: PropTypes.bool,
     level: PropTypes.bool,
-    date: PropTypes.bool
+    date: PropTypes.bool,
+    projectFilterId: PropTypes.string,
+    positionFilterId: PropTypes.string,
+    levelFilterId: PropTypes.string,
+    dateFromFilterId: PropTypes.string,
+    dateToFilterId: PropTypes.string,
+
 };
 
 

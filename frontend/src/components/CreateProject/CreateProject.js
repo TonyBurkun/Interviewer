@@ -162,6 +162,7 @@ class CreateProject extends Component {
                             pageTitle='Create Projects'
                             showBackBtn={true}
                             showButton={false}
+                            backBtnId="back-from-create"
                             titleForButton=''
                             linkForButton=''
                         />
@@ -226,13 +227,13 @@ class CreateProject extends Component {
                         </Modal.Body>
                         <Modal.Footer>
                             <Button
-                                id="modal-confirm-cancel"
+                                id="modal-confirm-yes"
                                 className="btn btn-primary"
                                 onClick={() => this.leaveForm()}
                             >Yes
                             </Button>
                             <Button
-                                id="modal-confirm-back"
+                                id="modal-confirm-no"
                                 className="btn btn-danger"
                                 onClick={() => this.closeModalConfirm()} bsStyle="primary"
                             >No

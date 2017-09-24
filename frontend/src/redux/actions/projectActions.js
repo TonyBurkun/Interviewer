@@ -1,5 +1,5 @@
 import fetch from "isomorphic-fetch";
-import {makeNote, showNote} from "./notificationActions";
+import {makeNote} from "./notificationActions";
 
 export const CREATE_PROJECT = "CREATE_PROJECT";
 export const SHOW_PROJECTS = "SHOW_PROJECTS";

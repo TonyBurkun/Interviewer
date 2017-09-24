@@ -147,6 +147,8 @@ class ProjectEdit extends Component {
     }
 
     render() {
+        let id = this.state.currentProject.id;
+
         return (
             <div>
                 <Helmet>
@@ -158,6 +160,7 @@ class ProjectEdit extends Component {
                             pageTitle='Edit Projects'
                             showBackBtn={true}
                             showButton={false}
+                            backBtnId="back-from-edit"
                             titleForButton=''
                             linkForButton=''
                         />
@@ -167,7 +170,7 @@ class ProjectEdit extends Component {
                         >
                             <div className="title-block">
                                 <input
-                                    id="pe-title"
+                                    id={"pe-title-"+id}
                                     className=" form-control boxed"
                                     maxLength="60"
                                     value={this.state.projectTitle}
@@ -179,7 +182,7 @@ class ProjectEdit extends Component {
 
                             </div>
                             <TextareaAutosize
-                                id="pe-description"
+                                id={"pe-description-"+id}
                                 className="form-control boxed"
                                 maxLength="3000"
                                 rows={10}
@@ -192,13 +195,13 @@ class ProjectEdit extends Component {
 
                             <div className="form-group">
                                 <button
-                                    id="pe-btn-save"
+                                    id={"pe-btn-save-"+id}
                                     type="submit"
                                     className="btn btn-primary"
                                 >Save
                                 </button>
                                 <button
-                                    id="pe-btn-cancel"
+                                    id={"pe-btn-cancel-"+id}
                                     type="reset"
                                     className="btn btn-danger"
                                     onClick={()=> this.showMConfirmMessage()}
@@ -219,13 +222,13 @@ class ProjectEdit extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button
-                            id="pe-btn-modal-cancel"
+                            id={"pe-btn-modal-yes-"+id}
                             className="btn btn-primary"
                             onClick={() => this.leaveEdit()}
                         >Yes
                         </Button>
                         <Button
-                            id="pe-btn-modal-back"
+                            id={"pe-btn-modal-no-"+id}
                             className="btn btn-danger"
                             onClick={() => this.closeModalConfirm()}
                         >No
