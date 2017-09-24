@@ -4,7 +4,7 @@ import {Modal, Button, PanelGroup} from "react-bootstrap";
 import Helmet from "react-helmet";
 
 import "./ProjectsList.css";
-import {showProjects, deleteProject} from "../../redux/actions/projectActions";
+import {showProjects, removeProject} from "../../redux/actions/projectActions";
 import PageTitle from "./../../containers/PageTitle";
 import Panels from "../Panels/Panels";
 
@@ -49,7 +49,7 @@ class ProjectsList extends Component {
         this.closeModalConfirm();
         this.forceUpdate();
         const {dispatch} = this.props;
-        dispatch(deleteProject(this.state.currentProjectID));
+        dispatch(removeProject(this.state.currentProjectID));
     }
 
 

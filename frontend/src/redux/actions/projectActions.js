@@ -109,12 +109,11 @@ export function getProjects(id) {
     });
 }
 
-export function removeProject(date) {
+export function removeProject(id) {
     return (dispatch) => {
-        fetch('/api/v1/projects/' + date.id,
+        fetch('/api/v1/projects/' + id,
             {
                 method: 'delete',
-                body: JSON.stringify(date),
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -142,27 +141,6 @@ export function removeProject(date) {
                     }
                 ));
             });
-    };
-}
-
-export function deleteProject(id) {
-    return (dispatch) => {
-        fetch("/api/v1/projects/" + id)
-            .then(res =>
-                res.json()
-            )
-            .then(project => {
-                dispatch(removeProject(project.data));
-            })
-            .catch(function(err) {
-                dispatch(makeNote(
-                    {
-                        status: "danger",
-                        text: "Error: "+ err,
-                        hide: false
-                    }
-                ));
-            })
     };
 }
 
