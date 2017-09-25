@@ -71,9 +71,6 @@ class Header extends Component {
                             {toggleActiveSettings()}
                         </li>
                         <li>
-                            <Link to="/login" id="headerLogin">Log in</Link>
-                        </li>
-                        <li>
                             <Link to="/login" id="headerLogout" onClick={() => this.handleLogOut()}>Logout</Link>
                         </li>
                     </ul>
